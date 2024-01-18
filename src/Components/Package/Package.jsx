@@ -1,5 +1,3 @@
-import React from "react";
-
 const Package = () => {
   return (
     <div className="mt-4 ml-10 mr-10 md:ml-5 lg:ml-20">
@@ -15,7 +13,7 @@ const Package = () => {
           </div>
           <div className="flex flex-wrap items-stretch -mx-4">
             <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-gray-900">
+              <div className="flex flex-grow flex-col p-6 space-y-6 rounded-md border shadow sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Basic</h4>
                   <span className="text-6xl font-bold">Free</span>
@@ -72,14 +70,14 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="inline-block px-2 py-1 font-semibold tracki text-center rounded btn btn-secondary text-white"
+                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
               </div>
             </div>
             <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
+              <div className="flex flex-grow flex-col p-6 space-y-6 rounded-md border shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Standard</h4>
                   <span className="text-6xl font-bold">
@@ -87,9 +85,7 @@ const Package = () => {
                     <span className="text-sm tracki">/month</span>
                   </span>
                 </div>
-                <p className="leadi">
-                  Linguist Plus.
-                </p>
+                <p className="leadi">Linguist Plus.</p>
                 <ul className="flex-1 space-y-2">
                   <li className="flex items-center space-x-2">
                     <svg
@@ -154,14 +150,14 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="inline-block px-2 py-1 font-semibold tracki text-center rounded btn btn-secondary text-white"
+                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
               </div>
             </div>
             <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-gray-900">
+              <div className="flex flex-grow flex-col p-6 space-y-6 rounded-md border shadow sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Premium</h4>
                   <span className="text-6xl font-bold">
@@ -251,7 +247,7 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="inline-block px-2 py-1 font-semibold tracki text-center rounded btn btn-secondary text-white"
+                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
@@ -263,6 +259,5 @@ const Package = () => {
     </div>
   );
 };
-
 
 export default Package;
