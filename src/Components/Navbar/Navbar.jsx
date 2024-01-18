@@ -33,7 +33,7 @@ const NavBar = () => {
   //       });
   //   };
   return (
-    <div className="navbar bg-base-100 lg:px-20 md:px-10 px-5 shadow-md fixed z-10 container border-b mx-auto top-0">
+    <div className="navbar bg-base-100 lg:px-20 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -66,6 +66,9 @@ const NavBar = () => {
               <NavLink to={"/translate"}>Translate</NavLink>
             </li>
             <li>
+              <NavLink to={"/contact"}>Contact</NavLink>
+            </li>
+            <li>
               <NavLink to={"/blogs"}>Blogs</NavLink>
             </li>
           </ul>
@@ -90,6 +93,9 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink to={"/translate"}>Translate</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"}>Contact</NavLink>
           </li>
           <li>
             <NavLink to={"/blogs"}>Blogs</NavLink>
@@ -126,38 +132,36 @@ const NavBar = () => {
           </svg>
         </label>
 
-      
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                {/* <img src={user.photoURL} alt={user.displayName} /> */}
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <button className="btn btn-sm  btn-ghost">
-                  {/* {user.displayName} */}
-                </button>
-              </li>
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              {/* <img src={user.photoURL} alt={user.displayName} /> */}
+            </div>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <button className="btn btn-sm  btn-ghost">
+                {/* {user.displayName} */}
+              </button>
+            </li>
 
-              <li>
-                <button
-                  //   onClick={handleLogOut}
-                  className="btn btn-sm  btn-ghost"
-                >
-                  Logout
-                </button>
-              </li>
-            </ul>
-          </div>
-    
-          <Link to="/login">
-            <button className="btn btn-sm  btn-ghost">Login</button>
-          </Link>
-     
+            <li>
+              <button
+                //   onClick={handleLogOut}
+                className="btn btn-sm  btn-ghost"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <Link to="/login">
+          <button className="btn btn-sm  btn-ghost">Login</button>
+        </Link>
       </div>
     </div>
   );
