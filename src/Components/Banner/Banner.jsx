@@ -29,7 +29,7 @@ const Banner = () => {
             <img
               src={img1}
               alt=""
-              className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+              className="object-contain h-72 sm:h-80 lg:h-[410px] w-[400px] xl:h-112 2xl:h-128"
             />
           </div>
         </div>
