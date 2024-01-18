@@ -11,10 +11,6 @@ import Home from "./Home/Home";
 const router = createBrowserRouter([
   {
     path: "/",
-<<<<<<< HEAD
-    element:<Root></Root>
-    
-=======
     element: <Root></Root>,
     children:[
       {
@@ -22,7 +18,6 @@ const router = createBrowserRouter([
         element:<Home></Home>
       }
     ]
->>>>>>> 475954b36a0a43eaac9da22a40a65550836440d2
   },
 ]);
 
