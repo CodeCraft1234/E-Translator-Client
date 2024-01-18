@@ -5,16 +5,17 @@ import Footer from "./Components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
 
 const Root = () => {
-    return (
-        <div className="max-w-[1280px] mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Banner></Banner>
-            <Package></Package>
-            <Review></Review>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar></Navbar>
+      <div className="max-w-[1280px] mx-auto">
+        <Outlet></Outlet>
+        <Footer></Footer>
+        <Toaster />
+      </div>
+    </div>
+  );
 };
 
 export default Root;
+

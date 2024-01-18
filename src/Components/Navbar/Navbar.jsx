@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   //   const { user, logOutUser } = useContext(AuthContext);
