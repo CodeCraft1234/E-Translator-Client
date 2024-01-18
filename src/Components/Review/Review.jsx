@@ -1,75 +1,74 @@
-import "./Review.css";
+import { useState } from 'react';
+
 const Review = () => {
+  const [testimonials, setTestimonials] = useState([
+    {
+      id: 1,
+      name: 'Mosaddek Ali',
+      image: 'https://images.pexels.com/photos/3211476/pexels-photo-3211476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      rating: 3,
+      review:
+        "I recently started using the online language translator, and it has exceeded my expectations. The interface is user-friendly, making it easy to navigate. I appreciate the accuracy of the translations especially for complex phrases and sentences."
+    },
+    {
+      id: 2,
+      name: 'Sara Begum',
+      image: 'https://images.pexels.com/photos/3585325/pexels-photo-3585325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      rating: 3,
+      review:
+        "My experience with the online language translator has been decent so far. The basic translation services work well for everyday use, and the browser extension is handy. However, I encountered a few glitches when dealing with less common language pairs."
+    },
+    {
+      id: 3,
+      name: 'Aklima Khatun',
+      image: 'https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      rating: 3,
+      review:
+        "I've been using the online language translator platform for a few months now, and it has truly transformed the way I interact with content in different languages. From the moment I started using it, the platform has consistently delivered exceptional results."
+    }
+  ]);
+
+  const handleRatingChange = (testimonialId, newRating) => {
+    setTestimonials((prevTestimonials) =>
+      prevTestimonials.map((testimonial) =>
+        testimonial.id === testimonialId ? { ...testimonial, rating: newRating } : testimonial
+      )
+    );
+  };
+
   return (
     <div className="testimonials mt-4">
-      <div className="testimonial-inner">
-        <h1 className="text-4xl hover:text-blue-500">Client Review</h1>
+      <div className="testimonial-inner text-center">
+        <h1 className="text-4xl hover:text-blue-500 font-bold mb-8">Client Review</h1>
         <div className="border"></div>
 
-        <div className="flex flex-wrap justify-center">
-          <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-            <div className="testimonial">
-              <img
-                src="https://images.pexels.com/photos/3211476/pexels-photo-3211476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt=""
-                className="rounded-full"
-              />
-              <div className="name text-red-500">Mosaddek Ali</div>
-              <div className="stars">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 mx-5 gap-5">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className={`px-4 mb-8 bg-base-200 py-5 mt-10 shadow-xl rounded-md border ${
+                testimonial.rating === 3 ? 'border-blue-500' : ''
+              }`}
+            >
+              <div className="testimonial">
+                <img src={testimonial.image} alt="" className="rounded-full w-[150px] mx-auto" />
+                <div className="name text-red-500 text-xl font-semibold mt-4">{testimonial.name}</div>
+                <div className="rating py-3 z-0">
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <input
+                      key={index}
+                      type="radio"
+                      name={`rating-${testimonial.id}`}
+                      className="mask mask-star-2 bg-orange-400"
+                      checked={index + 1 === testimonial.rating}
+                      onClick={() => handleRatingChange(testimonial.id, index + 1)}
+                    />
+                  ))}
+                </div>
+                <p className="text-blue-500">{testimonial.review}</p>
               </div>
-              <p className="text-blue-500">
-                "I recently started using the online language translator, and it has exceeded my expectations. The interface is user-friendly, making it easy to navigate. I appreciate the accuracy of the translations especially for complex phrases and sentences."
-              </p>
             </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-            <div className="testimonial">
-              <img
-                src="https://images.pexels.com/photos/3585325/pexels-photo-3585325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt=""
-                className="rounded-full"
-              />
-              <div className="name text-red-500">Sara Begum</div>
-              <div className="stars">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="far fa-star"></i>
-              </div>
-              <p className="text-blue-500">
-                "My experience with the online language translator has been decent so far. The basic translation services work well for everyday use, and the browser extension is handy. However, I encountered a few glitches when dealing with less common language pairs."
-              </p>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-            <div className="testimonial">
-              <img
-                src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt=""
-                className="rounded-full"
-              />
-              <div className="name text-red-500">Aklima Khatun</div>
-              <div className="stars">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-              <p className="text-blue-500">
-                "I've been using the online language translator platform for a few months now, and it has truly transformed the way I interact with content in different languages. From the moment I started
-                using it, the platform has consistently delivered exceptional results."
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
