@@ -8,7 +8,7 @@ import Banner from "./Components/Banner/Banner";
 
 const Root = () => {
     return (
-        <div className="container mx-auto">
+        <div className="max-w-[1280px] mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Banner></Banner>
