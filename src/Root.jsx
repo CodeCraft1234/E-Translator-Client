@@ -8,8 +8,10 @@ const Root = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="max-w-[1280px] mx-auto">
-        <Outlet></Outlet>
+      <div className="container mx-auto">
+        <div className="min-h-screen">
+          <Outlet></Outlet>
+        </div>
         <Footer></Footer>
         <Toaster />
       </div>
@@ -18,4 +20,3 @@ const Root = () => {
 };
 
 export default Root;
-
