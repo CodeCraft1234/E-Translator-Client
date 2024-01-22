@@ -4,6 +4,7 @@ import NewsLetter from "../Components/NewsLetter/NewsLetter";
 import Package from "../Components/Package/Package";
 import Review from "../Components/Review/Review";
 
+
 const Home = () => {
   return (
     <div className="lg:px-28 md:px-10 px-5">
