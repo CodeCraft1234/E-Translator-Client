@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link, NavLink } from "react-router-dom";
 // import { AuthContext } from "../Provider/AuthProvider";
@@ -22,16 +22,6 @@ const NavBar = () => {
       setTheme("light");
     }
   };
-
-  //   const handleLogOut = () => {
-  //     logOutUser()
-  //       .then(() => {
-  //         toast.success("LogOut Successfully");
-  //       })
-  //       .catch(() => {
-  //         toast.error("Authentication failed. Please try again");
-  //       });
-  //   };
   return (
     <div className="navbar bg-base-100 lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
       <div className="navbar-start">
