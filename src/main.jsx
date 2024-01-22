@@ -7,9 +7,9 @@ import Home from "./Home/Home";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Blog from "./Components/Blog/Blog";
 import Login from "./Security/Login";
-import SignUp from "./Security/SignUp";
 import AuthProvider from "./Security/AuthProvider";
 import Error from "./Error";
+import Register from "./Security/Register";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <SignUp></SignUp>
+        element: <Register></Register>
       },
     ],
   },
