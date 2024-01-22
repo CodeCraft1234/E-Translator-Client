@@ -4,8 +4,8 @@ const Banner = () => {
   return (
     <div>
       <section className=" mt-10 lg:mt-0 md:mt-10">
-        <div className="container flex flex-col  justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
-          <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
+        <div className="container flex flex-col  justify-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
+          <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
             <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl ">
               Decode
               <span className=""> the World of Words </span>
@@ -25,11 +25,11 @@ const Banner = () => {
               </button>
             </div>
           </div>
-          <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+          <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
               src={img1}
               alt=""
-              className="object-contain h-72 sm:h-80 lg:h-[410px] w-[400px] xl:h-112 2xl:h-128"
+              className="object-contain h-72 sm:h-80 lg:h-[420px] w-[400px] xl:h-112 2xl:h-128"
             />
           </div>
         </div>
