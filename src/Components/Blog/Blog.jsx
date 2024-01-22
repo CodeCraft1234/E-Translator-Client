@@ -32,7 +32,7 @@ const TranslationPlatformBlog = () => {
   };
 
   return (
-    <div className="bg-base-300 p-4 mt-16">
+    <div className="bg-base-300 p-4 mt-16 lg:px-28 md:px-10 px-5">
       <div className=" p-8 rounded shadow-md bg-base-100 mb-4 border">
         <h2 className="text-2xl font-bold mb-4">
           Revolutionizing Communication with Online Language Translation

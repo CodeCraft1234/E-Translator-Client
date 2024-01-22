@@ -1,8 +1,8 @@
 const Package = () => {
   return (
-    <div className="mt-4 ml-10 mr-10 md:ml-5 lg:ml-20">
+    <div className="">
       <div className="py-20 dark:bg-gray-800 dark:text-red-100">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto">
           <div className="max-w-2xl mx-auto mb-16 text-center">
             <span className="font-bold tracki uppercase dark:text-violet-400">
               Package
@@ -11,9 +11,9 @@ const Package = () => {
               Choose your best plan
             </h2>
           </div>
-          <div className="flex flex-wrap items-stretch -mx-4">
-            <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-grow flex-col p-6 space-y-6 rounded-md border shadow sm:p-8 dark:bg-gray-900">
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5">
+            <div className="">
+              <div className="flex flex-grow flex-col p-6 h-[450px] space-y-6 rounded-md border shadow sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Basic</h4>
                   <span className="text-6xl font-bold">Free</span>
@@ -76,8 +76,8 @@ const Package = () => {
                 </button>
               </div>
             </div>
-            <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-grow flex-col p-6 space-y-6 rounded-md border shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
+            <div>
+              <div className="flex flex-grow flex-col p-6 h-[450px] space-y-6 rounded-md border shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Standard</h4>
                   <span className="text-6xl font-bold">
@@ -156,8 +156,8 @@ const Package = () => {
                 </button>
               </div>
             </div>
-            <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-grow flex-col p-6 space-y-6 rounded-md border shadow sm:p-8 dark:bg-gray-900">
+            <div>
+              <div className="flex flex-grow flex-col p-6 space-y-6 h-[450px] rounded-md border shadow sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Premium</h4>
                   <span className="text-6xl font-bold">
