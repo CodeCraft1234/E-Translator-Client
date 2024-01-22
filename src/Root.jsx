@@ -1,22 +1,20 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
-import Package from "./Components/Package/Package";
-import Review from "./Components/Review/Review";
-import Banner from "./Components/Banner/Banner";
 
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
-    return (
-        <div className="container mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Banner></Banner>
-            <Package></Package>
-            <Review></Review>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar></Navbar>
+      <div className="min-h-screen">
+        <Outlet></Outlet>
+      </div>
+      <Footer></Footer>
+      <Toaster />
+    </div>
+  );
 };
 
 export default Root;

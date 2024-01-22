@@ -42,11 +42,11 @@ const Review = () => {
         <h1 className="text-4xl hover:text-blue-500 font-bold mb-8">Client Review</h1>
         <div className="border"></div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 mx-5 gap-5">
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`px-4 mb-8 bg-base-200 py-5 mt-10 shadow-xl rounded-md border ${
+              className={`px-4 mb-8 bg-base-200 py-5 shadow-xl rounded-md border ${
                 testimonial.rating === 3 ? 'border-blue-500' : ''
               }`}
             >
