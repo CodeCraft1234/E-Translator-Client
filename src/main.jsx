@@ -8,6 +8,7 @@ import "./index.css";
 import Root from "./Root";
 import Home from "./Home/Home";
 import ContactUs from "./Pages/ContactUs/ContactUs";
+import Translate from "./Pages/Translate/Translate";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<ContactUs></ContactUs>
+      },
+      {
+        path:'/translate',
+        element:<Translate></Translate>
       }
     ]
   },
