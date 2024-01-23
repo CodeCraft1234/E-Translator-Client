@@ -1,9 +1,17 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useContext, useEffect, useState } from "react";
+
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Security/AuthProvider";
 
 const NavBar = () => {
-  //   const { user, logOutUser } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  // sign out a user
+  const handleLogOut = () => {
+    logOut().then().catch();
+    navigate("/");
+  };
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -21,18 +29,8 @@ const NavBar = () => {
       setTheme("light");
     }
   };
-
-  //   const handleLogOut = () => {
-  //     logOutUser()
-  //       .then(() => {
-  //         toast.success("LogOut Successfully");
-  //       })
-  //       .catch(() => {
-  //         toast.error("Authentication failed. Please try again");
-  //       });
-  //   };
   return (
-    <div className="navbar bg-base-100 lg:px-20 md:px-10 px-5 shadow-md fixed z-10 border-b mx-auto top-0">
+    <div className="navbar bg-base-100 lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -131,11 +129,11 @@ const NavBar = () => {
           </svg>
         </label>
 
-      
+        {user?.displayName ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                {/* <img src={user.photoURL} alt={user.displayName} /> */}
+                <img src={user.photoURL} alt={user.displayName} />
               </div>
             </label>
             <ul
@@ -144,25 +142,33 @@ const NavBar = () => {
             >
               <li>
                 <button className="btn btn-sm  btn-ghost">
-                  {/* {user.displayName} */}
+                  {user.displayName}
                 </button>
+              </li>
+              <li>
+                <button className="btn btn-sm  btn-ghost">{user.email}</button>
               </li>
 
               <li>
+                <div className="relative inline-block">
+                  <Link to="/dashboard"></Link>
+                </div>
                 <button
-                  //   onClick={handleLogOut}
-                  className="btn btn-sm  btn-ghost"
+                  onClick={handleLogOut}
+                  className="font-avenir mt-2 mr-10 px-2 py-1 rounded bg-purple-800 text-white"
                 >
-                  Logout
+                  Log out
                 </button>
               </li>
             </ul>
           </div>
-    
+        ) : (
           <Link to="/login">
-            <button className="btn btn-sm  btn-ghost">Login</button>
+            <button className="font-avenir mr-10 px-3 py-1 rounded bg-red-500 text-white">
+              Login
+            </button>
           </Link>
-     
+        )}
       </div>
     </div>
   );
