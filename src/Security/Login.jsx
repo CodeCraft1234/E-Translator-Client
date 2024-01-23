@@ -6,7 +6,7 @@ import axios from "axios";
 import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
-  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn, facebookSignin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   // console.log('location in the login page', location);
@@ -28,14 +28,14 @@ const Login = () => {
   };
 
   // github login
-  const handleGithubLogin = () => {
-    githubSignIn()
+  const handlefacebooksignin = () => {
+    facebookSignin ()
       .then((result) => {
         console.log(result.user);
 
         // navigate after login
         navigate(location?.state ? location.state : "/");
-        return toast.success("google login successfully");
+        return toast.success("facebook login successfully");
       })
       .catch((error) => {
         console.log(error);
@@ -139,7 +139,7 @@ const Login = () => {
               </div>
               <div className="form-control mt-1">
                 <button
-                  onClick={handleGithubLogin}
+                  onClick={handlefacebooksignin}
                   className="p-2 rounded bg-blue-600 text-white"
                 >
                   Login With Facebook
