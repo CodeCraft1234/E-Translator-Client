@@ -142,7 +142,7 @@ const Login = () => {
                   onClick={handleGithubLogin}
                   className="p-2 rounded bg-blue-600 text-white"
                 >
-                  Login With GitHub
+                  Login With Facebook
                 </button>
               </div>
               <p className="text-center text-[#000] font-semibold text-xs mt-4">

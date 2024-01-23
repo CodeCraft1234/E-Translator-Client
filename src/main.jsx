@@ -5,15 +5,11 @@ import "./index.css";
 import Root from "./Root";
 import Home from "./Home/Home";
 import ContactUs from "./Pages/ContactUs/ContactUs";
-<<<<<<< HEAD
-import Translate from "./Pages/Translate/Translate";
-=======
 import Blog from "./Components/Blog/Blog";
 import Login from "./Security/Login";
 import AuthProvider from "./Security/AuthProvider";
 import Error from "./Error";
 import Register from "./Security/Register";
->>>>>>> 813ef7413498d4675795b7856d1d01efd05da6f4
 
 const router = createBrowserRouter([
   {
@@ -26,16 +22,6 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-<<<<<<< HEAD
-        path:'/contact',
-        element:<ContactUs></ContactUs>
-      },
-      {
-        path:'/translate',
-        element:<Translate></Translate>
-      }
-    ]
-=======
         path: "/contact",
         element: <ContactUs></ContactUs>,
       },
@@ -52,7 +38,6 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
     ],
->>>>>>> 813ef7413498d4675795b7856d1d01efd05da6f4
   },
 ]);
 
