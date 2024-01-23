@@ -1,8 +1,10 @@
 import Banner from "../Components/Banner/Banner";
+import ChooseUs from "../Components/ChooseUs/ChooseUs";
 import Faq from "../Components/Faq/Faq";
 import NewsLetter from "../Components/NewsLetter/NewsLetter";
 import Package from "../Components/Package/Package";
 import Review from "../Components/Review/Review";
+
 
 const Home = () => {
   return (
@@ -10,6 +12,7 @@ const Home = () => {
       <Banner></Banner>
       <Package></Package>
       <Review></Review>
+      <ChooseUs></ChooseUs>
       <NewsLetter></NewsLetter>
       <Faq></Faq>
     </div>

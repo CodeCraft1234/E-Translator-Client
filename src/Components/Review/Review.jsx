@@ -8,7 +8,7 @@ const Review = () => {
       image: 'https://images.pexels.com/photos/3211476/pexels-photo-3211476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       rating: 3,
       review:
-        "I recently started using the online language translator, and it has exceeded my expectations. The interface is user-friendly, making it easy to navigate. I appreciate the accuracy of the translations especially for complex phrases and sentences."
+        "Anika Dental Point has been my go-to dental clinic for years. The staff is incredibly friendly, and Dr. Smith is an expert at what he does. The clinic is well-maintained, and they use the latest technology for treatments. I always feel comfortable and well taken care of during my visits.."
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ const Review = () => {
       image: 'https://images.pexels.com/photos/3585325/pexels-photo-3585325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       rating: 3,
       review:
-        "My experience with the online language translator has been decent so far. The basic translation services work well for everyday use, and the browser extension is handy. However, I encountered a few glitches when dealing with less common language pairs."
+        "I had a fantastic experience at Anika Dental Point. The team is professional, and they take the time to explain procedures thoroughly. The clinic is clean and inviting, and the atmosphere is calming. Dr. Horkil Alom is not only skilled but also genuinely cares about the well-being of his patients."
     },
     {
       id: 3,
@@ -61,7 +61,7 @@ const Review = () => {
                       name={`rating-${testimonial.id}`}
                       className="mask mask-star-2 bg-orange-400"
                       checked={index + 1 === testimonial.rating}
-                      onClick={() => handleRatingChange(testimonial.id, index + 1)}
+                      onChange={() => handleRatingChange(testimonial.id, index + 1)}
                     />
                   ))}
                 </div>
