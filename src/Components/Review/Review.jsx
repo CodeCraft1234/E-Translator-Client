@@ -61,7 +61,7 @@ const Review = () => {
                       name={`rating-${testimonial.id}`}
                       className="mask mask-star-2 bg-orange-400"
                       checked={index + 1 === testimonial.rating}
-                      onClick={() => handleRatingChange(testimonial.id, index + 1)}
+                      onChange={() => handleRatingChange(testimonial.id, index + 1)}
                     />
                   ))}
                 </div>
