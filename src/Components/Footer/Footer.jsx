@@ -14,15 +14,27 @@ const Footer = () => {
           </p>
         </aside>
         <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-          <a href="https://twitter.com/" target="_blank">
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaTwitter className="text-2xl"></FaTwitter>
           </a>
-          <a href="https://youtube.com/" target="_blank">
+          <a
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <a>
               <FaYoutube className="text-2xl"></FaYoutube>
             </a>
           </a>
-          <a href="https://facebook.com/" target="_blank">
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaFacebook className="text-2xl"></FaFacebook>
           </a>
         </nav>
