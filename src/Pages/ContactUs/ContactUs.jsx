@@ -51,7 +51,7 @@ const ContactUs = () => {
           </div>
           <button
             type="submit"
-            className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+            className="btn btn-outline border-0 border-[#d926a9]  hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
           >
             Send Message
           </button>
