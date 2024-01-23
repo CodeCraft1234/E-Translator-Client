@@ -1,10 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 
-import { Link, NavLink } from "react-router-dom";
-// import { AuthContext } from "../Provider/AuthProvider";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Security/AuthProvider";
 
 const NavBar = () => {
-  //   const { user, logOutUser } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  // sign out a user
+  const handleLogOut = () => {
+    logOut().then().catch();
+    navigate("/");
+  };
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -22,18 +29,8 @@ const NavBar = () => {
       setTheme("light");
     }
   };
-
-  //   const handleLogOut = () => {
-  //     logOutUser()
-  //       .then(() => {
-  //         toast.success("LogOut Successfully");
-  //       })
-  //       .catch(() => {
-  //         toast.error("Authentication failed. Please try again");
-  //       });
-  //   };
   return (
-    <div className="navbar bg-base-100 lg:px-20 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
+    <div className="navbar bg-base-100 lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -69,7 +66,7 @@ const NavBar = () => {
               <NavLink to={"/contact"}>Contact</NavLink>
             </li>
             <li>
-              <NavLink to={"/blogs"}>Blogs</NavLink>
+              <NavLink to={"/blog"}>Blogs</NavLink>
             </li>
           </ul>
         </div>
@@ -98,7 +95,7 @@ const NavBar = () => {
             <NavLink to={"/contact"}>Contact</NavLink>
           </li>
           <li>
-            <NavLink to={"/blogs"}>Blogs</NavLink>
+            <NavLink to={"/blog"}>Blogs</NavLink>
           </li>
         </ul>
       </div>
@@ -132,36 +129,46 @@ const NavBar = () => {
           </svg>
         </label>
 
-        <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              {/* <img src={user.photoURL} alt={user.displayName} /> */}
-            </div>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <button className="btn btn-sm  btn-ghost">
-                {/* {user.displayName} */}
-              </button>
-            </li>
+        {user?.displayName ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={user.photoURL} alt={user.displayName} />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <button className="btn btn-sm  btn-ghost">
+                  {user.displayName}
+                </button>
+              </li>
+              <li>
+                <button className="btn btn-sm  btn-ghost">{user.email}</button>
+              </li>
 
-            <li>
-              <button
-                //   onClick={handleLogOut}
-                className="btn btn-sm  btn-ghost"
-              >
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div>
-
-        <Link to="/login">
-          <button className="btn btn-sm  btn-ghost">Login</button>
-        </Link>
+              <li>
+                <div className="relative inline-block">
+                  <Link to="/dashboard"></Link>
+                </div>
+                <button
+                  onClick={handleLogOut}
+                  className="font-avenir mt-2 mr-10 px-2 py-1 rounded bg-purple-800 text-white"
+                >
+                  Log out
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="font-avenir mr-10 px-3 py-1 rounded bg-red-500 text-white">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

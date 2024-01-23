@@ -8,11 +8,11 @@ const Root = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="container mx-auto">
+      <div className="min-h-screen">
         <Outlet></Outlet>
-        <Footer></Footer>
-        <Toaster />
       </div>
+      <Footer></Footer>
+      <Toaster />
     </div>
   );
 };
