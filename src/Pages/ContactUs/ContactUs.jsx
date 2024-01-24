@@ -171,12 +171,14 @@ const Contact = () => {
               placeholder="message"
               required
             ></textarea>
-            <input
-              type="submit"
-              className="px-5 py-2 rounded-xl bg-[crimson] font-bold mt-5"
-            ></input>
-          </form>
-        </div>
+          </div>
+          <button
+            type="submit"
+            className="btn btn-outline border-0 border-[#d926a9]  hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
   );

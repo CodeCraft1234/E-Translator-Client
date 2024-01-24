@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.5",
+    "emoji-picker-react": "^4.6.15",
+    "firebase": "^10.7.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -17,13 +20,18 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.16.0",
+<<<<<<< HEAD
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.10.3"
+=======
+    "react-speech-recognition": "^3.10.0",
+    "sort-by": "^1.2.0"
+>>>>>>> b0523b0631588550dec84454de84ba9dc128257a
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
     "daisyui": "^3.9.2",
     "eslint": "^8.45.0",
@@ -32,6 +40,6 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5"
+    "vite": "^5.0.11"
   }
 }
