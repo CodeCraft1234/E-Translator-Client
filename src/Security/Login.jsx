@@ -27,7 +27,7 @@ const Login = () => {
       });
   };
 
-  // github login
+  // facebook login
   const handlefacebooksignin = () => {
     facebookSignin ()
       .then((result) => {
