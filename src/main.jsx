@@ -11,6 +11,8 @@ import AuthProvider from "./Security/AuthProvider";
 import Error from "./Error";
 import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
+import ForgetPassword from "./Security/ForgetPassword";
+
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,11 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Register></Register>
       },
+      {
+        path: "/forgetPassword",
+        element: <ForgetPassword></ForgetPassword>
+      },
+      
     ],
   },
 ]);
