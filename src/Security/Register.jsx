@@ -80,7 +80,7 @@ const Register = () => {
                     placeholder="Enter your photo url"
                     name="photo"
                     className="input input-bordered text-[#9F9F9F] text-xs font-normal "
-                    required
+                    
                   />
                 </div>
 
