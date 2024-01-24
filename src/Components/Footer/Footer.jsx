@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     
     <div>
-      <footer className="footer items-center p-4 bg-base-300 text-base-content  " >
+      <footer className="footer items-center p-4 bg-base-200 text-base-content  " >
 
         <aside style={{ width: '200px' }}>
           <img
@@ -16,22 +16,23 @@ const Footer = () => {
 
         </aside>
         <nav>
-          <header className="footer-title">Services</header>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <header className="footer-title border-b-4 border-red-500">Services</header>
+          <a className="link link-hover hover:translate-x-2">Branding</a>
+          
+          <a className="link link-hover hover:translate-x-2">Design</a>
+          <a className="link link-hover hover:translate-x-2">Marketing</a>
+          <a className="link link-hover hover:translate-x-2">Advertisement</a>
         </nav>
         <nav>
-          <header className="footer-title">Company</header>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <header className="footer-title border-b-4 border-red-500">Company</header>
+          <a className="link link-hover hover:translate-x-2">About us</a>
+          <a className="link link-hover hover:translate-x-2">Contact</a>
+          <a className="link link-hover hover:translate-x-2">Jobs</a>
+          <a className="link link-hover hover:translate-x-2">Press kit</a>
         </nav>
         <nav>
-          <header className="footer-title">Legal</header>
-          <button onClick={() => document.getElementById('my_modal_1').showModal()}>Terms and Conditions</button>
+          <header className="footer-title border-b-4 border-red-500">Legal</header>
+          <button className="hover:translate-x-2 link link-hover" onClick={() => document.getElementById('my_modal_1').showModal()}>Terms and Conditions</button>
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box">
               <h2><strong>Terms and Conditions</strong></h2>
@@ -163,7 +164,7 @@ const Footer = () => {
               </div>
             </div>
           </dialog>
-          <button onClick={() => document.getElementById('my_modal_2').showModal()}>Privacy Policy</button>
+          <button className="hover:translate-x-2 link link-hover" onClick={() => document.getElementById('my_modal_2').showModal()}>Privacy Policy</button>
           <dialog id="my_modal_2" className="modal">
             <div className="modal-box">
               <div>
@@ -233,7 +234,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <p><strong>Website</strong> refers to E Translator, accessible from <a
-                      href="https://etranslator.netlify.app/" rel="external nofollow noopener"
+                      href="https://etranslator.netlify.app/" rel="noreferrer noopener"
                       target="_blank">https://etranslator.netlify.app/</a></p>
                   </li>
                   <li>
@@ -486,7 +487,7 @@ const Footer = () => {
               </div>
             </div>
           </dialog>
-          <button onClick={() => document.getElementById('my_modal_3').showModal()}>Cookies Policy</button>
+          <button className="hover:translate-x-2 link link-hover" onClick={() => document.getElementById('my_modal_3').showModal()}>Cookies Policy</button>
           <dialog id="my_modal_3" className="modal">
             <div className="modal-box">
               <h2><strong>Cookies Policy</strong></h2>
@@ -565,16 +566,16 @@ const Footer = () => {
           </dialog>
         </nav>
         <nav>
-          <header className="footer-title">Social</header>
+          <header className="footer-title border-b-4 border-red-500">Social</header>
           <div className="grid grid-flow-col gap-4">
             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="text-2xl"></FaTwitter>
+              <FaTwitter className="text-2xl hover:scale-150"></FaTwitter>
             </a>
             <a rel="noopener noreferrer" href="https://youtube.com/" target="_blank" >
-              <FaYoutube className="text-2xl"></FaYoutube>
+              <FaYoutube className="text-2xl hover:scale-150"></FaYoutube>
             </a>
             <a rel="noopener noreferrer" href="https://facebook.com/" target="_blank" >
-              <FaFacebook className="text-2xl"></FaFacebook>
+              <FaFacebook className="text-2xl hover:scale-150"></FaFacebook>
             </a>
           </div>
         </nav>
