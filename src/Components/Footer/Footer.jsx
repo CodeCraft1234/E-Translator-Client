@@ -17,7 +17,7 @@ const Footer = () => {
         </aside>
         <nav>
           <header className="footer-title border-b-4 border-red-500">Services</header>
-          <a className="link link-hover hover:translate-x-2">Branding</a>
+         
           
           <a className="link link-hover hover:translate-x-2">Design</a>
           <a className="link link-hover hover:translate-x-2">Marketing</a>
@@ -27,7 +27,7 @@ const Footer = () => {
           <header className="footer-title border-b-4 border-red-500">Company</header>
           <a className="link link-hover hover:translate-x-2">About us</a>
           <a className="link link-hover hover:translate-x-2">Contact</a>
-          <a className="link link-hover hover:translate-x-2">Jobs</a>
+          
           <a className="link link-hover hover:translate-x-2">Press kit</a>
         </nav>
         <nav>
