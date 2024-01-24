@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     updateProfiles,
     logOut,
-    // githubSignIn,
+   
     facebookSignin
 
   };
