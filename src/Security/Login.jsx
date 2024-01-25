@@ -82,6 +82,8 @@ const Login = () => {
     });
   };
 
+  
+
   return (
     <div>
       <div className="hero min-h-screen mt-16">
@@ -121,7 +123,11 @@ const Login = () => {
                   required
                 />
 				<div className="flex justify-end text-xs dark:text-gray-400">
-				<a rel="noopener noreferrer" href="#">Forgot Password?</a>
+				{/* <a rel="noopener noreferrer" href="#">Forgot Password?</a> */}
+        <Link className="text-[#F75B5F]" to="/forgetPassword">
+                  {" "}
+                  Forgot Password?
+                </Link>
 			</div>
               </div>
               <div className="form-control mt-1">
