@@ -129,37 +129,33 @@ const NavBar = () => {
           </svg>
         </label>
 
-        {user?.displayName ? (
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src={user.photoURL} alt={user.displayName} />
+      <div className="items-center">
+      {user?.displayName ? (
+          <div className="dropdown   center">
+            <label tabIndex={0} >
+              
+              <div>
+              <img className="h-10 w-10 rounded-full" src={user.photoURL} alt="" />
+              <h1 className="lowercase">Profile</h1>
+                
               </div>
             </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <button className="btn btn-sm  btn-ghost">
-                  {user.displayName}
-                </button>
-              </li>
-              <li>
-                <button className="btn btn-sm  btn-ghost">{user.email}</button>
-              </li>
-
-              <li>
-                <div className="relative inline-block">
-                  <Link to="/dashboard"></Link>
-                </div>
-                <button
-                  onClick={handleLogOut}
-                  className="font-avenir mt-2 mr-10 px-2 py-1 rounded bg-purple-800 text-white"
-                >
-                  Log out
-                </button>
-              </li>
+            <ul tabIndex={0} className="menu menu-lg dropdown-content mt-3  right-1  z-[1] p-2  rounded-box w-52">
+            <div className="dropdown ">
+        <div tabIndex={0} className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-white text-black">
+        <figure><img className="h-20 w-20 rounded-full" src={user?.photoURL} alt="Shoes" /></figure>
+          <div className="card-body">
+          <h1> Name: {user?.displayName}</h1>
+          <hr />
+          <h1>{user?.email}</h1>
+          <hr />
+          <h1>Date of Birth :</h1>
+          <NavLink onClick={handleLogOut} className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "underline mr-5 text-blue-700" : "mr-5 hover:text-gray-100"
+  }><button className="btn  btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white ">LogOut</button></NavLink>
+          </div>
+        </div>
+      </div>
             </ul>
           </div>
         ) : (
@@ -169,6 +165,8 @@ const NavBar = () => {
             </button>
           </Link>
         )}
+         
+      </div>
       </div>
     </div>
   );
