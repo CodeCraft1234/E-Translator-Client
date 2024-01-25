@@ -12,6 +12,7 @@ import Error from "./Error";
 import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
+import Features from "./Components/Features/Features";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path:'/features',
+        element:<Features></Features>
+
       },
       {
         path:"/translate",
