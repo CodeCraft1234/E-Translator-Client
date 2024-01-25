@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const TranslateFrom= () => {
+const TranslateFrom = () => {
   const [options, setOptions] = useState([]);
   const [to, setTo] = useState('en');
   const [from, setFrom] = useState('en');
@@ -23,7 +22,10 @@ const TranslateFrom= () => {
       },
     }).then(res => {
       console.log(res.data);
+      // Assuming res.data is an object with a property named 'translatedText'
       setOutput(res.data.translatedText);
+    }).catch(error => {
+      console.error('Translation error:', error);
     });
   };
 
@@ -35,6 +37,8 @@ const TranslateFrom= () => {
       .then(res => {
         console.log(res.data);
         setOptions(res.data);
+      }).catch(error => {
+        console.error('Language options error:', error);
       });
   }, []);
 
@@ -58,18 +62,18 @@ const TranslateFrom= () => {
           ))}
         </select>
       </div>
-     <div className='flex justify-center mx-auto gap-6'>
-     <div>
-        <textarea
-          cols="50"
-          rows="8"
-          onInput={(e) => setInput(e.target.value)}
-        ></textarea>
+      <div className='flex justify-center mx-auto gap-6'>
+        <div>
+          <textarea
+            cols="50"
+            rows="8"
+            onInput={(e) => setInput(e.target.value)}
+          ></textarea>
+        </div>
+        <div>
+          <textarea cols="50" rows="8" value={output}></textarea>
+        </div>
       </div>
-      <div>
-        <textarea cols="50" rows="8" value={output}></textarea>
-      </div>
-     </div>
       <div>
         <button className='flex justify-center mx-auto btn btn-accent' onClick={translate}>Translate</button>
       </div>
