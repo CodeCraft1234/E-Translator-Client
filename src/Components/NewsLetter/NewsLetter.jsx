@@ -16,7 +16,7 @@ const NewsLetter = () => {
 
   return (
     <div className="mt-10 mb-10">
-      <section className="bg-base-300 py-12 rounded-2xl">
+      <section className="bg-base-300 py-12 rounded-2xl border">
         <div className="container mx-auto">
           <h2 className="lg:text-2xl md:text-2xl text-xl px-3 font-bold mb-4 text-center">
             Subscribe to Our Newsletter

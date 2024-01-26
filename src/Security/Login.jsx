@@ -92,12 +92,12 @@ const Login = () => {
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
-                <h1 className="text-3xl text-[#403F3F] text-center font-semibold">
+                <h1 className="text-3xl text-center font-semibold">
                   Login your account
                 </h1>
                 <hr className="mt-4" />
                 <label className="label">
-                  <span className="label-text text-[#403F3F] text-sm font-semibold">
+                  <span className="label-text text-sm font-semibold">
                     Email address
                   </span>
                 </label>
@@ -105,13 +105,13 @@ const Login = () => {
                   type="email"
                   placeholder="Enter your email address"
                   name="email"
-                  className="input input-bordered text-[#9F9F9F] text-xs font-normal "
+                  className="input input-bordered text-xs font-normal "
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-[#403F3F] text-sm font-semibold">
+                  <span className="label-text text-sm font-semibold">
                     Password
                   </span>
                 </label>
@@ -151,7 +151,7 @@ const Login = () => {
                   Login With Facebook
                 </button>
               </div>
-              <p className="text-center text-[#000] font-semibold text-xs mt-4">
+              <p className="text-center font-semibold text-xs mt-4">
                 Don't Have An Account ?
                 <Link className="text-[#F75B5F]" to="/signup">
                   {" "}

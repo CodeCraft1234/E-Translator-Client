@@ -1,4 +1,4 @@
-const countries = {
+const languages = {
   "am-ET": "Amharic",
   "ar-SA": "Arabic",
   "be-BY": "Bielarus",
@@ -96,6 +96,7 @@ const countries = {
   "xh-ZA": "Xhosa",
   "yi-YD": "Yiddish",
   "zu-ZA": "Zulu",
+  "zh-CN": "Chinese",
 };
 
-export default countries;
+export default languages;
