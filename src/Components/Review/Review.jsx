@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 AOS.init();
+
 const Review = () => {
   const [testimonials, setTestimonials] = useState([
     {
@@ -42,11 +43,13 @@ const Review = () => {
     <div className="testimonials mt-4">
       <div className="testimonial-inner text-center">
         <h1 className="text-4xl hover:text-blue-500 font-bold mb-8" data-aos='zoom-in'>Client Review</h1>
-        <div className="border"></div>
+        
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5" data-aos='fade-left'>
-          {testimonials.map((testimonial) => (
-            <div
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5" >
+          {testimonials.map((testimonial,index) => (
+            <div data-aos="fade-left"
+            data-aos-delay={index*1000}
+            data-aos-duration="1500"
               key={testimonial.id}
               className={`px-4 mb-8 bg-base-200 py-5 shadow-xl rounded-md border ${
                 testimonial.rating === 3 ? 'border-blue-500' : ''
