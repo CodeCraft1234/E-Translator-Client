@@ -67,8 +67,8 @@ const ChooseUS = () => {
           </div>
 
           {cards.map((card, index) => (
-            <div key={index} className="col-span-1 sm:col-span-1 lg:col-span-1">
-              <div className="item bg-gray-600 text-white text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-[#5170ea] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+            <div key={index} className="col-span-1 sm:col-span-1 lg:col-span-1" >
+              <div className="item bg-gray-600 text-white text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-[#5170ea] transition duration-500  transform hover:-translate-y-1 hover:scale-105" data-aos='zoom-in'>
                 <span className={`icon feature_box_col_${index + 1}`}>
                   <i className={`fa ${card.iconClass} text-2xl`}></i>
                 </span>
