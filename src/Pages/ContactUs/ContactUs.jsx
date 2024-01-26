@@ -1,3 +1,5 @@
+
+import { GrContact } from "react-icons/gr";
 const ContactUs = () => {
   return (
     <div className="bg-base-200 mt-16 rounded-md lg:px-12 md:px-10 px-5">
@@ -7,9 +9,11 @@ const ContactUs = () => {
             <h2 className="text-4xl font-bold leadi lg:text-5xl">
               {` Let's talk!`}
             </h2>
+            
             <div className="dark:text-gray-400">
               We are happy to response you.
             </div>
+            <h1 className="text-9xl text-center"><GrContact /></h1>
           </div>
           <img
             src="assets/svg/doodle.svg"
