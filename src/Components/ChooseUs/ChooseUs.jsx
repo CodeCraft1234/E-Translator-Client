@@ -1,3 +1,6 @@
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+AOS.init();
 const ChooseUS = () => {
   const cards = [
     {
@@ -42,8 +45,8 @@ const ChooseUS = () => {
     <div className="feat bg-gray pt-5 pb-5">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="section-head col-span-full text-center">
-            <h4 className="text-3xl font-bold mb-4">
+          <div className="section-head col-span-full text-center" data-aos='zoom-in'>
+            <h4 className="text-3xl font-bold mb-4" >
               <span>Why Choose</span> Us?
             </h4>
             <p>
@@ -55,7 +58,7 @@ const ChooseUS = () => {
           </div>
 
           {cards.map((card, index) => (
-            <div key={index} className="col-span-1 sm:col-span-1 lg:col-span-1">
+            <div key={index} className="col-span-1 sm:col-span-1 lg:col-span-1" data-aos='flip-left'>
               <div className="item bg-gray-600 text-white text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-green-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                 <span className={`icon feature_box_col_${index + 1}`}>
                   <i className={`fa ${card.iconClass}`}></i>

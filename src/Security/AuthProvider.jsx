@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
   const forgetPass=(email)=>{
     // setLoading(true);
     return sendPasswordResetEmail(auth, email)
-  }
+  };
 
   const googleSignIn = () => {
     setLoading(true);
