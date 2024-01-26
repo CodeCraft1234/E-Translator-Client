@@ -1,18 +1,29 @@
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { motion } from 'framer-motion';
+AOS.init();
 const Package = () => {
+  
   return (
     <div className="">
       <div className="py-20 dark:bg-gray-800 dark:text-red-100">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto mb-16 text-center">
-            <span className="font-bold tracki uppercase dark:text-violet-400">
+            <span className="font-bold tracki uppercase dark:text-violet-400" >
               Package
             </span>
-            <h2 className="text-4xl font-bold lg:text-5xl">
+            <h2 className="text-4xl font-bold lg:text-5xl" data-aos='zoom-in'>
               Choose your best plan
             </h2>
           </div>
           <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5">
-            <div className="">
+            <div data-aos='fade-right' 
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+     className="">
               <div className="flex flex-grow flex-col p-6 h-[450px] space-y-6 rounded-md border shadow sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Basic</h4>
@@ -76,7 +87,12 @@ const Package = () => {
                 </button>
               </div>
             </div>
-            <div>
+            <div data-aos='fade-right' 
+    data-aos-delay="550"
+    data-aos-duration="1000"
+    data-aos-mirror="true"
+    data-aos-once="false"
+   >
               <div className="flex flex-grow flex-col p-6 h-[450px] space-y-6 rounded-md border shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Standard</h4>
@@ -156,7 +172,12 @@ const Package = () => {
                 </button>
               </div>
             </div>
-            <div>
+            <div data-aos='fade-right' 
+    data-aos-delay="1050"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false">
               <div className="flex flex-grow flex-col p-6 space-y-6 h-[450px] rounded-md border shadow sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Premium</h4>

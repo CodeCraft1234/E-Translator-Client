@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
                 <h2><strong>Privacy Policy</strong></h2>
                 <br />
 
-                <p>Last updated: January 22, 2024</p>
+                <p>Last updated: January 22, 2024</p> 
                 <br />
                 <br />
                 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
