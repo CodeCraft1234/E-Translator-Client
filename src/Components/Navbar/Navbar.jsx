@@ -160,7 +160,7 @@ const NavBar = () => {
           </div>
         ) : (
           <Link to="/login">
-            <button className="font-avenir mr-10 px-3 py-1 rounded bg-red-500 text-white">
+            <button className="font-avenir mr-10 px-3 py-1 rounded bg-[#477aaf] text-white">
               Login
             </button>
           </Link>
