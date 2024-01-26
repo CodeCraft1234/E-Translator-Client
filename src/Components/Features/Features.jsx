@@ -23,13 +23,13 @@ const Features = () => {
     },
     {
       icon: <FaClock className="h-16 w-16 mb-2"></FaClock>,
-      name: "Privacy and Security",
+      name: "Real Time Translation",
       description:
         "Provide real-time translation results as users type to enhance the user experience..",
     },
     {
       icon: <FaMicrophone className="h-16 w-16 mb-2"></FaMicrophone>,
-      name: "Speech-to-Text and Text-to-Speech<",
+      name: "Speech-to-Text and Text-to-Speech",
       description:
         "Integrate speech-to-text and text-to-speech functionalities for users who prefer audio interaction",
     },
@@ -75,7 +75,6 @@ const Features = () => {
       description:
         "Provide real-time translation results as users type to enhance the user experience.",
     },
-
   ];
   const featureVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.8, rotate: -10 },
@@ -97,7 +96,7 @@ const Features = () => {
             variants={featureVariants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: index * 0}}
+            transition={{ delay: index * 0 }}
             whileHover={{
               scale: 1.2,
               background:
