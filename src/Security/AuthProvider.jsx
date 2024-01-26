@@ -28,8 +28,8 @@ const AuthProvider = ({ children }) => {
 
   const forgetPass = (email) => {
     // setLoading(true);
-    return sendPasswordResetEmail(auth, email);
-  };
+    return sendPasswordResetEmail(auth, email)
+  }
 
   const googleSignIn = () => {
     setLoading(true);
@@ -79,10 +79,10 @@ const AuthProvider = ({ children }) => {
     signIn,
     updateProfiles,
     logOut,
-
     // githubSignIn,
     facebookSignin,
-    forgetPass,
+    forgetPass
+
   };
 
   return (

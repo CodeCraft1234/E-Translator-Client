@@ -176,7 +176,7 @@ function Translator() {
               </div>
             </button>
 
-            <button onClick={handleExchangeClick} className="text-green-500">
+            <button onClick={handleExchangeClick} className="text-[#5170ea]">
               <div className="hover:bg-[#c1c7cd] rounded p-1 mr-5">
                 <FaExchangeAlt size={20} />
               </div>

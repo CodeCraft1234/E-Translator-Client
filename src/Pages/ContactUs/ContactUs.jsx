@@ -103,7 +103,7 @@ const Contact = () => {
             ></textarea>
             <input
               type="submit"
-              className="px-5 py-2 rounded-xl bg-[crimson] font-bold mt-5"
+              className="btn  btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
             />
           </form>
         </div>
