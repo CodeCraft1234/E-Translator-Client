@@ -3,14 +3,17 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./Root";
-import Home from "./Home/Home";
+import Home from "./Pages/Home/Home";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Blog from "./Components/Blog/Blog";
 import Login from "./Security/Login";
 import AuthProvider from "./Security/AuthProvider";
 import Error from "./Error";
 import Register from "./Security/Register";
+import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
+import Features from "./Components/Features/Features";
+
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path:'/features',
+        element:<Features></Features>
+
+      },
+      {
+        path:"/translate",
+        element:<Translate/>
       },
       {
         path: "/contact",
