@@ -78,9 +78,9 @@ return (
                     variants={featureVariants}
                     initial="hidden"
                     animate="visible"
-                    transition={{ delay: index * 0.2 }}
+                    transition={{ delay: index * 0 }}
                     whileHover={{
-                        scale: 1.25,
+                        scale: 1.2,
                         background: hoveredIndex === index ? 'linear-gradient(to right, #8e44ad, #663399)' : 'white',
                     }}
                     onMouseEnter={() => setHoveredIndex(index)}
