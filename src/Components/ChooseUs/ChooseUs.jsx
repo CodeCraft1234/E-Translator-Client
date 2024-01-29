@@ -1,5 +1,6 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { FaAnchor, FaCamera, FaDatabase, FaGlobe, FaHourglassHalf, FaUpload } from 'react-icons/fa';
 
 AOS.init();
 
@@ -8,42 +9,42 @@ const ChooseUS = () => {
   const cards = [
     {
       id: 1,
-      iconClass: "fa-globe",
+      iconClass: <FaGlobe className="h-6 w-6" />,
       title: "Precision and Expertise",
       description:
         "In the realm of language translation, precision is the cornerstone of our commitment. With a meticulous approach honed over a decade of dedicated service, our team of seasoned linguists ensures that every word is translated with unparalleled accuracy.",
     },
     {
       id: 2,
-      iconClass: "fa-anchor",
+      iconClass: <FaAnchor className="h-6 w-6"></FaAnchor>,
       title: "Cutting-Edge Technology",
       description:
         "Stay ahead with the latest translation technology. We employ state-of-the-art tools and methodologies to provide you with efficient, accurate, and timely translations, meeting the demands of a dynamic global landscape.",
     },
     {
       id: 3,
-      iconClass: "fa-hourglass-half",
+      iconClass: <FaHourglassHalf className="h-6 w-6"></FaHourglassHalf>,
       title: "24 x 7 User Support",
       description:
         "Your queries and concerns are our top priority. Enjoy round-the-clock customer support, ensuring you're never alone on your language journey. Our team is ready to assist you anytime, ensuring a smooth and hassle-free experience.",
     },
     {
       id: 4,
-      iconClass: "fa-database",
+      iconClass: <FaDatabase className="h-6 w-6"></FaDatabase>,
       title: "Business Growth",
       description:
         "Like climbing a mountain, true growth happens during the journey. Our translation services open doors to new markets, fostering global connections and expanding your business horizons.",
     },
     {
       id: 5,
-      iconClass: "fa-upload",
+      iconClass: <FaUpload className="h-6 w-6"></FaUpload>,
       title: "Market Strategies",
       description:
         "Break barriers with tailored market strategies. Our translations go beyond words; they adapt to the cultural nuances of your target audience, ensuring your message resonates and drives success.",
     },
     {
       id: 6,
-      iconClass: "fa-camera",
+      iconClass: <FaCamera className="h-6 w-6"></FaCamera>,
       title: "Cost-Effective Solutions",
       description:
         "Quality should never break the bank. Experience the perfect balance of affordability and excellence. We understand the value of your words, and we make every translation cost-effective without compromising on quality.",
@@ -68,11 +69,13 @@ const ChooseUS = () => {
 
           {cards.map((card, index) => (
             <div key={index} className="col-span-1 sm:col-span-1 lg:col-span-1" >
-              <div className="item bg-gray-600 text-white text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-[#5170ea] transition duration-500  transform hover:-translate-y-1 hover:scale-105" data-aos='zoom-in'>
+              <div className="item bg-gray-600 text-white text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-primary transition duration-500  transform hover:-translate-y-1 hover:scale-105" data-aos='zoom-in'>
+                <div className='flex justify-center gap-3'>
                 <span className={`icon feature_box_col_${index + 1}`}>
-                  <i className={`fa ${card.iconClass} text-2xl`}></i>
+                  {card.iconClass}
                 </span>
                 <h6 className="text-xl font-semibold mb-2">{card.title}</h6>
+                </div>
                 <p className="text-sm">{card.description}</p>
               </div>
             </div>

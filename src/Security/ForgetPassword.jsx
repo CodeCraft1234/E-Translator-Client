@@ -60,7 +60,7 @@ return (
                             />
                         </div>
                         <div className="form-control mt-4">
-                            <button className="p-2 rounded bg-red-600 text-white">
+                            <button className="p-2 rounded bg-neutral text-white">
                                 Submit
                             </button>
                         </div>
