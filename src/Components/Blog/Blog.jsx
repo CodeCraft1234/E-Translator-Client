@@ -33,12 +33,17 @@ const TranslationPlatformBlog = () => {
   };
 
   return (
+
+    <div className="bg-base-300 p-4 mt-16 lg:px-28 md:px-10 px-5">
+      <div className=" p-8 rounded shadow-md bg-base-100 mb-4 border">
+
     <div className="bg-base-300 p-4 mt-16 lg:px-28 md:px-10 px-5" >
       <Helmet>
         <title> E-Translator | Blogs</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className=" p-8 rounded shadow-md bg-base-100 mb-4 border" >
+
         <h2 className="text-2xl font-bold mb-4">
           Revolutionizing Communication with Online Language Translation
         </h2>
@@ -50,9 +55,9 @@ const TranslationPlatformBlog = () => {
           )}
         </p>
 
-        <div className="mt-4" >
+        <div className="mt-4">
           <button
-            className="desi-btn desi-btn-primary btn btn-sm" 
+            className="btn  btn-outline border-0 btn-sm border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
             onClick={() => toggleContent(1)}
           >
             {showFullContent1 ? "Read Less" : "Read More"}
@@ -74,7 +79,7 @@ const TranslationPlatformBlog = () => {
 
         <div className="mt-4">
           <button
-            className="desi-btn desi-btn-primary btn btn-sm"
+            className="btn  btn-outline border-0 btn-sm border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
             onClick={() => toggleContent(2)}
           >
             {showFullContent2 ? "Read Less" : "Read More"}
@@ -87,7 +92,7 @@ const TranslationPlatformBlog = () => {
           The Future of Communication – Embracing Multilingualism
         </h2>
 
-        <p className="text-gray-500" >
+        <p className="text-gray-500">
           {renderContent(
             "As we look to the future, the importance of multilingualism in communication cannot be overstated. Online language translation platforms play a pivotal role in fostering a global community where language is no longer a barrier. Businesses can expand their reach, students can access education in diverse languages, and individuals can connect on a personal level regardless of linguistic differences.",
             showFullContent3
@@ -96,7 +101,7 @@ const TranslationPlatformBlog = () => {
 
         <div className="mt-4">
           <button
-            className="desi-btn desi-btn-primary btn btn-sm"
+            className="btn btn-outline border-0 btn-sm border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
             onClick={() => toggleContent(3)}
           >
             {showFullContent3 ? "Read Less" : "Read More"}

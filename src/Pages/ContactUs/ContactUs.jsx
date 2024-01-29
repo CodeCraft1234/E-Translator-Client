@@ -45,31 +45,36 @@ const Contact = () => {
 
   return (
     <div className="my-20 px-5 md:px-0" id="contact">
+
+      <h1 className="text-5xl font-bold text-center mb-10">
+        Contact <span className="text-[#4392d9]">Me</span>
+
       <Helmet>
         <title> E-Translator | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <h1 className="text-5xl font-bold text-center  mb-10">
         Contact <span className="text-accent">Me</span>
+
       </h1>
       <div className="flex flex-wrap items-center justify-around">
         <div className="md:w-3/12">
           <p className="flex items-center gap-2 my-3">
-            <span className="text-accent text-2xl">
+            <span className="text-[#4392d9] text-2xl">
               <FaAddressCard />
             </span>{" "}
             <span className="text-xl">Address: </span>{" "}
             <span className="text-gray-400">Mirpur-10, Dhaka</span>
           </p>
           <p className="flex items-center gap-2 my-3">
-            <span className="text-accent text-2xl">
+            <span className="text-[#4392d9] text-2xl">
               <FaElementor />
             </span>{" "}
             <span className="text-xl">Email: </span>{" "}
             <span className="text-gray-400">{user?.email}</span>
           </p>
           <p className="flex items-center gap-2 my-3">
-            <span className="text-accent text-2xl">
+            <span className="text-[#4392d9] text-2xl">
               <FaPhoneAlt />
             </span>{" "}
             <span className="text-xl">Phone: </span>{" "}
@@ -108,7 +113,7 @@ const Contact = () => {
             ></textarea>
             <input
               type="submit"
-              className="btn  btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+              className="btn  btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
             />
           </form>
         </div>
