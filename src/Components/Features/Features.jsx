@@ -12,6 +12,7 @@ import {
   FaMicrophone,
   FaStar,
 } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Features = () => {
   const features = [
@@ -85,6 +86,10 @@ const Features = () => {
 
   return (
     <div className="lg:px-24 md:px-8 px-5 ">
+      <Helmet>
+        <title> E-Translator | Features</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
         Our features
       </h3>

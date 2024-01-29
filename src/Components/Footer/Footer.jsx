@@ -5,6 +5,7 @@ import CookiesPolicy from "./CookiesPolicy";
 import TermsAndConditionsPage from "./TermsAndConditionsPage";
 
 const Footer = () => {
+  
   return (
     <div>
       <footer className="footer items-center p-4 bg-base-200 border-t text-base-content ">
