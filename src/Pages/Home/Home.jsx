@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "../../Components/Banner/Banner";
 import ChooseUs from "../../Components/ChooseUs/ChooseUs";
 import Faq from "../../Components/Faq/Faq";
@@ -9,6 +10,10 @@ import Review from "../../Components/Review/Review";
 const Home = () => {
   return (
     <div className="lg:px-28 md:px-10 px-5">
+       <Helmet>
+        <title> E-Translator | Home</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <Banner></Banner>
       <Package></Package>
       <Review></Review>
