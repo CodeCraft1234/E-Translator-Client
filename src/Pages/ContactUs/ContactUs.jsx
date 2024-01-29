@@ -45,16 +45,15 @@ const Contact = () => {
 
   return (
     <div className="my-20 px-5 md:px-0" id="contact">
-
-      <h1 className="text-5xl font-bold text-center mb-10">
-        Contact <span className="text-[#4392d9]">Me</span>
-
-      <Helmet>
+  <Helmet>
         <title> E-Translator | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <h1 className="text-5xl font-bold text-center  mb-10">
-        Contact <span className="text-accent">Me</span>
+      <h1 className="text-5xl font-bold text-center mb-10">
+        Contact <span className="text-[#4392d9]">Me</span>
+
+      
+     
 
       </h1>
       <div className="flex flex-wrap items-center justify-around">
