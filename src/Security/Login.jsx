@@ -29,7 +29,7 @@ const Login = () => {
 
   // facebook login
   const handlefacebooksignin = () => {
-    facebookSignin ()
+    facebookSignin()
       .then((result) => {
         console.log(result.user);
 
@@ -82,8 +82,6 @@ const Login = () => {
     });
   };
 
-  
-
   return (
     <div>
       <div className="hero min-h-screen mt-16">
@@ -122,16 +120,16 @@ const Login = () => {
                   className="input input-bordered text-[#9F9F9F] text-xs font-normal "
                   required
                 />
-				<div className="flex justify-end text-xs dark:text-gray-400">
-				{/* <a rel="noopener noreferrer" href="#">Forgot Password?</a> */}
-        <Link className="text-[#F75B5F]" to="/forgetPassword">
-                  {" "}
-                  Forgot Password?
-                </Link>
-			</div>
+                <div className="flex justify-end text-xs dark:text-gray-400">
+                  {/* <a rel="noopener noreferrer" href="#">Forgot Password?</a> */}
+                  <Link className="text-[#F75B5F]" to="/forgetPassword">
+                    {" "}
+                    Forgot Password?
+                  </Link>
+                </div>
               </div>
               <div className="form-control mt-1">
-                <button className="p-2 rounded bg-red-600 text-white">
+                <button className="p-2 rounded bg-[#d927a9] text-white">
                   Login
                 </button>
               </div>

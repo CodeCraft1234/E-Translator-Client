@@ -44,7 +44,7 @@ const Contact = () => {
 
   return (
     <div className="my-20 px-5 md:px-0" id="contact">
-      <h1 className="text-5xl font-bold text-center  mb-10">
+      <h1 className="text-5xl font-bold text-center mb-10">
         Contact <span className="text-accent">Me</span>
       </h1>
       <div className="flex flex-wrap items-center justify-around">
@@ -103,7 +103,7 @@ const Contact = () => {
             ></textarea>
             <input
               type="submit"
-              className="btn  btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+              className="btn  btn-outline border-0 border-[#1dcdbc] hover:bg-[#1dcdbc] hover:border-[#1dcdbc] border-b-4 hover:text-white"
             />
           </form>
         </div>
