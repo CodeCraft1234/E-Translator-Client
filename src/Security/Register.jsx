@@ -93,7 +93,7 @@ const Register = () => {
                     </span>
                   </label>
                   <input
-                    {...register("image", { required: true })}
+                    {...register("image",)}
                     type="file"
                     placeholder="Enter your photo url"
                     className="file-input file-input-bordered w-full max-w-xs "
@@ -154,7 +154,7 @@ const Register = () => {
                 </p>
               </div>
               <div className="form-control mt-4">
-                <button className="p-2 rounded bg-[#d927a9] text-white">
+                <button className="p-2 rounded bg-neutral text-white">
                   Register
                 </button>
               </div>

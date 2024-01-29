@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import { FcGoogle } from "react-icons/fc";
+import { FaSquareFacebook } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { AuthContext } from "./AuthProvider";
@@ -129,26 +131,60 @@ const Login = () => {
                 </div>
               </div>
               <div className="form-control mt-1">
-                <button className="p-2 rounded bg-[#d927a9] text-white">
+                <button className="p-2 rounded bg-neutral text-white">
                   Login
                 </button>
               </div>
-              <div className="form-control mt-1">
+              {/* <div className="form-control mt-1">
                 <button
                   onClick={handleGoogleLogin}
                   className="p-2 rounded bg-green-600 text-white"
                 >
                   Login With Google
                 </button>
-              </div>
-              <div className="form-control mt-1">
+              </div> */}
+              {/* <div className="form-control mt-1">
                 <button
                   onClick={handlefacebooksignin}
                   className="p-2 rounded bg-blue-600 text-white"
                 >
                   Login With Facebook
                 </button>
+              </div> */}
+              <div className="flex items-center pt-4 space-x-1">
+                <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+                <div className=" flex flex-col w-full">
+                  <p className="px-3 divider divider-neutral text-sm dark:text-gray-400">
+                    Login with social accounts
+                  </p>
+                </div>
+                <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
               </div>
+              <div className="flex justify-center space-x-4">
+                <button
+                  onClick={handleGoogleLogin}
+                  aria-label="Log in with Google"
+                  className="p-3 hover:bg-[#e7e9eb] rounded-full"
+                >
+               <FcGoogle />
+
+
+                </button>
+                <button
+                  onClick={handlefacebooksignin}
+                  aria-label="Log in with Facebook"
+                  className="p-3 hover:bg-[#e7e9eb] rounded-full"
+                >
+                <FaSquareFacebook className="text-[#016ecd]"/>
+                </button>
+                <button
+                  aria-label="Log in with GitHub"
+                  className="p-3 hover:bg-[#e7e9eb] rounded-full"
+                >
+                <FaGithub />
+                </button>
+              </div>
+
               <p className="text-center font-semibold text-xs mt-4">
                 Don't Have An Account ?
                 <Link className="text-[#F75B5F]" to="/signup">

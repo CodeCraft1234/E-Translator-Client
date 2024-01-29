@@ -101,7 +101,7 @@ const Features = () => {
               scale: 1.2,
               background:
                 hoveredIndex === index
-                  ? "linear-gradient(to right, #8e44ad, #663399)"
+                  ? "linear-gradient(to right, #006bcb, #1b71d2)"
                   : "white",
             }}
             onMouseEnter={() => setHoveredIndex(index)}

@@ -82,7 +82,7 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+                  className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
@@ -168,7 +168,7 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+                  className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
@@ -272,7 +272,7 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+                  className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>

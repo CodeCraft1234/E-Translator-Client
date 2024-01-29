@@ -196,7 +196,7 @@ function Translator() {
             <div>
               <button
                 onClick={() => utterText(fromText, fromLanguage)}
-                className="text-blue-500"
+                className="text-[#4392d9]"
               >
                 <div className="hover:bg-[#c1c7cd] rounded p-1">
                   <FaVolumeUp size={20} />
@@ -215,14 +215,14 @@ function Translator() {
 
             <button
               onClick={() => copyContent(fromText)}
-              className="text-purple-500 ml-5"
+              className="text-[#4392d9] ml-5"
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaCopy size={20} />
               </div>
             </button>
 
-            <button onClick={handleExchangeClick} className="text-[#5170ea]">
+            <button onClick={handleExchangeClick} className="text-[#4392d9]">
               <div className="hover:bg-[#c1c7cd] rounded p-1 mr-5">
                 <FaExchangeAlt size={20} />
               </div>
@@ -230,7 +230,7 @@ function Translator() {
 
             <button
               onClick={() => copyContent(toText)}
-              className="text-purple-500"
+              className="text-[#4392d9]"
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaCopy size={20} />
@@ -239,7 +239,7 @@ function Translator() {
 
             <button
               onClick={() => utterText(toText, toLanguage)}
-              className="text-blue-500 ml-5"
+              className="text-[#4392d9] ml-5"
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaVolumeUp size={20} />
@@ -250,7 +250,7 @@ function Translator() {
           <div className="mt-5">
             <button
               onClick={handleReset}
-              className="btn  btn-outline border-0 border-[#5170ea] hover:bg-[#5170ea] hover:border-[#5170ea] border-b-4 hover:text-white"
+              className="btn  btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
             >
               <div>Reset</div>
             </button>
