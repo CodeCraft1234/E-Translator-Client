@@ -18,6 +18,7 @@ import {  HelmetProvider } from 'react-helmet-async';
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
 
 import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>
       },
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>
+      }
      
       
     ],

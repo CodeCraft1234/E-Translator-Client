@@ -3,8 +3,17 @@ import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import PrivacyPolicy from "./PrivacyPolicy";
 import CookiesPolicy from "./CookiesPolicy";
 import TermsAndConditionsPage from "./TermsAndConditionsPage";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+  
   return (
     <div>
       <footer className="footer items-center p-4 bg-base-200 border-t text-base-content ">
@@ -28,9 +37,13 @@ const Footer = () => {
           <header className="footer-title border-b-4 border-[#006bcb]">
             Company
           </header>
-          <a className="link link-hover hover:translate-x-2">About us</a>
           <a className="link link-hover hover:translate-x-2">Contact</a>
-
+          {/* <link className="link link-hover hover:translate-x-2">Contact</link> */}
+          <Link to="/aboutUs">
+            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2" onClick={scrollToTop()}>
+            About us
+            </button>
+          </Link>
           <a className="link link-hover hover:translate-x-2">Press kit</a>
         </nav>
         <nav>
