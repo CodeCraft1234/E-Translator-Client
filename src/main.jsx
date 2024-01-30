@@ -18,11 +18,9 @@ import {  HelmetProvider } from 'react-helmet-async';
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
 
 import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
-<<<<<<< HEAD
-import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
-=======
 import AboutUs from "./Components/AboutUs/AboutUs";
->>>>>>> 39cc45cc2f5bf344b8f26c63aa9a16beccf3c2b1
+import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
+import GetInTouch from "./Components/GetInTouch/GetInTouch";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>
+      },
+      {
+        path: "/getintuch",
+        element: <GetInTouch/>
       }
      
       

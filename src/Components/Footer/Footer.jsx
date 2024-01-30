@@ -37,7 +37,9 @@ const Footer = () => {
           <header className="footer-title border-b-4 border-[#006bcb]">
             Company
           </header>
-          <a className="link link-hover hover:translate-x-2">Contact</a>
+          <Link to="/getintuch">
+          <a className="link link-hover hover:translate-x-2">Get In Touch</a>
+          </Link>
           {/* <link className="link link-hover hover:translate-x-2">Contact</link> */}
           <Link to="/aboutUs">
             <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2" onClick={scrollToTop()}>
