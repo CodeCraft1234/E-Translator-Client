@@ -22,10 +22,20 @@ const AboutUs = () => {
 
             <a href="#" className="flex  flex-col mx-auto items-center mt-20 bg-white   rounded-lg  md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800  mb-24 ">
                 <div className="flex flex-col justify-between p-4 leading-normal flex-1 ">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-500 dark:text-white flex-1">We are the best</h5>
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-500 dark:text-white flex-1">We Are The Best</h5>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Our team,  distinguishes itself as a premier force in the coding domain, marked by a collective commitment to excellence and innovation.  What sets us apart is not just individual expertise but the synergy derived from the diverse talents within the team. We foster an environment that encourages creative problem-solving, efficient collaboration, and continuous learning. Our commitment to staying at the forefront of coding trends is evident in our diverse skill set, ranging from solving algorithmic challenges to developing sophisticated software solutions. Our team not only embraces traditional coding practices but also embraces creativity, adaptability, and a forward-thinking mindset. This approach positions our team as a trailblazer in the coding industry, making us the preferred choice for delivering innovative and effective solutions.</p>
                 </div>
-                <img className=" rotate-[-20deg] object-cover w-full rounded-t-lg h-72 md:h-72 md:w-48 md:rounded-none md:rounded-s-lg pl-12 flex-1  " src={image} alt="" />
+                <img className=" rotate-[-10deg] object-cover w-full rounded-t-lg h-72 md:h-72 md:w-48 md:rounded-none md:rounded-s-lg pl-12 flex-1  " src={image} alt="" />
+
+            </a>
+
+            <a href="#" className="flex  flex-col mx-auto items-center mt-[250px] bg-white   rounded-lg  md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800  mb-24 ">
+                <img className=" rotate-[-10deg] object-cover w-full rounded-t-lg h-72 md:h-72 md:w-48 md:rounded-none md:rounded-s-lg pr-12 flex-1  " src={image} alt="" />
+                <div className="flex flex-col justify-between p-4 leading-normal flex-1 ">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-500 dark:text-white flex-1">We Are Creative</h5>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">CodeCrafter's Team exemplifies a commitment to excellence in every project undertaken. Led by a skilled leader, our members contribute diverse talents and expertise to deliver innovative solutions. From tackling complex challenges to developing efficient applications, the team's collective skill set reflects a passion for pushing boundaries and achieving high standards. With a focus on collaboration and continuous learning, we strive to make a meaningful impact in the dynamic realm of technology and design.</p>
+                </div>
+
 
             </a>
 
