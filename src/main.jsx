@@ -19,6 +19,8 @@ import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
 
 import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
+import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
+import GetInTouch from "./Components/GetInTouch/GetInTouch";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>
+      },
+      {
+        path: "/getintuch",
+        element: <GetInTouch/>
       }
      
       
@@ -74,6 +80,10 @@ const router = createBrowserRouter([
       {
         path:'skeleton',
         element:<SkilitonLoader></SkilitonLoader>
+      },
+      {
+        path:'/dashboard/addblogs',
+        element:<AddBlogs/>
       }
     ]
   }
