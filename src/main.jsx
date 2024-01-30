@@ -14,6 +14,7 @@ import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Dashboard from "./AdminArea/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
       
     ],
   },
+
+  {
+    path:"/dashboard",
+    element:<Dashboard/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
