@@ -5,60 +5,76 @@ import lang from "../Translate/Languages/languages";
 import toast from "react-hot-toast";
 
 function Translator() {
+  const initialFromLanguage = "en-GB";
+  const initialToLanguage = "bn-IN";
+
   const [fromText, setFromText] = useState("");
   const [toText, setToText] = useState("");
-  const [fromLanguage, setFromLanguage] = useState("en-GB");
-  const [toLanguage, setToLanguage] = useState("bn-IN");
+  const [fromLanguage, setFromLanguage] = useState(initialFromLanguage);
+  const [toLanguage, setToLanguage] = useState(initialToLanguage);
   const [languages, setLanguages] = useState({});
-  const [loading, setLoading] = useState(false);
   const [recognition, setRecognition] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
+  const [translationsCache, setTranslationsCache] = useState({});
 
   useEffect(() => {
     setLanguages(lang);
     initializeRecognition();
   }, []);
 
+  useEffect(() => {
+    handleTranslate();
+  }, [fromText, fromLanguage, toLanguage]);
+
   const initializeRecognition = () => {
-    const recognition = new window.webkitSpeechRecognition();
-    recognition.continuous = true;
-    recognition.interimResults = true;
-    recognition.onresult = (event) => {
-      const transcripts = Array.from(event.results)
-        .map((result) => result[0].transcript)
-        .join(" ");
-      
-      setFromText(transcripts);
-      const spokenLanguage = event.results[0][0].lang;
-      if (spokenLanguage && spokenLanguage.toLowerCase() === toLanguage.toLowerCase()) {
-        setToText(transcripts);
-      }
-    };
-    setRecognition(recognition);
+    if ("webkitSpeechRecognition" in window) {
+      const recognition = new window.webkitSpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.onresult = (event) => {
+        const transcripts = Array.from(event.results)
+          .map((result) => result[0].transcript)
+          .join(" ");
+
+        setFromText(transcripts);
+        const spokenLanguage = event.results[0][0].lang;
+        if (
+          spokenLanguage &&
+          spokenLanguage.toLowerCase() === toLanguage.toLowerCase()
+        ) {
+          setToText(transcripts);
+        }
+      };
+      setRecognition(recognition);
+    } else {
+      toast.error("Speech recognition not available in this browser");
+    }
   };
 
   const toggleRecognition = () => {
-    if (!recognition) {
-      toast.error("Speech recognition not available in this browser");
-      return;
-    }
-
-    if (isRecording) {
-      recognition.stop();
-      setIsRecording(false);
-      toast.success("Voice recognition stopped");
-    } else {
-      recognition.start();
-      setIsRecording(true);
-      toast.success("Voice recognition started. Speak now...");
+    if (recognition) {
+      if (isRecording) {
+        recognition.stop();
+        setIsRecording(false);
+        toast.success("Voice recognition stopped");
+      } else {
+        recognition.start();
+        setIsRecording(true);
+        toast.success("Voice recognition started. Speak now...");
+      }
     }
   };
 
   const handleExchangeClick = () => {
-    setFromText(toText);
-    setToText(fromText);
-    setFromLanguage(toLanguage);
-    setToLanguage(fromLanguage);
+    setFromText((prevFromText) => {
+      setToText(prevFromText);
+      return toText;
+    });
+
+    setFromLanguage((prevFromLanguage) => {
+      setToLanguage(prevFromLanguage);
+      return toLanguage;
+    });
   };
 
   const handleTranslate = () => {
@@ -67,14 +83,36 @@ function Translator() {
       return;
     }
 
-    setLoading(true);
-    let url = `https://api.mymemory.translated.net/get?q=${fromText}&langpair=${fromLanguage}|${toLanguage}`;
+    // Check if translation is available in cache
+    const cacheKey = `${fromText}_${fromLanguage}_${toLanguage}`;
+    if (translationsCache[cacheKey]) {
+      setToText(translationsCache[cacheKey]);
+      return;
+    }
+
+    let url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
+      fromText
+    )}&langpair=${fromLanguage}|${toLanguage}`;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setToText(data.responseData.translatedText);
-        setLoading(false);
+        if (data.responseData) {
+          const translatedText = data.responseData.translatedText;
+
+          // Update cache with the new translation
+          setTranslationsCache((prevCache) => ({
+            ...prevCache,
+            [cacheKey]: translatedText,
+          }));
+
+          setToText(translatedText);
+        } else {
+          toast.error("Translation failed. Please try again.");
+        }
+      })
+      .catch(() => {
+        toast.error("An error occurred during translation.");
       });
   };
 
@@ -87,6 +125,14 @@ function Translator() {
 
   const copyContent = (text) => {
     navigator.clipboard.writeText(text);
+    toast.success("Text copied to clipboard");
+  };
+
+  const handleReset = () => {
+    setFromText("");
+    setToText("");
+    setFromLanguage(initialFromLanguage);
+    setToLanguage(initialToLanguage);
   };
 
   return (
@@ -150,7 +196,7 @@ function Translator() {
             <div>
               <button
                 onClick={() => utterText(fromText, fromLanguage)}
-                className="text-blue-500"
+                className="text-[#4392d9]"
               >
                 <div className="hover:bg-[#c1c7cd] rounded p-1">
                   <FaVolumeUp size={20} />
@@ -169,14 +215,14 @@ function Translator() {
 
             <button
               onClick={() => copyContent(fromText)}
-              className="text-purple-500 ml-5"
+              className="text-[#4392d9] ml-5"
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaCopy size={20} />
               </div>
             </button>
 
-            <button onClick={handleExchangeClick} className="text-[#5170ea]">
+            <button onClick={handleExchangeClick} className="text-[#4392d9]">
               <div className="hover:bg-[#c1c7cd] rounded p-1 mr-5">
                 <FaExchangeAlt size={20} />
               </div>
@@ -184,7 +230,7 @@ function Translator() {
 
             <button
               onClick={() => copyContent(toText)}
-              className="text-purple-500"
+              className="text-[#4392d9]"
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaCopy size={20} />
@@ -193,7 +239,7 @@ function Translator() {
 
             <button
               onClick={() => utterText(toText, toLanguage)}
-              className="text-blue-500 ml-5"
+              className="text-[#4392d9] ml-5"
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaVolumeUp size={20} />
@@ -201,12 +247,12 @@ function Translator() {
             </button>
           </div>
 
-          <div className="mb-4">
+          <div className="mt-5">
             <button
-              onClick={handleTranslate}
-              className="border py-3 px-3 w-full bg-[#5170ea] dark:bg-slate-800 rounded-md text-white"
+              onClick={handleReset}
+              className="btn  btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
             >
-              {loading ? "Translating..." : "Translate Text"}
+              <div>Reset</div>
             </button>
           </div>
         </div>
@@ -216,5 +262,3 @@ function Translator() {
 }
 
 export default Translator;
-
-

@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion } from "framer-motion";
+
 AOS.init();
 const Package = () => {
   return (
@@ -17,7 +17,7 @@ const Package = () => {
           </div>
           <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5">
             <div
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="50"
               data-aos-duration="1000"
               data-aos-easing="ease-in-out"
@@ -82,14 +82,14 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+                  className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
               </div>
             </div>
             <div
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="550"
               data-aos-duration="1000"
               data-aos-mirror="true"
@@ -168,14 +168,14 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+                  className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
               </div>
             </div>
             <div
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="1050"
               data-aos-duration="1000"
               data-aos-easing="ease-in-out"
@@ -272,7 +272,7 @@ const Package = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white"
+                  className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>

@@ -3,9 +3,13 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
 
+
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
+  console.log(user)
+
+  
 
   // sign out a user
   const handleLogOut = () => {
@@ -83,7 +87,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 flex gap-4">
           <li>
-            <NavLink to={"/"}>Homes</NavLink>
+            <NavLink to={"/"}>Home</NavLink>
           </li>
           <li>
             <NavLink to={"/features"}>Features</NavLink>
@@ -97,6 +101,13 @@ const NavBar = () => {
           <li>
             <NavLink to={"/blog"}>Blogs</NavLink>
           </li>
+         <li>
+         {
+            user?.email==='admin@gmail.com'? 
+            <NavLink to={"dashboard/skeleton"}>Dashbord</NavLink>: <p></p>
+          }
+          
+         </li>
         </ul>
       </div>
       <div className="navbar-end">

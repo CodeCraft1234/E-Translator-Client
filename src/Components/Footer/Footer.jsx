@@ -17,7 +17,7 @@ const Footer = () => {
           />
         </aside>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Services
           </header>
 
@@ -26,7 +26,7 @@ const Footer = () => {
           <a className="link link-hover hover:translate-x-2">Advertisement</a>
         </nav>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Company
           </header>
           <a className="link link-hover hover:translate-x-2">About us</a>
@@ -35,7 +35,7 @@ const Footer = () => {
           <a className="link link-hover hover:translate-x-2">Press kit</a>
         </nav>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Legal
           </header>
           <button
@@ -49,8 +49,7 @@ const Footer = () => {
               <TermsAndConditionsPage></TermsAndConditionsPage>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-primary">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">Close</button>
                 </form>
               </div>
             </div>
@@ -69,8 +68,7 @@ const Footer = () => {
               </p>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-primary">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">Close</button>
                 </form>
               </div>
             </div>
@@ -86,15 +84,14 @@ const Footer = () => {
               <CookiesPolicy></CookiesPolicy>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-primary">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">Close</button>
                 </form>
               </div>
             </div>
           </dialog>
         </nav>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Social
           </header>
           <div className="grid grid-flow-col gap-4">
