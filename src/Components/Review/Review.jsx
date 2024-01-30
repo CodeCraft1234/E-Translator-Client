@@ -55,7 +55,7 @@ const Review = () => {
 
         <div
           className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5 mt-16"
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-delay="50"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"

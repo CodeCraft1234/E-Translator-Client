@@ -13,8 +13,12 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Dashboard from "./AdminArea/Dashboard/Dashboard";
+import {  HelmetProvider } from 'react-helmet-async';
+
+import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
+
+import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
+import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 
 const router = createBrowserRouter([
   {
@@ -55,13 +59,23 @@ const router = createBrowserRouter([
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>
       },
+     
       
     ],
   },
-
   {
-    path:"/dashboard",
-    element:<Dashboard/>
+    path:'dashboard',
+    element:<DashboardRoot></DashboardRoot>,
+    children:[
+      {
+        path:'skeleton',
+        element:<SkilitonLoader></SkilitonLoader>
+      },
+      {
+        path:'/dashboard/addblogs',
+        element:<AddBlogs/>
+      }
+    ]
   }
 ]);
 
