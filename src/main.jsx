@@ -14,6 +14,8 @@ import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Checkout from "./Components/Checkout/Checkout";
+import PrivateRoute from "./Security/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,15 @@ const router = createBrowserRouter([
       {
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>
+      },
+      {
+        path: "/order",
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
+        
       },
       
     ],
