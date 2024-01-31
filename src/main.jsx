@@ -14,11 +14,9 @@ import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
 
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
-
-import {  HelmetProvider } from 'react-helmet-async';
 
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
 
@@ -77,7 +75,7 @@ const router = createBrowserRouter([
         ),
         
       },
-
+      {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>
       },
@@ -85,9 +83,6 @@ const router = createBrowserRouter([
         path: "/getintuch",
         element: <GetInTouch/>
       }
-     
-
-      
     ],
   },
   {
@@ -113,6 +108,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
     </AuthProvider>
     </HelmetProvider>
-   
   </React.StrictMode>
 );
