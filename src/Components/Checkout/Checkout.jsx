@@ -51,7 +51,7 @@ const {id} = useParams();
 
   return (
     <div>
-      <div className="mt-20 hero min-h-screen">
+      <div className="mt-16 hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleAddProduct} className="card-body">
