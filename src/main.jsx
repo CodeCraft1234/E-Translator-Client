@@ -14,7 +14,11 @@ import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
 
+
+import { Helmet, HelmetProvider } from "react-helmet-async";
+
 import { HelmetProvider } from 'react-helmet-async';
+
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 
@@ -26,25 +30,23 @@ import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
       },
       {
-        path:'/features',
-        element:<Features></Features>
-
+        path: "/features",
+        element: <Features></Features>,
       },
       {
-        path:"/translate",
-        element:<Translate/>
+        path: "/translate",
+        element: <Translate />,
       },
       {
         path: "/contact",
@@ -56,60 +58,73 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/signup",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/forgetPassword",
-        element: <ForgetPassword></ForgetPassword>
+        element: <ForgetPassword></ForgetPassword>,
       },
       {
-
-        path: "/order",
+        path: "/order/:id",
         element: (
           <PrivateRoute>
             <Checkout></Checkout>
           </PrivateRoute>
         ),
-        
       },
+
+
+
+
       {
         path: "/aboutUs",
-        element: <AboutUs></AboutUs>
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/getintuch",
+
+        element: <GetInTouch />,
+      },
+
         element: <GetInTouch/>
       }
+
     ],
   },
   {
-    path:'dashboard',
-    element:<DashboardRoot></DashboardRoot>,
-    children:[
+    path: "dashboard",
+    element: <DashboardRoot></DashboardRoot>,
+    children: [
       {
-        path:'skeleton',
-        element:<SkilitonLoader></SkilitonLoader>
+        path: "skeleton",
+        element: <SkilitonLoader></SkilitonLoader>,
       },
       {
-        path:'/dashboard/addblogs',
-        element:<AddBlogs/>
-      }
-    ]
-  }
+        path: "/dashboard/addblogs",
+        element: <AddBlogs />,
+      },
+    ],
+  },
 ]);
 
 const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+
      <QueryClientProvider client={queryClient}>
      <HelmetProvider>
     <AuthProvider>
     <RouterProvider router={router} />
-    </AuthProvider>
+   
+    <HelmetProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+
     </HelmetProvider>
     </QueryClientProvider>
    
