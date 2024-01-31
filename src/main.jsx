@@ -14,7 +14,11 @@ import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
 
+
 import { Helmet, HelmetProvider } from "react-helmet-async";
+
+import { HelmetProvider } from 'react-helmet-async';
+
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 
@@ -72,14 +76,22 @@ const router = createBrowserRouter([
         ),
       },
 
+
+
+
       {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>,
       },
       {
         path: "/getintuch",
+
         element: <GetInTouch />,
       },
+
+        element: <GetInTouch/>
+      }
+
     ],
   },
   {
