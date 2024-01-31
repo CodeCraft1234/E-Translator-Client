@@ -57,13 +57,12 @@ const router = createBrowserRouter([
         element: <ForgetPassword></ForgetPassword>
       },
       {
-        path: "/order",
+        path: "/order/:id",
         element: (
           <PrivateRoute>
             <Checkout></Checkout>
           </PrivateRoute>
-        ),
-        
+        ), 
       },
       
     ],
