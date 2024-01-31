@@ -1,14 +1,17 @@
+
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Checkout = () => {
-  // const {id} = useParams();
-  // console.log(id);
+
+const {id} = useParams();
+
   const handleAddProduct = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const address = form.address.value;
+    const price = form.price.value;
     const postcode = form.postcode.value;
     const phonenumber = form.phonenumber.value;
 
@@ -16,12 +19,13 @@ const Checkout = () => {
     const product = {
       name,
       address,
+      price,
       postcode,
       phonenumber,
     };
 
     console.log(product);
-    fetch("http://localhost:5000/order", {
+    fetch(`http://localhost:5000/order/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,6 +35,8 @@ const Checkout = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        data.productId = id;
+      
         if (data.insertedId) {
           Swal.fire({
             title: "success",
@@ -45,7 +51,7 @@ const Checkout = () => {
 
   return (
     <div>
-      <div className="mt-12 hero min-h-screen">
+      <div className="mt-16 hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleAddProduct} className="card-body">
@@ -69,6 +75,19 @@ const Checkout = () => {
                   type="text"
                   name="address"
                   placeholder="address"
+                  className="input input-bordered text-black"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Price</span>
+                </label>
+                <input
+                  type="number"
+                  name="price"
+                  placeholder="price"
                   className="input input-bordered text-black"
                   required
                 />
