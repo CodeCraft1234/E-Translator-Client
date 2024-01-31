@@ -92,7 +92,7 @@ const Review = () => {
                     />
                   ))}
                 </div>
-                <p className="text-black">{testimonial.review}</p>
+                <p>{testimonial.review}</p>
               </div>
             </div>
           ))}

@@ -18,7 +18,7 @@ const Banner = () => {
               fingertips.
             </p>
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-              <Link to={'/translate'}>
+              <Link to={"/translate"}>
                 <button className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
                   Lets Translate
                 </button>
