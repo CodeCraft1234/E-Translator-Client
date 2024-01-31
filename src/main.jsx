@@ -28,6 +28,7 @@ import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
   {
@@ -110,12 +111,22 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+
+     <QueryClientProvider client={queryClient}>
+     <HelmetProvider>
+    <AuthProvider>
+    <RouterProvider router={router} />
+   
     <HelmetProvider>
       <AuthProvider>
         <RouterProvider router={router} />
       </AuthProvider>
+
     </HelmetProvider>
+    </QueryClientProvider>
+   
   </React.StrictMode>
 );
