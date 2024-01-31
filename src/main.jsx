@@ -13,6 +13,11 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
+
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Checkout from "./Components/Checkout/Checkout";
+import PrivateRoute from "./Security/PrivateRoute";
+
 import {  HelmetProvider } from 'react-helmet-async';
 
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
@@ -21,6 +26,7 @@ import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
+
 
 const router = createBrowserRouter([
   {
@@ -62,6 +68,16 @@ const router = createBrowserRouter([
         element: <ForgetPassword></ForgetPassword>
       },
       {
+
+        path: "/order",
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
+        
+      },
+
         path: "/aboutUs",
         element: <AboutUs></AboutUs>
       },
@@ -70,6 +86,7 @@ const router = createBrowserRouter([
         element: <GetInTouch/>
       }
      
+
       
     ],
   },

@@ -1,6 +1,8 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import { Link } from "react-router-dom";
+
 AOS.init();
 const Package = () => {
   return (
@@ -166,12 +168,15 @@ const Package = () => {
                     <span>Priority Customer Support</span>
                   </li>
                 </ul>
+                <Link to="/order">
                 <button
                   type="button"
                   className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
+                </Link>
+               
               </div>
             </div>
             <div
@@ -270,12 +275,14 @@ const Package = () => {
                     <span>Advance Features</span>
                   </li>
                 </ul>
+                <Link to="/order">
                 <button
                   type="button"
                   className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
                 </button>
+                </Link>
               </div>
             </div>
           </div>
