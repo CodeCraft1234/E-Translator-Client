@@ -17,7 +17,7 @@ import Features from "./Components/Features/Features";
 
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-import { HelmetProvider } from 'react-helmet-async';
+
 
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
@@ -106,8 +106,7 @@ const router = createBrowserRouter([
         element: <GetInTouch />,
       },
 
-        element: <GetInTouch/>
-      }
+       
 
     ],
   },
