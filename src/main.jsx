@@ -13,7 +13,15 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-import {HelmetProvider } from "react-helmet-async";
+
+
+
+import { Helmet, HelmetProvider } from "react-helmet-async";
+
+
+
+
+
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
@@ -21,8 +29,13 @@ import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
+
+import PaymentSuccess from "./Components/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "./Components/PaymentFail/PaymentFail";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -72,6 +85,21 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "payment/success/:tranId",
+        element: 
+        (
+          
+            <PaymentSuccess></PaymentSuccess>
+         
+        ),
+      },
+
+      {
+        path: "payment/fail/:tranId",
+        element: <PaymentFail></PaymentFail>,
+      },
+
+      {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>,
       },
@@ -80,6 +108,7 @@ const router = createBrowserRouter([
 
         element: <GetInTouch />,
       },
+
 
     ],
   },
