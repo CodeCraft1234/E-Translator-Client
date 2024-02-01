@@ -82,12 +82,13 @@ const Package = () => {
                     <span>Browser Extension</span>
                   </li>
                 </ul>
-                <button
+                <Link
+                  to={"/translate"}
                   type="button"
                   className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
             <div
@@ -168,15 +169,14 @@ const Package = () => {
                     <span>Priority Customer Support</span>
                   </li>
                 </ul>
-                <Link to="/order">
-                <button
+
+                <Link
+                  to="/order"
                   type="button"
                   className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Get Started
-                </button>
                 </Link>
-               
               </div>
             </div>
             <div
@@ -275,14 +275,14 @@ const Package = () => {
                     <span>Advance Features</span>
                   </li>
                 </ul>
-                <Link to="/order">
-                <button
-                  type="button"
-                  className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
-                >
-                  Get Started
-                </button>
-                </Link>
+                
+                  <Link to="/order"
+                    type="button"
+                    className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
+                  >
+                    Get Started
+                  </Link>
+               
               </div>
             </div>
           </div>
