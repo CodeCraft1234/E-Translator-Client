@@ -34,7 +34,11 @@ import PaymentSuccess from "./Components/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "./Components/PaymentFail/PaymentFail";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import AdminHome from "./AdminPannel/AdminHome/AdminHome";
+
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
+
 
 
 const router = createBrowserRouter([
@@ -119,6 +123,10 @@ const router = createBrowserRouter([
       {
         path: "skeleton",
         element: <SkilitonLoader></SkilitonLoader>,
+      },
+      {
+        path: "/dashboard/adminHome",
+        element: <AdminHome/>,
       },
       {
         path: "/dashboard/addblogs",
