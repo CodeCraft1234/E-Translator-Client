@@ -85,9 +85,9 @@ const router = createBrowserRouter([
         path: "payment/success/:tranId",
         element: 
         (
-          <PrivateRoute>
+          
             <PaymentSuccess></PaymentSuccess>
-          </PrivateRoute>
+         
         ),
       },
 
