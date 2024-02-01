@@ -19,8 +19,10 @@ const Dashboard = ({ showSidebar }) => {
             <div className="w-[250px]">
               <div className="avatar">
                 <div className="w-14 rounded-full">
-                  <img src={user.photoURL} />
-                  <h1>{user.displayName}</h1>
+                  <img src={user?.photoURL} />
+                </div>
+                <div>
+                <h1>{user?.displayName}</h1>
                 </div>
               </div>
               <li className=" ">
