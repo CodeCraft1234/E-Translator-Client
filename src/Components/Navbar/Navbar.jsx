@@ -160,7 +160,7 @@ const NavBar = () => {
           <hr />
           <h1>{user?.email}</h1>
           <hr />
-          <h1>Date of Birth :</h1>
+         
           <NavLink onClick={handleLogOut} className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? "underline mr-5 text-blue-700" : "mr-5 hover:text-gray-100"
   }><button className="btn  btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white ">LogOut</button></NavLink>

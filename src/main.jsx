@@ -22,6 +22,7 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/addblogs",
         element: <AddBlogs />,
+      },
+      {
+        path: "/dashboard/alluser",
+        element: <AllUsers></AllUsers>
       },
     ],
   },
