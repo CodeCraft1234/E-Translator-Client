@@ -13,17 +13,10 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-
-
-import { Helmet, HelmetProvider } from "react-helmet-async";
-
-import { HelmetProvider } from 'react-helmet-async';
-
+import {HelmetProvider } from "react-helmet-async";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
-
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
-
 import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
@@ -77,9 +70,6 @@ const router = createBrowserRouter([
         ),
       },
 
-
-
-
       {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>,
@@ -89,9 +79,6 @@ const router = createBrowserRouter([
 
         element: <GetInTouch />,
       },
-
-        element: <GetInTouch/>
-      }
 
     ],
   },
@@ -114,17 +101,11 @@ const router = createBrowserRouter([
 const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-
      <QueryClientProvider client={queryClient}>
      <HelmetProvider>
     <AuthProvider>
     <RouterProvider router={router} />
-   
-    <HelmetProvider>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-
+    </AuthProvider>
     </HelmetProvider>
     </QueryClientProvider>
    
