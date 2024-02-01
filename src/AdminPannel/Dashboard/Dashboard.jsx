@@ -10,7 +10,7 @@ const Dashboard = ({ showSidebar }) => {
   return (
     <div className="relative">
       <div
-        className={` min-h-screen text-white  ${
+        className={` min-h-screen fixed bg-blue-400  text-white  ${
           showSidebar ? "block" : "hidden"
         } md:block`}
       >
@@ -25,11 +25,11 @@ const Dashboard = ({ showSidebar }) => {
               </div>
               <li className=" ">
                 <Link
-                  to="/dashboard/adminHome"
+                  to="/"
                   className="flex items-center py-2"
                 >
                   <FaHome className="mr-2" />
-                  Admin Home
+                  Home
                 </Link>
               </li>
               <li>
