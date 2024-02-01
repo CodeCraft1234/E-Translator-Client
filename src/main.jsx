@@ -15,21 +15,27 @@ import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
 
 
+
 import { Helmet, HelmetProvider } from "react-helmet-async";
+
+
 
 
 
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
-
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
-
 import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
+
 import PaymentSuccess from "./Components/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "./Components/PaymentFail/PaymentFail";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -78,9 +84,6 @@ const router = createBrowserRouter([
         ),
       },
 
-
-
-
       {
         path: "payment/success/:tranId",
         element: 
@@ -106,7 +109,6 @@ const router = createBrowserRouter([
         element: <GetInTouch />,
       },
 
-       
 
     ],
   },
@@ -122,16 +124,24 @@ const router = createBrowserRouter([
         path: "/dashboard/addblogs",
         element: <AddBlogs />,
       },
+      {
+        path: "/dashboard/alluser",
+        element: <AllUsers></AllUsers>
+      },
     ],
   },
 ]);
 
+const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
+     <QueryClientProvider client={queryClient}>
+     <HelmetProvider>
+    <AuthProvider>
+    <RouterProvider router={router} />
+    </AuthProvider>
     </HelmetProvider>
+    </QueryClientProvider>
+   
   </React.StrictMode>
 );

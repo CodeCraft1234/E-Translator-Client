@@ -79,11 +79,9 @@ function Translator() {
 
   const handleTranslate = () => {
     if (!fromText.trim()) {
-      toast.error("Please type something to translate.");
       return;
     }
 
-    // Check if translation is available in cache
     const cacheKey = `${fromText}_${fromLanguage}_${toLanguage}`;
     if (translationsCache[cacheKey]) {
       setToText(translationsCache[cacheKey]);
@@ -100,7 +98,6 @@ function Translator() {
         if (data.responseData) {
           const translatedText = data.responseData.translatedText;
 
-          // Update cache with the new translation
           setTranslationsCache((prevCache) => ({
             ...prevCache,
             [cacheKey]: translatedText,
