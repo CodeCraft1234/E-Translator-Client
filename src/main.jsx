@@ -24,6 +24,8 @@ import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
+import PaymentSuccess from "./Components/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "./Components/PaymentFail/PaymentFail";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +72,21 @@ const router = createBrowserRouter([
             <Checkout></Checkout>
           </PrivateRoute>
         ),
+      },
+
+      {
+        path: "payment/success/:tranId",
+        element: 
+        (
+          <PrivateRoute>
+            <PaymentSuccess></PaymentSuccess>
+          </PrivateRoute>
+        ),
+      },
+
+      {
+        path: "payment/fail/:tranId",
+        element: <PaymentFail></PaymentFail>,
       },
 
       {
