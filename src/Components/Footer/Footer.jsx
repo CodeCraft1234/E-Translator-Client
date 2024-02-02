@@ -1,18 +1,68 @@
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-
+import { useRef } from "react";
 import PrivacyPolicy from "./PrivacyPolicy";
 import CookiesPolicy from "./CookiesPolicy";
 import TermsAndConditionsPage from "./TermsAndConditionsPage";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const modalContentRef1 = useRef(null);
+  const modalContentRef2 = useRef(null);
+  const modalContentRef3 = useRef(null);
+  const showModalAndScrollToTop = () => {
+    // Show modal
+    const modal = document.getElementById("my_modal_1");
+    if (modal) {
+      modal.showModal();
+    }
+
+    // Scroll modal content to top
+    if (modalContentRef1.current) {
+      modalContentRef1.current.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const newShowModalAndScrollToTop = () => {
+    // Show modal
+    const modal = document.getElementById("my_modal_2");
+    if (modal) {
+      modal.showModal();
+    }
+
+    // Scroll modal content to top
+    if (modalContentRef2.current) {
+      modalContentRef2.current.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+  const newNewShowModalAndScrollToTop = () => {
+    // Show modal
+    const modal = document.getElementById("my_modal_3");
+    if (modal) {
+      modal.showModal();
+    }
+
+    // Scroll modal content to top
+    if (modalContentRef3.current) {
+      modalContentRef3.current.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
-  
+
   return (
     <div>
       <footer className="footer items-center p-4 bg-base-200 border-t text-base-content ">
@@ -28,24 +78,43 @@ const Footer = () => {
             Services
           </header>
 
-          <Link to={'/translate'} className="link link-hover hover:translate-x-2">Translate</Link>
-          <Link to={'/contact'} className="link link-hover hover:translate-x-2">Contact</Link>
-          <Link to={'/features'} className="link link-hover hover:translate-x-2">Features</Link>
+          <Link
+            to={"/translate"}
+            className="link link-hover hover:translate-x-2"
+          >
+            Translate
+          </Link>
+          <Link to={"/contact"} className="link link-hover hover:translate-x-2">
+            Contact
+          </Link>
+          <Link
+            to={"/features"}
+            className="link link-hover hover:translate-x-2"
+          >
+            Features
+          </Link>
         </nav>
         <nav>
           <header className="footer-title border-b-4 border-[#006bcb]">
             Company
           </header>
           <Link to="/getintuch">
-          <a className="link link-hover hover:translate-x-2">Get In Touch</a>
+            <a className="link link-hover hover:translate-x-2">Get In Touch</a>
           </Link>
           {/* <link className="link link-hover hover:translate-x-2">Contact</link> */}
           <Link to="/aboutUs">
-            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2" onClick={scrollToTop()}>
-            About us
+            <button
+              className="font-avenir mr-10  rounded link link-hover hover:translate-x-2"
+              onClick={scrollToTop()}
+            >
+              About us
             </button>
           </Link>
-          <a className="link link-hover hover:translate-x-2">Press kit</a>
+          <Link to="/meetTeam">
+            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2">
+              Meet Our Team
+            </button>
+          </Link>
         </nav>
         <nav>
           <header className="footer-title border-b-4 border-[#006bcb]">
@@ -53,12 +122,12 @@ const Footer = () => {
           </header>
           <button
             className="hover:translate-x-2 link link-hover"
-            onClick={() => document.getElementById("my_modal_1").showModal()}
+            onClick={showModalAndScrollToTop}
           >
             Terms and Conditions
           </button>
           <dialog id="my_modal_1" className="modal">
-            <div className="modal-box">
+            <div className="modal-box" ref={modalContentRef1}>
               <TermsAndConditionsPage></TermsAndConditionsPage>
               <div className="modal-action">
                 <form method="dialog">
@@ -71,12 +140,12 @@ const Footer = () => {
           </dialog>
           <button
             className="hover:translate-x-2 link link-hover"
-            onClick={() => document.getElementById("my_modal_2").showModal()}
+            onClick={newShowModalAndScrollToTop}
           >
             Privacy Policy
           </button>
           <dialog id="my_modal_2" className="modal">
-            <div className="modal-box">
+            <div className="modal-box" ref={modalContentRef2}>
               <PrivacyPolicy></PrivacyPolicy>
               <p className="py-4">
                 Press ESC key or click the button below to close
@@ -92,12 +161,12 @@ const Footer = () => {
           </dialog>
           <button
             className="hover:translate-x-2 link link-hover"
-            onClick={() => document.getElementById("my_modal_3").showModal()}
+            onClick={newNewShowModalAndScrollToTop}
           >
             Cookies Policy
           </button>
           <dialog id="my_modal_3" className="modal">
-            <div className="modal-box">
+            <div className="modal-box" ref={modalContentRef3}>
               <CookiesPolicy></CookiesPolicy>
               <div className="modal-action">
                 <form method="dialog">
