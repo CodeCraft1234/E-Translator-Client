@@ -12,21 +12,36 @@ const Package = () => {
       id: 1,
       name: "Basic",
       price: "Free",
-      features: ["Text Translation", "Basic Language Pairs", "Browser Extension"],
+      features: [
+        "Text Translation",
+        "Basic Language Pairs",
+        "Browser Extension",
+      ],
     },
     {
       type: "standard",
       id: 2,
       name: "Standard",
       price: "$24",
-      features: ["Advance Accuracy", "Multilingual Translation", "Text and Document Translation", "Priority Customer Support"],
+      features: [
+        "Advance Accuracy",
+        "Multilingual Translation",
+        "Text and Document Translation",
+        "Priority Customer Support",
+      ],
     },
     {
       type: "premium",
       id: 3,
       name: "Premium",
       price: "$72",
-      features: ["Unlimited Translation Quotes", "Enhanced Language Support", "Secure File Handling", "Collaboration Tools", "Advance Features"],
+      features: [
+        "Unlimited Translation Quotes",
+        "Enhanced Language Support",
+        "Secure File Handling",
+        "Collaboration Tools",
+        "Advance Features",
+      ],
     },
   ];
 
@@ -53,12 +68,14 @@ const Package = () => {
                 data-aos-mirror="true"
                 data-aos-once="false"
               >
-                <div className={`flex flex-grow flex-col p-6 space-y-6 h-[450px] rounded-md border shadow sm:p-8 dark:bg-gray-900`}>
+                <div
+                  className={`flex flex-grow flex-col p-6 space-y-6 h-[450px] rounded-md border shadow sm:p-8 dark:bg-gray-900`}
+                >
                   <div className="space-y-2">
                     <h4 className="text-2xl font-bold">{plan.name}</h4>
                     <span className="text-6xl font-bold">{plan.price}</span>
                   </div>
-                  <p className="leadi dark:text-gray-400">{plan.features[0]}</p>
+                  <p className=" dark:text-gray-400">{plan.features[0]}</p>
                   <ul className="space-y-2 dark:text-gray-400">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start space-x-2">
@@ -78,13 +95,12 @@ const Package = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={`/order/${plan.id}`}>
-                    <button
-                      type="button"
-                      className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
-                    >
-                      Get Started
-                    </button>
+                  <Link
+                    to={`/order/${plan.id}`}
+                    type="button"
+                    className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
+                  >
+                    Get Started
                   </Link>
                 </div>
               </div>
