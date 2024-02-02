@@ -17,10 +17,12 @@ const Dashboard = ({ showSidebar }) => {
         <ul className="menu text-center text-lg md:text-xl">
           {user && (
             <div className="w-[250px]">
-              <div className="avatar bg-black">
+              <div className="avatar">
                 <div className="w-14 rounded-full">
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                  <h1>{user.displayName}</h1>
+                  <img src={user?.photoURL} />
+                </div>
+                <div>
+                <h1>{user?.displayName}</h1>
                 </div>
               </div>
               <li className=" ">
@@ -48,6 +50,15 @@ const Dashboard = ({ showSidebar }) => {
                 >
                   <FaUsers className="mr-2" />
                   All Users
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="flex items-center py-2"
+                >
+                  <FaHome className="mr-2" />
+                  Go Home 
                 </Link>
               </li>
             </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaVolumeUp, FaExchangeAlt, FaCopy } from "react-icons/fa";
+import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera, FaImage } from "react-icons/fa";
 import { MdKeyboardVoice } from "react-icons/md";
 import lang from "../Translate/Languages/languages";
 import toast from "react-hot-toast";
@@ -240,6 +240,9 @@ function Translator() {
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaVolumeUp size={20} />
+              </div>
+              <div className="hover:bg-[#c1c7cd] rounded p-1">
+                <FaImage size={20} />
               </div>
             </button>
           </div>
