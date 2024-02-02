@@ -53,7 +53,7 @@ const Package = () => {
                 data-aos-mirror="true"
                 data-aos-once="false"
               >
-                <div className={`flex flex-grow flex-col p-6 space-y-6 h-[450px] rounded-md border shadow sm:p-8 dark:bg-gray-900`}>
+                <div className={`flex flex-grow flex-col p-6 space-y-6 h-[450px] rounded-md border shadow sm:p-8 dark:bg-gray-900 justify-between`}>
                   <div className="space-y-2">
                     <h4 className="text-2xl font-bold">{plan.name}</h4>
                     <span className="text-6xl font-bold">{plan.price}</span>
@@ -81,7 +81,7 @@ const Package = () => {
                   <Link to={`/order/${plan.id}`}>
                     <button
                       type="button"
-                      className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
+                      className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white "
                     >
                       Get Started
                     </button>
