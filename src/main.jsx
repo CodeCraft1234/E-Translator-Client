@@ -13,6 +13,7 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
+import Dashboard from "./dashboard/Dashboard";
 
 
 
@@ -143,6 +144,11 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/dashboard",
+    element:<Dashboard/>
+    
+  }
 ]);
 
 const queryClient = new QueryClient()
