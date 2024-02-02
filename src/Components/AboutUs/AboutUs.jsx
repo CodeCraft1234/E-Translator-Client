@@ -1,6 +1,7 @@
 
 import NavBar from '../Navbar/Navbar';
-import image from '../../../src/assets/rabbit2.jpg'
+import image from '../../../src/assets/team collaboration.jpg'
+import image2 from '../../../src/assets/creative.jpg'
 
 const AboutUs = () => {
     return (
@@ -30,7 +31,7 @@ const AboutUs = () => {
             </a>
 
             <a href="#" className="flex  flex-col mx-auto items-center mt-[250px] bg-white   rounded-lg  md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800  mb-24 ">
-                <img className=" rotate-[-10deg] object-cover w-full rounded-t-lg h-72 md:h-72 md:w-48 md:rounded-none md:rounded-s-lg pr-12 flex-1  " src={image} alt="" />
+                <img className=" rotate-[-10deg] object-cover w-full rounded-t-lg h-72 md:h-72 md:w-48 md:rounded-none md:rounded-s-lg pr-12 flex-1  " src={image2} alt="" />
                 <div className="flex flex-col justify-between p-4 leading-normal flex-1 ">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-500 dark:text-white flex-1">We Are Creative</h5>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">CodeCrafter's Team exemplifies a commitment to excellence in every project undertaken. Led by a skilled leader, our members contribute diverse talents and expertise to deliver innovative solutions. From tackling complex challenges to developing efficient applications, the team's collective skill set reflects a passion for pushing boundaries and achieving high standards. With a focus on collaboration and continuous learning, we strive to make a meaningful impact in the dynamic realm of technology and design.</p>
