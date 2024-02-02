@@ -241,9 +241,7 @@ function Translator() {
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaVolumeUp size={20} />
               </div>
-              <div className="hover:bg-[#c1c7cd] rounded p-1">
-                <FaImage size={20} />
-              </div>
+             
             </button>
           </div>
 

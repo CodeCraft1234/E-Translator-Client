@@ -199,7 +199,7 @@ const {id} = useParams();
        
 
         <form className="text-center">
-          <div className="form-control">
+          {/* <div className="form-control">
             <label className="label">
               <span className="label-text font-bold">Name on card</span>
             </label>
@@ -280,7 +280,7 @@ const {id} = useParams();
               className="input input-bordered text-black"
               required
             />
-          </div>
+          </div> */}
 
           <div className="mt-6">
             <button className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">

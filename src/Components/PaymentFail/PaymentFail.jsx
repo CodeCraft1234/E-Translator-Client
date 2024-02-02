@@ -6,7 +6,7 @@ const PaymentFail = () => {
     console.log(tranId);
 
     return (
-        <div>
+        <div className="mt-44">
             <h1 className="text-center text-red-600">Payment Fail: {tranId}</h1>
         </div>
     );

@@ -7,7 +7,7 @@ const PaymentSuccess = () => {
     
 
     return (
-        <div className="mt-4">
+        <div className="mt-44">
          <h1 className="text-center text-green-600">Payment Success: {tranId}</h1>
         </div>
     );
