@@ -25,6 +25,7 @@ const {id} = useParams();
     };
 
     console.log(product);
+    
     fetch(`http://localhost:5000/order/${id}`, {
       method: "POST",
       headers: {
