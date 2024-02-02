@@ -3,13 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
 
-
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(user)
-
-  
+  console.log(user);
 
   // sign out a user
   const handleLogOut = () => {
@@ -101,13 +98,13 @@ const NavBar = () => {
           <li>
             <NavLink to={"/blog"}>Blogs</NavLink>
           </li>
-         <li>
-         {
-            user?.email==='admin@gmail.com'? 
-            <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>: <p></p>
-          }
-          
-         </li>
+          <li>
+            {user?.email === "admin@gmail.com" ? (
+              <NavLink to={"dashboard/skeleton"}>Dashbord</NavLink>
+            ) : (
+              <p></p>
+            )}
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
@@ -140,48 +137,70 @@ const NavBar = () => {
           </svg>
         </label>
 
-      <div className="items-center">
-      {user?.displayName ? (
-          <div className="dropdown   center">
-            <label tabIndex={0} >
-              
-              <div>
-              <img className="h-10 w-10 rounded-full" src={user.photoURL} alt="" />
-              <h1 className="lowercase">Profile</h1>
-                
-              </div>
-            </label>
-            <ul tabIndex={0} className="menu menu-lg dropdown-content mt-3  right-1  z-[1] p-2  rounded-box w-52">
-            <div className="dropdown ">
-        <div tabIndex={0} className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-white text-black">
-        <figure><img className="h-20 w-20 rounded-full" src={user?.photoURL} alt="Shoes" /></figure>
-          <div className="card-body">
-          <h1> Name: {user?.displayName}</h1>
-          <hr />
-          <h1>{user?.email}</h1>
-          <hr />
-         
-          <NavLink onClick={handleLogOut} className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "underline mr-5 text-blue-700" : "mr-5 hover:text-gray-100"
-  }><button className="btn  btn-outline border-0 border-[#d926a9] hover:bg-[#d926a9] hover:border-[#d926a9] border-b-4 hover:text-white ">LogOut</button></NavLink>
-          </div>
+        <div className="items-center">
+          {user?.displayName ? (
+            <div className="dropdown   center">
+              <label tabIndex={0}>
+                <div>
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src={user.photoURL}
+                    alt=""
+                  />
+                  <h1 className="lowercase">Profile</h1>
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-lg dropdown-content mt-3  right-1  z-[1] p-2  rounded-box w-52"
+              >
+                <div className="dropdown ">
+                  <div
+                    tabIndex={0}
+                    className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-white text-black"
+                  >
+                    <figure>
+                      <img
+                        className="h-20 w-20 rounded-full"
+                        src={user?.photoURL}
+                        alt="Shoes"
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <h1> Name: {user?.displayName}</h1>
+                      <hr />
+                      <h1>{user?.email}</h1>
+                      <hr />
+                      <h1>Date of Birth :</h1>
+                      <NavLink
+                        onClick={handleLogOut}
+                        className={({ isActive, isPending }) =>
+                          isPending
+                            ? "pending"
+                            : isActive
+                            ? "underline mr-5 text-blue-700"
+                            : "mr-5 hover:text-gray-100"
+                        }
+                      >
+                        <button className="btn  btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm">
+                          LogOut
+                        </button>
+                      </NavLink>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="font-avenir mr-10 px-3 py-1 bg-neutral rounded text-white">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
-      </div>
-            </ul>
-          </div>
-        ) : (
-          <Link to="/login">
-            <button className="font-avenir mr-10 px-3 py-1 bg-neutral rounded text-white">
-              Login
-            </button>
-          </Link>
-        )}
-         
-      </div>
       </div>
     </div>
   );
 };
 export default NavBar;
-
-
