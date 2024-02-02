@@ -31,7 +31,15 @@ const AllUsers = () => {
                     className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
                   >
                     <button className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
-                              Make Admin
+                             
+                              {user?.admin===false ? "Make Admin" : "Admin" }
+                            </button>
+                  </span>
+                  <span
+                    className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                  >
+                    <button className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
+                              Delete User
                             </button>
                   </span>
                   {/* <span
