@@ -55,7 +55,7 @@ const Review = () => {
 
         <div
           className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5 mt-16"
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-delay="50"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
@@ -65,7 +65,7 @@ const Review = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className={`px-4 mb-8 bg-base-200 py-5 shadow-xl rounded-md border ${
+              className={`px-4 mb-8  py-5 shadow-xl rounded-md border ${
                 testimonial.rating === 3 ? "border-blue-500" : ""
               }`}
             >
@@ -75,7 +75,7 @@ const Review = () => {
                   alt=""
                   className="rounded-full w-[150px] mx-auto"
                 />
-                <div className="name text-red-500 text-xl font-semibold mt-4">
+                <div className="name text-[#006bcb] text-xl font-semibold mt-4">
                   {testimonial.name}
                 </div>
                 <div className="rating py-3 z-0">
@@ -92,7 +92,7 @@ const Review = () => {
                     />
                   ))}
                 </div>
-                <p className="text-blue-500">{testimonial.review}</p>
+                <p>{testimonial.review}</p>
               </div>
             </div>
           ))}

@@ -3,8 +3,16 @@ import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import PrivacyPolicy from "./PrivacyPolicy";
 import CookiesPolicy from "./CookiesPolicy";
 import TermsAndConditionsPage from "./TermsAndConditionsPage";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+  
   return (
     <div>
       <footer className="footer items-center p-4 bg-base-200 border-t text-base-content ">
@@ -16,25 +24,31 @@ const Footer = () => {
           />
         </aside>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Services
           </header>
 
-          <a className="link link-hover hover:translate-x-2">Design</a>
-          <a className="link link-hover hover:translate-x-2">Marketing</a>
-          <a className="link link-hover hover:translate-x-2">Advertisement</a>
+          <Link to={'/translate'} className="link link-hover hover:translate-x-2">Translate</Link>
+          <Link to={'/contact'} className="link link-hover hover:translate-x-2">Contact</Link>
+          <Link to={'/features'} className="link link-hover hover:translate-x-2">Features</Link>
         </nav>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Company
           </header>
-          <a className="link link-hover hover:translate-x-2">About us</a>
-          <a className="link link-hover hover:translate-x-2">Contact</a>
-
+          <Link to="/getintuch">
+          <a className="link link-hover hover:translate-x-2">Get In Touch</a>
+          </Link>
+          {/* <link className="link link-hover hover:translate-x-2">Contact</link> */}
+          <Link to="/aboutUs">
+            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2" onClick={scrollToTop()}>
+            About us
+            </button>
+          </Link>
           <a className="link link-hover hover:translate-x-2">Press kit</a>
         </nav>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Legal
           </header>
           <button
@@ -48,8 +62,9 @@ const Footer = () => {
               <TermsAndConditionsPage></TermsAndConditionsPage>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-primary">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">
+                    Close
+                  </button>
                 </form>
               </div>
             </div>
@@ -68,8 +83,9 @@ const Footer = () => {
               </p>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-primary">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">
+                    Close
+                  </button>
                 </form>
               </div>
             </div>
@@ -85,15 +101,16 @@ const Footer = () => {
               <CookiesPolicy></CookiesPolicy>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-primary">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">
+                    Close
+                  </button>
                 </form>
               </div>
             </div>
           </dialog>
         </nav>
         <nav>
-          <header className="footer-title border-b-4 border-red-500">
+          <header className="footer-title border-b-4 border-[#006bcb]">
             Social
           </header>
           <div className="grid grid-flow-col gap-4">

@@ -1,90 +1,96 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaCamera,
-  FaClock,
-  FaCode,
-  FaComment,
-  FaDesktop,
-  FaDirections,
-  FaGlobe,
-  FaLock,
-  FaMicrophone,
-  FaStar,
-} from "react-icons/fa";
+import img1 from '../../assets/6435775.jpg'
+import img2 from '../../assets/download (3).jpg'
+import img3 from '../../assets/4209048.jpg'
+import img4 from '../../assets/photo-tan.webp'
+import img5 from '../../assets/istockphoto-1061357610-612x612.jpg'
+import img6 from '../../assets/api-application-programming-interface-software-600nw-2295572201.webp'
+import img7 from '../../assets/download (2).jpg'
+
+import img8 from '../../assets/istockphoto-1281150061-612x612.jpg'
+import img9 from '../../assets/pricing.jpg'
+import img10 from '../../assets/direct.jpg'
+
+import { Helmet } from "react-helmet-async";
 
 const Features = () => {
+
+
   const features = [
     {
-      icon: <FaGlobe className="h-16 w-16 mb-2 " />,
+      image: img1,
       name: "Multi-Language Support",
-      description:
-        "Ensure that your website supports a wide range of languages for both input and output translations.",
+      description: `Ensure that your website supports a wide range of languages for both input and output translations. This feature aims to make your platform accessible to users worldwide, facilitating effective communication in their preferred languages.`,
     },
     {
-      icon: <FaClock className="h-16 w-16 mb-2"></FaClock>,
+      image: img2,
       name: "Real Time Translation",
-      description:
-        "Provide real-time translation results as users type to enhance the user experience..",
+      description: `Provide users with instant translation results as they type, enhancing the overall user experience. This real-time feature ensures quick and dynamic translation feedback, making the communication process smoother and more efficient.`,
     },
     {
-      icon: <FaMicrophone className="h-16 w-16 mb-2"></FaMicrophone>,
+      image: img3,
       name: "Speech-to-Text and Text-to-Speech",
-      description:
-        "Integrate speech-to-text and text-to-speech functionalities for users who prefer audio interaction",
+      description: `Integrate advanced functionalities for speech-to-text and text-to-speech capabilities. This feature accommodates users who prefer audio interactions, offering a versatile and inclusive approach to translation.`,
     },
     {
-      icon: <FaCamera className="h-16 w-16 mb-2"></FaCamera>,
-      name: "Camera Translation",
-      description:
-        "Translate text using your devices camera for quick and easy translations",
+      image: img4,
+      name: "Image Translation",
+      description: `Enable users to translate text using their device's camera, ensuring quick and easy translations from images. This feature leverages visual content for seamless language interpretation, expanding the scope of translation beyond text inputs.`,
     },
     {
-      icon: <FaLock className="h-16 w-16 mb-2"></FaLock>,
+      image: img5,
       name: "Privacy and Security",
-      description:
-        "Implement secure data handling practices, especially when dealing with sensitive or personal information",
+      description: `Implement robust data handling practices, especially when dealing with sensitive or personal information. This feature emphasizes the importance of user privacy and data security, instilling trust in users who rely on your translation service.`,
     },
     {
-      icon: <FaCode className="h-16 w-16 mb-2"></FaCode>,
+      image: img6,
       name: "API Integration",
-      description:
-        "Offer an API for developers who want to integrate your translation service into their applications",
+      description: `Offer an Application Programming Interface (API) for developers, allowing them to seamlessly integrate your translation service into their applications. This feature extends the usability of your service, fostering collaboration with third-party developers.`,
     },
     {
-      icon: <FaComment className="h-16 w-16 mb-2"></FaComment>,
+      image: img7,
       name: "Collaborative Translation with Chat Tool",
-      description:
-        "Enable users to work together on translations in real-time and to discuss translation choices, ask questions, or provide feedback to each other",
+      description: `Enable users to collaboratively work on translations in real-time, providing a chat tool for discussions. This feature promotes community engagement and facilitates a collective approach to refining translations through discussions, questions, and feedback.`,
     },
     {
-      icon: <FaDesktop className="h-16 w-16 mb-2"></FaDesktop>,
-      name: " User-Friendly Interface",
-      description:
-        "Design an intuitive and easy-to-use interface with clear instructions for users to input and receive translations",
+      image: img8,
+      name: "User-Friendly Interface",
+      description: `Design an intuitive and user-friendly interface with clear instructions for users to input and receive translations. This feature focuses on enhancing the overall user experience by providing an easy-to-use platform with transparent guidance.`,
     },
     {
-      icon: <FaStar className="h-16 w-16 mb-2"></FaStar>,
+      image: img9,
       name: "Subscription Plans or Premium Features",
-      description:
-        "Consider offering subscription plans or premium features for users who require advanced functionalities or a higher volume of translations",
+      description: `Consider offering subscription plans or premium features for users requiring advanced functionalities or a higher volume of translations. This feature caters to diverse user needs, offering customized plans for those seeking additional translation capabilities.`,
     },
     {
-      icon: <FaDirections className="h-16 w-16 mb-2"></FaDirections>,
+      image: img10,
       name: "Translation Direction",
-      description:
-        "Provide real-time translation results as users type to enhance the user experience.",
+      description: `Provide real-time translation results as users type, enhancing the user experience. This feature ensures dynamic translation feedback, contributing to a seamless and responsive translation process based on user input.`,
     },
   ];
+
+
   const featureVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.8, rotate: -10 },
     visible: { opacity: 1, y: 0, scale: 1, rotate: 0 },
   };
 
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+ 
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const handleToggleExpanded = (index) => {
+    setExpandedIndex((prevIndex) =>
+      prevIndex === index ? null : index
+    );
+  };
 
   return (
-    <div className="lg:px-24 md:px-8 px-5 ">
+    <div className="lg:px-24 md:px-8 px-5 my-12">
+      <Helmet>
+        <title> E-Translator | Features</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
         Our features
       </h3>
@@ -92,41 +98,42 @@ const Features = () => {
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="w-80 p-6 rounded-lg shadow-2xl bg-white"
+            className="max-w-xs rounded-xl shadow-2xl"
             variants={featureVariants}
             initial="hidden"
             animate="visible"
             transition={{ delay: index * 0 }}
             whileHover={{
-              scale: 1.2,
-              background:
-                hoveredIndex === index
-                  ? "linear-gradient(to right, #8e44ad, #663399)"
-                  : "white",
+              scale: 1.05,
+              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+
             }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div>
-              <motion.h2
-                style={{ color: hoveredIndex === index ? "white" : "black" }}
-              >
-                {feature.icon}
-              </motion.h2>
-            </div>
-            <div className="">
-              <motion.h2
-                className="mb-2 text-xl font-semibold"
-                style={{ color: hoveredIndex === index ? "white" : "black" }}
-              >
-                {feature.name}
-              </motion.h2>
-              <motion.p
-                className="text-base dark:text-gray-400"
-                style={{ color: hoveredIndex === index ? "white" : "black" }}
-              >
-                {feature.description}
-              </motion.p>
+            <img
+              src={feature.image}
+              alt=""
+              className="border  object-center w-full rounded-t-md h-44 dark:bg-gray-500"
+            />
+            <div className="flex flex-col justify-between p-6 space-y-8  ">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-semibold tracking">
+                  {feature.name}
+                </h2>
+                <p className="dark:text-gray-100">
+                  {expandedIndex === index
+                    ? feature.description
+                    : `${feature.description.slice(0, 100)}${feature.description.length > 100 ? "..." : ""
+                    } `}
+                  {feature.description.length > 100 && (
+                    <span
+                      className="text-blue-500 cursor-pointer"
+                      onClick={() => handleToggleExpanded(index)}
+                    >
+                      {expandedIndex === index ? "Show Less" : "Show More"}
+                    </span>
+                  )}
+                </p>
+              </div>
             </div>
           </motion.div>
         ))}
