@@ -31,7 +31,7 @@ const MeetTeam = () => {
             designation: "Algorithm Alchemist",
             description:
             "Mastering complex algorithms with a magical analytical mindset.",
-            image:"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+            image:"https://i.ibb.co/LN7q3WF/ssss.png"
             
         },
         {
@@ -48,7 +48,7 @@ const MeetTeam = () => {
             designation: "CodeCraft Artisan",
             description:
             "Crafting software masterpieces with unparalleled programming prowess.",
-            image:'https://i.ibb.co/nBYsmzS/Asad.png'
+            image:'https://i.ibb.co/Rcjksyc/Screenshot-2024-02-02-181319.png'
         },
         {
             
