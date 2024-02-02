@@ -48,7 +48,7 @@ const MeetTeam = () => {
             designation: "CodeCraft Artisan",
             description:
             "Crafting software masterpieces with unparalleled programming prowess.",
-            image:'https://i.ibb.co/Rcjksyc/Screenshot-2024-02-02-181319.png'
+            image:'https://i.ibb.co/Rcjksyc/Screenshot-2024-02-02-181319.png '
         },
         {
             
