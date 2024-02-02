@@ -95,7 +95,12 @@ const Footer = () => {
             About us
             </button>
           </Link>
-          <a className="link link-hover hover:translate-x-2">Meet Our Team</a>
+          <Link to="/meetTeam">
+            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2" >
+            Meet Our Team
+            </button>
+          </Link>
+         
         </nav>
         <nav>
           <header className="footer-title border-b-4 border-[#006bcb]">

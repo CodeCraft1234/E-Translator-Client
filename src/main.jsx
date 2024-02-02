@@ -38,6 +38,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
+import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
 
 
 
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/meetTeam",
+        element: <MeetTeam></MeetTeam>,
       },
       {
         path: "/getintuch",
