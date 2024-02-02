@@ -5,7 +5,6 @@ import CookiesPolicy from "./CookiesPolicy";
 import TermsAndConditionsPage from "./TermsAndConditionsPage";
 import { Link } from "react-router-dom";
 
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -29,9 +28,9 @@ const Footer = () => {
             Services
           </header>
 
-          <a className="link link-hover hover:translate-x-2">Design</a>
-          <a className="link link-hover hover:translate-x-2">Marketing</a>
-          <a className="link link-hover hover:translate-x-2">Advertisement</a>
+          <Link to={'/translate'} className="link link-hover hover:translate-x-2">Translate</Link>
+          <Link to={'/contact'} className="link link-hover hover:translate-x-2">Contact</Link>
+          <Link to={'/features'} className="link link-hover hover:translate-x-2">Features</Link>
         </nav>
         <nav>
           <header className="footer-title border-b-4 border-[#006bcb]">
@@ -63,7 +62,9 @@ const Footer = () => {
               <TermsAndConditionsPage></TermsAndConditionsPage>
               <div className="modal-action">
                 <form method="dialog">
-                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">
+                    Close
+                  </button>
                 </form>
               </div>
             </div>
@@ -82,7 +83,9 @@ const Footer = () => {
               </p>
               <div className="modal-action">
                 <form method="dialog">
-                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">
+                    Close
+                  </button>
                 </form>
               </div>
             </div>
@@ -98,7 +101,9 @@ const Footer = () => {
               <CookiesPolicy></CookiesPolicy>
               <div className="modal-action">
                 <form method="dialog">
-                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">Close</button>
+                  <button className="btn bg-[#006bcb] text-white hover:bg-[#1659a6]">
+                    Close
+                  </button>
                 </form>
               </div>
             </div>

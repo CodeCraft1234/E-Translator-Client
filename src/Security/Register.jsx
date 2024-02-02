@@ -18,6 +18,7 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    console.log(data.image)
     // access the form data
     const image = { image: data.image[0] };
     const res = await AxiosPublic.post(image_hosting_api, image, {
@@ -43,7 +44,8 @@ const Register = () => {
         const userInfo = { email, name, photo, date, admin: false };
         console.log(date);
 
-        AxiosPublic.post("/users", userInfo).then((res) => {
+        AxiosPublic.post("/users", userInfo)
+        .then((res) => {
           console.log(res.data);
         });
         // new product created for server side here
