@@ -48,9 +48,9 @@ const AddBlogs = () => {
   };
 
   return (
-    <div className="bg-blue-200 min-h-screen flex items-center justify-center p-10">
-      <div className="bg-white p-8 rounded-lg shadow-xl w-96">
-        <h2 className="text-2xl font-bold mb-4">Blogs Section</h2>
+    <div className="min-h-screen flex items-center justify-center p-10">
+      <div className="bg-emerald-400 p-8 rounded-lg shadow-xl w-96">
+        <h2 className="text-2xl font-bold mb-4">Add your Blogs</h2>
         <form action="#" method="post">
           <label htmlFor="title" className="block font-bold mb-1">
             Title:
