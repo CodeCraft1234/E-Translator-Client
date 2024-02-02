@@ -1,5 +1,5 @@
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import React, { useRef } from 'react';
+import { useRef } from "react";
 import PrivacyPolicy from "./PrivacyPolicy";
 import CookiesPolicy from "./CookiesPolicy";
 import TermsAndConditionsPage from "./TermsAndConditionsPage";
@@ -15,12 +15,12 @@ const Footer = () => {
     if (modal) {
       modal.showModal();
     }
-    
+
     // Scroll modal content to top
     if (modalContentRef1.current) {
       modalContentRef1.current.scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -31,12 +31,12 @@ const Footer = () => {
     if (modal) {
       modal.showModal();
     }
-    
+
     // Scroll modal content to top
     if (modalContentRef2.current) {
       modalContentRef2.current.scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -46,23 +46,23 @@ const Footer = () => {
     if (modal) {
       modal.showModal();
     }
-    
+
     // Scroll modal content to top
     if (modalContentRef3.current) {
       modalContentRef3.current.scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
-  
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
-  
+
   return (
     <div>
       <footer className="footer items-center p-4 bg-base-200 border-t text-base-content ">
@@ -78,29 +78,43 @@ const Footer = () => {
             Services
           </header>
 
-          <Link to={'/translate'} className="link link-hover hover:translate-x-2">Translate</Link>
-          <Link to={'/contact'} className="link link-hover hover:translate-x-2">Contact</Link>
-          <Link to={'/features'} className="link link-hover hover:translate-x-2">Features</Link>
+          <Link
+            to={"/translate"}
+            className="link link-hover hover:translate-x-2"
+          >
+            Translate
+          </Link>
+          <Link to={"/contact"} className="link link-hover hover:translate-x-2">
+            Contact
+          </Link>
+          <Link
+            to={"/features"}
+            className="link link-hover hover:translate-x-2"
+          >
+            Features
+          </Link>
         </nav>
         <nav>
           <header className="footer-title border-b-4 border-[#006bcb]">
             Company
           </header>
           <Link to="/getintuch">
-          <a className="link link-hover hover:translate-x-2">Get In Touch</a>
+            <a className="link link-hover hover:translate-x-2">Get In Touch</a>
           </Link>
           {/* <link className="link link-hover hover:translate-x-2">Contact</link> */}
           <Link to="/aboutUs">
-            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2" onClick={scrollToTop()}>
-            About us
+            <button
+              className="font-avenir mr-10  rounded link link-hover hover:translate-x-2"
+              onClick={scrollToTop()}
+            >
+              About us
             </button>
           </Link>
           <Link to="/meetTeam">
-            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2" >
-            Meet Our Team
+            <button className="font-avenir mr-10  rounded link link-hover hover:translate-x-2">
+              Meet Our Team
             </button>
           </Link>
-         
         </nav>
         <nav>
           <header className="footer-title border-b-4 border-[#006bcb]">
@@ -131,7 +145,7 @@ const Footer = () => {
             Privacy Policy
           </button>
           <dialog id="my_modal_2" className="modal">
-            <div className="modal-box" ref={modalContentRef2} >
+            <div className="modal-box" ref={modalContentRef2}>
               <PrivacyPolicy></PrivacyPolicy>
               <p className="py-4">
                 Press ESC key or click the button below to close
