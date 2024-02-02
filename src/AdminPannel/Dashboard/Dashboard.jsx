@@ -52,6 +52,15 @@ const Dashboard = ({ showSidebar }) => {
                   All Users
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/"
+                  className="flex items-center py-2"
+                >
+                  <FaUsers className="mr-2" />
+                  Go Home
+                </Link>
+              </li>
             </div>
           )}
         </ul>
