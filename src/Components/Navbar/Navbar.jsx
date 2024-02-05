@@ -100,7 +100,7 @@ const NavBar = () => {
           </li>
           <li>
             {user?.email === "admin@gmail.com" ? (
-              <NavLink to={"dashboard/skeleton"}>Dashbord</NavLink>
+              <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
             ) : (
               <p></p>
             )}
