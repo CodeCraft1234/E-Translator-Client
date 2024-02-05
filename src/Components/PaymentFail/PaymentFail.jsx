@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+
 import { useParams } from "react-router-dom";
 
 
@@ -8,7 +9,7 @@ const PaymentFail = () => {
     console.log(tranId);
     
     useEffect(() =>{
-        const failToast = toast.error("Payment Fail", {
+        const failToast = toast.error("24$ Pay Fail", {
             duration: 3000,
         });
 
@@ -18,7 +19,7 @@ const PaymentFail = () => {
 
     return (
         <div className="mt-44">
-            <h1 className="text-center text-4xl font-bold text-red-600">Payment Fail</h1>
+            <h1 className="text-center text-2xl font-bold text-red-600">Payment Fail</h1>
         </div>
     );
 };
