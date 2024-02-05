@@ -10,11 +10,11 @@ const Dashboard = ({ showSidebar }) => {
   return (
     <div className="relative">
       <div
-        className={` min-h-screen text-white  ${
+        className={`bg-blue-600 w-64 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
         } md:block`}
       >
-        <ul className="menu text-center text-lg md:text-xl">
+        <ul className="menu  text-center text-lg md:text-xl">
           {user && (
             <div className="w-[250px]">
               <div className="avatar">
@@ -57,7 +57,7 @@ const Dashboard = ({ showSidebar }) => {
                   to="/"
                   className="flex items-center py-2"
                 >
-                  <FaUsers className="mr-2" />
+                  <FaHome  className="mr-2" />
                   Go Home
                 </Link>
               </li>
