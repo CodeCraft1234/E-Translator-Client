@@ -64,7 +64,7 @@ const Checkout = () => {
         }
       });
   };
-
+//jkshajkdhjgfjkjkdgdsgfgs
   return (
     <div className="mt-16 hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse py-10">
