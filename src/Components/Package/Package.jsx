@@ -261,7 +261,7 @@ const Package = () => {
         "Priority Customer Support",
       ],
       action: () => {
-        window.location.href = `/order/2`;
+        window.location.href = `/order/1`;
       },
     },
     {
