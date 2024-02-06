@@ -109,10 +109,10 @@ const router = createBrowserRouter([
     path: "dashboard",
     element: <DashboardRoot></DashboardRoot>,
     children: [
-      {
-        path: "skeleton",
-        element: <SkilitonLoader></SkilitonLoader>,
-      },
+      // {
+      //   path: "skeleton",
+      //   element: <SkilitonLoader></SkilitonLoader>,
+      // },
       {
         path: "/dashboard/adminHome",
         element: <AdminHome />,

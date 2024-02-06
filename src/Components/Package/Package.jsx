@@ -31,9 +31,8 @@ const Package = () => {
         "Text and Document Translation",
         "Priority Customer Support",
       ],
-      action: (e) => {
-        e.preventDefault();
-        window.location.href = "/order/2";
+      action: () => {
+        window.location.href = `/order/1`;
       },
     },
     {
