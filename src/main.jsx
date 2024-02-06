@@ -32,6 +32,7 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
+import ManageBlogs from "./AdminPannel/AdminPages/ManageBlogs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -124,6 +125,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/alluser",
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/dashboard/manageBlogs",
+        element: <ManageBlogs></ManageBlogs>,
       },
     ],
   },
