@@ -16,10 +16,12 @@ function Translator() {
   const [recognition, setRecognition] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
   const [translationsCache, setTranslationsCache] = useState({});
+  const [translationHistory, setTranslationHistory] = useState([initialFromLanguage]); // Initialize as an array
 
   useEffect(() => {
     setLanguages(lang);
     initializeRecognition();
+    fetchTranslationHistory();
   }, []);
 
   useEffect(() => {
@@ -104,12 +106,45 @@ function Translator() {
           }));
 
           setToText(translatedText);
+
+          // save translation to history
+          saveTranslationToHistory({ fromText, toText, fromLanguage, toLanguage });
         } else {
           toast.error("Translation failed. Please try again.");
         }
       })
       .catch(() => {
         toast.error("An error occurred during translation.");
+      });
+  };
+
+  const fetchTranslationHistory = () => {
+    fetch('http://localhost:5000/api/history')
+      .then((res) => res.json())
+      .then((data) => {
+        // Update translation history state
+        setTranslationHistory(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching translation history:', error);
+      });
+  };
+
+  const saveTranslationToHistory = (translation) => {
+    fetch('http://localhost:5000/api/history', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(translation),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // Update translation history state
+        setTranslationHistory((prevHistory) => [data, ...prevHistory]);
+      })
+      .catch((error) => {
+        console.error('Error saving translation to history:', error);
       });
   };
 
@@ -255,6 +290,24 @@ function Translator() {
               <div>Reset</div>
             </button>
           </div>
+
+           {/* Display translation history */}
+      <div className="mt-8">
+        <h2 className="text-lg font-bold mb-4">Translation History</h2>
+        <ul>
+          {translationHistory.map((item) => (
+            <li key={item._id}>
+              <div>
+                <strong>From:</strong> {item.fromText}
+              </div>
+              <div>
+                <strong>To:</strong> {item.toText}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
         </div>
       </div>
     </>
