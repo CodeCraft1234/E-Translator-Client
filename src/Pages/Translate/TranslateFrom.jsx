@@ -406,7 +406,6 @@ function Translator() {
           </button>
         </div>
 
-<<<<<<< HEAD
         {/* History Modal */}
       {/* <Modal show={showHistoryModal} onClose={toggleHistoryModal}> */}
         <div className="p-4">
@@ -435,17 +434,6 @@ function Translator() {
             <h2>History</h2>
           </button>
         </div>
-=======
-        <div className="flex items-center justify-center">
-          <div>
-            <button className="text-[#4392d9] ml-5">
-              <div className=" p-3 border border-[#4392d9] rounded-full">
-                <RiHistoryLine size={40} />
-              </div>
-              <h2>History</h2>
-            </button>
-          </div>
->>>>>>> 3fd27256ab78ca0b3fda005b10ade21781fd582d
           <button className="text-[#4392d9] ml-5">
             <div className="p-3 border border-[#4392d9] rounded-full">
               <FaStar size={40} />
