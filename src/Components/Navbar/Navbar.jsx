@@ -69,6 +69,13 @@ const NavBar = () => {
             <li>
               <NavLink to={"/blog"}>Blogs</NavLink>
             </li>
+            <li>
+            {user?.email === "admin@gmail.com" ? (
+              <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
+            ) : (
+              <p></p>
+            )}
+          </li>
           </ul>
         </div>
         <div>

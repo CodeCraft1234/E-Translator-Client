@@ -8,6 +8,13 @@ const AllUsers = () => {
   const AxiosSecure=UseAxiosSecure()
   console.log(users)
 
+  const handleMakeAdmin=(id)=>{
+    AxiosSecure.patch(`/users/${id}`).then(res=>{
+      console.log(res.data)
+      refetch()
+    })
+  }
+
   const handleDelete =(id)=>{
     console.log(id)
     Swal.fire({
@@ -62,7 +69,7 @@ const AllUsers = () => {
                   <span
                     className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
                   >
-                    <button className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
+                    <button onClick={()=>handleMakeAdmin(user._id)} className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
                              
                               {user?.admin===false ? "Make Admin" : "Admin" }
                             </button>
