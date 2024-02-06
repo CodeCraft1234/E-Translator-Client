@@ -33,6 +33,7 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
 import ManageBlogs from "./AdminPannel/AdminPages/ManageBlogs.jsx";
+import UpdateBlog from "./AdminPannel/AdminPages/UpdateBlog.jsx";
 
 const router = createBrowserRouter([
   {
@@ -129,6 +130,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageBlogs",
         element: <ManageBlogs></ManageBlogs>,
+      },
+      {
+        path: "/dashboard/updateBlog/:id",
+        element: <UpdateBlog></UpdateBlog>
       },
     ],
   },

@@ -3,6 +3,7 @@ import UseBlogs from "../../AxiosFetch/UseBlogs";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const ManageBlogs = () => {
@@ -56,6 +57,10 @@ const ManageBlogs = () => {
       
         
       }
+
+      const handleUpdate =()=>{
+
+      }
   
     return (
         <div className="bg-base-300  p-4 lg:px-28 md:px-10 px-5">
@@ -106,9 +111,10 @@ const ManageBlogs = () => {
                 </button>
   
                 <div>
-                <button className="btn text-white  btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
+               <Link to={`/dashboard/updateBlog/:${blog._id}`}>
+               <button  className="btn text-white  btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
                 Update
-              </button>
+              </button></Link>
                 <button onClick={()=>handleDelete(blog._id)} className="btn text-white  btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
                 Delete
               </button>
