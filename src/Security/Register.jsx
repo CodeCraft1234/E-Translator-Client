@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
@@ -10,6 +10,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const Register = () => {
   const { createUser, updateProfiles } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location=useLocation()
   const AxiosPublic = UseAxiosPublic();
   const {
     register,
@@ -36,6 +37,7 @@ const Register = () => {
     // create user and update profiles
     createUser(email, password)
       .then((result) => {
+        navigate(location.state? location.state : '/')
         updateProfiles(name, photo);
         console.log(result.user);
         console.log(email, name, photo);

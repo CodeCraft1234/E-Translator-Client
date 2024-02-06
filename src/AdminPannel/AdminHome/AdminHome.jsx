@@ -10,7 +10,7 @@ const AdminHome = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setLoading(false);
     };
 
@@ -34,35 +34,34 @@ const AdminHome = () => {
                   <HiUserGroup /> Total User
                 </h2>
                 <p className="text-white text-2xl">New User: 50</p>
-                <p className="text-white text-2xl">Total User: 500</p>
                 <div className="card-actions justify-center">
-                  <button className="btn btn-sm bg-blue-600 text-white hover:bg-teal-500 border-none">
+                  <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                     View
                   </button>
                 </div>
               </div>
             </div>
             <div className="card w-96 bg-base-100  h-56 flex-shrink-0">
-              <div className="card-body bg-[#D35400] rounded-xl ml-5">
+              <div className="card-body bg-[#0660F8] rounded-xl ml-5">
                 <h2 className="card-title text-white text-2xl ">
                   <MdOutlineSubscriptions /> Subscription
                 </h2>
                 <p className="text-white text-2xl ">Total subscription: 30</p>
                 <div className="card-actions justify-center">
-                  <button className="btn btn-sm bg-blue-600 text-white hover:bg-teal-500 border-none">
+                  <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                     View
                   </button>
                 </div>
               </div>
             </div>
             <div className="card w-96 bg-base-100 h-56 flex-shrink-0">
-              <div className="card-body bg-[#D35400] rounded-xl ml-5">
+              <div className="card-body bg-[#3D8600] rounded-xl ml-5">
                 <h2 className="card-title text-white text-2xl ">
                   <MdOutlineSubscriptions /> Visitors
                 </h2>
                 <p className="text-white text-2xl ">Total Visitor: 600k</p>
                 <div className="card-actions justify-center">
-                  <button className="btn btn-sm bg-blue-600 text-white hover:bg-teal-500 border-none">
+                  <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                     View
                   </button>
                 </div>

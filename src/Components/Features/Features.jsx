@@ -1,22 +1,19 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import img1 from '../../assets/6435775.jpg'
-import img2 from '../../assets/download (3).jpg'
-import img3 from '../../assets/4209048.jpg'
-import img4 from '../../assets/photo-tan.webp'
-import img5 from '../../assets/istockphoto-1061357610-612x612.jpg'
-import img6 from '../../assets/api-application-programming-interface-software-600nw-2295572201.webp'
-import img7 from '../../assets/download (2).jpg'
-
-import img8 from '../../assets/istockphoto-1281150061-612x612.jpg'
-import img9 from '../../assets/pricing.jpg'
-import img10 from '../../assets/direct.jpg'
+import img1 from "../../assets/6435775.jpg";
+import img2 from "../../assets/download (3).jpg";
+import img3 from "../../assets/4209048.jpg";
+import img4 from "../../assets/photo-tan.webp";
+import img5 from "../../assets/istockphoto-1061357610-612x612.jpg";
+import img6 from "../../assets/api-application-programming-interface-software-600nw-2295572201.webp";
+import img7 from "../../assets/download (2).jpg";
+import img8 from "../../assets/istockphoto-1281150061-612x612.jpg";
+import img9 from "../../assets/pricing.jpg";
+import img10 from "../../assets/direct.jpg";
 
 import { Helmet } from "react-helmet-async";
 
 const Features = () => {
-
-
   const features = [
     {
       image: img1,
@@ -70,19 +67,15 @@ const Features = () => {
     },
   ];
 
-
   const featureVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.8, rotate: -10 },
     visible: { opacity: 1, y: 0, scale: 1, rotate: 0 },
   };
 
- 
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleToggleExpanded = (index) => {
-    setExpandedIndex((prevIndex) =>
-      prevIndex === index ? null : index
-    );
+    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
@@ -98,7 +91,7 @@ const Features = () => {
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="max-w-xs rounded-xl shadow-2xl"
+            className="max-w-xs rounded-xl shadow-2xl border"
             variants={featureVariants}
             initial="hidden"
             animate="visible"
@@ -106,7 +99,6 @@ const Features = () => {
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-
             }}
           >
             <img
@@ -114,7 +106,7 @@ const Features = () => {
               alt=""
               className="border  object-center w-full rounded-t-md h-44 dark:bg-gray-500"
             />
-            <div className="flex flex-col justify-between p-6 space-y-8  ">
+            <div className="flex flex-col justify-between p-6 space-y-8 ">
               <div className="space-y-2">
                 <h2 className="text-3xl font-semibold tracking">
                   {feature.name}
@@ -122,8 +114,9 @@ const Features = () => {
                 <p className="dark:text-gray-100">
                   {expandedIndex === index
                     ? feature.description
-                    : `${feature.description.slice(0, 100)}${feature.description.length > 100 ? "..." : ""
-                    } `}
+                    : `${feature.description.slice(0, 100)}${
+                        feature.description.length > 100 ? "..." : ""
+                      } `}
                   {feature.description.length > 100 && (
                     <span
                       className="text-blue-500 cursor-pointer"

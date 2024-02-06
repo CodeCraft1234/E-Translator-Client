@@ -1,9 +1,41 @@
+import Swal from "sweetalert2";
+import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 import UseUsers from "../../AxiosFetch/UseUsers";
 
 
 const AllUsers = () => {
-  const [users]=UseUsers()
+  const [users,refetch]=UseUsers()
+  const AxiosSecure=UseAxiosSecure()
   console.log(users)
+
+  const handleDelete =(id)=>{
+    console.log(id)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to delete this user!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete user"
+    })
+    .then(res=>{
+      console.log(res.data)
+      AxiosSecure.delete(`/users/${id}`).then(res=>{
+        console.log(res.data)
+        refetch()
+        if(res.data.deletedCount>0){
+          Swal.fire({
+              title: "deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            });
+      }
+      })
+    })
+  
+    
+  }
     return (
         <div className="">
           {
@@ -31,7 +63,15 @@ const AllUsers = () => {
                     className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
                   >
                     <button className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
-                              Make Admin
+                             
+                              {user?.admin===false ? "Make Admin" : "Admin" }
+                            </button>
+                  </span>
+                  <span
+                    className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                  >
+                    <button onClick={()=>handleDelete(user._id)} className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
+                              Delete User
                             </button>
                   </span>
                   {/* <span

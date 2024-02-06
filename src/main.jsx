@@ -13,15 +13,8 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-
-
-
-import { Helmet, HelmetProvider } from "react-helmet-async";
-
-
-
-
-
+import Dashboard from "./dashboard/Dashboard";
+import {HelmetProvider } from "react-helmet-async";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
@@ -39,8 +32,6 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
-
-
 
 const router = createBrowserRouter([
   {
@@ -91,12 +82,7 @@ const router = createBrowserRouter([
 
       {
         path: "payment/success/:tranId",
-        element: 
-        (
-          
-            <PaymentSuccess></PaymentSuccess>
-         
-        ),
+        element: <PaymentSuccess></PaymentSuccess>,
       },
 
       {
@@ -117,21 +103,19 @@ const router = createBrowserRouter([
 
         element: <GetInTouch />,
       },
-
-
     ],
   },
   {
     path: "dashboard",
     element: <DashboardRoot></DashboardRoot>,
     children: [
-      {
-        path: "skeleton",
-        element: <SkilitonLoader></SkilitonLoader>,
-      },
+      // {
+      //   path: "skeleton",
+      //   element: <SkilitonLoader></SkilitonLoader>,
+      // },
       {
         path: "/dashboard/adminHome",
-        element: <AdminHome/>,
+        element: <AdminHome />,
       },
       {
         path: "/dashboard/addblogs",
@@ -139,22 +123,26 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/alluser",
-        element: <AllUsers></AllUsers>
+        element: <AllUsers></AllUsers>,
       },
     ],
   },
+  {
+    path: "/dashboard",
+    element:<Dashboard/>
+    
+  }
 ]);
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-     <QueryClientProvider client={queryClient}>
-     <HelmetProvider>
-    <AuthProvider>
-    <RouterProvider router={router} />
-    </AuthProvider>
-    </HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </HelmetProvider>
     </QueryClientProvider>
-   
   </React.StrictMode>
 );

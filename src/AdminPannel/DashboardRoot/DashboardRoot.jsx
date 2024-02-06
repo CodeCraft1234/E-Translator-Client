@@ -8,7 +8,7 @@ const DashboardRoot = () => {
   return (
     <div>
       <div className="flex relative">
-        <div className="absolute md:static  lg:w-[18%] grid lg:grid-cols-[140px] top-0 gap-8 lg:gap-8 bg-blue-400 z-10">
+        <div className="absolute md:static  lg:w-[18%] grid lg:grid-cols-[140px] top-0 gap-8 lg:gap-8  z-10">
           <Dashboard
             showSidebar={showSidebar}
           ></Dashboard>
@@ -21,7 +21,7 @@ const DashboardRoot = () => {
         </button>
       </div>
         </div>
-        <div className="h-32 rounded-lg w-full lg:w-[82%] lg:col-span-2">
+        <div className="h-32 rounded-lg max-w-6xl lg:w-[82%] lg:col-span-2">
           <Outlet></Outlet>
         </div>
       </div>

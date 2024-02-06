@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera, FaImage } from "react-icons/fa";
+import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera, FaImage ,FaBook} from "react-icons/fa";
 import { MdKeyboardVoice } from "react-icons/md";
 import lang from "../Translate/Languages/languages";
 import toast from "react-hot-toast";
@@ -133,7 +133,7 @@ function Translator() {
   };
 
   return (
-    <>
+    
       <div className="bg-[#5170ea] dark:bg-slate-800 flex items-center justify-center">
         <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-28">
           <h1 className="text-2xl text-center font-bold mb-4">
@@ -241,7 +241,16 @@ function Translator() {
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaVolumeUp size={20} />
               </div>
-             
+
+            </button>
+            <button
+              onClick={() => utterText(toText, toLanguage)}
+              className="text-[#4392d9] ml-5"
+            >
+              <div className="hover:bg-[#c1c7cd] rounded p-1">
+                <FaBook size={20} />
+              </div>
+
             </button>
           </div>
 
@@ -255,7 +264,7 @@ function Translator() {
           </div>
         </div>
       </div>
-    </>
+   
   );
 }
 

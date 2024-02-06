@@ -57,30 +57,30 @@ const Login = () => {
     signIn(email, password).then((result) => {
       console.log(result.user);
       e.target.reset();
-      const user = { email };
-
+      // const user = { email };
+      navigate(location?.state ? location.state : "/");
       // get access token
-      axios
-        .post("https://task-craft-server-side.vercel.app/jwt", user, {
-          withCredentials: true,
-        })
-        .then((res) => {
-          console.log(res.data);
-          if (res.data.success) {
-            // navigate after login
-            navigate(location?.state ? location.state : "/");
-            return toast.success("google login successfully");
-          }
-        })
+      // axios
+      //   .post("https://task-craft-server-side.vercel.app/jwt", user, {
+      //     withCredentials: true,
+      //   })
+        // .then((res) => {
+        //   console.log(res.data);
+        //   if (res.data.success) {
+        //     // navigate after login
+        //     navigate(location?.state ? location.state : "/");
+        //     return toast.success("google login successfully");
+        //   }
+        // })
 
         //   // navigate after login
         //   navigate(location?.state ? location.state : "/");
         //   return toast.success("user login successfully");
         // })
-        .catch((error) => {
-          console.log(error);
-          return toast.error("password or email not match");
-        });
+        // .catch((error) => {
+        //   console.log(error);
+        //   return toast.error("password or email not match");
+        // });
     });
   };
 
@@ -186,7 +186,7 @@ const Login = () => {
               </div>
 
               <p className="text-center font-semibold text-xs mt-4">
-                Don't Have An Account ?
+               { `Don't Have An Account ?`}
                 <Link className="text-[#F75B5F]" to="/signup">
                   {" "}
                   Register

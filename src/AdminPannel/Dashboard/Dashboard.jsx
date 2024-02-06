@@ -10,15 +10,15 @@ const Dashboard = ({ showSidebar }) => {
   return (
     <div className="relative">
       <div
-        className={` min-h-screen fixed bg-blue-400  text-white  ${
+        className={`bg-blue-600 w-64 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
         } md:block`}
       >
-        <ul className="menu text-center text-lg md:text-xl">
+        <ul className="menu  text-center text-lg md:text-xl">
           {user && (
             <div className="w-[250px]">
               <div className="avatar">
-                <div className="w-14 rounded-full">
+                <div className=" flex w-14 rounded-full">
                   <img src={user?.photoURL} />
                 </div>
                 <div>
@@ -27,11 +27,11 @@ const Dashboard = ({ showSidebar }) => {
               </div>
               <li className=" ">
                 <Link
-                  to="/"
+                  to="/dashboard/adminHome"
                   className="flex items-center py-2"
                 >
                   <FaHome className="mr-2" />
-                  Home
+                  Admin Home
                 </Link>
               </li>
               <li>
@@ -57,8 +57,8 @@ const Dashboard = ({ showSidebar }) => {
                   to="/"
                   className="flex items-center py-2"
                 >
-                  <FaHome className="mr-2" />
-                  Go Home 
+                  <FaHome  className="mr-2" />
+                  Go Home
                 </Link>
               </li>
             </div>
