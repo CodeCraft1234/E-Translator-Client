@@ -139,7 +139,8 @@ function Translator() {
   };
 
 
-
+  const handlePdfUpload = async (event) => {
+    const file = event.target.files[0];
   
     const handlePdfUpload = async (event) => {
       const file = event.target.files[0];
