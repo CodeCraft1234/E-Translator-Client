@@ -1,4 +1,4 @@
-// all work is done
+
 import { useEffect, useState, useRef } from "react";
 import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera } from "react-icons/fa";
 import { MdKeyboardVoice } from "react-icons/md";
@@ -582,3 +582,6 @@ function Translator() {
 }
 
 export default Translator;
+
+
+

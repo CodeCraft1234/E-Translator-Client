@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./PaymentSuccess.css";
 
 const PaymentSuccess = () => {
   const { tranId } = useParams();
+  const navigate = useNavigate();
   console.log(tranId);
 
   useEffect(() => {
@@ -13,9 +14,18 @@ const PaymentSuccess = () => {
       duration: 3000,
     });
 
+    // after payment redirects to translate page
+    const redirectTimer = setTimeout(() => {
+      navigate("/translate");
+    }, 4500);
+
     // clean the toast when components mount
-    return () => toast.dismiss(successToast);
-  }, []);
+
+    return () => {
+      clearTimeout(redirectTimer);
+      toast.dismiss(successToast);
+    };
+  }, [navigate]);
 
   return (
     <div className="mt-44">
