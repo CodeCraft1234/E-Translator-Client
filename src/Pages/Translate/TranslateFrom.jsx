@@ -1,3 +1,4 @@
+// all work is done
 import { useEffect, useState, useRef } from "react";
 import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera } from "react-icons/fa";
 import { MdKeyboardVoice } from "react-icons/md";
@@ -5,13 +6,13 @@ import lang from "../Translate/Languages/languages";
 import toast from "react-hot-toast";
 import Tesseract from "tesseract.js";
 import { FaRegFilePdf, FaStar } from "react-icons/fa";
-import { FaUserGroup } from "react-icons/fa6";
 import { RiHistoryLine } from "react-icons/ri";
+import { FaUserGroup } from "react-icons/fa6";
+import { pdfjs } from "react-pdf";
 
 function Translator() {
   const initialFromLanguage = "en-GB";
   const initialToLanguage = "bn-IN";
-
   const [fromText, setFromText] = useState("");
   const [toText, setToText] = useState("");
   const [fromLanguage, setFromLanguage] = useState(initialFromLanguage);
@@ -23,15 +24,28 @@ function Translator() {
   const [imageFile, setImageFile] = useState(null);
   const [recognizedText, setRecognizedText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
+
+  const [showHistoryModal, setShowHistoryModal] = useState(false);
+  const [historyFromText, setHistoryFromText] = useState("");
+  const [historyToText, setHistoryToText] = useState("");
+  const [translationHistory, setTranslationHistory] = useState([]);
+  const [pdfText, setPdfText] = useState("");
+  const [showExtractPdf, setShowExtractPdf] = useState(false);
+  const [showPdfText, setShowPdfText] = useState(false);
+
+
   const [translationHistory, setTranslationHistory] = useState([]); 
   // const [showHistoryModal, setShowHistoryModal] = useState(false);
+
   const imageInput = useRef(null);
+  const typingTimer = useRef(null);
 
 
 
   useEffect(() => {
     setLanguages(lang);
     initializeRecognition();
+    fetchTranslationHistory();
   }, []);
 
   useEffect(() => {
@@ -43,10 +57,14 @@ function Translator() {
     fetchTranslationHistory();
   }, [recognizedText]);
 
+
+  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
    // Function to open/close the history modal
   //  const toggleHistoryModal = () => {
   //   setShowHistoryModal((prev) => !prev);
   // };
+
 
   const initializeRecognition = () => {
     if ("webkitSpeechRecognition" in window) {
@@ -122,8 +140,17 @@ function Translator() {
 
           setToText(translatedText);
 
+          saveTranslationToHistory({
+            fromText,
+            toText: translatedText,
+            fromLanguage,
+            toLanguage,
+          });
+
+
           // save translation to history
           saveTranslationToHistory({ fromText, toText, fromLanguage, toLanguage });
+
 
         } else {
           toast.error("Translation failed. Please try again.");
@@ -141,6 +168,53 @@ function Translator() {
   };
 
   const fetchTranslationHistory = () => {
+
+    fetch("http://localhost:5000/api/history")
+      .then((res) => res.json())
+      .then((data) => {
+        setTranslationHistory(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching translation history:", error);
+      });
+  };
+
+  const saveTranslationToHistory = ({
+    fromText,
+    toText,
+    fromLanguage,
+    toLanguage,
+  }) => {
+    const textToSave = imageFile ? recognizedText : fromText;
+
+    clearTimeout(typingTimer.current);
+
+    typingTimer.current = setTimeout(() => {
+      const translation = {
+        fromText: textToSave,
+        toText,
+        fromLanguage,
+        toLanguage,
+      };
+
+      fetch("http://localhost:5000/api/history", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(translation),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setTranslationHistory((prevHistory) => [data, ...prevHistory]);
+        })
+        .catch((error) => {
+          console.error("Error saving translation to history:", error);
+        });
+    }, 10000);
+  };
+
+
     fetch('http://localhost:5000/api/history')
       .then((res) => res.json())
       .then((data) => {
@@ -172,6 +246,7 @@ function Translator() {
 
 
 
+
   const utterText = (text, language) => {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
@@ -192,6 +267,9 @@ function Translator() {
     setTranslatedText("");
     setRecognizedText("");
     setImageFile(null);
+    setPdfText("");
+    setShowExtractPdf(false);
+    setShowPdfText(false);
     if (imageInput.current) {
       imageInput.current.value = null;
     }
@@ -209,9 +287,7 @@ function Translator() {
         } = await Tesseract.recognize(file, "eng");
 
         if (text.trim() === "") {
-          console.error(
-            "No text found in the image. Please try again with a different image."
-          );
+          console.error("No text found in the image. Please try again.");
           return;
         }
 
@@ -242,15 +318,80 @@ function Translator() {
   };
 
   const handleExchangeClick = () => {
-    setFromText((prevFromText) => {
-      setToText(prevFromText);
-      return toText;
-    });
+    setFromText(toText);
+    setToText(fromText);
 
-    setFromLanguage((prevFromLanguage) => {
-      setToLanguage(prevFromLanguage);
-      return toLanguage;
-    });
+    setFromLanguage(toLanguage);
+    setToLanguage(fromLanguage);
+  };
+
+  const openHistoryModal = () => {
+    setShowHistoryModal(true);
+    setHistoryFromText(imageFile ? recognizedText : fromText);
+    setHistoryToText(toText);
+    fetchTranslationHistory();
+  };
+
+  // const handleOpenPdf = () => {
+  //   if (imageInput.current) {
+  //     imageInput.current.click();
+  //   }
+  // };
+
+  const handleOpenPdf = () => {
+    if (imageInput.current) {
+      imageInput.current.click();
+    }
+    if (showExtractPdf || showPdfText) {
+      setShowExtractPdf(false);
+      setShowPdfText(false);
+    } else {
+      setShowExtractPdf(true);
+      setShowPdfText(true);
+    }
+  };
+
+  const handlePdfTextExtraction = async () => {
+    const fileReader = new FileReader();
+    fileReader.onload = async function () {
+      const arrayBuffer = this.result;
+      const pdfData = new Uint8Array(arrayBuffer);
+      const loadingTask = pdfjs.getDocument({ data: pdfData });
+      loadingTask.promise
+        .then(async (pdf) => {
+          let fullText = "";
+          for (let i = 1; i <= pdf.numPages; i++) {
+            const page = await pdf.getPage(i);
+            const content = await page.getTextContent();
+            const textItems = content.items.map((item) => item.str);
+            fullText += textItems.join(" ");
+          }
+          const translationTargetLanguage = "bn-IN";
+          let translationUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
+            fullText
+          )}&langpair=eng|${translationTargetLanguage}&mt=1`;
+
+          fetch(translationUrl)
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.responseData) {
+                const translatedText = data.responseData.translatedText;
+                setTranslatedText(translatedText);
+              } else {
+                console.error("Translation failed. Please try again.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error in translation:", error);
+            });
+
+          setRecognizedText(fullText);
+        })
+        .catch((error) => {
+          console.error("Error loading PDF:", error);
+        });
+    };
+    fileReader.readAsArrayBuffer(imageFile);
   };
 
   return (
@@ -266,13 +407,18 @@ function Translator() {
             <textarea
               className="border w-full p-2"
               placeholder={
-                imageFile ? `${recognizedText}\n${fromText}` : "Type Here...."
+                imageFile ? `${recognizedText}\n${pdfText}` : "Type Here...."
               }
-              value={imageFile ? recognizedText : fromText}
+              value={
+                imageFile
+                  ? `${recognizedText}${pdfText}`
+                  : `${fromText}${pdfText}`
+              }
               onChange={(e) => setFromText(e.target.value)}
               cols="30"
               rows="10"
             ></textarea>
+
             <select
               value={fromLanguage}
               onChange={(e) => setFromLanguage(e.target.value)}
@@ -309,14 +455,6 @@ function Translator() {
           </div>
         </div>
 
-        <div>
-          {imageFile && (
-            <div>
-              <img src={URL.createObjectURL(imageFile)} alt="Uploaded Image" />
-            </div>
-          )}
-        </div>
-
         <div className="flex items-center justify-between">
           <div>
             <button
@@ -346,21 +484,11 @@ function Translator() {
               </div>
             </button>
 
-            <button className="text-[#4392d9]">
+            <button className="text-[#4392d9]" onClick={handleOpenPdf}>
               <div className="hover:bg-[#c1c7cd] rounded p-1">
                 <FaRegFilePdf size={20} />
               </div>
             </button>
-
-            <div>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                style={{ display: "none" }}
-                ref={imageInput}
-              />
-            </div>
           </div>
 
           <button
@@ -397,14 +525,57 @@ function Translator() {
           </button>
         </div>
 
+        <div>
+          <input
+            type="file"
+            accept="image/*, application/pdf"
+            onChange={handleImageUpload}
+            style={{ display: "none" }}
+            ref={imageInput}
+          />
+        </div>
+
+        {showExtractPdf && (
+          <button
+            onClick={handlePdfTextExtraction}
+            className="bg-[#4392d9] text-white font-semibold mt-4 px-4 py-2 rounded-md hover:bg-[#3182ce]"
+          >
+            Extract Text from PDF
+          </button>
+        )}
+
+        {showPdfText && imageFile && recognizedText && (
+          <div>
+            <h2 className="text-xl mt-4 font-semibold">PDF Text</h2>
+            <p className="border p-2 rounded-lg">{recognizedText}</p>
+          </div>
+        )}
+
+        {imageFile && !showExtractPdf && (
+          <div>
+            <img src={URL.createObjectURL(imageFile)} alt="Uploaded Image" />
+          </div>
+        )}
+
         <div className="mt-5">
           <button
             onClick={handleReset}
-            className="btn  btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
+            className="btn btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
           >
             <div>Reset</div>
           </button>
         </div>
+
+
+        <div className="flex items-center justify-center">
+          <div>
+            <button onClick={openHistoryModal} className="text-[#4392d9] ml-5">
+              <div className=" p-3 border border-[#4392d9] rounded-full">
+                <RiHistoryLine size={40} />
+              </div>
+              <h2>History</h2>
+            </button>
+          </div>
 
         {/* History Modal */}
       {/* <Modal show={showHistoryModal} onClose={toggleHistoryModal}> */}
@@ -434,6 +605,7 @@ function Translator() {
             <h2>History</h2>
           </button>
         </div>
+
           <button className="text-[#4392d9] ml-5">
             <div className="p-3 border border-[#4392d9] rounded-full">
               <FaStar size={40} />
@@ -448,6 +620,49 @@ function Translator() {
           </button>
         </div>
       </div>
+
+      {showHistoryModal && (
+        <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-800 bg-opacity-70 flex items-center justify-center z-50">
+          <div className="bg-white p-4 rounded-lg w-96 h-96 overflow-auto">
+            <h2 className="text-xl font-bold mb-6 text-center border-b-2 border-[#5170ea] rounded">
+              Translation History
+            </h2>
+            <ul>
+              {translationHistory
+                .slice(0)
+                .reverse()
+                .slice(0, 10)
+                .map((entry, index) => (
+                  <li key={index} className="mb-4">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm font-medium">
+                          <span className="text-[#4392d9]">
+                            {entry.fromLanguage}
+                          </span>
+                          {" => "}
+                          <span className="text-[#4392d9]">
+                            {entry.toLanguage}
+                          </span>
+                        </p>
+                        <p className="text-sm">{entry.fromText}</p>
+                        <p className="text-sm text-[#4a5568]">
+                          Translated: {entry.toText}
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+            </ul>
+            <button
+              onClick={() => setShowHistoryModal(false)}
+              className="btn btn-sm btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
