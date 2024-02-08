@@ -32,14 +32,14 @@ const Package = () => {
         "Priority Customer Support",
       ],
       action: () => {
-        window.location.href = `/order/1`;
+        window.location.href = `/order/2`;
       },
     },
     {
       type: "premium",
       id: 3,
       name: "Premium",
-      price: "$72",
+      price: "$24",
       features: [
         "Unlimited Translation Quotes",
         "Enhanced Language Support",
