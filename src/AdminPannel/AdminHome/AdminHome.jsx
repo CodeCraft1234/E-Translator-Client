@@ -38,7 +38,7 @@ const AdminHome = () => {
             <span className=" font-bold text-cyan-600"> @{user?.displayName || "Guest"}</span>
           </h1>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-6">
+          <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-2">
             <div className="card w-96 bg-base-100  h-56 flex-shrink-0">
               <div className="card-body bg-[#D35400] rounded-xl ml-5">
                 <h2 className="card-title text-white text-2xl">
