@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
-import { FaHome, FaUsers } from "react-icons/fa";
+import { FaBlog, FaHome, FaUsers } from "react-icons/fa";
 import { FaBookBookmark } from "react-icons/fa6";
 
 const Dashboard = ({ showSidebar }) => {
@@ -49,7 +49,16 @@ const Dashboard = ({ showSidebar }) => {
                   className="flex items-center py-2"
                 >
                   <FaUsers className="mr-2" />
-                  All Users
+                  Manage Users
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard/manageBlogs"
+                  className="flex items-center py-2"
+                >
+                  <FaBlog className="mr-2" />
+                  Manage Blogs
                 </Link>
               </li>
               <li>
