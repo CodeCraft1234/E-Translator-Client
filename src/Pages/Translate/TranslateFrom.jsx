@@ -24,21 +24,9 @@ function Translator() {
   const [imageFile, setImageFile] = useState(null);
   const [recognizedText, setRecognizedText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
-
-  const [showHistoryModal, setShowHistoryModal] = useState(false);
-  const [historyFromText, setHistoryFromText] = useState("");
-  const [historyToText, setHistoryToText] = useState("");
-  const [translationHistory, setTranslationHistory] = useState([]);
-  const [pdfText, setPdfText] = useState("");
-  const [showExtractPdf, setShowExtractPdf] = useState(false);
-  const [showPdfText, setShowPdfText] = useState(false);
-
-
   const [translationHistory, setTranslationHistory] = useState([]); 
   // const [showHistoryModal, setShowHistoryModal] = useState(false);
-
   const imageInput = useRef(null);
-  const typingTimer = useRef(null);
 
 
 
@@ -54,7 +42,6 @@ function Translator() {
 
   useEffect(() => {
     handleTranslateFromImage();
-    fetchTranslationHistory();
   }, [recognizedText]);
 
 
@@ -64,7 +51,6 @@ function Translator() {
   //  const toggleHistoryModal = () => {
   //   setShowHistoryModal((prev) => !prev);
   // };
-
 
   const initializeRecognition = () => {
     if ("webkitSpeechRecognition" in window) {
@@ -140,17 +126,8 @@ function Translator() {
 
           setToText(translatedText);
 
-          saveTranslationToHistory({
-            fromText,
-            toText: translatedText,
-            fromLanguage,
-            toLanguage,
-          });
-
-
           // save translation to history
           saveTranslationToHistory({ fromText, toText, fromLanguage, toLanguage });
-
 
         } else {
           toast.error("Translation failed. Please try again.");
@@ -168,8 +145,7 @@ function Translator() {
   };
 
   const fetchTranslationHistory = () => {
-
-    fetch("http://localhost:5000/api/history")
+    fetch('http://localhost:5000/api/history')
       .then((res) => res.json())
       .then((data) => {
         setTranslationHistory(data);
@@ -213,37 +189,6 @@ function Translator() {
         });
     }, 10000);
   };
-
-
-    fetch('http://localhost:5000/api/history')
-      .then((res) => res.json())
-      .then((data) => {
-        // Update translation history state
-        setTranslationHistory(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching translation history:', error);
-      });
-  };
-
-  const saveTranslationToHistory = (translation) => {
-    fetch('http://localhost:5000/api/history', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(translation),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // Update translation history state
-        setTranslationHistory((prevHistory) => [data, ...prevHistory]);
-      })
-      .catch((error) => {
-        console.error('Error saving translation to history:', error);
-      });
-  };
-
 
 
 
@@ -566,17 +511,6 @@ function Translator() {
           </button>
         </div>
 
-
-        <div className="flex items-center justify-center">
-          <div>
-            <button onClick={openHistoryModal} className="text-[#4392d9] ml-5">
-              <div className=" p-3 border border-[#4392d9] rounded-full">
-                <RiHistoryLine size={40} />
-              </div>
-              <h2>History</h2>
-            </button>
-          </div>
-
         {/* History Modal */}
       {/* <Modal show={showHistoryModal} onClose={toggleHistoryModal}> */}
         <div className="p-4">
@@ -605,7 +539,6 @@ function Translator() {
             <h2>History</h2>
           </button>
         </div>
-
           <button className="text-[#4392d9] ml-5">
             <div className="p-3 border border-[#4392d9] rounded-full">
               <FaStar size={40} />
