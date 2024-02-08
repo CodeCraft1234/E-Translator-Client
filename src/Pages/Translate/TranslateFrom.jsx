@@ -1,6 +1,5 @@
-
 import { useEffect, useState, useRef } from "react";
-import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera } from "react-icons/fa";
+import { FaVolumeUp, FaExchangeAlt, FaCopy, FaImages } from "react-icons/fa";
 import { MdKeyboardVoice } from "react-icons/md";
 import lang from "../Translate/Languages/languages";
 import toast from "react-hot-toast";
@@ -9,7 +8,6 @@ import { FaRegFilePdf, FaStar } from "react-icons/fa";
 import { RiHistoryLine } from "react-icons/ri";
 import { FaUserGroup } from "react-icons/fa6";
 import { pdfjs } from "react-pdf";
-
 
 function Translator() {
   const initialFromLanguage = "en-GB";
@@ -425,7 +423,7 @@ function Translator() {
               className="text-[#4392d9]"
             >
               <div className="hover:bg-[#c1c7cd] rounded p-1">
-                <FaCamera size={20} />
+                <FaImages size={20} />
               </div>
             </button>
 
@@ -582,6 +580,3 @@ function Translator() {
 }
 
 export default Translator;
-
-
-
