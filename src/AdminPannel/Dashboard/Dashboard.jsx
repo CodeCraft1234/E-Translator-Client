@@ -17,8 +17,10 @@ const Dashboard = ({ showSidebar }) => {
         <ul className="menu  text-center text-lg md:text-xl">
           {user && (
             <div className="w-[250px]">
+                <img className="w-44 mx-auto" src="https://i.ibb.co/BjZTK4r/E-translator.png" alt="" />
               <div className="avatar">
                 <div className=" flex w-14 rounded-full">
+                
                   <img src={user?.photoURL} />
                 </div>
                 <div>
