@@ -10,7 +10,7 @@ const PrivateRoute = ({children}) => {
        return <p>loading.....</p>
     }
     if(user){
-        return children
+        return children;
     }
 
     return (
@@ -19,5 +19,6 @@ const PrivateRoute = ({children}) => {
         </Navigate>
     )
 };
+
 
 export default PrivateRoute;

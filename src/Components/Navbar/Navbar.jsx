@@ -70,6 +70,9 @@ const NavBar = () => {
               <NavLink to={"/blog"}>Blogs</NavLink>
             </li>
             <li>
+            <NavLink to={"/profile"}>Profile</NavLink>
+          </li>
+            <li>
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
             ) : (
@@ -157,7 +160,7 @@ const NavBar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                  <h1 className="lowercase">Profile</h1>
+                  <h1 className="lowercase">Logout</h1>
                 </div>
               </label>
               <ul
@@ -177,7 +180,7 @@ const NavBar = () => {
                       />
                     </figure>
                     <div className="card-body">
-                      <h1> Name: {user?.displayName}</h1>
+                      {/* <h1> Name: {user?.displayName}</h1> */}
                       <hr />
 
 
