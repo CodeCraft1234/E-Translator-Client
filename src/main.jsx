@@ -132,8 +132,9 @@ const router = createBrowserRouter([
         element: <ManageBlogs></ManageBlogs>,
       },
       {
-        path: "/dashboard/updateBlog/:id",
-        element: <UpdateBlog></UpdateBlog>
+        path: "/dashboard/blogs/:id",
+        element: <UpdateBlog></UpdateBlog>,
+        loader:({params})=>fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
       },
     ],
   },

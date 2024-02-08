@@ -111,7 +111,7 @@ const ManageBlogs = () => {
                 </button>
   
                 <div>
-               <Link to={`/dashboard/updateBlog/:${blog._id}`}>
+               <Link to={`/dashboard/blogs/${blog._id}`}>
                <button  className="btn text-white  btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
                 Update
               </button></Link>
