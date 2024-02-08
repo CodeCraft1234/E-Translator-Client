@@ -179,9 +179,8 @@ const NavBar = () => {
                     <div className="card-body">
                       <h1> Name: {user?.displayName}</h1>
                       <hr />
-                      <h1>{user?.email}</h1>
-                      <hr />
-                      <h1>Date of Birth :</h1>
+
+
                       <NavLink
                         onClick={handleLogOut}
                         className={({ isActive, isPending }) =>
