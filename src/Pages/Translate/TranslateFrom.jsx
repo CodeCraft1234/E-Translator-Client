@@ -10,6 +10,7 @@ import { RiHistoryLine } from "react-icons/ri";
 import { FaUserGroup } from "react-icons/fa6";
 import { pdfjs } from "react-pdf";
 
+
 function Translator() {
   const initialFromLanguage = "en-GB";
   const initialToLanguage = "bn-IN";

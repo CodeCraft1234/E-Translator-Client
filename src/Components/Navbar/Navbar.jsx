@@ -70,12 +70,12 @@ const NavBar = () => {
               <NavLink to={"/blog"}>Blogs</NavLink>
             </li>
             <li>
-            {user?.email === "admin@gmail.com" ? (
-              <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
-            ) : (
-              <p></p>
-            )}
-          </li>
+              {user?.email === "admin@gmail.com" ? (
+                <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
+              ) : (
+                <></>
+              )}
+            </li>
           </ul>
         </div>
         <div>
@@ -112,7 +112,7 @@ const NavBar = () => {
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
             ) : (
-              <p></p>
+        <></>
             )}
           </li>
         </ul>
