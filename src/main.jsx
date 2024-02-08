@@ -34,6 +34,7 @@ import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
 import ManageBlogs from "./AdminPannel/AdminPages/ManageBlogs.jsx";
 import UpdateBlog from "./AdminPannel/AdminPages/UpdateBlog.jsx";
+import Profile from "./Pages/Profile/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/profile",
+        element: <Profile/>,
       },
       {
         path: "/login",
