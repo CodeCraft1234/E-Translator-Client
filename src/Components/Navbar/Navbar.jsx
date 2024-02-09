@@ -160,7 +160,7 @@ const NavBar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                  <h1 className="lowercase">Logout</h1>
+                 
                 </div>
               </label>
               <ul
