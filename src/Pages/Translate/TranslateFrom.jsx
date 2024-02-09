@@ -146,7 +146,7 @@ function Translator() {
   };
 
   const fetchTranslationHistory = () => {
-    fetch("http://localhost:5000/api/history")
+    fetch("https://e-translator-server.vercel.app/api/history")
       .then((res) => res.json())
       .then((data) => {
         setTranslationHistory(data);
@@ -174,7 +174,7 @@ function Translator() {
         toLanguage,
       };
 
-      fetch("http://localhost:5000/api/history", {
+      fetch("https://e-translator-server.vercel.app/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
