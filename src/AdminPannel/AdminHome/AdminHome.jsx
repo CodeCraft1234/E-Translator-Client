@@ -38,7 +38,7 @@ const AdminHome = () => {
             <span className=" font-bold text-cyan-600"> @{user?.displayName || "Guest"}</span>
           </h1>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-6">
+          <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-2">
             <div className="card w-96 bg-base-100  h-56 flex-shrink-0">
               <div className="card-body bg-[#D35400] rounded-xl ml-5">
                 <h2 className="card-title text-white text-2xl">
@@ -48,9 +48,7 @@ const AdminHome = () => {
                 <p className="text-white text-2xl">Total User: 50</p>
                 
                 <div className="card-actions justify-center">
-                  <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                    View
-                  </button>
+                 
                 </div>
               </div>
             </div>
@@ -62,9 +60,7 @@ const AdminHome = () => {
                 <p className="text-white text-2xl ">Total subscription: 30</p>
                 <p className="text-white text-2xl ">Non subscription: 100</p>
                 <div className="card-actions justify-center">
-                  <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                    View
-                  </button>
+                
                 </div>
               </div>
             </div>
@@ -76,9 +72,7 @@ const AdminHome = () => {
                 <p className="text-white text-2xl ">Total Visitor: 505</p>
                 <p className="text-white text-2xl ">Click Users: 70</p>
                 <div className="card-actions justify-center">
-                  <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                    View
-                  </button>
+                
                 </div>
               </div>
             </div>

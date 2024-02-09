@@ -27,7 +27,7 @@ AxiosSecure.patch(`/blogs/${blog._id}`,body)
   })
 }
     return (
-        <div>
+        <div >
              <div className="min-h-screen flex items-center justify-center p-10">
       <div className="bg-emerald-400 p-8 rounded-lg shadow-xl w-96">
         <h2 className="text-2xl font-bold mb-4">Update your Blogs</h2>

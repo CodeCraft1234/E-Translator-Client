@@ -70,10 +70,13 @@ const NavBar = () => {
               <NavLink to={"/blog"}>Blogs</NavLink>
             </li>
             <li>
+            <NavLink to={"/profile"}>Profile</NavLink>
+          </li>
+            <li>
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
             ) : (
-              <p></p>
+              <></>
             )}
           </li>
           </ul>
@@ -112,7 +115,7 @@ const NavBar = () => {
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
             ) : (
-              <p></p>
+              <></>
             )}
           </li>
         </ul>
@@ -157,7 +160,7 @@ const NavBar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                  <h1 className="lowercase">Profile</h1>
+                 
                 </div>
               </label>
               <ul
@@ -177,11 +180,10 @@ const NavBar = () => {
                       />
                     </figure>
                     <div className="card-body">
-                      <h1> Name: {user?.displayName}</h1>
+                      {/* <h1> Name: {user?.displayName}</h1> */}
                       <hr />
-                      <h1>{user?.email}</h1>
-                      <hr />
-                      <h1>Date of Birth :</h1>
+
+
                       <NavLink
                         onClick={handleLogOut}
                         className={({ isActive, isPending }) =>
