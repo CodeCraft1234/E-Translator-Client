@@ -7,7 +7,11 @@ import Tesseract from "tesseract.js";
 import { FaRegFilePdf, FaStar } from "react-icons/fa";
 import { FaUserGroup } from "react-icons/fa6";
 import { RiHistoryLine } from "react-icons/ri";
-
+import { Link } from "react-router-dom";
+import MyRating from "../../Components/Rating/MyRating";
+import Feedback from "../../Components/Feedback/Feedback";
+import { useContext } from "react";
+import { AuthContext } from "../../Security/AuthProvider"
 function Translator() {
   const initialFromLanguage = "en-GB";
   const initialToLanguage = "bn-IN";
@@ -23,9 +27,10 @@ function Translator() {
   const [imageFile, setImageFile] = useState(null);
   const [recognizedText, setRecognizedText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
-  const [translationHistory, setTranslationHistory] = useState([]); 
+  const [translationHistory, setTranslationHistory] = useState([]);
   // const [showHistoryModal, setShowHistoryModal] = useState(false);
   const imageInput = useRef(null);
+  const { user } = useContext(AuthContext);
 
 
 
@@ -43,7 +48,7 @@ function Translator() {
     fetchTranslationHistory();
   }, [recognizedText]);
 
-   // Function to open/close the history modal
+  // Function to open/close the history modal
   //  const toggleHistoryModal = () => {
   //   setShowHistoryModal((prev) => !prev);
   // };
@@ -407,7 +412,7 @@ function Translator() {
         </div>
 
         {/* History Modal */}
-      {/* <Modal show={showHistoryModal} onClose={toggleHistoryModal}> */}
+        {/* <Modal show={showHistoryModal} onClose={toggleHistoryModal}> */}
         <div className="p-4">
           <h2 className="text-lg font-bold mb-4">Translation History</h2>
           <ul>
@@ -423,29 +428,69 @@ function Translator() {
             ))}
           </ul>
         </div>
-      {/* </Modal> */}
+        {/* </Modal> */}
 
-      <div className="flex items-center justify-center">
-        <div>
-          <button className="text-[#4392d9] ml-5">
-            <div className=" p-3 border border-[#4392d9] rounded-full">
-              <RiHistoryLine size={40} />
-            </div>
-            <h2>History</h2>
-          </button>
-        </div>
-          <button className="text-[#4392d9] ml-5">
+        <div className="flex items-center justify-center">
+          <div>
+            <button className="text-[#4392d9] ml-5">
+              <div className=" p-3 border border-[#4392d9] rounded-full">
+                <RiHistoryLine size={40} />
+              </div>
+              <h2>History</h2>
+            </button>
+          </div>
+          {/* <Link className="text-[#4392d9] ml-5" to="/rating" >
             <div className="p-3 border border-[#4392d9] rounded-full">
               <FaStar size={40} />
             </div>
-            <h2>Rating</h2>
-          </button>
-          <button className="text-[#4392d9] ml-5">
-            <div className="p-3 border border-[#4392d9] rounded-full">
-              <FaUserGroup size={40} />
+            <h2 className="text-center">Rating</h2>
+          </Link> */}
+          {
+            user && <div><button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_1').showModal()} >
+              <div className="p-3 border border-[#4392d9] rounded-full">
+                <FaStar size={40} />
+              </div>
+              <h2 className="text-center">Rating</h2>
+            </button>
+              <dialog id="my_modal_1" className="modal">
+                <div className="modal-box">
+                  <h3 className="font-bold text-lg">Have a moment?</h3>
+                  <p className="py-4">How would you rate this product?</p>
+                  <MyRating></MyRating>
+                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </div>
-            <h2>Feedback</h2>
-          </button>
+          }
+          {user && <div>
+            <button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_2').showModal()} >
+              <div className="p-3 border border-[#4392d9] rounded-full">
+                <FaUserGroup size={40} />
+              </div>
+              <h2 className="text-center">Feedback</h2>
+            </button>
+            <dialog id="my_modal_2" className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Please share your feedback</h3>
+
+                <Feedback></Feedback>
+                {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn">Close</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </div>
+          }
         </div>
       </div>
     </div>

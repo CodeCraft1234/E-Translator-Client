@@ -32,6 +32,11 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
+import MyRating from "./Components/Rating/MyRating.jsx";
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -71,6 +76,7 @@ const router = createBrowserRouter([
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>,
       },
+      
       {
         path: "/order/:id",
         element: (
