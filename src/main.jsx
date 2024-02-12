@@ -35,6 +35,8 @@ import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
 import ManageBlogs from "./AdminPannel/AdminPages/ManageBlogs.jsx";
 import UpdateBlog from "./AdminPannel/AdminPages/UpdateBlog.jsx";
 import Profile from "./Pages/Profile/Profile.jsx";
+import Chat from "./Components/Chat/Chat.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/chat",
+        element: <Chat></Chat>,
       },
       {
         path: "/blog",

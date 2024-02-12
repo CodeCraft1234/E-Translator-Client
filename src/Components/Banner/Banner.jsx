@@ -1,16 +1,35 @@
 import { Link } from "react-router-dom";
 import img1 from "../../assets/415877263_437231245391700_6340538220268059695_n.png";
-
+import { TypeAnimation } from "react-type-animation";
 const Banner = () => {
   return (
     <div>
       <section className=" mt-10 lg:mt-0 md:mt-10">
         <div className="container flex flex-col  justify-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
           <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
-            <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl ">
+            {/* <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl ">
               Decode
               <span className=""> the World of Words </span>
-            </h1>
+            </h1> */}
+             <TypeAnimation 
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Lets Decode the World of Word ',
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        'Lets Decode the World of Language ',
+        1000,
+        'Lets Decode the World of Text ',
+        1000,
+        'Lets Decode the World of PDF',
+        1000,
+        'Lets Decode the World of Sentense',
+        1000
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '3em', display: 'inline-block', }}
+      repeat={Infinity}
+    />
             <p className="mt-6 mb-8 text-lg sm:mb-12 ">
               Explore global communication without limits.
               <br className="hidden md:inline lg:hidden" />

@@ -106,6 +106,9 @@ const NavBar = () => {
             <NavLink to={"/contact"}>Contact</NavLink>
           </li>
           <li>
+            <NavLink to={"/chat"}>Live Chat</NavLink>
+          </li>
+          <li>
             <NavLink to={"/blog"}>Blogs</NavLink>
           </li>
           <li>
