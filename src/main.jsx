@@ -36,6 +36,7 @@ import ManageBlogs from "./AdminPannel/AdminPages/ManageBlogs.jsx";
 import UpdateBlog from "./AdminPannel/AdminPages/UpdateBlog.jsx";
 import Profile from "./Pages/Profile/Profile.jsx";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
