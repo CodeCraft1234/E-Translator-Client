@@ -16,8 +16,8 @@ const Feedback = () => {
         const feedbackInfo = { name:user.displayName, feedback:selectedValue};
         console.log(feedbackInfo);
         e.target.options.value='';
-        // AxiosTest.post("/feedback", feedbackInfo)
         AxiosPublic.post("/feedback", feedbackInfo)
+        // AxiosTest.post("/feedback", feedbackInfo)
         .then((res) => {
             console.log(res.data);
             if(res.data.acknowledged){
