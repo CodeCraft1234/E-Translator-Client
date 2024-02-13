@@ -10,7 +10,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="mt-24 mx-auto max-w-md bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-6 rounded-md shadow-md">
+    <div className="mt-24 mx-auto max-w-md bg-[#031321] text-white p-6 rounded-md shadow-md">
       <div className="text-center mb-4">
         <div className="w-24 h-24 rounded-full overflow-hidden mx-auto animate-bounce">
           <img
@@ -25,12 +25,21 @@ const Profile = () => {
       </div>
 
       <div className="flex justify-center space-x-4">
-        <button
-          onClick={handleLogout}
-          className="btn btn-outline bg-[#006bcb] text-white border-0 border-[#006bcb] hover:bg-[#005999] hover:border-[#005999] border-b-4"
+        <button onClick={handleLogout} className="bg-indigo-950 border-b-2 rounded-lg">
+             <a className="b" href="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Logout
+              </a>
+             </button>
+        {/* <button
+          onClick={handleEdit}
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
         >
-          Logout
-        </button>
+          Edit
+        </button> */}
       </div>
     </div>
   );

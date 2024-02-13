@@ -13,7 +13,7 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-import Dashboard from "./dashboard/Dashboard";
+// import Dashboard from "./dashboard/Dashboard";
 import {HelmetProvider } from "react-helmet-async";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
@@ -157,11 +157,11 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/dashboard",
-    element:<Dashboard/>
+  // {
+  //   path: "/dashboard",
+  //   element:<Dashboard></Dashboard>
     
-  }
+  // }
 ]);
 
 const queryClient = new QueryClient();
