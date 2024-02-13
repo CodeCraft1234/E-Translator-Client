@@ -66,7 +66,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/chat",
-        element: <Chat></Chat>,
+        element: <PrivateRoute>
+          <Chat></Chat>
+        </PrivateRoute>,
       },
       {
         path: "/blog",
