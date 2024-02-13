@@ -5,6 +5,7 @@ import UseAxiosSecure from '../../Axios/UseAxiosSecure';
 
 const AddBlogs = () => {
   // State variables to store input values
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState(null);
@@ -12,9 +13,10 @@ const AddBlogs = () => {
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
   const AxiosPublic = UseAxiosPublic();
   const AxiosSecure=UseAxiosSecure()
-  // Function to handle form submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     // You can perform any further actions with the input values here
     console.log('Title:', title);
     console.log('Description:', description);
@@ -48,8 +50,8 @@ const AddBlogs = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-10">
-      <div className="bg-emerald-400 p-8 rounded-lg shadow-xl w-96">
+    <div className="min-h-screen flex items-center justify-center p-10 overflow-x-hidden">
+      <div className="bg-teal-800 p-8 rounded-lg shadow-xl w-96">
         <h2 className="text-2xl font-bold mb-4">Add your Blogs</h2>
         <form onSubmit={handleSubmit} action="#" method="post">
           <label htmlFor="title" className="block font-bold mb-1">

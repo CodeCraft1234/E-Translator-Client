@@ -18,7 +18,7 @@ import {HelmetProvider } from "react-helmet-async";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
-import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
+// import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
@@ -32,7 +32,11 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
-import MyRating from "./Components/Rating/MyRating.jsx";
+// import MyRating from "./Components/Rating/MyRating.jsx";
+import Chat from './Components/Chat/Chat';
+import Profile from './Pages/Profile/Profile';
+import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
+import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
 
 
 
@@ -61,8 +65,16 @@ const router = createBrowserRouter([
         element: <ContactUs></ContactUs>,
       },
       {
+        path: "/chat",
+        element: <Chat></Chat>,
+      },
+      {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/profile",
+        element: <PrivateRoute><Profile/></PrivateRoute>,
       },
       {
         path: "/login",
@@ -130,6 +142,15 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/alluser",
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/dashboard/manageBlogs",
+        element: <ManageBlogs></ManageBlogs>,
+      },
+      {
+        path: "/dashboard/blogs/:id",
+        element: <UpdateBlog></UpdateBlog>,
+        loader:({params})=>fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
       },
     ],
   },

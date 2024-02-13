@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
-import { FaHome, FaUsers } from "react-icons/fa";
+import { FaBlog, FaHome, FaUsers } from "react-icons/fa";
 import { FaBookBookmark } from "react-icons/fa6";
 
 const Dashboard = ({ showSidebar }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <div
         className={`bg-blue-600 w-64 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
@@ -17,18 +17,21 @@ const Dashboard = ({ showSidebar }) => {
         <ul className="menu  text-center text-lg md:text-xl">
           {user && (
             <div className="w-[250px]">
+                <img className="w-44 mx-auto" src="https://i.ibb.co/BjZTK4r/E-translator.png" alt="" />
               <div className="avatar">
                 <div className=" flex w-14 rounded-full">
+                
                   <img src={user?.photoURL} />
                 </div>
                 <div>
+                  <br />
                 <h1>{user?.displayName}</h1>
                 </div>
               </div>
               <li className=" ">
                 <Link
                   to="/dashboard/adminHome"
-                  className="flex items-center py-2"
+                  className="flex items-center"
                 >
                   <FaHome className="mr-2" />
                   Admin Home
@@ -49,7 +52,16 @@ const Dashboard = ({ showSidebar }) => {
                   className="flex items-center py-2"
                 >
                   <FaUsers className="mr-2" />
-                  All Users
+                  Manage Users
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard/manageBlogs"
+                  className="flex items-center py-2"
+                >
+                  <FaBlog className="mr-2" />
+                  Manage Blogs
                 </Link>
               </li>
               <li>
