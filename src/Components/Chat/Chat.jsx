@@ -2,14 +2,14 @@ import { useEffect, useState, useRef, useContext } from "react";
 import io from "socket.io-client";
 import { AuthContext } from "../../Security/AuthProvider";
 
-const socket = io("http://localhost:5000");
+const socket = io.connect("http://localhost:5001");
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const messagesEndRef = useRef(null);
   const { user } = useContext(AuthContext);
-
+ 
   useEffect(() => {
     socket.on("message", (msg) => {
       setMessages((prevMessages) => [...prevMessages, msg]);
