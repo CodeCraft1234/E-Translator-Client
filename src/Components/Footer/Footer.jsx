@@ -65,7 +65,7 @@ const Footer = () => {
 
   return (
     <div>
-      <footer className="footer items-center p-4 bg-base-200 border-t text-base-content ">
+      <footer className="footer items-center p-4 bg-[#031321] text-white border-t  ">
         <aside style={{ width: "200px" }}>
           <img
             className=""
@@ -207,7 +207,7 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+      <footer className="footer footer-center p-4 bg-[#031321] text-white text-base-content">
         <aside>
           <p>Copyright © 2024 - All right reserved by E Translator </p>
         </aside>

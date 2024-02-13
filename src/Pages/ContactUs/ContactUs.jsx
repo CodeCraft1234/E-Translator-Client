@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="my-20 px-5 md:px-0" id="contact">
+    <div className="my-20 px-5 bg-[#031321] text-white md:px-0" id="contact">
   <Helmet>
         <title> E-Translator | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
