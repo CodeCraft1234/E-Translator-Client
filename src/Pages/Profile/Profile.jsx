@@ -5,30 +5,23 @@ const Profile = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
-    // Add the logic to handle logout
     logOut();
     window.location.href = "/";
   };
 
-  // const handleEdit = () => {
-  //   // Add the logic to handle edit
-  //   console.log("Edit button clicked");
-  // };
-
   return (
     <div className="mt-24 mx-auto max-w-md bg-[#031321] text-white p-6 rounded-md shadow-md">
       <div className="text-center mb-4">
-        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto">
+        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto animate-bounce">
           <img
             src={user?.photoURL}
             alt="User Avatar"
             className="w-full h-full object-cover"
           />
         </div>
-        <h1 className="text-lg font-semibold mt-2">Member Type</h1>
-        <h1 className="text-xl font-bold">{user?.displayName}</h1>
-        <p className="text-gray-500">Email: {user?.email}</p>
-
+        <h1 className="text-xl font-bold text-white">{user?.displayName}</h1>
+        <p className="text-gray-300">Email: {user?.email}</p>
+        <p className="text-gray-300">Role: {user?.role}</p>
       </div>
 
       <div className="flex justify-center space-x-4">
