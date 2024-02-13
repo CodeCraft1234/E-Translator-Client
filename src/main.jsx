@@ -33,10 +33,11 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
 // import MyRating from "./Components/Rating/MyRating.jsx";
-import Chat from './Components/Chat/Chat';
+// import Chat from './Components/Chat/Chat';
 import Profile from './Pages/Profile/Profile';
 import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
 import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
+import ChatTest from "./Components/Chat/ChatTest.jsx";
 
 
 
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: "/chat",
         element: <PrivateRoute>
-          <Chat></Chat>
+          <ChatTest></ChatTest>
         </PrivateRoute>,
       },
       {
