@@ -45,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-16 px-5  py-10 bg-[#031321] text-white md:px-0" id="contact">
+    <div className="mt-16 px-5  py-10 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white md:px-0" id="contact">
   <Helmet>
         <title> E-Translator | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -100,18 +100,18 @@ const Contact = () => {
                   type="email"
                   placeholder="Your email"
                   name="user_email"
-                  className="input w-full border-2 border-gray-700"
+                  className="input w-full  border-2 border-gray-700"
                   required
                 />
               </div>
             </div>
             <textarea
               name="message"
-              className="textarea textarea-ghost w-full mt-6 border-2 border-gray-700"
+              className="textarea   w-full mt-6 border-2 border-gray-700"
               placeholder="Message"
               required
             ></textarea>
-           <button className="bg-indigo-950 border-b-2 rounded-lg">
+           <button className="bg-indigo-950 mt-4 border-b-2 rounded-lg">
              <a className="b" >
               <span></span>
               <span></span>

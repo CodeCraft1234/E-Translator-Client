@@ -1,95 +1,72 @@
-
-
-
-
-
 import { Link } from "react-router-dom";
-import { useCallback, useEffect } from "react";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
 import img1 from "../../assets/415877263_437231245391700_6340538220268059695_n.png";
-
 import { TypeAnimation } from "react-type-animation";
 import "./Banner.css"
+// import { useEffect } from "react";
+import { Animation, Typer } from 'react-easy-animations'
+import Typewriter from 'react-text-writer'
 const Banner = () => {
-  // const particlesInit = useCallback(async (engine) => {
-  //   await loadSlim(engine);
-  // }, []);
-
-  // const particlesLoaded = useCallback(async (container) => {
-  //   console.log(container);
-  // }, []);
-  useEffect(() => {
-    // Define an array of words or phrases
-    const words = [
-      'Hello',
-      "প্রোগ্রামিং হিরো",
-      'বাংলা', 
-      'Bonjour',
-      'Hola',
-      'Ciao',
-      'こんにちは',
-      '안녕하세요',
-      'Привет', // Russian: "Hello"
-      'مرحبا', // Arabic: "Hello"
-      'नमस्ते', // Hindi: "Hello"
-      'გამარჯობა', // Georgian: "Hello"
-      'CodeCrafters'
-  
-    ];
+  // useEffect(() => {
     
+  //   const words = [
+  //     'Hello',
+  //     "প্রোগ্রামিং হিরো",
+  //     'বাংলা', 
+  //     'Bonjour',
+  //     'Hola',
+  //     'Ciao',
+  //     'こんにちは',
+  //     '안녕하세요',
+  //     'Привет', 
+  //     'مرحبا', 
+  //     'नमस्ते', 
+  //     'გამარჯობა', 
+  //     'CodeCrafters'
   
+  //   ];
     
+  //   const generateFloatingWords = () => {
+  //     const banner = document.querySelector('.banner-container');
 
-    // Function to generate and animate floating words
-    const generateFloatingWords = () => {
-      const banner = document.querySelector('.banner-container');
+  //     words.forEach(word => {
+  //       const wordElement = document.createElement('div');
+  //       wordElement.classList.add('floating-word');
+  //       wordElement.textContent = word;
+  //       banner.appendChild(wordElement);
+  //       const x = Math.random() * window.innerWidth;
+  //       const y = Math.random() * window.innerHeight;
+  //       wordElement.style.left = `${x}px`;
+  //       wordElement.style.top = `${y}px`;
 
-      words.forEach(word => {
-        const wordElement = document.createElement('div');
-        wordElement.classList.add('floating-word');
-        wordElement.textContent = word;
-        banner.appendChild(wordElement);
+  //       const duration = (Math.random() * 5 + 5) + 's';
+  //       wordElement.style.animationDuration = duration;
 
-        // Randomize starting position
-        const x = Math.random() * window.innerWidth;
-        const y = Math.random() * window.innerHeight;
-        wordElement.style.left = `${x}px`;
-        wordElement.style.top = `${y}px`;
+      
+  //       const delay = (Math.random() * 3) + 's';
+  //       wordElement.style.animationDelay = delay;
 
-        // Randomize animation duration
-        const duration = (Math.random() * 5 + 5) + 's';
-        wordElement.style.animationDuration = duration;
+    
+  //       const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
+  //       wordElement.style.animationDirection = direction;
 
-        // Randomize animation delay
-        const delay = (Math.random() * 3) + 's';
-        wordElement.style.animationDelay = delay;
+        
+  //       wordElement.addEventListener('animationend', () => {
+  //         banner.removeChild(wordElement);
+  //       });
+  //     });
+  //   };
 
-        // Randomize animation direction
-        const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
-        wordElement.style.animationDirection = direction;
+  //   generateFloatingWords();
 
-        // Remove word after animation ends
-        wordElement.addEventListener('animationend', () => {
-          banner.removeChild(wordElement);
-        });
-      });
-    };
+  //   // Set interval to generate new words periodically
+  //   const interval = setInterval(generateFloatingWords, 10000);
 
-    generateFloatingWords();
-
-    // Set interval to generate new words periodically
-    const interval = setInterval(generateFloatingWords, 10000);
-
-    // Clean up interval on component unmount
-    return () => clearInterval(interval);
-  }, []); 
-
-
+  //   // Clean up interval on component unmount
+  //   return () => clearInterval(interval);
+  // }, []); 
   return (
-
     <div >
-      <section className=" mt-24 h-[650px] text-white bg-[#1e1b4b]  lg:mt-0 md:mt-10">
+      <section className=" mt-24 h-[650px] text-white   lg:mt-0 md:mt-10">
         <div className="container  flex flex-col p-20  justify-center items-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
           <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
             {/* <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl ">
@@ -116,11 +93,33 @@ const Banner = () => {
       repeat={Infinity}
     />
             <p className="mt-6 mb-8 text-lg sm:mb-12 ">
-              Explore global communication without limits.
+            <Animation
+  type="zoomIn"
+  duration="1000ms"
+  delay="0s"
+  direction="normal"
+  timing="ease"
+  iteration="1"
+  fillMode="none">
+  
+</Animation>
+ <Typewriter
+            text={
+                [
+                "  Explore global communication without limits. Seamlessly translate languages, unlocking a world of words at your fingertips.",
+                ]
+            }
+            speed={40}
+            isLoop
+            loopDelay={4000}
+            ClassName="text-white"
+        />
+             
               <br className="hidden md:inline lg:hidden" />
-              Seamlessly translate languages, unlocking a world of words at your
-              fingertips.
+           
+
             </p>
+           
 
             <div className="gap-5">
              <button className="bg-indigo-950  border-b-2 mr-5 rounded-lg">
@@ -144,16 +143,7 @@ const Banner = () => {
             </Link>
              </button>
             </div>
-            {/* <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-              <Link to={"/translate"}>
-                <button className="btn  btn-outline border-0 border-[##2b3440] hover:bg-[#2b3440] hover:border-[#2b3440] border-b-4 hover:text-white">
-                  Lets Translate
-                </button>
-              </Link>
-              <button className="btn  btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
-                Explore Us
-              </button>
-            </div> */}
+           
           </div>
           <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
@@ -161,18 +151,9 @@ const Banner = () => {
               alt=""
               className="object-contain h-72 sm:h-80 lg:h-[420px] w-[400px] xl:h-112 2xl:h-128"
             />
-
           </div>
         </div>
-
-        <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-          <img
-            src={img1}
-            alt=""
-            className="object-contain h-72 sm:h-80 lg:h-[420px] w-[400px] xl:h-112 2xl:h-128"
-          />
-        </div>
-      </div>
+      </section>
     </div>
   );
 };
