@@ -210,7 +210,7 @@ const ManageBlogs = () => {
                 {showFullContent1 ? "Read Less" : "Read More"}
               </button>
               <div className=" flex gap-5">
-                <Link to={`/dashboard/updateBlog/:${blog._id}`}>
+                <Link to={`/dashboard/blogs/${blog._id}`}>
                   <button className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
                     Update
                   </button>

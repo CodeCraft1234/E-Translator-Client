@@ -8,7 +8,7 @@ const Dashboard = ({ showSidebar }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <div
         className={`bg-blue-600 w-64 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
@@ -17,8 +17,10 @@ const Dashboard = ({ showSidebar }) => {
         <ul className="menu  text-center text-lg md:text-xl">
           {user && (
             <div className="w-[250px]">
+                <img className="w-44 mx-auto" src="https://i.ibb.co/BjZTK4r/E-translator.png" alt="" />
               <div className="avatar">
                 <div className=" flex w-14 rounded-full">
+                
                   <img src={user?.photoURL} />
                 </div>
                 <div>

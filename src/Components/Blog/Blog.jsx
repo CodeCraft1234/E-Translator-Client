@@ -2,27 +2,35 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import UseBlogs from "../../AxiosFetch/UseBlogs";
 
-const TranslationPlatformBlog = () => {
-  const [blogs] = UseBlogs();
-  const [showFullContent, setShowFullContent] = useState(Array(blogs.length).fill(false));
 
-  const toggleContent = (index) => {
-    const newShowFullContent = [...showFullContent];
-    newShowFullContent[index] = !newShowFullContent[index];
-    setShowFullContent(newShowFullContent);
+
+
+const TranslationPlatformBlog = () => {
+  const [showFullContent1, setShowFullContent1] = useState(false);
+  const [blogs, refetch] = UseBlogs();
+
+
+  const toggleContent = (cardNumber) => {
+    switch (cardNumber) {
+      case 1:
+        setShowFullContent1(!showFullContent1);
+        break;
+      default:
+        break;
+    }
   };
 
-  const renderContent = (content, index) => {
+  const renderContent = (content, showFullContent) => {
     const maxLength = 150;
-    const currentShowFullContent = showFullContent[index];
-
-    if (currentShowFullContent) {
+    if (showFullContent) {
       return content;
     }
-
-    return content.length > maxLength ? content.substring(0, maxLength) + "..." : content;
+    return content.length > maxLength
+      ? content.substring(0, maxLength) + "..."
+      : content;
   };
 
+ 
   return (
     <div className="bg-base-300 p-4 mt-16 lg:px-28 md:px-10 px-5">
       <Helmet>
@@ -30,65 +38,27 @@ const TranslationPlatformBlog = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
 
-      {blogs.map((blog, index) => (
-        <div
-          key={blog._id}
-          className="dark:bg-gray-800 flex mt-10 justify-center items-center dark:text-gray-100"
-        >
-          <img className="w-60 h-full" src={blog.photo} alt="" />
-          <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-900">
-            <div className="flex items-center justify-between">
-              <span className="text-sm dark:text-gray-400">{blog.date}</span>
-              <a
-                rel="noopener noreferrer"
-                href="#-1"
-                className="px-2 py-1 font-bold rounded dark:bg-violet-400 dark:text-gray-900"
-              ></a>
-            </div>
-            <div className="mt-3">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="text-2xl font-bold hover:underline"
-              >
-                {blog.title}
-              </a>
-              <p className="mt-2">
-                {" "}
-                {renderContent(`${blog.description}`, index)}
+      <div className="grid gap-6 overflow-hidden ">
+        {blogs.map((blog) => (
+          <>
+            <div key={blog._id} className="bg-[#006bcb] dark:bg-gray-800 p-4 rounded-lg shadow-md ">
+              <img
+                className=" w-full h-72 rounded-lg"
+                src={blog.photo}
+                alt="" /></div>
+             <div className="mt-4">
+              <h3 className="text-xl font-semibold">{blog.title}</h3>
+              <p className="mt-2 text-gray-600">
+                {renderContent(blog.description, showFullContent1)}
               </p>
-            </div>
-            <div className="flex items-center justify-between mt-4">
-              <button onClick={() => toggleContent(index)}>
-                <a
-                  rel="noopener noreferrer"
-                  href="#-2"
-                  className="btn btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm"
-                >
-                  {showFullContent[index] ? "Read Less" : "Read More"}
-                </a>
+             </div><div className="flex justify-between items-center mt-4">
+              <button onClick={() => toggleContent(1)} className="text-blue-500 hover:underline">
+                {showFullContent1 ? "Read Less" : "Read More"}
               </button>
-
-              <div>
-                <a
-                  rel="noopener noreferrer"
-                  href="#-3"
-                  className="flex items-center"
-                >
-                  <img
-                    src="https://source.unsplash.com/50x50/?portrait"
-                    alt="avatar"
-                    className="object-cover w-10 h-10 mx-4 rounded-full dark:bg-gray-500"
-                  />
-                  <span className="hover:underline dark:text-gray-400">
-                    Leroy Jenkins
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
+             
+            </div></>
+        ))}
+      </div>
     </div>
   );
 };

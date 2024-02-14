@@ -33,7 +33,7 @@ const Checkout = () => {
 
     console.log(product);
 
-    fetch(`http://localhost:5000/order/${id}`, {
+    fetch(`https://http://localhost:5000/order/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -51,9 +51,15 @@ const router = createBrowserRouter([
         element: <Features></Features>,
       },
       {
+        path:'/checkout',
+        element:<Checkout></Checkout>
+
+      },
+      {
         path: "/translate",
         element: <Translate />,
       },
+
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
@@ -64,7 +70,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile/>,
+        element: <PrivateRoute><Profile/></PrivateRoute>,
       },
       {
         path: "/login",
@@ -80,6 +86,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/order/:id",
+        
         element: (
           <PrivateRoute>
             <Checkout></Checkout>
@@ -137,8 +144,9 @@ const router = createBrowserRouter([
         element: <ManageBlogs></ManageBlogs>,
       },
       {
-        path: "/dashboard/updateBlog/:id",
-        element: <UpdateBlog></UpdateBlog>
+        path: "/dashboard/blogs/:id",
+        element: <UpdateBlog></UpdateBlog>,
+        loader:({params})=>fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
       },
     ],
   },
