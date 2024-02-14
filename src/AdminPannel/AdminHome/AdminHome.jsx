@@ -5,6 +5,8 @@ import { HiUserGroup } from "react-icons/hi2";
 import SkilitonLoader from "../SkilitonLoader/SkilitonLoader";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 import { MdOutlineSubscriptions } from "react-icons/md";
+import { FcFeedback } from "react-icons/fc";
+
 
 const AdminHome = () => {
   const { user } = useContext(AuthContext);
@@ -32,13 +34,13 @@ const AdminHome = () => {
       {loading ? (
         <SkilitonLoader />
       ) : (
-        <div>
-          <h1 className="py-6 text-center text-xl font-semibold">
+        <div className="text-white bg-[#031321] p-10 min-h-screen">
+          <h1 className="py-6 text-white bg-[#031321] text-xl font-semibold">
             Welcome back{" "}
-            <span className=" font-bold text-cyan-600"> @{user?.displayName || "Guest"}</span>
+            <span className="  font-bold text-cyan-600"> @{user?.displayName || "Guest"}</span>
           </h1>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-2">
+          <div className="grid  lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2">
             <div className="card w-96 bg-base-100  h-56 flex-shrink-0">
               <div className="card-body bg-[#D35400] rounded-xl ml-5">
                 <h2 className="card-title text-white text-2xl">
@@ -53,7 +55,7 @@ const AdminHome = () => {
               </div>
             </div>
             <div className="card w-96 bg-base-100  h-56 flex-shrink-0">
-              <div className="card-body bg-[#0660F8] rounded-xl ml-5">
+              <div className="card-body bg-[#1F618D] rounded-xl ml-5">
                 <h2 className="card-title text-white text-2xl ">
                   <MdOutlineSubscriptions /> Subscription
                 </h2>
@@ -73,6 +75,17 @@ const AdminHome = () => {
                 <p className="text-white text-2xl ">Click Users: 70</p>
                 <div className="card-actions justify-center">
                 
+                </div>
+              </div>
+            </div>
+            <div className="card w-96 bg-base-100 h-56 flex-shrink-0">
+              <div className="card-body bg-[#34495E] rounded-xl ml-5">
+                <h2 className="card-title text-white text-2xl ">
+                  <FcFeedback  /> Feedback & Rating
+                </h2>
+                <p className="text-white text-2xl ">Ratings: 3.5</p>
+                <p className="text-white text-2xl ">Feedback: 20</p>
+                <div className="card-actions justify-center">
                 </div>
               </div>
             </div>

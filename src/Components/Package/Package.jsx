@@ -103,13 +103,24 @@ const Package = () => {
                         <span>{feature}</span>
                       </li>
                     ))}
+                    <button
+                         onClick={plan.action} 
+                             className="bg-indigo-950 mx-5  border-b-2 rounded-lg">
+             <a className="b" >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Get {plan.name} Plan
+              </a>
+             </button>
                   </ul>
-                  <button
+                  {/* <button
                     onClick={plan.action}
                     className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                   >
                     Get {plan.name} Plan
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}

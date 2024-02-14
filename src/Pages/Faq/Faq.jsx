@@ -1,7 +1,7 @@
 const Faq = () => {
   return (
     <div>
-      <section className="dark:bg-gray-800 dark:text-gray-100">
+      <section className="dark:bg-gray-800  dark:text-gray-100">
         <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
           <h2 className="text-2xl font-semibold sm:text-4xl">
             Frequently Asked Questions

@@ -32,7 +32,7 @@ const TranslationPlatformBlog = () => {
 
  
   return (
-    <div className="bg-base-300 p-4 mt-16 lg:px-28 md:px-10 px-5">
+    <div className="bg-[#031321] text-white p-4 mt-16 lg:px-28 md:px-10 px-5">
       <Helmet>
         <title> E-Translator | Blogs</title>
         <link rel="canonical" href="https://www.tacobell.com/" />

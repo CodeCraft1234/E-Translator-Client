@@ -1,6 +1,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera } from "react-icons/fa";
+import { useContext } from "react";
 import { MdKeyboardVoice } from "react-icons/md";
 import lang from "../Translate/Languages/languages";
 import toast from "react-hot-toast";
@@ -9,9 +10,14 @@ import { FaRegFilePdf, FaStar } from "react-icons/fa";
 import { RiHistoryLine } from "react-icons/ri";
 import { FaUserGroup } from "react-icons/fa6";
 import { pdfjs } from "react-pdf";
-import BannerBg from "../../Components/Features/BG";
+
+import { AuthContext } from "../../Security/AuthProvider"
+import Feedback from "../../Components/Feedback/Feedback";
+import MyRating from "../../Components/Rating/MyRating";
+
 
 function Translator() {
+  const { user } = useContext(AuthContext);
   const initialFromLanguage = "en-GB";
   const initialToLanguage = "bn-IN";
   const [fromText, setFromText] = useState("");
@@ -148,7 +154,7 @@ function Translator() {
   };
 
   const fetchTranslationHistory = () => {
-    fetch("http://localhost:5000/api/history")
+    fetch("https://e-translator-server.vercel.app/api/history")
       .then((res) => res.json())
       .then((data) => {
         setTranslationHistory(data);
@@ -176,7 +182,7 @@ function Translator() {
         toLanguage,
       };
 
-      fetch("http://localhost:5000/api/history", {
+      fetch("https://e-translator-server.vercel.app/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -341,10 +347,10 @@ function Translator() {
   };
 
   return (
-    <div className="bg-[#5170ea] dark:bg-slate-800 flex items-center justify-center">
-      
+
+    <div className="text-black bg-[#031321]  flex items-center justify-center">
       <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-28">
-        <h1 className="text-2xl text-center font-bold mb-4">
+        <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
 
@@ -523,18 +529,52 @@ function Translator() {
               <h2>History</h2>
             </button>
           </div>
-          <button className="text-[#4392d9] ml-5">
-            <div className="p-3 border border-[#4392d9] rounded-full">
-              <FaStar size={40} />
+          {
+            user && <div><button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_1').showModal()} >
+              <div className="p-3 border border-[#4392d9] rounded-full">
+                <FaStar size={40} />
+              </div>
+              <h2 className="text-center">Rating</h2>
+            </button>
+              <dialog id="my_modal_1" className="modal">
+                <div className="modal-box">
+                  <h3 className="font-bold text-lg">Have a moment?</h3>
+                  <p className="py-4">How would you rate this product?</p>
+                  <MyRating></MyRating>
+                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </div>
-            <h2>Rating</h2>
-          </button>
-          <button className="text-[#4392d9] ml-5">
-            <div className="p-3 border border-[#4392d9] rounded-full">
-              <FaUserGroup size={40} />
-            </div>
-            <h2>Feedback</h2>
-          </button>
+          }
+          {user && <div>
+            <button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_2').showModal()} >
+              <div className="p-3 border border-[#4392d9] rounded-full">
+                <FaUserGroup size={40} />
+              </div>
+              <h2 className="text-center">Feedback</h2>
+            </button>
+            <dialog id="my_modal_2" className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Please share your feedback</h3>
+
+                <Feedback></Feedback>
+                {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn">Close</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </div>
+          }
         </div>
       </div>
 
@@ -585,6 +625,3 @@ function Translator() {
 }
 
 export default Translator;
-
-
-
