@@ -84,7 +84,7 @@ const Features = () => {
   };
 
   return (
-    <div className="lg:px-24 md:px-8 px-5 my-12">
+    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5 mt-8">
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
