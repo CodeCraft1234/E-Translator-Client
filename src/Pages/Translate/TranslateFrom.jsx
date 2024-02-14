@@ -10,9 +10,11 @@ import { FaRegFilePdf, FaStar } from "react-icons/fa";
 import { RiHistoryLine } from "react-icons/ri";
 import { FaUserGroup } from "react-icons/fa6";
 import { pdfjs } from "react-pdf";
+
 import { AuthContext } from "../../Security/AuthProvider"
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
+
 
 function Translator() {
   const { user } = useContext(AuthContext);
@@ -39,6 +41,7 @@ function Translator() {
 
   const imageInput = useRef(null);
   const typingTimer = useRef(null);
+  
 
   useEffect(() => {
     setLanguages(lang);
@@ -344,6 +347,7 @@ function Translator() {
   };
 
   return (
+
     <div className="text-black bg-[#031321]  flex items-center justify-center">
       <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-28">
         <h1 className="text-2xl text-center text-black font-bold mb-4">
@@ -351,6 +355,7 @@ function Translator() {
         </h1>
 
         <div className="mb-4 flex items-center">
+       
           <div className="w-1/2 pr-2">
             <label className="block text-sm font-medium">From Language:</label>
             <textarea

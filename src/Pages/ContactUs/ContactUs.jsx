@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Security/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
+
 const Contact = () => {
   const form = useRef();
   const { user } = useContext(AuthContext);
@@ -122,6 +123,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+     
     </div>
   );
 };
