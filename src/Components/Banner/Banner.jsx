@@ -56,7 +56,9 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import img1 from "../../assets/415877263_437231245391700_6340538220268059695_n.png";
 import "./Banner.css"; // Import CSS file for styling
-import BannerBg from "../Features/BG";
+
+
+import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   // const particlesInit = useCallback(async (engine) => {

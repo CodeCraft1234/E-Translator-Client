@@ -33,7 +33,11 @@ const Checkout = () => {
 
     console.log(product);
 
+<<<<<<< HEAD
     fetch(`https://http://localhost:5000/order/${id}`, {
+=======
+    fetch(`https://e-translator-server.vercel.app/order/${id}`, {
+>>>>>>> abae3d4c93a599036d3b55cec504e51f74bfa6b6
       method: "POST",
       headers: {
         "Content-Type": "application/json",

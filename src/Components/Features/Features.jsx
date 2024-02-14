@@ -67,6 +67,11 @@ const Features = () => {
       name: "Translation Direction",
       description: `Provide real-time translation results as users type, enhancing the user experience. This feature ensures dynamic translation feedback, contributing to a seamless and responsive translation process based on user input.`,
     },
+    {
+      image: "https://www.pdfgear.com/chat-pdf/img/pdf-language-translator-1.png",
+      name: "PDF to Text Translator",
+      description: "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
+      }
   ];
 
   const featureVariants = {
@@ -138,7 +143,11 @@ const Features = () => {
   //   </div>
   // );
   return (
+<<<<<<< HEAD
     <div className="lg:px-24 md:px-8 px-5 my-12 relative"> {/* Ensure relative positioning */}
+=======
+    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5 mt-8">
+>>>>>>> abae3d4c93a599036d3b55cec504e51f74bfa6b6
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -157,6 +166,7 @@ const Features = () => {
             transition={{ delay: index * 0 }}
             whileHover={{ scale: 1.05, boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)" }}
           >
+<<<<<<< HEAD
             <div className="card-content">
               <img
                 src={feature.image}
@@ -182,6 +192,33 @@ const Features = () => {
                     )}
                   </p>
                 </div>
+=======
+            <img
+              src={feature.image}
+              alt=""
+              className="border  object-center w-full rounded-t-md h-44 dark:bg-gray-500"
+            />
+            <div className="flex flex-col justify-between p-6 space-y-8 ">
+              <div className="space-y-2">
+                <h2 className="text-2xl font-semibold tracking">
+                  {feature.name}
+                </h2>
+                <p className="dark:text-gray-200">
+                  {expandedIndex === index
+                    ? feature.description
+                    : `${feature.description.slice(0, 100)}${
+                        feature.description.length > 100 ? "..." : ""
+                      } `}
+                  {feature.description.length > 100 && (
+                    <span
+                      className="text-blue-500 cursor-pointer"
+                      onClick={() => handleToggleExpanded(index)}
+                    >
+                      {expandedIndex === index ? "Show Less" : "Show More"}
+                    </span>
+                  )}
+                </p>
+>>>>>>> abae3d4c93a599036d3b55cec504e51f74bfa6b6
               </div>
             </div>
           </motion.div>
