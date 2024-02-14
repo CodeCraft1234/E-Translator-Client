@@ -52,7 +52,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  bg-base-100 rounded-box w-52 "
           >
             <li>
               <NavLink to={"/"}>Home</NavLink>
@@ -70,18 +70,21 @@ const NavBar = () => {
               <NavLink to={"/blog"}>Blogs</NavLink>
             </li>
             <li>
-              {user?.email === "admin@gmail.com" ? (
-                <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
-              ) : (
-                <></>
-              )}
-            </li>
+            <NavLink to={"/profile"}>Profile</NavLink>
+          </li>
+            <li>
+            {user?.email === "admin@gmail.com" ? (
+              <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
+            ) : (
+              <></>
+            )}
+          </li>
           </ul>
         </div>
         <div>
           <Link to={"/"}>
             <img
-              className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px] w-[100px] h-[30px]"
+              className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px]  w-[100px] h-[30px] lg:pr-5 md:pr-0 pr-0"
               src="https://i.ibb.co/BjZTK4r/E-translator.png"
               alt=""
             />
@@ -112,7 +115,7 @@ const NavBar = () => {
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
             ) : (
-        <></>
+              <></>
             )}
           </li>
         </ul>
@@ -149,7 +152,7 @@ const NavBar = () => {
 
         <div className="items-center">
           {user?.displayName ? (
-            <div className="dropdown   center">
+            <div className="dropdown center">
               <label tabIndex={0}>
                 <div>
                   <img
@@ -157,7 +160,7 @@ const NavBar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                  <h1 className="lowercase">Profile</h1>
+                  <h1 className="lowercase">Logout</h1>
                 </div>
               </label>
               <ul
@@ -167,7 +170,7 @@ const NavBar = () => {
                 <div className="dropdown ">
                   <div
                     tabIndex={0}
-                    className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-white text-black"
+                    className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-base-100 border text-black"
                   >
                     <figure>
                       <img
@@ -176,12 +179,11 @@ const NavBar = () => {
                         alt="Shoes"
                       />
                     </figure>
-                    <div className="card-body">
-                      <h1> Name: {user?.displayName}</h1>
+                    <div className="card-body ">
+                      {/* <h1> Name: {user?.displayName}</h1> */}
                       <hr />
-                      <h1>{user?.email}</h1>
-                      <hr />
-                      <h1>Date of Birth :</h1>
+
+
                       <NavLink
                         onClick={handleLogOut}
                         className={({ isActive, isPending }) =>
@@ -192,7 +194,7 @@ const NavBar = () => {
                             : "mr-5 hover:text-gray-100"
                         }
                       >
-                        <button className="btn  btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm">
+                        <button className="btn btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm">
                           LogOut
                         </button>
                       </NavLink>

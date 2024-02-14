@@ -66,7 +66,7 @@ const Package = () => {
               Choose your best plan
             </h2>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
             {plans.map((plan, index) => (
               <div
                 key={index}

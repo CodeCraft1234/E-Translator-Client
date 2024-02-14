@@ -7,7 +7,7 @@ const Banner = () => {
       <section className=" mt-10 lg:mt-0 md:mt-10">
         <div className="container flex flex-col  justify-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
           <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
-            <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl ">
+            <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl lg:mt-0 md:mt-0 mt-10">
               Decode
               <span className=""> the World of Words </span>
             </h1>
@@ -23,9 +23,11 @@ const Banner = () => {
                   Lets Translate
                 </button>
               </Link>
-              <button className="btn  btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
-                Explore Us
-              </button>
+              <Link>
+                <button className="btn  btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white ">
+                  Explore Us
+                </button>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
