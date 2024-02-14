@@ -13,8 +13,6 @@ import img10 from "../../assets/direct.jpg";
 
 import { Helmet } from "react-helmet-async";
 
-import BannerBg from "./BG";
-
 const Features = () => {
   const features = [
     {
@@ -85,82 +83,29 @@ const Features = () => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  // return (
-  //   <div className="lg:px-24 md:px-8 px-5 my-12">
-  
-  //     <Helmet>
-  //       <title> E-Translator | Features</title>
-  //       <link rel="canonical" href="https://www.tacobell.com/" />
-  //     </Helmet>
-  //     <BannerBg></BannerBg>
-  //     <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
-  //       Our features
-  //     </h3>
-  //     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 py-10 mx-10">
-  //       {features.map((feature, index) => (
-  //         <motion.div
-  //           key={index}
-  //           className="max-w-xs rounded-xl shadow-2xl border"
-  //           variants={featureVariants}
-  //           initial="hidden"
-  //           animate="visible"
-  //           transition={{ delay: index * 0 }}
-  //           whileHover={{
-  //             scale: 1.05,
-  //             boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-  //           }}
-  //         >
-  //           <img
-  //             src={feature.image}
-  //             alt=""
-  //             className="border  object-center w-full rounded-t-md h-44 dark:bg-gray-500"
-  //           />
-  //           <div className="flex flex-col justify-between p-6 space-y-8 ">
-  //             <div className="space-y-2">
-  //               <h2 className="text-3xl font-semibold tracking">
-  //                 {feature.name}
-  //               </h2>
-  //               <p className="dark:text-gray-100">
-  //                 {expandedIndex === index
-  //                   ? feature.description
-  //                   : `${feature.description.slice(0, 100)}${
-  //                       feature.description.length > 100 ? "..." : ""
-  //                     } `}
-  //                 {feature.description.length > 100 && (
-  //                   <span
-  //                     className="text-blue-500 cursor-pointer"
-  //                     onClick={() => handleToggleExpanded(index)}
-  //                   >
-  //                     {expandedIndex === index ? "Show Less" : "Show More"}
-  //                   </span>
-  //                 )}
-  //               </p>
-  //             </div>
-  //           </div>
-  //         </motion.div>
-  //       ))}
-  //     </div>
-  //   </div>
-  // );
   return (
     <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5 mt-8">
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-     {/* Particle animation component */}
-      <h3 className="mt-20 text-center text-5xl font-bold py-10 ">Our features</h3>
-      <BannerBg />
+    
+      <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
+        Our features
+      </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 py-10 mx-10">
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="max-w-xs rounded-xl shadow-2xl border relative z-10" // Ensure the cards have higher z-index
+            className="max-w-xs rounded-xl shadow-2xl border"
             variants={featureVariants}
             initial="hidden"
             animate="visible"
             transition={{ delay: index * 0 }}
-            whileHover={{ scale: 1.05, boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)" }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+            }}
           >
             <img
               src={feature.image}

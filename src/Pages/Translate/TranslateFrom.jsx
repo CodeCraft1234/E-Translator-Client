@@ -10,9 +10,11 @@ import { FaRegFilePdf, FaStar } from "react-icons/fa";
 import { RiHistoryLine } from "react-icons/ri";
 import { FaUserGroup } from "react-icons/fa6";
 import { pdfjs } from "react-pdf";
+
 import { AuthContext } from "../../Security/AuthProvider"
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
+
 
 function Translator() {
   const { user } = useContext(AuthContext);
