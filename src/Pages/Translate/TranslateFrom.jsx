@@ -344,9 +344,9 @@ function Translator() {
   };
 
   return (
-    <div className="bg-[#5170ea] dark:bg-slate-800 flex items-center justify-center">
+    <div className="text-black bg-[#031321]  flex items-center justify-center">
       <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-28">
-        <h1 className="text-2xl text-center font-bold mb-4">
+        <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
 
