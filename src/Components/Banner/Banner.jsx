@@ -23,7 +23,7 @@ const Banner = () => {
         1000,
         'Lets Decode the World of PDF',
         1000,
-        'Lets Decode the World of Sentense',
+        'Lets Decode the World of Sentence',
         1000
       ]}
       wrapper="span"
@@ -49,13 +49,15 @@ const Banner = () => {
               </a></Link>
              </button>
              <button className="bg-indigo-950 border-b-2 rounded-lg">
-             <a className="b" href="">
+            <Link to={'/chat'}>
+            <a className="b" >
               <span></span>
               <span></span>
               <span></span>
               <span></span>
-              Explore Us
+              Live Support
               </a>
+            </Link>
              </button>
             </div>
             {/* <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
