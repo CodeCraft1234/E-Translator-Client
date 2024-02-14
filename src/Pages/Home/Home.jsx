@@ -5,6 +5,7 @@ import Faq from "../../Components/Faq/Faq";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import Package from "../../Components/Package/Package";
 import Review from "../../Components/Review/Review";
+import Card from "../../Components/Card";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <ChooseUs></ChooseUs>
       <NewsLetter></NewsLetter>
       <Faq></Faq>
+      <Card></Card>
     </div>
   );
 };
