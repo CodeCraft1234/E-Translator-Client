@@ -188,3 +188,20 @@ body {
 .hide {
   opacity: 0 !important;
 }
+
+/* Responsive styles using media queries */
+
+@media only screen and (max-width: 600px) {
+  .chat-window {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .chat-window .chat-body {
+    height: calc(100% - (45px + 40px));
+  }
+
+  .joinChatContainer h3 {
+    font-size: 1.5rem;
+  }
+}
