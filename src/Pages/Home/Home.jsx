@@ -11,6 +11,7 @@ import Card from "../../Components/Card";
 const Home = () => {
   return (
     <div className="lg:px-28 bg-[#031321] text-white md:px-10 px-5">
+
        <Helmet>
         <title> E-Translator | Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />

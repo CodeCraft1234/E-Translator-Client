@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
 function ChatTwo({ socket, username, room }) {
@@ -24,7 +24,7 @@ function ChatTwo({ socket, username, room }) {
   };
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
+    socket.off("receive_message").on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
     });
   }, [socket]);

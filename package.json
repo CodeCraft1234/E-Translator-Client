@@ -44,15 +44,23 @@
     "react-scroll-to-bottom": "^4.2.0",
     "react-select": "^5.8.0",
     "react-speech-recognition": "^3.10.0",
+
     "react-tilt": "^1.0.2",
+
+
+    "react-tsparticles": "^2.12.2",
+
+
     "react-type-animation": "^3.2.0",
     "rollup": "^4.10.0",
+
     "socket.io": "^4.7.4",
     "socket.io-client": "^4.7.4",
     "sort-by": "^1.2.0",
     "split-type": "^0.3.4",
     "sweetalert2": "^11.10.4",
-    "tesseract.js": "^5.0.4"
+    "tesseract.js": "^5.0.4",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
@@ -69,6 +77,6 @@
     "postcss": "^8.4.31",
     "regenerator-runtime": "^0.14.1",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.0.11"
+    "vite": "^5.1.1"
   }
 }
