@@ -10,7 +10,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="mt-24 mx-auto max-w-md bg-[#031321] text-white p-6 rounded-md shadow-md">
+    <div className="mt-24 mx-auto max-w-md text-white bg-[#031321] p-6 rounded-md shadow-md">
       <div className="text-center mb-4">
         <div className="w-24 h-24 rounded-full overflow-hidden mx-auto animate-bounce">
           <img
