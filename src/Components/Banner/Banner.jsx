@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import img1 from "../../assets/415877263_437231245391700_6340538220268059695_n.png";
 import { TypeAnimation } from "react-type-animation";
 import "./Banner.css"
+
 // import { useEffect } from "react";
 import { Animation, Typer } from 'react-easy-animations'
 import Typewriter from 'react-text-writer'
@@ -64,6 +65,66 @@ const Banner = () => {
   //   // Clean up interval on component unmount
   //   return () => clearInterval(interval);
   // }, []); 
+
+import { useEffect } from "react";
+const Banner = () => {
+  useEffect(() => {
+    
+    const words = [
+      'Hello',
+      "প্রোগ্রামিং হিরো",
+      'বাংলা', 
+      'Bonjour',
+      'Hola',
+      'Ciao',
+      'こんにちは',
+      '안녕하세요',
+      'Привет', 
+      'مرحبا', 
+      'नमस्ते', 
+      'გამარჯობა', 
+      'CodeCrafters'
+  
+    ];
+    
+    const generateFloatingWords = () => {
+      const banner = document.querySelector('.banner-container');
+      if (!banner) return;
+
+      words.forEach(word => {
+        const wordElement = document.createElement('div');
+        wordElement.classList.add('floating-word');
+        wordElement.textContent = word;
+        banner.appendChild(wordElement);
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        wordElement.style.left = `${x}px`;
+        wordElement.style.top = `${y}px`;
+
+        const duration = (Math.random() * 5 + 5) + 's';
+        wordElement.style.animationDuration = duration;
+
+      
+        const delay = (Math.random() * 3) + 's';
+        wordElement.style.animationDelay = delay;
+
+    
+        const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
+        wordElement.style.animationDirection = direction;
+
+        
+        wordElement.addEventListener('animationend', () => {
+          banner.removeChild(wordElement);
+        });
+      });
+    };
+
+    generateFloatingWords();
+    const interval = setInterval(generateFloatingWords, 10000);
+    return () => clearInterval(interval);
+  }, []); 
+  
+
   return (
     <div >
       <section className=" mt-24 h-[650px] text-white   lg:mt-0 md:mt-10">

@@ -85,12 +85,17 @@ const Features = () => {
   };
 
   return (
+
     <div className="lg:px-24 md:px-8   px-5 mt-8">
-      <BG></BG>
+     
+
+  
+
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
+
       <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
         Our features
       </h3>
@@ -109,7 +114,7 @@ const Features = () => {
               boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
             }}
           >
-            
+
             <img
               src={feature.image}
               alt=""
