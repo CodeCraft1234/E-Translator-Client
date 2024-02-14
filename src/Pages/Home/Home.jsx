@@ -5,17 +5,19 @@ import Faq from "../../Components/Faq/Faq";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import Package from "../../Components/Package/Package";
 import Review from "../../Components/Review/Review";
+import LiveChat from "../LiveChat/LiveChat";
 
 
 const Home = () => {
   return (
     <div className="lg:px-28 bg-[#031321] text-white md:px-10 px-5">
-
+       
        <Helmet>
         <title> E-Translator | Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <Banner></Banner>
+      <LiveChat/>
       <Package></Package>
       <Review></Review>
       <ChooseUs></ChooseUs>

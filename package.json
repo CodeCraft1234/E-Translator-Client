@@ -31,7 +31,6 @@
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "pdfjs-dist": "^4.0.379",
-    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-helmet-async": "^2.0.4",
@@ -41,15 +40,11 @@
     "react-pdf": "^7.7.0",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.16.0",
-    "react-scroll-to-bottom": "^4.2.0",
     "react-select": "^5.8.0",
     "react-speech-recognition": "^3.10.0",
-
     "react-tsparticles": "^2.12.2",
-
     "react-type-animation": "^3.2.0",
     "rollup": "^4.10.0",
-
     "socket.io": "^4.7.4",
     "socket.io-client": "^4.7.4",
     "sort-by": "^1.2.0",
