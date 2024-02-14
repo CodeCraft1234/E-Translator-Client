@@ -11,7 +11,7 @@ const Root = () => {
   const noheaderfooter=location.pathname.includes('login')
  
   return (
-    <div>
+    <div className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]">
           <div >
            { noheaderfooter || <Navbar></Navbar>}
            <div className="min-h-screen">
