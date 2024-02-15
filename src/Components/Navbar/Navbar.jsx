@@ -57,6 +57,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
+
             className="menu menu-sm dropdown-content  bg-violet-950 mt-3 z-[1] p-2 shadow  rounded-box w-52 "
           >
           <li>
@@ -86,21 +87,21 @@ const NavBar = () => {
       <></>
     )}
   </li>
+
           </ul>
         </div>
         <div>
           <Link to={"/"}>
-        
             <img
               className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
               src="https://i.ibb.co/BjZTK4r/E-translator.png"
               alt=""
             />
-            
           </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
+
         <ul className="menu menu-horizontal items-center px-1 flex gap-4">
         <li>
 
@@ -121,17 +122,23 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink to={"/contact"}><img className="h-8 w-8" src="https://i.ibb.co/hg15vQ2/phone-call-icon-with-conversation-3d-render-png.webp" alt="" />Contact</NavLink>
+
           </li>
-        
+
           <li>
+
             <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
+
           </li>
+
           <li>
+
             <NavLink to={"/profile"}><img className="h-10 w-10" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
           </li>
           <li>
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}><img className="h-8 w-8" src="https://i.ibb.co/ZgKDvpZ/business-icon-dashboard-3d-illustration-png.webp" alt="" />Dashbord</NavLink>
+
             ) : (
               <></>
             )}
@@ -170,7 +177,7 @@ const NavBar = () => {
 
         <div className="items-center">
           {user?.displayName ? (
-            <div className="dropdown   center">
+            <div className="dropdown center">
               <label tabIndex={0}>
                 <div>
                   <img
@@ -178,7 +185,6 @@ const NavBar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                 
                 </div>
               </label>
               <ul
@@ -188,7 +194,7 @@ const NavBar = () => {
                 <div className="dropdown ">
                   <div
                     tabIndex={0}
-                    className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-white text-black"
+                    className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-base-100 border text-black"
                   >
                     <figure>
                       <img
@@ -197,10 +203,9 @@ const NavBar = () => {
                         alt="Shoes"
                       />
                     </figure>
-                    <div className="card-body">
+                    <div className="card-body ">
                       {/* <h1> Name: {user?.displayName}</h1> */}
                       <hr />
-
 
                       <NavLink
                         onClick={handleLogOut}
@@ -212,7 +217,7 @@ const NavBar = () => {
                             : "mr-5 hover:text-gray-100"
                         }
                       >
-                        <button className="btn  btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm">
+                        <button className="btn btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm">
                           LogOut
                         </button>
                       </NavLink>

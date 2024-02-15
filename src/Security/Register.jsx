@@ -158,7 +158,9 @@ const Register = () => {
                 </p>
               </div>
               <div className="form-control mt-4">
-                <button className="p-2 rounded bg-neutral b text-white">
+
+                <button className="p-2 rounded bg-[#1368c0] text-white">
+
                   Register
                 </button>
               </div>
