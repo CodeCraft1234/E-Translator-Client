@@ -69,7 +69,8 @@ const Banner = () => {
 
   return (
     <div >
-      <section className=" mt-24 h-[650px] text-white bg-[#1e1b4b]  lg:mt-0 md:mt-10">
+    
+      <section className=" mt-24 h-[650px] text-white bg-[#1e1b4b]  lg:mt-0 md:mt-10 ">
         <div className="container  flex flex-col p-20  justify-center items-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
           <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
             {/* <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl ">
