@@ -13,12 +13,12 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-import Dashboard from "./dashboard/Dashboard";
+// import Dashboard from "./dashboard/Dashboard";
 import {HelmetProvider } from "react-helmet-async";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
-import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
+// import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
@@ -32,9 +32,16 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
-import ManageBlogs from "./AdminPannel/AdminPages/ManageBlogs.jsx";
-import UpdateBlog from "./AdminPannel/AdminPages/UpdateBlog.jsx";
-import Profile from "./Pages/Profile/Profile.jsx";
+// import MyRating from "./Components/Rating/MyRating.jsx";
+// import Chat from './Components/Chat/Chat';
+import Profile from './Pages/Profile/Profile';
+import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
+import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
+import ChatTest from "./Components/Chat/ChatTest.jsx";
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -51,12 +58,24 @@ const router = createBrowserRouter([
         element: <Features></Features>,
       },
       {
+        path:'/checkout',
+        element:<Checkout></Checkout>
+
+      },
+      {
         path: "/translate",
         element: <Translate />,
       },
+
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/chat",
+        element: <PrivateRoute>
+          <ChatTest></ChatTest>
+        </PrivateRoute>,
       },
       {
         path: "/blog",
@@ -78,8 +97,10 @@ const router = createBrowserRouter([
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>,
       },
+      
       {
         path: "/order/:id",
+        
         element: (
           <PrivateRoute>
             <Checkout></Checkout>
@@ -137,16 +158,17 @@ const router = createBrowserRouter([
         element: <ManageBlogs></ManageBlogs>,
       },
       {
-        path: "/dashboard/updateBlog/:id",
-        element: <UpdateBlog></UpdateBlog>
+        path: "/dashboard/blogs/:id",
+        element: <UpdateBlog></UpdateBlog>,
+        loader:({params})=>fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
       },
     ],
   },
-  {
-    path: "/dashboard",
-    element:<Dashboard/>
+  // {
+  //   path: "/dashboard",
+  //   element:<Dashboard></Dashboard>
     
-  }
+  // }
 ]);
 
 const queryClient = new QueryClient();

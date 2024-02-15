@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosTest=axios.create({
-    baseURL:'http://localhost:5000'
+    baseURL:'https://e-translator-server.vercel.app'
 })
 const UseAxiosTest = () => {
     return AxiosTest

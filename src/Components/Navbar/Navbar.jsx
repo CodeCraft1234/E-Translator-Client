@@ -31,7 +31,7 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar bg-base-100 lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
+    <div className="navbar bg-base-100  lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -105,6 +105,7 @@ const NavBar = () => {
           <li>
             <NavLink to={"/contact"}>Contact</NavLink>
           </li>
+        
           <li>
             <NavLink to={"/blog"}>Blogs</NavLink>
           </li>
@@ -160,7 +161,7 @@ const NavBar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                  <h1 className="lowercase">Logout</h1>
+                 
                 </div>
               </label>
               <ul

@@ -65,6 +65,11 @@ const Features = () => {
       name: "Translation Direction",
       description: `Provide real-time translation results as users type, enhancing the user experience. This feature ensures dynamic translation feedback, contributing to a seamless and responsive translation process based on user input.`,
     },
+    {
+      image: "https://www.pdfgear.com/chat-pdf/img/pdf-language-translator-1.png",
+      name: "PDF to Text Translator",
+      description: "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
+      }
   ];
 
   const featureVariants = {
@@ -79,7 +84,7 @@ const Features = () => {
   };
 
   return (
-    <div className="lg:px-24 md:px-8 px-5 my-12">
+    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5 mt-8">
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -108,10 +113,10 @@ const Features = () => {
             />
             <div className="flex flex-col justify-between p-6 space-y-8 ">
               <div className="space-y-2">
-                <h2 className="text-3xl font-semibold tracking">
+                <h2 className="text-2xl font-semibold tracking">
                   {feature.name}
                 </h2>
-                <p className="dark:text-gray-100">
+                <p className="dark:text-gray-200">
                   {expandedIndex === index
                     ? feature.description
                     : `${feature.description.slice(0, 100)}${

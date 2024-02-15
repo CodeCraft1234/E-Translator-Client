@@ -186,7 +186,7 @@ const ManageBlogs = () => {
   };
 
   return (
-    <div className="bg-base-300 p-4 lg:px-28 md:px-10 px-5">
+    <div className="text-white bg-[#031321] p-4 lg:px-28 md:px-10 px-5">
       <Helmet>
         <title>E-Translator | Manage Blogs</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -210,17 +210,36 @@ const ManageBlogs = () => {
                 {showFullContent1 ? "Read Less" : "Read More"}
               </button>
               <div className=" flex gap-5">
-                <Link to={`/dashboard/updateBlog/:${blog._id}`}>
-                  <button className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
+                <Link to={`/dashboard/blogs/${blog._id}`}>
+                <button className="bg-indigo-950 border-b-2 rounded-lg">
+             <a className="b" href="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Update
+              </a>
+             </button>
+                  {/* <button className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
                     Update
-                  </button>
+                  </button> */}
                 </Link>
-                <button
-                  onClick={() => handleDelete(blog._id)}
+
+                <button  onClick={() => handleDelete(blog._id)} className="bg-indigo-950 border-b-2 rounded-lg">
+             <a className="b" >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Delete
+              </a>
+             </button>
+                {/* <button
+                 
                   className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Delete
-                </button>
+                </button> */}
               </div>
             </div></>
         ))}

@@ -8,7 +8,7 @@ const Dashboard = ({ showSidebar }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <div
         className={`bg-blue-600 w-64 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
@@ -24,13 +24,14 @@ const Dashboard = ({ showSidebar }) => {
                   <img src={user?.photoURL} />
                 </div>
                 <div>
+                  <br />
                 <h1>{user?.displayName}</h1>
                 </div>
               </div>
               <li className=" ">
                 <Link
                   to="/dashboard/adminHome"
-                  className="flex items-center py-2"
+                  className="flex items-center"
                 >
                   <FaHome className="mr-2" />
                   Admin Home
