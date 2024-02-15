@@ -9,8 +9,8 @@ import img6 from "../../assets/api-application-programming-interface-software-60
 import img7 from "../../assets/download (2).jpg";
 import img8 from "../../assets/istockphoto-1281150061-612x612.jpg";
 import img9 from "../../assets/pricing.jpg";
-import img10 from "../../assets/direct.jpg";
-
+import img10 from "../../assets/website translation.jpg";
+import BG from '../Features/BG.jsx'
 import { Helmet } from "react-helmet-async";
 
 const Features = () => {
@@ -62,8 +62,8 @@ const Features = () => {
     },
     {
       image: img10,
-      name: "Translation Direction",
-      description: `Provide real-time translation results as users type, enhancing the user experience. This feature ensures dynamic translation feedback, contributing to a seamless and responsive translation process based on user input.`,
+      name: " Website Translation",
+      description: `Implementing real-time translation on your website enables users to receive instant translation feedback as they type, fostering a seamless and responsive translation experience. This feature enhances user engagement and accessibility by breaking down language barriers in real-time.`,
     },
     {
       image: "https://www.pdfgear.com/chat-pdf/img/pdf-language-translator-1.png",
@@ -84,11 +84,12 @@ const Features = () => {
   };
 
   return (
-    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5 mt-8">
+    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5  border-b-2">
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
+      <BG></BG>
     
       <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
         Our features
