@@ -89,7 +89,7 @@ const Features = () => {
     <div className="lg:px-24 md:px-8   px-5 mt-8">
      
 
-  
+  <BG></BG>
 
       <Helmet>
         <title> E-Translator | Features</title>
