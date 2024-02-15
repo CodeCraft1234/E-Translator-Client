@@ -55,7 +55,7 @@ const Review = () => {
 
         <div
           className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5 mt-16"
-          data-aos="fade-up"
+          data-aos="zoom-in"
           data-aos-delay="50"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
@@ -66,7 +66,7 @@ const Review = () => {
             <div
               key={testimonial.id}
               className={`px-4 mb-8  py-5 shadow-xl rounded-md border ${
-                testimonial.rating === 3 ? "border-blue-500" : ""
+                testimonial.rating === 3 ? "bg-opacity-10 bg-white dark:bg-black dark:bg-opacity-10 p-8 rounded-lg shadow-md backdrop-blur-md" : ""
               }`}
             >
               <div className="testimonial">

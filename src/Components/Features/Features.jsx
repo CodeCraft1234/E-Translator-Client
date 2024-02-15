@@ -10,8 +10,10 @@ import img7 from "../../assets/download (2).jpg";
 import img8 from "../../assets/istockphoto-1281150061-612x612.jpg";
 import img9 from "../../assets/pricing.jpg";
 import img10 from "../../assets/website translation.jpg";
-import BG from '../Features/BG.jsx'
+import img11 from '../../assets/pdf_to_text.jpg'
+
 import { Helmet } from "react-helmet-async";
+import BG from "./BG";
 
 const Features = () => {
   const features = [
@@ -66,7 +68,7 @@ const Features = () => {
       description: `Implementing real-time translation on your website enables users to receive instant translation feedback as they type, fostering a seamless and responsive translation experience. This feature enhances user engagement and accessibility by breaking down language barriers in real-time.`,
     },
     {
-      image: "https://www.pdfgear.com/chat-pdf/img/pdf-language-translator-1.png",
+      image: img11,
       name: "PDF to Text Translator",
       description: "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
       }
@@ -90,11 +92,12 @@ const Features = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <BG></BG>
-    
+
       <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
         Our features
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 py-10 mx-10">
+        
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -108,6 +111,7 @@ const Features = () => {
               boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
             }}
           >
+
             <img
               src={feature.image}
               alt=""
