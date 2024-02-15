@@ -60,9 +60,15 @@ const router = createBrowserRouter([
         element: <Features></Features>,
       },
       {
+        path:'/checkout',
+        element:<Checkout></Checkout>
+
+      },
+      {
         path: "/translate",
         element: <Translate />,
       },
+
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
@@ -96,6 +102,7 @@ const router = createBrowserRouter([
       
       {
         path: "/order/:id",
+        
         element: (
           <PrivateRoute>
             <Checkout></Checkout>

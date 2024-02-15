@@ -2,6 +2,10 @@ import { useContext, useEffect, useState } from "react";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
+import { FaHome, FaMicroblog, FaMobile, FaMobileAlt } from "react-icons/fa";
+import { MdOutlineFeaturedPlayList, MdOutlineGTranslate } from "react-icons/md";
+import { AiFillProfile } from "react-icons/ai";
+import { RiDashboardFill } from "react-icons/ri";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -31,7 +35,7 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar bg-base-100 lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
+    <div className="navbar bg-base-100  lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,30 +58,28 @@ const NavBar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
           >
-            <li>
-              <NavLink to={"/"}>Home</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/features"}>Features</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/translate"}>Translate</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/contact"}>Contact</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/blog"}>Blogs</NavLink>
-            </li>
-            <li>
-            <NavLink to={"/profile"}>Profile</NavLink>
+             <li>
+            <NavLink to={"/"}><FaHome />Home </NavLink>
           </li>
           <li>
-            <NavLink to={"/rating"}>Rating</NavLink>
+            <NavLink to={"/features"}><MdOutlineFeaturedPlayList />Features </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/translate"}><MdOutlineGTranslate />Translate</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"}><FaMobileAlt/>Contact</NavLink>
+          </li>
+        
+          <li>
+            <NavLink to={"/blog"}> <FaMicroblog />Blogs</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/profile"}><AiFillProfile />Profile  </NavLink>
           </li>
             <li>
             {user?.email === "admin@gmail.com" ? (
-              <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
+              <NavLink to={"dashboard/adminHome"}><RiDashboardFill />Dashbord</NavLink>
             ) : (
               <></>
             )}
@@ -86,43 +88,43 @@ const NavBar = () => {
         </div>
         <div>
           <Link to={"/"}>
+        
             <img
-              className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px] w-[100px] h-[30px]"
+              className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
               src="https://i.ibb.co/BjZTK4r/E-translator.png"
               alt=""
             />
+            
           </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 flex gap-4">
-          <li>
-            <NavLink to={"/"}>Home</NavLink>
+        <li>
+            <NavLink to={"/"}><FaHome />Home </NavLink>
           </li>
           <li>
-            <NavLink to={"/features"}>Features</NavLink>
+            <NavLink to={"/features"}><MdOutlineFeaturedPlayList />Features </NavLink>
           </li>
           <li>
-            <NavLink to={"/translate"}>Translate</NavLink>
+            <NavLink to={"/translate"}><MdOutlineGTranslate />Translate</NavLink>
           </li>
           <li>
-            <NavLink to={"/contact"}>Contact</NavLink>
+            <NavLink to={"/contact"}><FaMobileAlt/>Contact</NavLink>
+          </li>
+        
+          <li>
+            <NavLink to={"/blog"}> <FaMicroblog />Blogs</NavLink>
           </li>
           <li>
-            <NavLink to={"/chat"}>Live Chat</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/blog"}>Blogs</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/profile"}>Profile</NavLink>
+            <NavLink to={"/profile"}><AiFillProfile />Profile  </NavLink>
           </li>
           <li>
             <NavLink to={"/rating"}>Rating</NavLink>
           </li>
           <li>
             {user?.email === "admin@gmail.com" ? (
-              <NavLink to={"dashboard/adminHome"}>Dashbord</NavLink>
+              <NavLink to={"dashboard/adminHome"}><RiDashboardFill />Dashbord</NavLink>
             ) : (
               <></>
             )}

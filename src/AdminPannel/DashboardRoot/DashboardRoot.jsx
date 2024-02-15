@@ -7,8 +7,8 @@ const DashboardRoot = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <div>
-      <div className="flex relative">
-        <div className="absolute md:static  lg:w-[18%] grid lg:grid-cols-[140px] top-0 gap-8 lg:gap-8  z-10">
+      <div className="flex relative ">
+        <div className="absolute md:static   lg:w-[18%] grid lg:grid-cols-[140px] top-0 gap-8 lg:gap-8  z-10">
           <Dashboard
             showSidebar={showSidebar}
           ></Dashboard>
@@ -16,7 +16,7 @@ const DashboardRoot = () => {
         className="absolute right-0 top-0 text-right lg:hidden "
         onClick={()=>setShowSidebar(!showSidebar)}
       >
-        <button className="bg-stone-500 text-white p-2 md:hidden">
+        <button className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white p-2 md:hidden">
         {showSidebar && <FaArrowLeft/> }
         </button>
       </div>

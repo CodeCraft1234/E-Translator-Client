@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Security/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
+
 const Contact = () => {
   const form = useRef();
   const { user } = useContext(AuthContext);
@@ -44,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="my-20 px-5 bg-[#031321] text-white md:px-0" id="contact">
+    <div className="mt-16 px-5  py-10 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white md:px-0" id="contact">
   <Helmet>
         <title> E-Translator | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -99,24 +100,30 @@ const Contact = () => {
                   type="email"
                   placeholder="Your email"
                   name="user_email"
-                  className="input w-full border-2 border-gray-700"
+                  className="input w-full  border-2 border-gray-700"
                   required
                 />
               </div>
             </div>
             <textarea
               name="message"
-              className="textarea textarea-ghost w-full mt-6 border-2 border-gray-700"
+              className="textarea   w-full mt-6 border-2 border-gray-700"
               placeholder="Message"
               required
             ></textarea>
-            <input
-              type="submit"
-              className="btn  btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
-            />
+           <button className="bg-indigo-950 mt-4 border-b-2 rounded-lg">
+             <a className="b" >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Explore Us
+              </a>
+             </button>
           </form>
         </div>
       </div>
+     
     </div>
   );
 };

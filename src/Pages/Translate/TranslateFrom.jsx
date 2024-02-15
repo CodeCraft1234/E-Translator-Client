@@ -10,9 +10,13 @@ import { FaRegFilePdf, FaStar } from "react-icons/fa";
 import { RiHistoryLine } from "react-icons/ri";
 import { FaUserGroup } from "react-icons/fa6";
 import { pdfjs } from "react-pdf";
+
 import { AuthContext } from "../../Security/AuthProvider"
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
+import BG from "../../Components/Features/BG";
+import Animation from "./Animation";
+
 
 function Translator() {
   const { user } = useContext(AuthContext);
@@ -39,6 +43,7 @@ function Translator() {
 
   const imageInput = useRef(null);
   const typingTimer = useRef(null);
+  
 
   useEffect(() => {
     setLanguages(lang);
@@ -344,13 +349,18 @@ function Translator() {
   };
 
   return (
-    <div className="bg-[#5170ea] dark:bg-slate-800 flex items-center justify-center">
-      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-28">
-        <h1 className="text-2xl text-center font-bold mb-4">
+
+
+    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  flex items-center justify-center ">
+      <Animation></Animation>
+      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
+
+        <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
 
         <div className="mb-4 flex items-center">
+       
           <div className="w-1/2 pr-2">
             <label className="block text-sm font-medium">From Language:</label>
             <textarea
@@ -615,6 +625,7 @@ function Translator() {
           </div>
         </div>
       )}
+      
     </div>
   );
 }

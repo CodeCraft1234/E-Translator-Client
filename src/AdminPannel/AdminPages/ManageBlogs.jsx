@@ -134,6 +134,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 import { Link } from "react-router-dom";
+import { MdReadMore } from "react-icons/md";
 
 const ManageBlogs = () => {
   const [showFullContent1, setShowFullContent1] = useState(false);
@@ -186,7 +187,7 @@ const ManageBlogs = () => {
   };
 
   return (
-    <div className="bg-base-300 p-4 lg:px-28 md:px-10 px-5">
+    <div className="text-white bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] p-4 lg:px-28 md:px-10 px-5">
       <Helmet>
         <title>E-Translator | Manage Blogs</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -207,20 +208,39 @@ const ManageBlogs = () => {
               </p>
              </div><div className="flex justify-between items-center mt-4">
               <button onClick={() => toggleContent(1)} className="text-blue-500 hover:underline">
-                {showFullContent1 ? "Read Less" : "Read More"}
+              {showFullContent1 ? "Read Less" : `Read More `} {<MdReadMore className="inline-block" />}
               </button>
               <div className=" flex gap-5">
                 <Link to={`/dashboard/blogs/${blog._id}`}>
-                  <button className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
+                <button className="bg-indigo-950 border-b-2 rounded-lg">
+             <a className="b" href="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Update
+              </a>
+             </button>
+                  {/* <button className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
                     Update
-                  </button>
+                  </button> */}
                 </Link>
-                <button
-                  onClick={() => handleDelete(blog._id)}
+
+                <button  onClick={() => handleDelete(blog._id)} className="bg-indigo-950 border-b-2 rounded-lg">
+             <a className="b" >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Delete
+              </a>
+             </button>
+                {/* <button
+                 
                   className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
                 >
                   Delete
-                </button>
+                </button> */}
               </div>
             </div></>
         ))}
