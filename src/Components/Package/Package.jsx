@@ -55,7 +55,7 @@ const Package = () => {
   ];
 
   return (
-    <div className="">
+    <div className="mb-24">
       <div className="  dark:text-red-100">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto mb-16 text-center">
@@ -66,7 +66,7 @@ const Package = () => {
               Choose your best plan
             </h2>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
             {plans.map((plan, index) => (
               <div
                 key={index}
@@ -104,16 +104,17 @@ const Package = () => {
                       </li>
                     ))}
                     <button
-                         onClick={plan.action} 
-                             className="bg-indigo-950 items-center flex text-center mx-auto border-b-2 rounded-lg">
-             <a className="b" >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              Get {plan.name} Plan
-              </a>
-             </button>
+                      onClick={plan.action}
+                      className="bg-indigo-950 items-center flex text-center mx-auto border-b-2 rounded-lg"
+                    >
+                      <a className="b rounded-lg">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Get {plan.name} Plan
+                      </a>
+                    </button>
                   </ul>
                   {/* <button
                     onClick={plan.action}
@@ -132,9 +133,6 @@ const Package = () => {
 };
 
 export default Package;
-
-
-
 
 // Trying to add mongoose
 
