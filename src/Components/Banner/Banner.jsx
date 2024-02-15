@@ -137,7 +137,7 @@ const Banner = () => {
               </button>
             </div>
           </div>
-          <div className="flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+          <div className="flex  items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
               src={img1}
               alt=""
@@ -151,3 +151,4 @@ const Banner = () => {
 };
 
 export default Banner;
+
