@@ -87,9 +87,8 @@ const Features = () => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  return (
-
-    <div className="lg:px-24 md:px-8   px-5 mt-8">
+  return (l
+    <div className="lg:px-24 mt-10 md:px-8 text-white bg-[#031321] px-5  border-b-2">
 
       <Helmet>
         <title> E-Translator | Features</title>
@@ -97,7 +96,9 @@ const Features = () => {
       </Helmet>
       <BG></BG>
 
-      <h3 className="text-center text-5xl font-bold py-16 text-white">
+
+      <h3 className="pt-20 text-center text-5xl font-bold py-10 ">
+
         Our features
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pb-16 mx-10">

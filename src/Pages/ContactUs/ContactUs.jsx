@@ -44,11 +44,10 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className="mt-16 px-5  py-10 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white md:px-0"
-      id="contact"
-    >
-      <Helmet>
+
+    <div className="mt-10 px-5  py-20 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white md:px-0" id="contact">
+  <Helmet>
+
         <title> E-Translator | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
