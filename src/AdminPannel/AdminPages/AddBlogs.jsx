@@ -50,7 +50,7 @@ const AddBlogs = () => {
   };
 
   return (
-    <div className="min-h-screen text-white bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] flex items-center justify-center p-10 overflow-x-hidden">
+    <div className="min-h-screen  bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] flex items-center justify-center p-10 overflow-x-hidden">
       <div className="bg-teal-800 p-8 rounded-lg shadow-xl w-96">
         <h2 className="text-2xl font-bold mb-4">Add your Blogs</h2>
         <form onSubmit={handleSubmit} action="#" method="post">

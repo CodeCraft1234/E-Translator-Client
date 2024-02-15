@@ -33,7 +33,7 @@ const TranslationPlatformBlog = () => {
 
  
   return (
-    <div className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white p-4 mt-16 lg:px-28 md:px-10 px-5">
+    <div className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white pt-24 mt-10 lg:px-28 md:px-10 px-5">
       <Helmet>
         <title> E-Translator | Blogs</title>
         <link rel="canonical" href="https://www.tacobell.com/" />

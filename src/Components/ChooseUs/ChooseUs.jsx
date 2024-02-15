@@ -8,44 +8,51 @@ AOS.init();
 const ChooseUS = () => {
   
   const cards = [
+
+//     
+// 
+// 
+// 
+// 
+// 
     {
       id: 1,
-      iconClass: <FaGlobe className="h-6 w-6" />,
+      iconClass: 'https://i.ibb.co/DRDRZxg/precision-modeling-9495577-7781126.webp',
       title: "Precision and Expertise",
       description:
         "In the realm of language translation, precision is the cornerstone of our commitment. With a meticulous approach honed over a decade of dedicated service, our team of seasoned linguists ensures that every word is translated with unparalleled accuracy.",
     },
     {
       id: 2,
-      iconClass: <FaAnchor className="h-6 w-6"></FaAnchor>,
+      iconClass: 'https://i.ibb.co/Vv53R5f/7969841.webp',
       title: "Cutting-Edge Technology",
       description:
         "Stay ahead with the latest translation technology. We employ state-of-the-art tools and methodologies to provide you with efficient, accurate, and timely translations, meeting the demands of a dynamic global landscape.",
     },
     {
       id: 3,
-      iconClass: <FaHourglassHalf className="h-6 w-6"></FaHourglassHalf>,
+      iconClass: 'https://i.ibb.co/9v8DbX2/support-operator-with-headphones-illustration-for-business-idea-concept-isolated-on-colorful-backgro.webp',
       title: "24 x 7 User Support",
       description:
         "Your queries and concerns are our top priority. Enjoy round-the-clock customer support, ensuring you're never alone on your language journey. Our team is ready to assist you anytime, ensuring a smooth and hassle-free experience.",
     },
     {
       id: 4,
-      iconClass: <FaDatabase className="h-6 w-6"></FaDatabase>,
+      iconClass: 'https://i.ibb.co/JrqSZ9x/business-growth-3d-icon-png.webp ',
       title: "Business Growth",
       description:
         "Like climbing a mountain, true growth happens during the journey. Our translation services open doors to new markets, fostering global connections and expanding your business horizons.",
     },
     {
       id: 5,
-      iconClass: <FaUpload className="h-6 w-6"></FaUpload>,
+      iconClass: 'https://i.ibb.co/xCk9h4L/3d-illustration-of-a-marketing-strategy-magnet-png.webp',
       title: "Market Strategies",
       description:
         "Break barriers with tailored market strategies. Our translations go beyond words; they adapt to the cultural nuances of your target audience, ensuring your message resonates and drives success.",
     },
     {
       id: 6,
-      iconClass: <FaCamera className="h-6 w-6"></FaCamera>,
+      iconClass: 'https://i.ibb.co/1Tvgpqk/solution-8327146-6648997.webp',
       title: "Cost-Effective Solutions",
       description:
         "Quality should never break the bank. Experience the perfect balance of affordability and excellence. We understand the value of your words, and we make every translation cost-effective without compromising on quality.",
@@ -80,14 +87,15 @@ const ChooseUS = () => {
           </div>
 
           {cards.map((card, index) => (
-  <Tilt key={index} options={defaultOptions} style={{ height: '350px', width: '250px' }}>
+  <Tilt key={index} options={defaultOptions} style={{ height: '400px', width: '300px' }}>
     <div className=''>
-      <div className="col-span-1 sm:col-span-1 lg:col-span-1" style={{ height: '350px', width: '250px' }}>
+      <div className="col-span-1 sm:col-span-1 gap-10 lg:col-span-1" style={{ height: '400px', width: '300px' }}>
         <div className="item border-2 shadow-md text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-[#006bcb] hover:text-white transition duration-500  transform hover:-translate-y-1 hover:scale-105" data-aos='zoom-in'>
-          <div className='flex justify-center gap-3'>
-            <span className={`icon feature_box_col_${index + 1}`}>
-              {card.iconClass}
-            </span>
+          <div className='  gap-3'>
+            <img className='h-28 w-28 mx-auto' src= {card.iconClass} alt="" />
+            {/* <span className={`icon feature_box_col_${index + 1}`}>
+             
+            </span> */}
             <h6 className="text-xl font-semibold mb-2">{card.title}</h6>
           </div>
           <p className="text-sm">{card.description}</p>
