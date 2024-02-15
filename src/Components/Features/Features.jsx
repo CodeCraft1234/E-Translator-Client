@@ -10,6 +10,7 @@ import img7 from "../../assets/download (2).jpg";
 import img8 from "../../assets/istockphoto-1281150061-612x612.jpg";
 import img9 from "../../assets/pricing.jpg";
 import img10 from "../../assets/direct.jpg";
+import BG from "../Features/BG";
 
 import { Helmet } from "react-helmet-async";
 
@@ -86,7 +87,12 @@ const Features = () => {
   };
 
   return (
-    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5 mt-8">
+
+    <div className="lg:px-24 md:px-8   px-5 mt-8">
+     
+
+  
+
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -95,6 +101,7 @@ const Features = () => {
         Our features
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 py-10 mx-10">
+        
         {features.map((feature, index) => (
           <motion.div
             key={index}

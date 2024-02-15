@@ -56,7 +56,7 @@ const Package = () => {
 
   return (
     <div className="">
-      <div className="py-20 dark:bg-gray-800 dark:text-red-100">
+      <div className="  dark:text-red-100">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto mb-16 text-center">
             <span className="font-bold tracki uppercase dark:text-violet-400">
@@ -70,7 +70,7 @@ const Package = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                data-aos="fade-right"
+                data-aos="fade-up"
                 data-aos-delay={index * 500}
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out"
@@ -105,7 +105,7 @@ const Package = () => {
                     ))}
                     <button
                          onClick={plan.action} 
-                             className="bg-indigo-950 mx-5  border-b-2 rounded-lg">
+                             className="bg-indigo-950 items-center flex text-center mx-auto border-b-2 rounded-lg">
              <a className="b" >
               <span></span>
               <span></span>

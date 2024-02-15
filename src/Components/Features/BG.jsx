@@ -20,7 +20,7 @@ const BannerBg = () => {
         options={{
             background: {
                 color: {
-                    value: "#0d47a1",
+                    value: "#62B1F3",
                 },
             },
             fpsLimit: 120,
