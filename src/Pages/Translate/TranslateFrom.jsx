@@ -14,6 +14,8 @@ import { pdfjs } from "react-pdf";
 import { AuthContext } from "../../Security/AuthProvider"
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
+import BG from "../../Components/Features/BG";
+import Animation from "./Animation";
 
 
 function Translator() {
@@ -349,8 +351,9 @@ function Translator() {
   return (
 
 
-    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  flex items-center justify-center">
-      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12">
+    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  flex items-center justify-center ">
+      <Animation></Animation>
+      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
 
         <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
@@ -622,6 +625,7 @@ function Translator() {
           </div>
         </div>
       )}
+      
     </div>
   );
 }
