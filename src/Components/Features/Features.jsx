@@ -87,7 +87,7 @@ const Features = () => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  return (l
+  return (
     <div className="lg:px-24 mt-10 md:px-8 text-white bg-[#031321] px-5  border-b-2">
 
       <Helmet>
