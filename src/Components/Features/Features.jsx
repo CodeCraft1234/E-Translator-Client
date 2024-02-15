@@ -10,6 +10,7 @@ import img7 from "../../assets/download (2).jpg";
 import img8 from "../../assets/istockphoto-1281150061-612x612.jpg";
 import img9 from "../../assets/pricing.jpg";
 import img10 from "../../assets/direct.jpg";
+import BG from "../Features/BG";
 
 import { Helmet } from "react-helmet-async";
 
@@ -66,10 +67,12 @@ const Features = () => {
       description: `Provide real-time translation results as users type, enhancing the user experience. This feature ensures dynamic translation feedback, contributing to a seamless and responsive translation process based on user input.`,
     },
     {
-      image: "https://www.pdfgear.com/chat-pdf/img/pdf-language-translator-1.png",
+      image:
+        "https://www.pdfgear.com/chat-pdf/img/pdf-language-translator-1.png",
       name: "PDF to Text Translator",
-      description: "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
-      }
+      description:
+        "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
+    },
   ];
 
   const featureVariants = {
@@ -84,15 +87,16 @@ const Features = () => {
   };
 
   return (
-    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5 mt-8">
+    <div className="lg:px-24 md:px-8   px-5 mt-8">
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
+
+      <h3 className="text-center text-5xl font-bold py-16 text-white">
         Our features
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 py-10 mx-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pb-16 mx-10">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -113,10 +117,10 @@ const Features = () => {
             />
             <div className="flex flex-col justify-between p-6 space-y-8 ">
               <div className="space-y-2">
-                <h2 className="text-2xl font-semibold tracking">
+                <h2 className="text-2xl text-white font-semibold tracking">
                   {feature.name}
                 </h2>
-                <p className="dark:text-gray-200">
+                <p className="dark:text-gray-200 text-white">
                   {expandedIndex === index
                     ? feature.description
                     : `${feature.description.slice(0, 100)}${

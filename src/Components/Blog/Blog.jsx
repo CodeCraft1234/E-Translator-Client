@@ -67,4 +67,3 @@ const TranslationPlatformBlog = () => {
 };
 
 export default TranslationPlatformBlog;
-

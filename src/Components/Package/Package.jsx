@@ -1,6 +1,5 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
 
 AOS.init();
 
@@ -56,8 +55,8 @@ const Package = () => {
   ];
 
   return (
-    <div className="">
-      <div className="py-20 dark:bg-gray-800 dark:text-red-100">
+    <div className="mb-24">
+      <div className="  dark:text-red-100">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto mb-16 text-center">
             <span className="font-bold tracki uppercase dark:text-violet-400">
@@ -71,7 +70,7 @@ const Package = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                data-aos="fade-right"
+                data-aos="fade-up"
                 data-aos-delay={index * 500}
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out"
@@ -104,18 +103,18 @@ const Package = () => {
                         <span>{feature}</span>
                       </li>
                     ))}
-                    <Link
+                    <button
                       onClick={plan.action}
-                      className="bg-indigo-950 mx-5  border-b-2 rounded-lg"
+                      className="bg-indigo-950 items-center flex text-center mx-auto border-b-2 rounded-lg"
                     >
-                      <a className="b hover:rounded-lg">
+                      <a className="b rounded-lg">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
                         Get {plan.name} Plan
                       </a>
-                    </Link>
+                    </button>
                   </ul>
                   {/* <button
                     onClick={plan.action}

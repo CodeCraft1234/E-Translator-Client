@@ -1,5 +1,11 @@
 import { useEffect, useState, useRef } from "react";
-import { FaVolumeUp, FaExchangeAlt, FaCopy,FaGlobe, FaImages } from "react-icons/fa";
+import {
+  FaVolumeUp,
+  FaExchangeAlt,
+  FaCopy,
+  FaGlobe,
+  FaImages,
+} from "react-icons/fa";
 import { useContext } from "react";
 import { MdKeyboardVoice } from "react-icons/md";
 import lang from "../Translate/Languages/languages";
@@ -13,6 +19,7 @@ import { pdfjs } from "react-pdf";
 import { AuthContext } from "../../Security/AuthProvider";
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
+
 
 function Translator() {
   const { user } = useContext(AuthContext);
@@ -39,7 +46,6 @@ function Translator() {
 
   const imageInput = useRef(null);
   const typingTimer = useRef(null);
-  
 
   useEffect(() => {
     setLanguages(lang);
@@ -384,15 +390,13 @@ function Translator() {
   };
 
   return (
-
-    <div className="text-black bg-[#031321]  flex items-center justify-center">
-      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-28">
+    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  flex items-center justify-center">
+      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12">
         <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
 
         <div className="mb-4 flex items-center">
-       
           <div className="w-1/2 pr-2">
             <label className="block text-sm font-medium">From Language:</label>
             <textarea
@@ -591,13 +595,19 @@ function Translator() {
               <h2>History</h2>
             </button>
           </div>
-          {
-            user && <div><button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_1').showModal()} >
-              <div className="p-3 border border-[#4392d9] rounded-full">
-                <FaStar size={40} />
-              </div>
-              <h2 className="text-center">Rating</h2>
-            </button>
+          {user && (
+            <div>
+              <button
+                className="text-[#4392d9] ml-5"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
+                <div className="p-3 border border-[#4392d9] rounded-full">
+                  <FaStar size={40} />
+                </div>
+                <h2 className="text-center">Rating</h2>
+              </button>
               <dialog id="my_modal_1" className="modal">
                 <div className="modal-box">
                   <h3 className="font-bold text-lg">Have a moment?</h3>
@@ -613,30 +623,38 @@ function Translator() {
                 </div>
               </dialog>
             </div>
-          }
-          {user && <div>
-            <button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_2').showModal()} >
-              <div className="p-3 border border-[#4392d9] rounded-full">
-                <FaUserGroup size={40} />
-              </div>
-              <h2 className="text-center">Feedback</h2>
-            </button>
-            <dialog id="my_modal_2" className="modal">
-              <div className="modal-box">
-                <h3 className="font-bold text-lg">Please share your feedback</h3>
-
-                <Feedback></Feedback>
-                {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
-                <div className="modal-action">
-                  <form method="dialog">
-                    {/* if there is a button in form, it will close the modal */}
-                    <button className="btn">Close</button>
-                  </form>
+          )}
+          {user && (
+            <div>
+              <button
+                className="text-[#4392d9] ml-5"
+                onClick={() =>
+                  document.getElementById("my_modal_2").showModal()
+                }
+              >
+                <div className="p-3 border border-[#4392d9] rounded-full">
+                  <FaUserGroup size={40} />
                 </div>
-              </div>
-            </dialog>
-          </div>
-          }
+                <h2 className="text-center">Feedback</h2>
+              </button>
+              <dialog id="my_modal_2" className="modal">
+                <div className="modal-box">
+                  <h3 className="font-bold text-lg">
+                    Please share your feedback
+                  </h3>
+
+                  <Feedback></Feedback>
+                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          )}
         </div>
       </div>
 
