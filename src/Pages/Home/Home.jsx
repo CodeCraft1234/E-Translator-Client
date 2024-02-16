@@ -8,10 +8,11 @@ import Review from "../../Components/Review/Review";
 import LiveChat from "../LiveChat/LiveChat";
 
 
+
 const Home = () => {
   return (
-    <div className="lg:px-28 bg-[#031321] text-white md:px-10 px-5">
-       
+    <div className="lg:px-28 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]   text-white md:px-10 px-5">
+
        <Helmet>
         <title> E-Translator | Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -23,6 +24,7 @@ const Home = () => {
       <ChooseUs></ChooseUs>
       <NewsLetter></NewsLetter>
       <Faq></Faq>
+    
     </div>
   );
 };

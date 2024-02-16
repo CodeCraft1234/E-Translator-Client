@@ -1,0 +1,21 @@
+.floating-word {
+    position: absolute;
+    color: hsl(228, 20%, 95%);
+    font-size: 12px; /* Increase the font size to make it bigger */
+    font-weight: bold; /* Optionally increase font weight for emphasis */
+    white-space: nowrap;
+    opacity: 0.3;
+    animation: floatAnimation 10s linear infinite;
+  }
+  
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-100vh);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }

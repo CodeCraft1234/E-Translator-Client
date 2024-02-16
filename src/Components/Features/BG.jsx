@@ -3,7 +3,7 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 
-const BannerBg = () => {
+const BG = () => {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
@@ -19,9 +19,9 @@ const BannerBg = () => {
         loaded={particlesLoaded}
         options={{
             background: {
-                color: {
-                    value: "#0d47a1",
-                },
+                // color: {
+                //     value: "#62B1F3",
+                // },
             },
             fpsLimit: 120,
             interactivity: {
@@ -90,4 +90,5 @@ const BannerBg = () => {
 );
 };
 
-export default BannerBg;
+// eslint-disable-next-line react-refresh/only-export-components
+export default BG;
