@@ -11,7 +11,7 @@ const Dashboard = ({ showSidebar }) => {
   return (
     <div className="relative ">
       <div
-        className={`bg-blue-600 w-64 min-h-screen lg:fixed text-white  ${
+        className={`bg-blue-600 w-72 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
         } md:block`}
       >
