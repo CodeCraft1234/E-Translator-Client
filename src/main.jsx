@@ -38,7 +38,9 @@ import Profile from './Pages/Profile/Profile';
 import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
 import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
 import ChatTest from "./Components/Chat/ChatTest.jsx";
-import UserFeedback from "./Pages/UserFeedback/UserFeedback.jsx";
+import WebRating from "./Components/WebRating/WebRating.jsx";
+import UserFeedback from './Pages/UserFeedback/UserFeedback';
+
 
 
 
@@ -126,6 +128,10 @@ const router = createBrowserRouter([
       {
         path: "/meetTeam",
         element: <MeetTeam></MeetTeam>,
+      },
+      {
+        path: "/rating",
+        element: <WebRating></WebRating>,
       },
       {
         path: "/getintuch",
