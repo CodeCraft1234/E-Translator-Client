@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
@@ -37,12 +37,9 @@ function ChatTwo({ socket, username, room }) {
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
-          {messageList.map((messageContent) => {
+          {messageList.map((messageContent, index) => {
             return (
-              <div key={'index'}
-                className="message"
-                id={username === messageContent.author ? "you" : "other"}
-              >
+              <div key={index} className="message" id={username === messageContent.author ? "you" : "other"}>
                 <div>
                   <div className="message-content">
                     <p>{messageContent.message}</p>
@@ -72,5 +69,7 @@ function ChatTwo({ socket, username, room }) {
         <button onClick={sendMessage}>&#9658;</button>
       </div>
     </div>
-  )}
+  );
+}
+
 export default ChatTwo;

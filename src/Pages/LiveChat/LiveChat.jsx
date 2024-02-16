@@ -168,11 +168,11 @@ const LiveChat = () => {
     if (lowerCaseInput.includes("hi")) {
       return "Hello there! How can I help you?";
     } else if (lowerCaseInput.includes("help")) {
-      return "we note your issue, write your issue here or email support@etranslator.com";
+      return "no support team avabile write your issue here or email support@etranslator.com";
     } else if (lowerCaseInput.includes("chat kaj kore na")) {
       return "wait korun amra issue ta dekchi";
     } else {
-      return "unable to understand wait for some time";
+      return "unable to understand wait for some time or email us support@etranslator.comn ";
     }
   };
 
@@ -219,7 +219,7 @@ const LiveChat = () => {
                   type="text"
                   value={userInput}
                   onChange={handleUserInput}
-                  onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+                  onKeyUp={(e) => e.key === "Enter" && handleSendMessage()}
                   placeholder="Type your message"
                   className="input text-black  input-bordered input-success w-full max-w-xs"
                 />
