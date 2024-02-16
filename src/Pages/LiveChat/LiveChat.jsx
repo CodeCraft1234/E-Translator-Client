@@ -179,7 +179,7 @@ const LiveChat = () => {
   return (
     <div className="fixed z-10 bottom-7 right-7">
       <button className="text-2xl text-emerald-600" onClick={openModal}>
-        <AiFillMessage className="text-blue-700 text-center text-4xl hover:text-red-600" /> Chat Support
+        <AiFillMessage className="text-blue-700 text-center text-5xl hover:text-red-600" /> Chat Support
       </button>
    
       {isModalOpen && (
