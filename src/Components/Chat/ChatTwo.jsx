@@ -30,7 +30,7 @@ function ChatTwo({ socket, username, room }) {
   }, [socket]);
 
   return (
-    <div className="chat-window">
+    <div className="chat-window mt-20">
       <div className="chat-header">
         <p>Live Chat</p>
       </div>
@@ -38,7 +38,7 @@ function ChatTwo({ socket, username, room }) {
         <ScrollToBottom className="message-container">
           {messageList.map((messageContent) => {
             return (
-              <div
+              <div key="room"
                 className="message"
                 id={username === messageContent.author ? "you" : "other"}
               >

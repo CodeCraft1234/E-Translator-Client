@@ -68,6 +68,7 @@ const Features = () => {
       description: `Implementing real-time translation on your website enables users to receive instant translation feedback as they type, fostering a seamless and responsive translation experience. This feature enhances user engagement and accessibility by breaking down language barriers in real-time.`,
     },
     {
+
       image: img11,
       name: "PDF to Text Translator",
       description:
@@ -87,18 +88,20 @@ const Features = () => {
   };
 
   return (
-    <div className="lg:px-24 md:px-8 text-white bg-[#031321] px-5  border-b-2">
+    <div className="lg:px-24 mt-10 md:px-8 text-white bg-[#031321] px-5  border-b-2">
+
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <BG></BG>
 
-      <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
+
+      <h3 className="pt-20 text-center text-5xl font-bold py-10 ">
+
         Our features
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 py-10 mx-10">
-        
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pb-16 mx-10">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -119,10 +122,10 @@ const Features = () => {
             />
             <div className="flex flex-col justify-between p-6 space-y-8 ">
               <div className="space-y-2">
-                <h2 className="text-2xl font-semibold tracking">
+                <h2 className="text-2xl text-white font-semibold tracking">
                   {feature.name}
                 </h2>
-                <p className="dark:text-gray-200">
+                <p className="dark:text-gray-200 text-white">
                   {expandedIndex === index
                     ? feature.description
                     : `${feature.description.slice(0, 100)}${

@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import './chat.css';
 import ChatTwo from "./ChatTwo";
 
-const socket = io.connect("http://localhost:5001");
+const socket = io.connect("https://e-translator-server.vercel.app");
 console.log(socket);
 
 const ChatTest = () => {
