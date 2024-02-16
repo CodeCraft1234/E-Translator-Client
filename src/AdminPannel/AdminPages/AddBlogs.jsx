@@ -1,7 +1,11 @@
-/* eslint-disable no-unused-vars */
+
 import React, { useState } from "react";
-import UseAxiosPublic from "../../Axios/UseAxiosPublic";
-import UseAxiosSecure from "../../Axios/UseAxiosSecure";
+
+
+import UseAxiosPublic from '../../Axios/UseAxiosPublic';
+import UseAxiosSecure from '../../Axios/UseAxiosSecure';
+import Swal from 'sweetalert2';
+
 
 const AddBlogs = () => {
   const [title, setTitle] = useState("");
@@ -29,17 +33,33 @@ const AddBlogs = () => {
     const photo = res.data.data.display_url;
     console.log(photo);
 
-    // Prepare blog info
+
+    
     const date = new Date();
     const blogInfo = { title, description, photo, date };
     console.log(blogInfo);
 
+    AxiosSecure.post('/blogs',blogInfo)
+    .then(res=>{
+      console.log(res.data)
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Blog has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+
+
     // Post blog to the server
     AxiosSecure.post("/blogs", blogInfo).then((res) => console.log(res.data));
+
 
     // Reset the form
     setTitle("");
     setDescription("");
+
     setImage(null);
   };
 
@@ -49,8 +69,12 @@ const AddBlogs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] flex items-center justify-center p-10 overflow-x-hidden">
-      <div className="bg-teal-800 p-8 rounded-lg shadow-xl w-96">
+
+  
+
+    <div className="min-h-screen  bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] flex items-center justify-center p-10 overflow-x-hidden">
+      <div className="bg-violet-950 text-white p-8 rounded-lg shadow-xl w-96">
+
         <h2 className="text-2xl font-bold mb-4">Add your Blogs</h2>
         <form onSubmit={handleSubmit} action="#" method="post">
           <label htmlFor="title" className="block font-bold mb-1">
@@ -60,7 +84,7 @@ const AddBlogs = () => {
             type="text"
             id="title"
             name="title"
-            className="w-full p-2 mb-4 border rounded"
+            className="w-full p-2 mb-4 text-black border rounded"
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -73,7 +97,7 @@ const AddBlogs = () => {
             id="description"
             name="description"
             rows="4"
-            className="w-full p-2 mb-4 border rounded"
+            className="w-full p-2 mb-4 text-black border rounded"
             required
             value={description}
             onChange={(e) => setDescription(e.target.value)}
