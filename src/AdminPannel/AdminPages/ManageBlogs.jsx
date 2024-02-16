@@ -193,20 +193,21 @@ const ManageBlogs = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
 
-      <div className="grid gap-6 overflow-hidden ">
+      <div className="grid gap-6  overflow-hidden ">
         {blogs.map((blog) => (
           <>
-            <div key={blog._id} className="bg-[#006bcb] dark:bg-gray-800 p-4 rounded-lg shadow-md ">
+            <div key={blog._id} className="border p-5 bg-violet-950 border-gray-300 rounded-lg overflow-hidden">
               <img
-                className=" w-full h-72 rounded-lg"
+                className=" w-full h-[500px] border-2 rounded-lg"
                 src={blog.photo}
-                alt="" /></div>
-             <div className="mt-4">
+                alt="" />
+                <div className="mt-4">
               <h3 className="text-xl font-semibold">{blog.title}</h3>
               <p className="mt-2 text-gray-600">
                 {renderContent(blog.description, showFullContent1)}
               </p>
-             </div><div className="flex justify-between items-center mt-4">
+             </div>
+             <div className="flex justify-between items-center mt-4">
               <button onClick={() => toggleContent(1)} className="text-blue-500 hover:underline">
               {showFullContent1 ? "Read Less" : `Read More `} {<MdReadMore className="inline-block" />}
               </button>
@@ -221,9 +222,7 @@ const ManageBlogs = () => {
               Update
               </a>
              </button>
-                  {/* <button className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white">
-                    Update
-                  </button> */}
+                 
                 </Link>
 
                 <button  onClick={() => handleDelete(blog._id)} className="bg-indigo-950 border-b-2 rounded-lg">
@@ -235,14 +234,11 @@ const ManageBlogs = () => {
               Delete
               </a>
              </button>
-                {/* <button
-                 
-                  className="btn text-black btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
-                >
-                  Delete
-                </button> */}
+                
               </div>
-            </div></>
+            </div>
+                </div>
+             </>
         ))}
       </div>
     </div>
