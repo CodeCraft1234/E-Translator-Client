@@ -11,14 +11,14 @@ import { FcFeedback } from "react-icons/fc";
 const AdminHome = () => {
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
-  const [totalUsers, setTotalUsers] = useState(0); // State to store the total user count
+  const [totalUsers, setTotalUsers] = useState(0); 
   const AxiosSecure = UseAxiosSecure();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await AxiosSecure.get("/users"); // Assuming you have an endpoint to fetch user data
-        setTotalUsers(response.data.length); // Update the state with the total user count
+        const response = await AxiosSecure.get("/users"); 
+        setTotalUsers(response.data.length); 
       } catch (error) {
         console.error("Error fetching user data:", error);
       } finally {
@@ -34,11 +34,15 @@ const AdminHome = () => {
       {loading ? (
         <SkilitonLoader />
       ) : (
-        <div className="text-white bg-[#031321] p-10 min-h-screen">
-          <h1 className="py-6 text-white bg-[#031321] text-xl font-semibold">
-            Welcome back{" "}
-            <span className="  font-bold text-cyan-600"> @{user?.displayName || "Guest"}</span>
+        
+        <div className=" text-white bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] p-10 min-h-screen">
+          <div className="">
+          <h1 className="flex justify-center items-center py-4 mb-4 text-white bg-slate-500 rounded-2xl  text-xl font-semibold">
+            Welcome back
+            <img className="w-24" src={user?.photoURL} alt="photo" />
+            <span className="font-bold text-cyan-600">@{user?.displayName || "Guest"}</span>
           </h1>
+          </div>
 
           <div className="grid  lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2">
             <div className="card w-96 bg-base-100  h-56 flex-shrink-0">
