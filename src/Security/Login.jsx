@@ -65,18 +65,18 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen mt-16">
+      <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left"></div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleLogin} className="card-body">
+          <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl border-4 box bg-violet-950">
+            <form onSubmit={handleLogin} className="card-body ">
               <div className="form-control">
-                <h1 className="text-3xl text-center font-semibold">
+                <h1 className="text-3xl text-center text-white font-semibold">
                   Login your account
                 </h1>
                 <hr className="mt-4" />
                 <label className="label">
-                  <span className="label-text text-sm font-semibold">
+                  <span className="label-text text-white text-sm font-semibold">
                     Email address
                   </span>
                 </label>
@@ -90,7 +90,7 @@ const Login = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-sm font-semibold">
+                  <span className="label-text text-sm text-white font-semibold">
                     Password
                   </span>
                 </label>
@@ -103,37 +103,24 @@ const Login = () => {
                 />
                 <div className="flex justify-end text-xs dark:text-gray-400">
                   {/* <a rel="noopener noreferrer" href="#">Forgot Password?</a> */}
-                  <Link className="text-[#F75B5F]" to="/forgetPassword">
+                  <Link className="text-[#F75B5F] " to="/forgetPassword">
                     {" "}
                     Forgot Password?
                   </Link>
                 </div>
               </div>
               <div className="form-control mt-1">
-                <button className="p-2 rounded bg-neutral text-white">
+
+                <button className="p-2 rounded bg-[#1368c0] text-white">
+
                   Login
                 </button>
               </div>
-              {/* <div className="form-control mt-1">
-                <button
-                  onClick={handleGoogleLogin}
-                  className="p-2 rounded bg-green-600 text-white"
-                >
-                  Login With Google
-                </button>
-              </div> */}
-              {/* <div className="form-control mt-1">
-                <button
-                  onClick={handlefacebooksignin}
-                  className="p-2 rounded bg-blue-600 text-white"
-                >
-                  Login With Facebook
-                </button>
-              </div> */}
+             
               <div className="flex items-center pt-4 space-x-1">
                 <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                 <div className=" flex flex-col w-full">
-                  <p className="px-3 divider divider-neutral text-sm dark:text-gray-400">
+                  <p className="px-3 divider divider-neutral  text-sm text-white">
                     Login with social accounts
                   </p>
                 </div>
@@ -158,13 +145,13 @@ const Login = () => {
                 </button>
                 <button
                   aria-label="Log in with GitHub"
-                  className="p-3 hover:bg-[#e7e9eb] rounded-full"
+                  className="p-3 text-white hover:bg-[#e7e9eb] rounded-full"
                 >
-                <FaGithub />
+                <FaGithub className="text-black"/>
                 </button>
               </div>
 
-              <p className="text-center font-semibold text-xs mt-4">
+              <p className="text-center text-white font-semibold text-xs mt-4">
                { `Don't Have An Account ?`}
                 <Link className="text-[#F75B5F]" to="/signup">
                   {" "}

@@ -62,10 +62,10 @@ const Register = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen mt-16">
+      <div className="hero min-h-screen pt-16 mt-10">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left"></div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="text-center  lg:text-left"></div>
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl border-4 text-white bg-violet-950">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <h1 className="text-2xl  text-center font-semibold">
@@ -74,7 +74,7 @@ const Register = () => {
                 <hr className="mt-4" />
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text  text-sm font-semibold">
+                    <span className="label-text  text-sm text-white font-semibold">
                       Your Name
                     </span>
                   </label>
@@ -82,7 +82,7 @@ const Register = () => {
                     {...register("name", { required: true })}
                     type="text"
                     placeholder="Enter your name"
-                    className="input input-bordered text-[#9F9F9F] text-xs font-normal "
+                    className="input  input-bordered text-black text-xs font-normal "
                     required
                   />
                   {errors.name && (
@@ -92,7 +92,7 @@ const Register = () => {
 
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-sm font-semibold">
+                    <span className="label-text text-sm font-semibold text-white">
                       Photo
                     </span>
                   </label>
@@ -108,7 +108,7 @@ const Register = () => {
                 </div>
 
                 <label className="label">
-                  <span className="label-text text-sm font-semibold">
+                  <span className="label-text text-sm font-semibold text-white">
                     Email address
                   </span>
                 </label>
@@ -116,7 +116,7 @@ const Register = () => {
                   {...register("email", { required: true })}
                   type="email"
                   placeholder="Enter your email address"
-                  className="input input-bordered text-[#9F9F9F] text-xs font-normal "
+                  className="input input-bordered text-black text-xs font-normal "
                   required
                 />
                 {errors.email && (
@@ -125,7 +125,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-sm font-semibold">
+                  <span className="label-text text-sm font-semibold text-white">
                     Password
                   </span>
                 </label>
@@ -137,7 +137,7 @@ const Register = () => {
                   })}
                   type="password"
                   placeholder="Enter your password"
-                  className="input input-bordered text-[#9F9F9F] text-xs font-normal "
+                  className="input input-bordered text-black text-xs font-normal "
                   required
                 />
                 {errors.password?.type === "required" && (
@@ -158,7 +158,9 @@ const Register = () => {
                 </p>
               </div>
               <div className="form-control mt-4">
-                <button className="p-2 rounded bg-neutral text-white">
+
+                <button className="p-2 rounded bg-[#1368c0] text-white">
+
                   Register
                 </button>
               </div>

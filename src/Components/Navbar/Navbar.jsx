@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from "react";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
-import { FaHome, FaMicroblog, FaMobile, FaMobileAlt } from "react-icons/fa";
-import { MdOutlineFeaturedPlayList, MdOutlineGTranslate } from "react-icons/md";
-import { AiFillProfile } from "react-icons/ai";
-import { RiDashboardFill } from "react-icons/ri";
+// import { FaHome, FaMicroblog, FaMobile, FaMobileAlt } from "react-icons/fa";
+// import { MdOutlineFeaturedPlayList, MdOutlineGTranslate } from "react-icons/md";
+// import { AiFillProfile } from "react-icons/ai";
+// import { RiDashboardFill } from "react-icons/ri";
+
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -35,7 +36,7 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar bg-base-100  lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
+    <div className="navbar  bg-indigo-700 text-white bg-opacity-50 backdrop-blur-lg p-5 rounded-md shadow-lg  lg:px-28 md:px-10 px-5  fixed z-10 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -56,75 +57,91 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+
+            className="menu menu-sm dropdown-content  bg-violet-950 mt-3 z-[1] p-2 shadow  rounded-box w-52 "
           >
-             <li>
-            <NavLink to={"/"}><FaHome />Home </NavLink>
-          </li>
           <li>
-            <NavLink to={"/features"}><MdOutlineFeaturedPlayList />Features </NavLink>
-          </li>
-          <li>
-            <NavLink to={"/translate"}><MdOutlineGTranslate />Translate</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/contact"}><FaMobileAlt/>Contact</NavLink>
-          </li>
-        
-          <li>
-            <NavLink to={"/blog"}> <FaMicroblog />Blogs</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/profile"}><AiFillProfile />Profile  </NavLink>
-          </li>
-            <li>
-            {user?.email === "admin@gmail.com" ? (
-              <NavLink to={"dashboard/adminHome"}><RiDashboardFill />Dashbord</NavLink>
-            ) : (
-              <></>
-            )}
-          </li>
+
+    <NavLink to={"/"}> <img className="h-8 w-8" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home </NavLink>
+  </li>
+  <li>
+    <NavLink to={"/features"}><img className="h-8 w-8" src="https://i.ibb.co/wKjbW5s/feature-3d-render-icon-illustration-png.png" alt="" />Features </NavLink>
+  </li>
+  <li>
+    <NavLink to={"/translate"}><img className="h-8 w-8" src="https://i.ibb.co/Kz2tKVG/minimal-modern-language-translation-app-symbol-user-interface-theme-3d-illustration-rendering-icon-i.webp" alt="" />Translate</NavLink>
+  </li>
+  {/* <li>
+    <NavLink to={"/contact"}><img className="h-8 w-8" src="https://i.ibb.co/hg15vQ2/phone-call-icon-with-conversation-3d-render-png.webp" alt="" />Contact</NavLink>
+  </li> */}
+
+  <li>
+    <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
+  </li>
+  <li>
+    <NavLink to={"/profile"}><img className="h-10 w-10" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
+  </li>
+  <li>
+    {user?.email === "admin@gmail.com" ? (
+      <NavLink to={"dashboard/adminHome"}><img className="h-8 w-8" src="https://i.ibb.co/ZgKDvpZ/business-icon-dashboard-3d-illustration-png.webp" alt="" />Dashbord</NavLink>
+    ) : (
+      <></>
+    )}
+  </li>
+
           </ul>
         </div>
         <div>
           <Link to={"/"}>
-        
             <img
-              className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
+              className="lg:w-[200px] z-50 lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
               src="https://i.ibb.co/BjZTK4r/E-translator.png"
               alt=""
             />
-            
           </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 flex gap-4">
+
+        <ul className="menu menu-horizontal items-center px-1 flex gap-4">
         <li>
-            <NavLink to={"/"}><FaHome />Home </NavLink>
+
+        {/* 
+
+
+
+
+ */}
+          
+            <NavLink to={"/"}> <img className="h-6 w-6" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home </NavLink>
           </li>
           <li>
-            <NavLink to={"/features"}><MdOutlineFeaturedPlayList />Features </NavLink>
+            <NavLink to={"/features"}><img className="h-6 w-6" src="https://i.ibb.co/wKjbW5s/feature-3d-render-icon-illustration-png.png" alt="" />Features </NavLink>
           </li>
           <li>
-            <NavLink to={"/translate"}><MdOutlineGTranslate />Translate</NavLink>
+            <NavLink to={"/translate"}><img className="h-6 w-6 " src="https://i.ibb.co/Kz2tKVG/minimal-modern-language-translation-app-symbol-user-interface-theme-3d-illustration-rendering-icon-i.webp" alt="" />Translate</NavLink>
           </li>
+          {/* <li>
+            <NavLink to={"/contact"}><img className="h-8 w-8" src="https://i.ibb.co/hg15vQ2/phone-call-icon-with-conversation-3d-render-png.webp" alt="" />Contact</NavLink>
+
+          </li> */}
+
           <li>
-            <NavLink to={"/contact"}><FaMobileAlt/>Contact</NavLink>
+
+            <NavLink to={"/blog"}> <img className="h-6 w-6" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
+
           </li>
-        
+
           <li>
-            <NavLink to={"/blog"}> <FaMicroblog />Blogs</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/profile"}><AiFillProfile />Profile  </NavLink>
+
+            <NavLink to={"/profile"}><img className="h-8 w-8" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
           </li>
           {/* <li>
             <NavLink to={"/rating"}>Rating</NavLink>
           </li> */}
           <li>
             {user?.email === "admin@gmail.com" ? (
-              <NavLink to={"dashboard/adminHome"}><RiDashboardFill />Dashbord</NavLink>
+              <NavLink to={"dashboard/adminHome"}><img className="h-8 w-8" src="https://i.ibb.co/ZgKDvpZ/business-icon-dashboard-3d-illustration-png.webp" alt="" />Dashbord</NavLink>
+
             ) : (
               <></>
             )}
@@ -163,7 +180,7 @@ const NavBar = () => {
 
         <div className="items-center">
           {user?.displayName ? (
-            <div className="dropdown   center">
+            <div className="dropdown center">
               <label tabIndex={0}>
                 <div>
                   <img
@@ -171,7 +188,6 @@ const NavBar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                 
                 </div>
               </label>
               <ul
@@ -181,7 +197,7 @@ const NavBar = () => {
                 <div className="dropdown ">
                   <div
                     tabIndex={0}
-                    className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-white text-black"
+                    className="dropdown-content z-[50] card card-compact w-44 p-2 shadow bg-base-100 border text-black"
                   >
                     <figure>
                       <img
@@ -190,10 +206,9 @@ const NavBar = () => {
                         alt="Shoes"
                       />
                     </figure>
-                    <div className="card-body">
+                    <div className="card-body ">
                       {/* <h1> Name: {user?.displayName}</h1> */}
                       <hr />
-
 
                       <NavLink
                         onClick={handleLogOut}
@@ -205,7 +220,7 @@ const NavBar = () => {
                             : "mr-5 hover:text-gray-100"
                         }
                       >
-                        <button className="btn  btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm">
+                        <button className="btn btn-outline border-0 border-[#0165c3] hover:bg-[#0165c3] hover:border-[#0165c3] border-b-4 hover:text-white btn-sm">
                           LogOut
                         </button>
                       </NavLink>

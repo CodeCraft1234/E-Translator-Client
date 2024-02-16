@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
 import { FaBlog, FaHome, FaUsers } from "react-icons/fa";
 import { FaBookBookmark } from "react-icons/fa6";
+import { FcFeedback } from "react-icons/fc";
+
+
 
 const Dashboard = ({ showSidebar }) => {
   const { user } = useContext(AuthContext);
@@ -62,6 +65,15 @@ const Dashboard = ({ showSidebar }) => {
                 >
                   <FaBlog className="mr-2" />
                   Manage Blogs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard/userfeedback"
+                  className="flex items-center py-2"
+                >
+               <FcFeedback className="mr-2"/>
+                  Users Feedback
                 </Link>
               </li>
               <li>

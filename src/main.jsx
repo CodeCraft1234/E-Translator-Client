@@ -39,6 +39,7 @@ import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
 import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
 import ChatTest from "./Components/Chat/ChatTest.jsx";
 import WebRating from "./Components/WebRating/WebRating.jsx";
+import UserFeedback from './Pages/UserFeedback/UserFeedback';
 
 
 
@@ -162,6 +163,11 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageBlogs",
         element: <ManageBlogs></ManageBlogs>,
+      },
+      {
+        path: "/dashboard/userfeedback",
+        element: <UserFeedback/>
+       
       },
       {
         path: "/dashboard/blogs/:id",

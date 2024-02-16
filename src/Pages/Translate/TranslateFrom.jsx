@@ -1,6 +1,11 @@
-
 import { useEffect, useState, useRef } from "react";
-import { FaVolumeUp, FaExchangeAlt, FaCopy, FaCamera } from "react-icons/fa";
+import {
+  FaVolumeUp,
+  FaExchangeAlt,
+  FaCopy,
+  FaGlobe,
+  FaImages,
+} from "react-icons/fa";
 import { useContext } from "react";
 import { MdKeyboardVoice } from "react-icons/md";
 import lang from "../Translate/Languages/languages";
@@ -9,9 +14,9 @@ import Tesseract from "tesseract.js";
 import { FaRegFilePdf, FaStar } from "react-icons/fa";
 import { RiHistoryLine } from "react-icons/ri";
 import { FaUserGroup } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { pdfjs } from "react-pdf";
-
-import { AuthContext } from "../../Security/AuthProvider"
+import { AuthContext } from "../../Security/AuthProvider";
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
 import BG from "../../Components/Features/BG";
@@ -44,7 +49,6 @@ function Translator() {
 
   const imageInput = useRef(null);
   const typingTimer = useRef(null);
-  
 
   useEffect(() => {
     setLanguages(lang);
@@ -160,10 +164,36 @@ function Translator() {
     fetch("https://e-translator-server.vercel.app/api/history")
       .then((res) => res.json())
       .then((data) => {
-        setTranslationHistory(data);
+        const userTranslationHistory = data.filter(
+          (entry) => entry.email === user.email
+        );
+        setTranslationHistory(userTranslationHistory);
       })
       .catch((error) => {
         console.error("Error fetching translation history:", error);
+      });
+  };
+
+  //deleted
+  const handleDeleted = (id) => {
+    fetch(`http://localhost:5000/api/history/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        if (data.deletedCount > 0) {
+          toast.success("Deleted! Successfully");
+
+          // Remove the deleted entry from the translation history
+          setTranslationHistory((prevHistory) =>
+            prevHistory.filter((entry) => entry._id !== id)
+          );
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting translation history:", error);
       });
   };
 
@@ -183,6 +213,7 @@ function Translator() {
         toText,
         fromLanguage,
         toLanguage,
+        email: user.email,
       };
 
       fetch("https://e-translator-server.vercel.app/api/history", {
@@ -228,6 +259,8 @@ function Translator() {
     if (imageInput.current) {
       imageInput.current.value = null;
     }
+    setShowInput("");
+    setWebsiteLink("");
   };
 
   const handleImageUpload = async (event) => {
@@ -286,13 +319,6 @@ function Translator() {
     setHistoryToText(toText);
     fetchTranslationHistory();
   };
-
-  // const handleOpenPdf = () => {
-  //   if (imageInput.current) {
-  //     imageInput.current.click();
-  //   }
-  // };
-
   const handleOpenPdf = () => {
     if (imageInput.current) {
       imageInput.current.click();
@@ -349,19 +375,37 @@ function Translator() {
     fileReader.readAsArrayBuffer(imageFile);
   };
 
-  return (
+  //
+  const [websiteLink, setWebsiteLink] = useState("");
+  const [showInput, setShowInput] = useState(false);
 
+  const toggleInput = () => {
+    setShowInput(!showInput);
+  };
+
+
+  const handleClick = () => {
+    if (websiteLink) {
+      let translatedLink = `https://translate.google.com/translate?sl=auto&tl=bn&u=${encodeURIComponent(
+        websiteLink
+      )}`;
+      window.open(translatedLink, "_blank");
+    }
+  };
+
+  return (
+   
 
     <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  flex items-center justify-center ">
       <Animation></Animation>
       <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
+
 
         <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
 
         <div className="mb-4 flex items-center">
-       
           <div className="w-1/2 pr-2">
             <label className="block text-sm font-medium">From Language:</label>
             <textarea
@@ -421,8 +465,8 @@ function Translator() {
               onClick={() => utterText(fromText, fromLanguage)}
               className="text-[#4392d9]"
             >
-              <div className="hover:bg-[#c1c7cd] rounded p-1">
-                <FaVolumeUp size={20} />
+              <div className="rounded p-1">
+                <FaVolumeUp className="text-xl hover:scale-150"></FaVolumeUp>
               </div>
             </button>
 
@@ -430,8 +474,8 @@ function Translator() {
               onClick={toggleRecognition}
               className={`text-${isRecording ? "red" : "blue"}-500`}
             >
-              <div className="hover:bg-[#c1c7cd] rounded p-1">
-                <MdKeyboardVoice size={20} />
+              <div className="rounded p-1">
+                <MdKeyboardVoice className="text-xl hover:scale-150"></MdKeyboardVoice>
               </div>
             </button>
 
@@ -439,30 +483,55 @@ function Translator() {
               onClick={() => imageInput.current.click()}
               className="text-[#4392d9]"
             >
-              <div className="hover:bg-[#c1c7cd] rounded p-1">
-                <FaCamera size={20} />
+              <div className="rounded p-1">
+                <FaImages className="text-xl hover:scale-150"></FaImages>
               </div>
             </button>
 
             <button className="text-[#4392d9]" onClick={handleOpenPdf}>
-              <div className="hover:bg-[#c1c7cd] rounded p-1">
-                <FaRegFilePdf size={20} />
+              <div className="rounded p-1">
+                <FaRegFilePdf className="text-xl hover:scale-150"></FaRegFilePdf>
               </div>
             </button>
+
+            <button className="text-[#4392d9]" onClick={toggleInput}>
+              <div className=" rounded p-1">
+                <FaGlobe className="text-xl hover:scale-150"></FaGlobe>
+              </div>
+            </button>
+
+            {showInput && (
+              <>
+                <h2>Website Link</h2>
+                <input
+                  type="text"
+                  className="p-1 rounded"
+                  placeholder="Website Link...."
+                  value={websiteLink}
+                  onChange={(e) => setWebsiteLink(e.target.value)}
+                />
+                <button
+                  className="bg-[#4392d9] p-4 rounded-full ml-[20px]"
+                  onClick={handleClick}
+                >
+                  <FaArrowRightLong className="text-white" />
+                </button>
+              </>
+            )}
           </div>
 
           <button
             onClick={() => copyContent(fromText)}
             className="text-[#4392d9] ml-5"
           >
-            <div className="hover:bg-[#c1c7cd] rounded p-1">
-              <FaCopy size={20} />
+            <div className="rounded p-1">
+              <FaCopy className="text-xl hover:scale-150"></FaCopy>
             </div>
           </button>
 
           <button onClick={handleExchangeClick} className="text-[#4392d9]">
-            <div className="hover:bg-[#c1c7cd] rounded p-1 mr-[80px]">
-              <FaExchangeAlt size={20} />
+            <div className="rounded p-1 mr-[110px]">
+              <FaExchangeAlt className="text-xl hover:scale-150"></FaExchangeAlt>
             </div>
           </button>
 
@@ -470,8 +539,8 @@ function Translator() {
             onClick={() => copyContent(toText)}
             className="text-[#4392d9]"
           >
-            <div className="hover:bg-[#c1c7cd] rounded p-1">
-              <FaCopy size={20} />
+            <div className="rounded p-1">
+              <FaCopy className="text-xl hover:scale-150"></FaCopy>
             </div>
           </button>
 
@@ -479,8 +548,8 @@ function Translator() {
             onClick={() => utterText(toText, toLanguage)}
             className="text-[#4392d9] ml-5"
           >
-            <div className="hover:bg-[#c1c7cd] rounded p-1">
-              <FaVolumeUp size={20} />
+            <div className="rounded p-1">
+              <FaVolumeUp className="text-xl hover:scale-150"></FaVolumeUp>
             </div>
           </button>
         </div>
@@ -517,12 +586,13 @@ function Translator() {
           </div>
         )}
 
-        <div className="mt-5">
+        <div className="lg:mt-5 md:mt-5 mt-6 lg:mb-5 md:mb-5 mb-10">
           <button
             onClick={handleReset}
             className="btn btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
           >
             <div>Reset</div>
+            {/* <h2 className="text-center">Reset</h2> */}
           </button>
         </div>
 
@@ -535,13 +605,19 @@ function Translator() {
               <h2>History</h2>
             </button>
           </div>
-          {
-            user && <div><button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_1').showModal()} >
-              <div className="p-3 border border-[#4392d9] rounded-full">
-                <FaStar size={40} />
-              </div>
-              <h2 className="text-center">Rating</h2>
-            </button>
+          {user && (
+            <div>
+              <button
+                className="text-[#4392d9] ml-5"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
+                <div className="p-3 border border-[#4392d9] rounded-full">
+                  <FaStar size={40} />
+                </div>
+                <h2 className="text-center">Rating</h2>
+              </button>
               <dialog id="my_modal_1" className="modal">
                 <div className="modal-box ">
                   <WebRating ></WebRating>
@@ -558,30 +634,38 @@ function Translator() {
                 </div>
               </dialog>
             </div>
-          }
-          {user && <div>
-            <button className="text-[#4392d9] ml-5" onClick={() => document.getElementById('my_modal_2').showModal()} >
-              <div className="p-3 border border-[#4392d9] rounded-full">
-                <FaUserGroup size={40} />
-              </div>
-              <h2 className="text-center">Feedback</h2>
-            </button>
-            <dialog id="my_modal_2" className="modal">
-              <div className="modal-box">
-                <h3 className="font-bold text-lg">Please share your feedback</h3>
-
-                <Feedback></Feedback>
-                {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
-                <div className="modal-action">
-                  <form method="dialog">
-                    {/* if there is a button in form, it will close the modal */}
-                    <button className="btn">Close</button>
-                  </form>
+          )}
+          {user && (
+            <div>
+              <button
+                className="text-[#4392d9] ml-5"
+                onClick={() =>
+                  document.getElementById("my_modal_2").showModal()
+                }
+              >
+                <div className="p-3 border border-[#4392d9] rounded-full">
+                  <FaUserGroup size={40} />
                 </div>
-              </div>
-            </dialog>
-          </div>
-          }
+                <h2 className="text-center">Feedback</h2>
+              </button>
+              <dialog id="my_modal_2" className="modal">
+                <div className="modal-box">
+                  <h3 className="font-bold text-lg">
+                    Please share your feedback
+                  </h3>
+
+                  <Feedback></Feedback>
+                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          )}
         </div>
       </div>
 
@@ -615,6 +699,12 @@ function Translator() {
                         </p>
                       </div>
                     </div>
+                    <button
+                      className="underline"
+                      onClick={() => handleDeleted(entry._id)}
+                    >
+                      Deleted
+                    </button>
                   </li>
                 ))}
             </ul>

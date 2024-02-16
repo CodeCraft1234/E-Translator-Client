@@ -5,6 +5,8 @@ import Faq from "../../Components/Faq/Faq";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import Package from "../../Components/Package/Package";
 import Review from "../../Components/Review/Review";
+import LiveChat from "../LiveChat/LiveChat";
+
 
 
 
@@ -17,11 +19,13 @@ const Home = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <Banner></Banner>
+      <LiveChat/>
       <Package></Package>
       <Review></Review>
       <ChooseUs></ChooseUs>
       <NewsLetter></NewsLetter>
       <Faq></Faq>
+      
     
     </div>
   );
