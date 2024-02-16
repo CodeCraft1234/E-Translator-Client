@@ -110,7 +110,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="form-control mt-1">
-                <button className="p-2 rounded bg-neutral text-white">
+                <button className="p-2 rounded bg-[#1368c0] text-white">
                   Login
                 </button>
               </div>
@@ -160,7 +160,7 @@ const Login = () => {
                   aria-label="Log in with GitHub"
                   className="p-3 hover:bg-[#e7e9eb] rounded-full"
                 >
-                <FaGithub />
+                <FaGithub className="text-black"/>
                 </button>
               </div>
 

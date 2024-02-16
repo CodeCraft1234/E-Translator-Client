@@ -68,10 +68,12 @@ const Features = () => {
       description: `Implementing real-time translation on your website enables users to receive instant translation feedback as they type, fostering a seamless and responsive translation experience. This feature enhances user engagement and accessibility by breaking down language barriers in real-time.`,
     },
     {
+
       image: img11,
       name: "PDF to Text Translator",
-      description: "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
-      }
+      description:
+        "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
+    },
   ];
 
   const featureVariants = {
@@ -93,11 +95,10 @@ const Features = () => {
       </Helmet>
       <BG></BG>
 
-      <h3 className="mt-20 text-center text-5xl font-bold py-10 ">
+      <h3 className="text-center text-5xl font-bold py-16 text-white">
         Our features
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 py-10 mx-10">
-        
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pb-16 mx-10">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -111,7 +112,6 @@ const Features = () => {
               boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
             }}
           >
-
             <img
               src={feature.image}
               alt=""
@@ -119,10 +119,10 @@ const Features = () => {
             />
             <div className="flex flex-col justify-between p-6 space-y-8 ">
               <div className="space-y-2">
-                <h2 className="text-2xl font-semibold tracking">
+                <h2 className="text-2xl text-white font-semibold tracking">
                   {feature.name}
                 </h2>
-                <p className="dark:text-gray-200">
+                <p className="dark:text-gray-200 text-white">
                   {expandedIndex === index
                     ? feature.description
                     : `${feature.description.slice(0, 100)}${
