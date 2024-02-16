@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import UseAxiosPublic from "../../Axios/UseAxiosPublic";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
+import Swal from "sweetalert2";
 
 const AddBlogs = () => {
   const [title, setTitle] = useState("");
@@ -35,7 +36,17 @@ const AddBlogs = () => {
     console.log(blogInfo);
 
     // Post blog to the server
-    AxiosSecure.post("/blogs", blogInfo).then((res) => console.log(res.data));
+    AxiosSecure.post('/blogs',blogInfo)
+    .then(res=>{
+      console.log(res.data)
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Blog has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
 
     // Reset the form
     setTitle("");
@@ -49,8 +60,8 @@ const AddBlogs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] flex items-center justify-center p-10 overflow-x-hidden">
-      <div className="bg-teal-800 p-8 rounded-lg shadow-xl w-96">
+    <div className="text-white min-h-screen bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] flex items-center justify-center p-10 overflow-x-hidden">
+      <div className="bg-[#031321] p-8 rounded-lg shadow-xl w-96">
         <h2 className="text-2xl font-bold mb-4">Add your Blogs</h2>
         <form onSubmit={handleSubmit} action="#" method="post">
           <label htmlFor="title" className="block font-bold mb-1">
@@ -60,7 +71,7 @@ const AddBlogs = () => {
             type="text"
             id="title"
             name="title"
-            className="w-full p-2 mb-4 border rounded"
+            className="w-full text-black p-2 mb-4 border rounded"
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -73,7 +84,7 @@ const AddBlogs = () => {
             id="description"
             name="description"
             rows="4"
-            className="w-full p-2 mb-4 border rounded"
+            className="w-full text-black p-2 mb-4 border rounded"
             required
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -94,7 +105,7 @@ const AddBlogs = () => {
 
           <button
             type="submit"
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+            className="b bg-cyan-900"
           >
             Submit
           </button>

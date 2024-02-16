@@ -21,7 +21,7 @@ const DashboardRoot = () => {
         </button>
       </div>
         </div>
-        <div className="h-32 rounded-lg max-w-7xl lg:w-[82%] lg:col-span-2">
+        <div className="h-32 rounded-lg w-7xl lg:w-[82%] lg:col-span-2">
           <Outlet></Outlet>
         </div>
       </div>

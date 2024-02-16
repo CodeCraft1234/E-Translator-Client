@@ -41,7 +41,7 @@ const UserFeedback = () => {
               className="b bg-cyan-950 rounded-md"
               onClick={() => handleDelete(feedback.id)}
             >
-              Delete
+              Delete 
             </button>
             </div>
           </div>
