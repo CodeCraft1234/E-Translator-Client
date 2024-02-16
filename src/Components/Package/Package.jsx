@@ -55,7 +55,7 @@ const Package = () => {
   ];
 
   return (
-    <div className="mb-24">
+    <div className="mb-24 mt-28">
       <div className="  dark:text-red-100">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto mb-16 text-center">
