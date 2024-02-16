@@ -7,8 +7,8 @@ const DashboardRoot = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <div>
-      <div className="flex relative ">
-        <div className="absolute md:static   lg:w-[18%] grid lg:grid-cols-[140px] top-0 gap-8 lg:gap-8  z-10">
+      <div className="flex relative">
+        <div className="absolute md:static lg:w-[18%] grid lg:grid-cols-[140px] top-0 gap-8 lg:gap-8  z-10">
           <Dashboard
             showSidebar={showSidebar}
           ></Dashboard>

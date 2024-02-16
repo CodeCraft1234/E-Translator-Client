@@ -30,10 +30,24 @@ const AddBlogs = () => {
     const photo = res.data.data.display_url;
     console.log(photo);
 
-    // Prepare blog info
+
+    
     const date = new Date();
     const blogInfo = { title, description, photo, date };
     console.log(blogInfo);
+
+    AxiosSecure.post('/blogs',blogInfo)
+    .then(res=>{
+      console.log(res.data)
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Blog has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+
 
     // Post blog to the server
     AxiosSecure.post('/blogs',blogInfo)
@@ -48,9 +62,11 @@ const AddBlogs = () => {
       });
     })
 
+
     // Reset the form
     setTitle("");
     setDescription("");
+
     setImage(null);
   };
 

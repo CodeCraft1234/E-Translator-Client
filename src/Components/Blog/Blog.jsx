@@ -27,7 +27,7 @@ const TranslationPlatformBlog = () => {
 
   return (
 
-    <div className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white pt-24 mt-10 lg:px-28 md:px-10 px-5">
+    <div className="bg-gradient-to-r my-10 from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white pt-24 mt-10 lg:px-28 md:px-10 px-5">
 
       <Helmet>
         <title> E-Translator | Blogs</title>
@@ -39,15 +39,14 @@ const TranslationPlatformBlog = () => {
           <>
             <div
               key={blog._id}
-              className="bg-[#006bcb] dark:bg-gray-800 p-4 rounded-lg shadow-md "
+              className="border p-5 bg-violet-950 border-gray-300 rounded-lg overflow-hidden "
             >
               <img
-                className=" w-full h-72 rounded-lg"
+                className=" w-full h-[500px] rounded-lg"
                 src={blog.photo}
                 alt=""
               />
-            </div>
-            <div className="mt-4">
+              <div className="mt-4">
               <h3 className="text-xl font-semibold">{blog.title}</h3>
               <p className="mt-2 text-gray-300">
                 {renderContent(blog.description, blog._id)}
@@ -61,6 +60,8 @@ const TranslationPlatformBlog = () => {
                 {showFullContent[blog._id] ? "Read Less" : "Read More"}
               </button>
             </div>
+            </div>
+            
           </>
         ))}
       </div>
