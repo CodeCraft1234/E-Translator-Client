@@ -119,9 +119,9 @@ const NavBar = () => {
           <li>
             <NavLink to={"/profile"}><AiFillProfile />Profile  </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to={"/rating"}>Rating</NavLink>
-          </li>
+          </li> */}
           <li>
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}><RiDashboardFill />Dashbord</NavLink>

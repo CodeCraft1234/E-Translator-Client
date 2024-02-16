@@ -16,6 +16,7 @@ import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
 import BG from "../../Components/Features/BG";
 import Animation from "./Animation";
+import WebRating from "../../Components/WebRating/WebRating";
 
 
 function Translator() {
@@ -542,7 +543,8 @@ function Translator() {
               <h2 className="text-center">Rating</h2>
             </button>
               <dialog id="my_modal_1" className="modal">
-                <div className="modal-box">
+                <div className="modal-box ">
+                  <WebRating ></WebRating>
                   <h3 className="font-bold text-lg">Have a moment?</h3>
                   <p className="py-4">How would you rate this product?</p>
                   <MyRating></MyRating>
