@@ -135,6 +135,9 @@ const NavBar = () => {
 
             <NavLink to={"/profile"}><img className="h-8 w-8" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
           </li>
+          {/* <li>
+            <NavLink to={"/rating"}>Rating</NavLink>
+          </li> */}
           <li>
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}><img className="h-8 w-8" src="https://i.ibb.co/ZgKDvpZ/business-icon-dashboard-3d-illustration-png.webp" alt="" />Dashbord</NavLink>
