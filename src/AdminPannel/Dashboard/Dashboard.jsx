@@ -9,7 +9,7 @@ const Dashboard = ({ showSidebar }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="relative ">
+    <div className="">
       <div
         className={`bg-blue-600 w-72 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
