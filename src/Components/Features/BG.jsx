@@ -41,7 +41,7 @@ const BG = () => {
                         quantity: 4,
                     },
                     repulse: {
-                        distance: 800,
+                        distance: 80,
                         duration: 0.4,
                     },
                 },
@@ -52,7 +52,7 @@ const BG = () => {
                 },
                 links: {
                     color: "#ffffff",
-                    distance: 150,
+                    distance: 20,
                     enable: true,
                     opacity: 0.5,
                     width: 1,
@@ -72,7 +72,7 @@ const BG = () => {
                         enable: true,
                         area: 800,
                     },
-                    value: 50,
+                    value: 20,
                 },
                 opacity: {
                     value: 0.1,
@@ -81,7 +81,7 @@ const BG = () => {
                     type: "circle",
                 },
                 size: {
-                    value: { min: 1, max: 5 },
+                    value: { min: 1, max: 10 },
                 },
             },
             detectRetina: true,

@@ -15,7 +15,9 @@ const NavBar = () => {
 
   // sign out a user
   const handleLogOut = () => {
-    logOut().then().catch();
+    logOut()
+    .then()
+    .catch();
     navigate("/");
   };
   const [theme, setTheme] = useState(
@@ -70,9 +72,9 @@ const NavBar = () => {
   <li>
     <NavLink to={"/translate"}><img className="h-8 w-8" src="https://i.ibb.co/Kz2tKVG/minimal-modern-language-translation-app-symbol-user-interface-theme-3d-illustration-rendering-icon-i.webp" alt="" />Translate</NavLink>
   </li>
-  <li>
+  {/* <li>
     <NavLink to={"/contact"}><img className="h-8 w-8" src="https://i.ibb.co/hg15vQ2/phone-call-icon-with-conversation-3d-render-png.webp" alt="" />Contact</NavLink>
-  </li>
+  </li> */}
 
   <li>
     <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
@@ -93,7 +95,7 @@ const NavBar = () => {
         <div>
           <Link to={"/"}>
             <img
-              className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
+              className="lg:w-[200px] z-50 lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
               src="https://i.ibb.co/BjZTK4r/E-translator.png"
               alt=""
             />
@@ -112,29 +114,32 @@ const NavBar = () => {
 
  */}
           
-            <NavLink to={"/"}> <img className="h-8 w-8" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home </NavLink>
+            <NavLink to={"/"}> <img className="h-6 w-6" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home </NavLink>
           </li>
           <li>
-            <NavLink to={"/features"}><img className="h-8 w-8" src="https://i.ibb.co/wKjbW5s/feature-3d-render-icon-illustration-png.png" alt="" />Features </NavLink>
+            <NavLink to={"/features"}><img className="h-6 w-6" src="https://i.ibb.co/wKjbW5s/feature-3d-render-icon-illustration-png.png" alt="" />Features </NavLink>
           </li>
           <li>
-            <NavLink to={"/translate"}><img className="h-8 w-8" src="https://i.ibb.co/Kz2tKVG/minimal-modern-language-translation-app-symbol-user-interface-theme-3d-illustration-rendering-icon-i.webp" alt="" />Translate</NavLink>
+            <NavLink to={"/translate"}><img className="h-6 w-6 " src="https://i.ibb.co/Kz2tKVG/minimal-modern-language-translation-app-symbol-user-interface-theme-3d-illustration-rendering-icon-i.webp" alt="" />Translate</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to={"/contact"}><img className="h-8 w-8" src="https://i.ibb.co/hg15vQ2/phone-call-icon-with-conversation-3d-render-png.webp" alt="" />Contact</NavLink>
 
+          </li> */}
+
+          <li>
+
+            <NavLink to={"/blog"}> <img className="h-6 w-6" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
+
           </li>
 
           <li>
 
-            <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
-
+            <NavLink to={"/profile"}><img className="h-8 w-8" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
           </li>
-
-          <li>
-
-            <NavLink to={"/profile"}><img className="h-10 w-10" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
-          </li>
+          {/* <li>
+            <NavLink to={"/rating"}>Rating</NavLink>
+          </li> */}
           <li>
             {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}><img className="h-8 w-8" src="https://i.ibb.co/ZgKDvpZ/business-icon-dashboard-3d-illustration-png.webp" alt="" />Dashbord</NavLink>
