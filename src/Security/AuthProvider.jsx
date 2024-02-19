@@ -11,6 +11,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import UseAxiosSecure from "../Axios/UseAxiosSecure";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -20,6 +21,7 @@ const facebookprovider = new FacebookAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const AxiosSecure=UseAxiosSecure()
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -61,9 +63,31 @@ const AuthProvider = ({ children }) => {
   // observing the user state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("user on the auth state changed", currentUser);
+      const userEmail = currentUser?.email;
+      const loggeduser = { email: userEmail };
       setUser(currentUser);
+      console.log("user on the auth state changed", currentUser);
       setLoading(false);
+      
+      if (currentUser) {
+        AxiosSecure.post('/jwt', loggeduser, { withCredentials: true })
+            .then((res) => {
+                console.log(res.data);
+            });
+            setLoading(false)
+    } 
+    else {
+        AxiosSecure.post('/logout', loggeduser, {
+                withCredentials: true,
+            })
+            .then((res) => {
+                console.log(res.data);
+            });
+            setLoading(false)
+    }
+
+
+     
     });
 
     return () => {

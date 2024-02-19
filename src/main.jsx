@@ -38,6 +38,10 @@ import Profile from './Pages/Profile/Profile';
 import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
 import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
 import ChatTest from "./Components/Chat/ChatTest.jsx";
+import WebRating from "./Components/WebRating/WebRating.jsx";
+import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx";
+
+
 
 
 
@@ -127,6 +131,10 @@ const router = createBrowserRouter([
         element: <MeetTeam></MeetTeam>,
       },
       {
+        path: "/rating",
+        element: <WebRating></WebRating>,
+      },
+      {
         path: "/getintuch",
 
         element: <GetInTouch />,
@@ -135,7 +143,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <DashboardRoot></DashboardRoot>,
+    element: <PrivateRoute><DashboardRoot></DashboardRoot></PrivateRoute>,
     children: [
       // {
       //   path: "skeleton",
@@ -156,6 +164,11 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageBlogs",
         element: <ManageBlogs></ManageBlogs>,
+      },
+      {
+        path: "/dashboard/userfeedback",
+        element: <UserFeedback/>
+       
       },
       {
         path: "/dashboard/blogs/:id",

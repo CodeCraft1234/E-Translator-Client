@@ -63,14 +63,11 @@ const Banner = () => {
   return (
 
     <div >
-      <section className="  h-[650px] text-white   lg:mt-0 md:mt-10">
-        <div className="container mt-10 flex flex-col p-20  justify-center items-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
+      <section className=" z-0 h-[650px] text-white pt-10  lg:mt-0 md:mt-10">
+        <div className="container mt-10 flex flex-col p-5  justify-center items-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
 
-          <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
-            {/* <h1 className="lg:text-5xl md:text-3xl text-3xl font-extrabold sm:text-6xl ">
-              Decode
-              <span className=""> the World of Words </span>
-            </h1> */}
+          <div className="flex flex-col  justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
+           
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
@@ -90,7 +87,7 @@ const Banner = () => {
               style={{ fontSize: "3em", display: "inline-block" }}
               repeat={Infinity}
             />
-            <p className="mt-6 mb-8 text-lg sm:mb-12 ">
+            <p className="mt-6 mb-0 text-lg sm:mb-12 ">
               <Animation
                 type="zoomIn"
                 duration="1000ms"
@@ -107,7 +104,7 @@ const Banner = () => {
                 speed={40}
                 isLoop
                 loopDelay={4000}
-                ClassName="text-white"
+                ClassName="text-white mb-5"
               />
 
               <br className="hidden md:inline lg:hidden" />
@@ -136,15 +133,17 @@ const Banner = () => {
              </button>
             </div>
           </div>
-          <div className="flex  items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+          <div className="flex  items-center justify-center mt-8  pt-16 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
               src={img1}
               alt=""
               className="object-contain h-72 sm:h-80 lg:h-[420px] w-[400px] xl:h-112 2xl:h-128"
             />
           </div>
+          
         </div>
       </section>
+      
     </div>
   );
 };

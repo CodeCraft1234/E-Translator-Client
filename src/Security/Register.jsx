@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import UseAxiosPublic from "../Axios/UseAxiosPublic";
 import { useForm } from "react-hook-form";
+import UseAxiosSecure from "../Axios/UseAxiosSecure";
 
 const image_hosting_key = "6fbc3358bbb1a92b78e2dee0f5ca1b94";
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -12,6 +13,7 @@ const Register = () => {
   const navigate = useNavigate();
   const location=useLocation()
   const AxiosPublic = UseAxiosPublic();
+
   const {
     register,
     handleSubmit,
@@ -22,10 +24,11 @@ const Register = () => {
     console.log(data.image)
     // access the form data
     const image = { image: data.image[0] };
-    const res = await AxiosPublic.post(image_hosting_api, image, {
+    const res = await AxiosPublic.post(image_hosting_api, image,  {
       headers: {
         "content-type": "multipart/form-data",
       },
+      
     });
     const name = data.name;
     const email = data.email;
@@ -46,7 +49,7 @@ const Register = () => {
         const userInfo = { email, name, photo, date, admin: false };
         console.log(date);
 
-        AxiosPublic.post("/users", userInfo)
+        AxiosPublic.post("/users", userInfo,)
         .then((res) => {
           console.log(res.data);
         });

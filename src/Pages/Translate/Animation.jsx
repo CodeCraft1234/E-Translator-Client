@@ -47,7 +47,7 @@ const Animation = () => {
     };
 
     generateFloatingWords();
-    const interval = setInterval(generateFloatingWords, 10000);
+    const interval = setInterval(generateFloatingWords, 20000);
     return () => clearInterval(interval);
   }, []); 
 
