@@ -15,7 +15,9 @@ const NavBar = () => {
 
   // sign out a user
   const handleLogOut = () => {
-    logOut().then().catch();
+    logOut()
+    .then()
+    .catch();
     navigate("/");
   };
   const [theme, setTheme] = useState(

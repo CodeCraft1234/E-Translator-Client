@@ -64,7 +64,7 @@ const BG = () => {
                         default: "bounce",
                     },
                     random: false,
-                    speed: 6,
+                    speed: 4,
                     straight: false,
                 },
                 number: {
@@ -75,7 +75,7 @@ const BG = () => {
                     value: 20,
                 },
                 opacity: {
-                    value: 0.5,
+                    value: 0.1,
                 },
                 shape: {
                     type: "circle",
@@ -90,5 +90,4 @@ const BG = () => {
 );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default BG;
