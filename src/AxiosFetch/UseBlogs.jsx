@@ -1,8 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiosPublic from "../Axios/UseAxiosPublic";
 import UseAxiosSecure from "../Axios/UseAxiosSecure";
-
-
 const UseBlogs = () => {
     const AxiosSecure=UseAxiosSecure()
     const { refetch, data: blogs=[]}=useQuery({
@@ -15,5 +12,4 @@ const UseBlogs = () => {
         console.log(blogs)
         return [blogs,refetch]
 }
-
 export default UseBlogs;
