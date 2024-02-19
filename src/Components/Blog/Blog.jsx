@@ -4,6 +4,7 @@ import UseBlogs from "../../AxiosFetch/UseBlogs";
 
 const TranslationPlatformBlog = () => {
   const [blogs, refetch] = UseBlogs();
+  
 
   // Maintain individual states for each blog post
   const [showFullContent, setShowFullContent] = useState({});
