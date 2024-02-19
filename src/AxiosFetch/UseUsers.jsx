@@ -1,8 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-
 import UseAxiosSecure from "../Axios/UseAxiosSecure";
-
-
 const UseUsers = () => {
     const AxiosSecure=UseAxiosSecure()
     const { refetch, data: users=[]}=useQuery({

@@ -2,7 +2,8 @@
 // Import the CSS file for styling
 import { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import UseAxiosTest1 from '../../Axios/UseAxiosTest1';
+
+import UseAxiosSecure from '../../Axios/UseAxiosSecure';
 // import UseAxiosPublic from '../../Axios/UseAxiosPublic';
 // import ProgressBar from './ProgressBar';
 
@@ -10,13 +11,13 @@ import UseAxiosTest1 from '../../Axios/UseAxiosTest1';
 
 const WebRating = () => {
   const [ratingHistory, setRatingHistory] = useState([]);
-  // const AxiosPublic = UseAxiosPublic();
 
-const AxiosTest1 = UseAxiosTest1();
+
+const AxiosSecure = UseAxiosSecure();
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await AxiosTest1.get("/rating");
+        const response = await AxiosSecure.get("/rating");
         // const response = await AxiosPublic.get("/rating"); // Assuming you have an endpoint to fetch user data
         // setTotalUsers(response.data.length); // Update the state with the total user count
         
