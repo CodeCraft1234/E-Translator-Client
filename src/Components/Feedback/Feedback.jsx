@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Security/AuthProvider"
-import UseAxiosPublic from '../../Axios/UseAxiosPublic';
 import toast from "react-hot-toast";
+import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 
 // import UseAxiosTest from '../../Axios/UseAxiosTest';
 
 
 const Feedback = () => {
-    const AxiosPublic = UseAxiosPublic();
+    const AxiosPublic = UseAxiosSecure();
     // const AxiosTest = UseAxiosTest();
     const { user } = useContext(AuthContext);
     const handleSubmit = (e) => {
