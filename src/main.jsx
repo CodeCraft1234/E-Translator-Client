@@ -40,6 +40,8 @@ import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
 import ChatTest from "./Components/Chat/ChatTest.jsx";
 import WebRating from "./Components/WebRating/WebRating.jsx";
 import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx";
+import Video from "./Pages/LiveChat/video/Video.jsx";
+
 
 
 
@@ -77,9 +79,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/chat",
-        element: <PrivateRoute>
-          <ChatTest></ChatTest>
-        </PrivateRoute>,
+        // element: <PrivateRoute>
+        //   <ChatTest></ChatTest>
+        // </PrivateRoute>,
+        element:<Video></Video>
       },
       {
         path: "/blog",
