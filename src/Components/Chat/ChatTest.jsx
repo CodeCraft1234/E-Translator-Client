@@ -39,7 +39,7 @@ const ChatTest = () => {
           />
           <button
             onClick={joinRoom}
-            className="w-72 md:w-48 h-12 bg-green-600 text-white rounded hover:bg-green-700"
+            className="w-72 md:w-48 h-12 bg-indigo-950 rounded-lg b"
           >
             Join A Room
           </button>
