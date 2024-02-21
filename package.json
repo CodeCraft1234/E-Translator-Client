@@ -32,8 +32,11 @@
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "pdfjs-dist": "^4.0.379",
+    "peerjs": "^1.5.2",
     "react": "^18.2.0",
     "react-anagram-animation": "^1.4.0",
+    "react-autosuggest": "^10.1.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-easy-animations": "^0.3.2",
@@ -44,11 +47,8 @@
     "react-pdf": "^7.7.0",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.16.0",
-
     "react-scripts": "^5.0.1",
-
     "react-scroll-parallax": "^3.4.5",
-
     "react-scroll-to-bottom": "^4.2.0",
     "react-select": "^5.8.0",
     "react-speech-recognition": "^3.10.0",

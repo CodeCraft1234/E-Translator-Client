@@ -3,9 +3,12 @@ import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 import UseUsers from "../../AxiosFetch/UseUsers";
 
 
+
 const AllUsers = () => {
+
   const [users,refetch]=UseUsers()
   const AxiosSecure=UseAxiosSecure()
+
   console.log(users)
 
   const handleMakeAdmin=(id)=>{
