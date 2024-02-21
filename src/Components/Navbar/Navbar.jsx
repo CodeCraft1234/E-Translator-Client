@@ -15,7 +15,9 @@ const NavBar = () => {
 
   // sign out a user
   const handleLogOut = () => {
-    logOut().then().catch();
+    logOut()
+    .then()
+    .catch();
     navigate("/");
   };
   const [theme, setTheme] = useState(
@@ -36,7 +38,7 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar  bg-indigo-700 text-white bg-opacity-50 backdrop-blur-lg p-5 rounded-md shadow-lg  lg:px-28 md:px-10 px-5  fixed z-10 top-0 border-b">
+    <div className="navbar  bg-indigo-700 text-white bg-opacity-50 backdrop-blur-lg p-5 rounded-md shadow-lg  lg:px-28 md:px-10 px-5  fixed z-50 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

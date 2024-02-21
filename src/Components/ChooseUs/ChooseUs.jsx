@@ -77,9 +77,9 @@ const ChooseUS = () => {
     easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
   };
   return (
-    <div className="feat bg-gray  pb-5 mt-24">
+    <div className="  pb-5 mt-24">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-4">
           <div
             className="section-head col-span-full text-center"
             data-aos="zoom-in"
@@ -103,9 +103,7 @@ const ChooseUS = () => {
         <div className="item border-2 shadow-md text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-[#006bcb] hover:text-white transition duration-500  transform hover:-translate-y-1 hover:scale-105" data-aos='zoom-in'>
           <div className='  gap-3'>
             <img className='h-28 w-28 mx-auto' src= {card.iconClass} alt="" />
-            {/* <span className={`icon feature_box_col_${index + 1}`}>
-             
-            </span> */}
+           
             <h6 className="text-xl font-semibold mb-2">{card.title}</h6>
           </div>
           <p className="text-sm">{card.description}</p>

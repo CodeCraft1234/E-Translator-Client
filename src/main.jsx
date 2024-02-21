@@ -80,6 +80,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ChatTest></ChatTest>
         </PrivateRoute>,
+       
       },
       {
         path: "/blog",
@@ -143,7 +144,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <DashboardRoot></DashboardRoot>,
+    element: <PrivateRoute><DashboardRoot></DashboardRoot></PrivateRoute>,
     children: [
       // {
       //   path: "skeleton",
