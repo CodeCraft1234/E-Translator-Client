@@ -103,7 +103,7 @@ const Banner = () => {
                 ]}
                 speed={40}
                 isLoop
-                loopDelay={4000}
+                loopDelay={15000}
                 ClassName="text-white mb-5"
               />
 

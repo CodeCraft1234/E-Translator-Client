@@ -40,6 +40,7 @@ import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
 import ChatTest from "./Components/Chat/ChatTest.jsx";
 import WebRating from "./Components/WebRating/WebRating.jsx";
 import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx";
+import BlogDetails from "./Components/Blog/BlogDetails.jsx";
 
 
 
@@ -84,6 +85,11 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/blogDetails/:id",
+        element: <BlogDetails></BlogDetails>,
+        loader:({params})=>fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
       },
       {
         path: "/profile",
