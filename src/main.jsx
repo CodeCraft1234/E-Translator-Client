@@ -81,6 +81,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ChatTest></ChatTest>
         </PrivateRoute>,
+       
       },
       {
         path: "/blog",
