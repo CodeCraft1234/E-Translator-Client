@@ -111,29 +111,26 @@ const Banner = () => {
             </p>
 
             <div className="gap-5">
-              <button className="bg-indigo-950  border-b-2 mr-5 rounded-lg">
-                <Link to={"/translate"}>
-                  {" "}
-                  <a className="b rounded-lg" href="">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Lets Translate
-                  </a>
-                </Link>
-              </button>
-              <button className="bg-indigo-950 border-b-2 rounded-lg">
-                <Link to={"/chat"}>
-                  <a className="b rounded-lg">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Live Support
-                  </a>
-                </Link>
-              </button>
+             <button className="bg-indigo-950  border-b-2 mr-5 rounded-lg">
+            <Link to={'/translate'}> <a className="b" href="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Lets Translate
+              </a></Link>
+             </button>
+             <button className="bg-indigo-950 border-b-2 rounded-lg">
+            <Link to={'/chat'}>
+            <a className="b" >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Live Support
+              </a>
+            </Link>
+             </button>
             </div>
           </div>
           <div className="flex  items-center justify-center mt-8  pt-16 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
