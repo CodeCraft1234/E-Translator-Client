@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import UseBlogs from "../../AxiosFetch/UseBlogs";
+import { Link } from "react-router-dom";
 
 const TranslationPlatformBlog = () => {
   const [blogs, refetch] = UseBlogs();
@@ -26,6 +27,8 @@ const TranslationPlatformBlog = () => {
       : content;
   };
 
+ 
+
   return (
 
     <div className="bg-gradient-to-r my-10 from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white pt-24 mt-10 lg:px-28 md:px-10 px-5">
@@ -35,7 +38,7 @@ const TranslationPlatformBlog = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
 
-      <div className="grid gap-6 overflow-hidden ">
+      <div className="grid lg:grid-cols-2 gap-6 overflow-hidden ">
         {blogs.map((blog) => (
           <>
             <div
@@ -60,11 +63,17 @@ const TranslationPlatformBlog = () => {
               >
                 {showFullContent[blog._id] ? "Read Less" : "Read More"}
               </button>
+             <Link to={`/blogDetails/${blog._id}`}>
+             <button  className="">learn more</button>
+             </Link>
             </div>
             </div>
             
           </>
         ))}
+      </div>
+      <div>
+
       </div>
     </div>
   );
