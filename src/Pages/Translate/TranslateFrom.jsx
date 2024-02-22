@@ -20,7 +20,6 @@ import { AuthContext } from "../../Security/AuthProvider";
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
 
-
 function Translator() {
   const { user } = useContext(AuthContext);
   const initialFromLanguage = "en-GB";
@@ -613,10 +612,9 @@ function Translator() {
                   <h3 className="font-bold text-lg">Have a moment?</h3>
                   <p className="py-4">How would you rate this product?</p>
                   <MyRating></MyRating>
-                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+
                   <div className="modal-action">
                     <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
                       <button className="btn">Close</button>
                     </form>
                   </div>
@@ -644,10 +642,9 @@ function Translator() {
                   </h3>
 
                   <Feedback></Feedback>
-                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+
                   <div className="modal-action">
                     <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
                       <button className="btn">Close</button>
                     </form>
                   </div>

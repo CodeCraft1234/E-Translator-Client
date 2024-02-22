@@ -15,6 +15,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@google-cloud/translate": "^8.1.0",
     "@react-pdf/renderer": "^3.3.7",
     "@smastrom/react-rating": "^1.5.0",
     "@tanstack/react-query": "^5.18.0",
@@ -26,7 +27,6 @@
     "express": "^4.18.2",
     "firebase": "^10.7.2",
     "framer-motion": "^11.0.3",
-    "google-translate-api": "^2.3.0",
     "got": "^14.1.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -46,16 +46,9 @@
     "react-scroll-to-bottom": "^4.2.0",
     "react-select": "^5.8.0",
     "react-speech-recognition": "^3.10.0",
-
     "react-text-writer": "^3.0.1",
-
     "react-tilt": "^1.0.2",
     "react-tsparticles": "^2.12.2",
-
-
-
-
-
     "react-type-animation": "^3.2.0",
     "rollup": "^4.10.0",
     "socket.io": "^4.7.4",

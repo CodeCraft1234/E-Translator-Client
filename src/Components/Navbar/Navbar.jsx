@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
-import { FaHome, FaMicroblog, FaMobile, FaMobileAlt } from "react-icons/fa";
+import { FaHome, FaMicroblog, FaMobileAlt } from "react-icons/fa";
 import { MdOutlineFeaturedPlayList, MdOutlineGTranslate } from "react-icons/md";
 import { AiFillProfile } from "react-icons/ai";
 import { RiDashboardFill } from "react-icons/ri";
@@ -35,7 +34,7 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar bg-base-100  lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
+    <div className="navbar bg-base-100 lg:px-28 md:px-10 px-5 shadow-md fixed z-10 top-0 border-b">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -56,7 +55,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  bg-base-100 rounded-box w-52 "
+            className="menu menu-sm dropdown-content mt-3 z-[1]  shadow  bg-base-100 rounded-box w-52 "
           >
             <li>
               <NavLink to={"/"}>
@@ -111,7 +110,7 @@ const NavBar = () => {
         <div>
           <Link to={"/"}>
             <img
-              className="lg:w-[200px] lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
+              className="lg:w-[140px] lg:h-[35px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
               src="https://i.ibb.co/BjZTK4r/E-translator.png"
               alt=""
             />
@@ -119,7 +118,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 flex gap-4">
+        <ul className="menu menu-horizontal flex gap-2">
           <li>
             <NavLink to={"/"}>
               <FaHome />
@@ -226,7 +225,7 @@ const NavBar = () => {
                       <img
                         className="h-20 w-20 rounded-full"
                         src={user?.photoURL}
-                        alt="Shoes"
+                        alt=""
                       />
                     </figure>
                     <div className="card-body ">
@@ -254,7 +253,7 @@ const NavBar = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button className="font-avenir mr-10 px-3 py-1 bg-neutral rounded text-white">
+              <button className="font-avenir  px-3 py-1 bg-neutral rounded text-white">
                 Login
               </button>
             </Link>
