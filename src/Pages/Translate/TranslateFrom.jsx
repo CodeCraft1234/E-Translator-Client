@@ -620,7 +620,7 @@ function Translator() {
               </button>
               <dialog id="my_modal_1" className="modal">
                 <div className="modal-box ">
-                  <WebRating ></WebRating>
+                  {/* <WebRating ></WebRating> */}
                   <h3 className="font-bold text-lg">Have a moment?</h3>
                   <p className="py-4">How would you rate this product?</p>
                   <MyRating></MyRating>
