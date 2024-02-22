@@ -7,6 +7,11 @@
     opacity: 0.3;
     animation: floatAnimation 10s linear infinite;
   }
+
+  [data-theme='dark'] .floating-word {
+    opacity: 0; 
+  }
+  
   
   @keyframes floatAnimation {
     0% {

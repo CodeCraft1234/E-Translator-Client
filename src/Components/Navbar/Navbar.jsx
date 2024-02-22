@@ -2,17 +2,21 @@ import { useContext, useEffect, useState } from "react";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
-// import { FaHome, FaMicroblog, FaMobile, FaMobileAlt } from "react-icons/fa";
-// import { MdOutlineFeaturedPlayList, MdOutlineGTranslate } from "react-icons/md";
-// import { AiFillProfile } from "react-icons/ai";
-// import { RiDashboardFill } from "react-icons/ri";
-
-
+import Data4 from "../Navbar/Animation4.json";
+import Lottie from "react-lottie";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   console.log(user);
 
+  const defaultOption = {
+    loop: true,
+    autoplay: true, 
+    animationData: Data4,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
   // sign out a user
   const handleLogOut = () => {
     logOut()
@@ -39,9 +43,10 @@ const NavBar = () => {
   };
   return (
     <div className="navbar  bg-indigo-700 text-white bg-opacity-50 backdrop-blur-lg p-5 rounded-md shadow-lg  lg:px-28 md:px-10 px-5  fixed z-50 top-0 border-b">
-      <div className="navbar-start">
+      <div className="navbar-start">    
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -72,9 +77,7 @@ const NavBar = () => {
   <li>
     <NavLink to={"/translate"}><img className="h-8 w-8" src="https://i.ibb.co/Kz2tKVG/minimal-modern-language-translation-app-symbol-user-interface-theme-3d-illustration-rendering-icon-i.webp" alt="" />Translate</NavLink>
   </li>
-  {/* <li>
-    <NavLink to={"/contact"}><img className="h-8 w-8" src="https://i.ibb.co/hg15vQ2/phone-call-icon-with-conversation-3d-render-png.webp" alt="" />Contact</NavLink>
-  </li> */}
+
 
   <li>
     <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
@@ -92,10 +95,16 @@ const NavBar = () => {
 
           </ul>
         </div>
-        <div>
+        <div className="flex justify-center items-center">
+        <Lottie options={defaultOption}
+              height={50}
+              width={50}
+              />
           <Link to={"/"}>
+         
+             
             <img
-              className="lg:w-[200px] z-50 lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
+              className="lg:w-[200px]  lg:h-[40px] md:w-[200px] lg:md:h-[40px] inline-block w-[100px] h-[30px]"
               src="https://i.ibb.co/BjZTK4r/E-translator.png"
               alt=""
             />
@@ -122,10 +131,7 @@ const NavBar = () => {
           <li>
             <NavLink to={"/translate"}><img className="h-6 w-6 " src="https://i.ibb.co/Kz2tKVG/minimal-modern-language-translation-app-symbol-user-interface-theme-3d-illustration-rendering-icon-i.webp" alt="" />Translate</NavLink>
           </li>
-          {/* <li>
-            <NavLink to={"/contact"}><img className="h-8 w-8" src="https://i.ibb.co/hg15vQ2/phone-call-icon-with-conversation-3d-render-png.webp" alt="" />Contact</NavLink>
-
-          </li> */}
+        
 
           <li>
 
@@ -170,7 +176,7 @@ const NavBar = () => {
             <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
           </svg>
 
-          {/* moon icon */}
+          
           <svg
             className="swap-off fill-current lg:w-10 md:w-10 w-8 lg:h-10 md:h-10 h-8"
             xmlns="http://www.w3.org/2000/svg"
@@ -209,7 +215,7 @@ const NavBar = () => {
                       />
                     </figure>
                     <div className="card-body ">
-                      {/* <h1> Name: {user?.displayName}</h1> */}
+                     
                       <hr />
 
                       <NavLink

@@ -2,8 +2,8 @@ import axios from "axios";
 
 
 const AxiosPublic=axios.create({
-    // baseURL:'https://e-translator-server.vercel.app'
-    baseURL:'http://localhost:5173'
+    baseURL:'https://e-translator-server.vercel.app'
+ 
 })
 const UseAxiosPublic = () => {
     return AxiosPublic

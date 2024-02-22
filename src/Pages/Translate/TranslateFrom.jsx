@@ -22,6 +22,7 @@ import MyRating from "../../Components/Rating/MyRating";
 import BG from "../../Components/Features/BG";
 import Animation from "./Animation";
 import WebRating from "../../Components/WebRating/WebRating";
+import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 
 
 function Translator() {
@@ -49,6 +50,8 @@ function Translator() {
 
   const imageInput = useRef(null);
   const typingTimer = useRef(null);
+  const [suggestions, setSuggestions] = useState([]);
+
 
   useEffect(() => {
     setLanguages(lang);
@@ -159,6 +162,11 @@ function Translator() {
       setFromText(recognizedText);
     }
   };
+
+
+
+
+
 
   const fetchTranslationHistory = () => {
     fetch("https://e-translator-server.vercel.app/api/history")
@@ -393,10 +401,44 @@ function Translator() {
     }
   };
 
-  return (
-   
+// Translation suggestion
 
-    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  flex items-center justify-center ">
+  const AxiosSecure = UseAxiosSecure();
+  useEffect(() => {
+    
+    fetchSuggestions('');
+  }, []);
+
+  const fetchSuggestions = async (text) => {
+    try {
+      const response = await AxiosSecure.get('/api/suggestions');
+      console.log(response.data);
+      const suggestions = response.data.reduce((acc, curr) => {
+        acc.push(...curr.words);
+        return acc;
+      }, []);
+
+      setSuggestions(suggestions);
+    } catch (error) {
+      console.error("Error fetching suggestions:", error);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    if (name === "fromText") {
+      setFromText(value);
+      fetchSuggestions(value);
+    } else {
+      // 
+    }
+  };
+
+
+  return (
+
+
+    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]   flex items-center justify-center ">
       <Animation></Animation>
       <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
 
@@ -418,10 +460,35 @@ function Translator() {
                   ? `${recognizedText}${pdfText}`
                   : `${fromText}${pdfText}`
               }
-              onChange={(e) => setFromText(e.target.value)}
+              onChange={(e) => {
+                setFromText(e.target.value);
+                fetchSuggestions(e.target.value);
+              }}
               cols="30"
               rows="10"
             ></textarea>
+            {fromText.trim() !== '' && (
+              <ul className="absolute z-10 bg-white w-full mt-1 rounded-b shadow-lg">
+                {suggestions
+                  .filter((suggestion) =>
+                    suggestion.toLowerCase().startsWith(fromText.toLowerCase())
+                  )
+                  .map((suggestion, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer py-1 px-2 hover:bg-gray-100"
+                      onClick={() => {
+                        setFromText(suggestion);
+                        setSuggestions([]);
+                      }}
+                    >
+                      {suggestion}
+                    </li>
+                  ))}
+              </ul>
+            )}
+
+
 
             <select
               value={fromLanguage}
@@ -572,7 +639,6 @@ function Translator() {
             Extract Text from PDF
           </button>
         )}
-
         {showPdfText && imageFile && recognizedText && (
           <div>
             <h2 className="text-xl mt-4 font-semibold">PDF Text</h2>
@@ -717,7 +783,7 @@ function Translator() {
           </div>
         </div>
       )}
-      
+
     </div>
   );
 }
