@@ -6,6 +6,8 @@ import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import Package from "../../Components/Package/Package";
 import Review from "../../Components/Review/Review";
 import LiveChat from "../LiveChat/LiveChat";
+import Parallux from "../../Components/Banner/Parallux";
+import Card from "../../Components/Card";
 
 
 
@@ -19,6 +21,7 @@ const Home = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <Banner></Banner>
+     
       <LiveChat/>
       <Package></Package>
       <Review></Review>

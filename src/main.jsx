@@ -13,39 +13,26 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-// import Dashboard from "./dashboard/Dashboard";
 import {HelmetProvider } from "react-helmet-async";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
-// import SkilitonLoader from "./AdminPannel/SkilitonLoader/SkilitonLoader";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AddBlogs from "./AdminPannel/AdminPages/AddBlogs";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
-
 import PaymentSuccess from "./Components/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "./Components/PaymentFail/PaymentFail";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 import AdminHome from "./AdminPannel/AdminHome/AdminHome";
-
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
-// import MyRating from "./Components/Rating/MyRating.jsx";
-// import Chat from './Components/Chat/Chat';
 import Profile from './Pages/Profile/Profile';
 import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
 import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
 import ChatTest from "./Components/Chat/ChatTest.jsx";
 import WebRating from "./Components/WebRating/WebRating.jsx";
 import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx";
-
-
-
-
-
-
+import BlogDetails from "./Components/Blog/BlogDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -80,11 +67,15 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ChatTest></ChatTest>
         </PrivateRoute>,
-       
       },
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/blogDetails/:id",
+        element: <BlogDetails></BlogDetails>,
+        loader:({params})=>fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
       },
       {
         path: "/profile",
@@ -102,7 +93,6 @@ const router = createBrowserRouter([
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>,
       },
-      
       {
         path: "/order/:id",
         
@@ -112,17 +102,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-
       {
         path: "payment/success/:tranId",
         element: <PaymentSuccess></PaymentSuccess>,
       },
-
       {
         path: "payment/fail/:tranId",
         element: <PaymentFail></PaymentFail>,
       },
-
       {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>,
@@ -137,7 +124,6 @@ const router = createBrowserRouter([
       },
       {
         path: "/getintuch",
-
         element: <GetInTouch />,
       },
     ],
@@ -146,10 +132,6 @@ const router = createBrowserRouter([
     path: "dashboard",
     element: <PrivateRoute><DashboardRoot></DashboardRoot></PrivateRoute>,
     children: [
-      // {
-      //   path: "skeleton",
-      //   element: <SkilitonLoader></SkilitonLoader>,
-      // },
       {
         path: "/dashboard/adminHome",
         element: <AdminHome />,
@@ -178,11 +160,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/dashboard",
-  //   element:<Dashboard></Dashboard>
-    
-  // }
 ]);
 
 const queryClient = new QueryClient();

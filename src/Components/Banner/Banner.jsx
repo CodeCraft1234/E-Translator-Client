@@ -1,85 +1,33 @@
 import { Link } from "react-router-dom";
-import img1 from "../../assets/415877263_437231245391700_6340538220268059695_n.png";
 import { TypeAnimation } from "react-type-animation";
 import "./Banner.css";
-
-// import { useEffect } from "react";
-import { Animation, Typer } from "react-easy-animations";
+import Data3 from "./Animation3.json";
+import { Animation } from "react-easy-animations";
 import Typewriter from "react-text-writer";
-import { useEffect } from "react";
-
+import Lottie from 'react-lottie';
 const Banner = () => {
-  useEffect(() => {
-    const words = [
-      "Hello",
-      "প্রোগ্রামিং হিরো",
-      "বাংলা",
-      "Bonjour",
-      "Hola",
-      "Ciao",
-      "こんにちは",
-      "안녕하세요",
-      "Привет",
-      "مرحبا",
-      "नमस्ते",
-      "გამარჯობა",
-      "CodeCrafters",
-    ];
-
-    const generateFloatingWords = () => {
-      const banner = document.querySelector(".banner-container");
-      if (!banner) return;
-
-      words.forEach((word) => {
-        const wordElement = document.createElement("div");
-        wordElement.classList.add("floating-word");
-        wordElement.textContent = word;
-        banner.appendChild(wordElement);
-        const x = Math.random() * window.innerWidth;
-        const y = Math.random() * window.innerHeight;
-        wordElement.style.left = `${x}px`;
-        wordElement.style.top = `${y}px`;
-
-        const duration = Math.random() * 5 + 5 + "s";
-        wordElement.style.animationDuration = duration;
-
-        const delay = Math.random() * 3 + "s";
-        wordElement.style.animationDelay = delay;
-
-        const direction = Math.random() > 0.5 ? "normal" : "reverse";
-        wordElement.style.animationDirection = direction;
-
-        wordElement.addEventListener("animationend", () => {
-          banner.removeChild(wordElement);
-        });
-      });
-    };
-
-    generateFloatingWords();
-    const interval = setInterval(generateFloatingWords, 10000);
-    return () => clearInterval(interval);
-  }, []);
-
+  const defaultOption = {
+    loop: true,
+    autoplay: true, 
+    animationData: Data3,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
   return (
-
     <div >
-      <section className=" z-0 h-[650px] text-white pt-10  lg:mt-0 md:mt-10">
+      <section className=" z-0 h-[700px] text-white pt-10  lg:mt-0 md:mt-10">
         <div className="container mt-10 flex flex-col p-5  justify-center items-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
-
-          <div className="flex flex-col  justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">
-           
+          <div className="flex flex-col  justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">          
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 "Lets Decode the World of Word ",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
-                "Lets Decode the World of Language ",
                 1000,
                 "Lets Decode the World of Text ",
                 1000,
                 "Lets Decode the World of PDF",
                 1000,
-                "Lets Decode the World of Sentence",
+                "Lets Decode the World of voice",
                 1000,
               ]}
               wrapper="span"
@@ -90,7 +38,7 @@ const Banner = () => {
             <p className="mt-6 mb-0 text-lg sm:mb-12 ">
               <Animation
                 type="zoomIn"
-                duration="1000ms"
+                duration="2000ms"
                 delay="0s"
                 direction="normal"
                 timing="ease"
@@ -103,14 +51,12 @@ const Banner = () => {
                 ]}
                 speed={40}
                 isLoop
-                loopDelay={4000}
-                ClassName="text-white mb-5"
+                loopDelay={15000}
+                ClassName="text-white mb-5 pb-5"
               />
-
               <br className="hidden md:inline lg:hidden" />
             </p>
-
-            <div className="gap-5">
+            <div className="gap-5 mt-5">
              <button className="bg-indigo-950  border-b-2 mr-5 rounded-lg">
             <Link to={'/translate'}> <a className="b" href="">
               <span></span>
@@ -133,20 +79,16 @@ const Banner = () => {
              </button>
             </div>
           </div>
-          <div className="flex  items-center justify-center mt-8  pt-16 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-            <img
-              src={img1}
-              alt=""
-              className="object-contain h-72 sm:h-80 lg:h-[420px] w-[400px] xl:h-112 2xl:h-128"
-            />
-          </div>
-          
+          <div className="flex  sm:p-10  items-center justify-center mt-8  pt-16 lg:mt-0 h-96 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+          <Lottie ClassName='h-[600px] w-[600px]' options={defaultOption}
+              height={400}
+              width={400}
+              />
+          </div>          
         </div>
-      </section>
-      
+      </section>     
     </div>
   );
 };
-
 export default Banner;
 

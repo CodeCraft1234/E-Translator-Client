@@ -55,14 +55,12 @@ const Package = () => {
   ];
 
   return (
-    <div className="mb-24 mt-28">
+    <div className="mb-24 sm:pt-20 mt-28">
       <div className="  dark:text-red-100">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto mb-16 text-center">
-            <span className="font-bold tracki uppercase dark:text-violet-400">
-              Package
-            </span>
-            <h2 className="text-4xl font-bold lg:text-5xl" data-aos="zoom-in">
+            
+            <h2 className="text-4xl font-bold  lg:text-5xl" data-aos="zoom-in">
               Choose your best plan
             </h2>
           </div>
