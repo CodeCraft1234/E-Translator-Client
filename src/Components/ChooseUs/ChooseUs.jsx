@@ -1,26 +1,9 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  FaAnchor,
-  FaCamera,
-  FaDatabase,
-  FaGlobe,
-  FaHourglassHalf,
-  FaUpload,
-} from "react-icons/fa";
 import { Tilt } from "react-tilt";
-
 AOS.init();
-
 const ChooseUS = () => {
   const cards = [
-
-//     
-// 
-// 
-// 
-// 
-// 
     {
       id: 1,
       iconClass: 'https://i.ibb.co/DRDRZxg/precision-modeling-9495577-7781126.webp',
@@ -77,7 +60,7 @@ const ChooseUS = () => {
     easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
   };
   return (
-    <div className="  pb-5 mt-24">
+    <div className=" container mx-auto pb-5 mt-24">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-4">
           <div

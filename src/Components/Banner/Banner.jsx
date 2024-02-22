@@ -21,9 +21,8 @@ const Banner = () => {
           <div className="flex flex-col  justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">          
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 "Lets Decode the World of Word ",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                1000,
                 "Lets Decode the World of Text ",
                 1000,
                 "Lets Decode the World of PDF",
@@ -82,8 +81,8 @@ const Banner = () => {
           </div>
           <div className="flex  sm:p-10  items-center justify-center mt-8  pt-16 lg:mt-0 h-96 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
           <Lottie ClassName='h-[600px] w-[600px]' options={defaultOption}
-              height={500}
-              width={500}
+              height={400}
+              width={400}
               />
           </div>          
         </div>
