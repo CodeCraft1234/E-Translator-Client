@@ -54,6 +54,7 @@
     "react-scroll-to-bottom": "^4.2.0",
     "react-select": "^5.8.0",
     "react-speech-recognition": "^3.10.0",
+    "react-spinners": "^0.13.8",
     "react-text-writer": "^3.0.1",
     "react-tilt": "^1.0.2",
     "react-tsparticles": "^2.12.2",

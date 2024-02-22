@@ -33,6 +33,7 @@ import ChatTest from "./Components/Chat/ChatTest.jsx";
 import WebRating from "./Components/WebRating/WebRating.jsx";
 import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx";
 import BlogDetails from "./Components/Blog/BlogDetails.jsx";
+import LoginFinal from "./Security/LoginFinal.jsx";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/logintwo",
+        element: <LoginFinal></LoginFinal>,
       },
       {
         path: "/signup",
