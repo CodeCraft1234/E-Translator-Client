@@ -11,7 +11,7 @@ import img8 from "../../assets/istockphoto-1281150061-612x612.jpg";
 import img9 from "../../assets/pricing.jpg";
 import img10 from "../../assets/website translation.jpg";
 import img11 from '../../assets/pdf_to_text.jpg'
-
+import img12 from '../../assets/images 12.png'
 import { Helmet } from "react-helmet-async";
 import BG from "./BG";
 
@@ -74,6 +74,13 @@ const Features = () => {
       description:
         "Effortlessly convert PDF documents to editable text with our intuitive PDF to Text Translator. Unlock the content within PDFs, making it easily accessible and editable in just a few clicks.",
     },
+    {
+      image:img12,
+      name:' Contextual translation suggestions',
+      description:
+      ' Contextual translation suggestions provide relevant translations based on the context of the text being inputted. These suggestions help users select the most appropriate translation for their specific content, improving accuracy and comprehension. By analyzing the surrounding words and phrases, contextual suggestions offer nuanced translations tailored to the users needs, enhancing the overall translation experience.'
+
+    }
   ];
 
   const featureVariants = {
