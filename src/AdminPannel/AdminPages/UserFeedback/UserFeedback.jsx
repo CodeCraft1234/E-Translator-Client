@@ -29,7 +29,7 @@ const UserFeedback = () => {
   }, [AxiosSecure]);
 
   return (
-    <div className="hero min-h-screen p-6 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]">
+    <div className="hero min-h-screen px-24 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]">
       <div className="container mx-auto p-4">
         <h1 className="text-4xl text-white font-bold mb-8">Users Feedbacks</h1>
         {feedbacks?.map((feedback) => (
