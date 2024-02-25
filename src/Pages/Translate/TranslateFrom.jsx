@@ -424,15 +424,15 @@ function Translator() {
     }
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    if (name === "fromText") {
-      setFromText(value);
-      fetchSuggestions(value);
-    } else {
-      // 
-    }
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   if (name === "fromText") {
+  //     setFromText(value);
+  //     fetchSuggestions(value);
+  //   } else {
+  //     // 
+  //   }
+  // };
 
 
   return (
@@ -453,7 +453,7 @@ function Translator() {
             <textarea
               className="border w-full p-2"
               placeholder={
-                imageFile ? `${recognizedText}\n${pdfText}` : "Type Here...."
+                imageFile ? `${recognizedText}\n${pdfText}` :  "Type Here...."
               }
               value={
                 imageFile
@@ -468,7 +468,7 @@ function Translator() {
               rows="10"
             ></textarea>
             {fromText.trim() !== '' && (
-              <ul className="absolute z-10 bg-white w-full mt-1 rounded-b shadow-lg">
+              <ul className="absolute z-10 bg-white w-full mt-1 rounded-b ">
                 {suggestions
                   .filter((suggestion) =>
                     suggestion.toLowerCase().startsWith(fromText.toLowerCase())

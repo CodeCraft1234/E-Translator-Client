@@ -11,7 +11,7 @@ const Dashboard = ({ showSidebar }) => {
   return (
     <div className="">
       <div
-        className={`bg-blue-600 w-72 min-h-screen lg:fixed text-white  ${
+        className={`bg-slate-600 w-72 min-h-screen lg:fixed text-white  ${
           showSidebar ? "block" : "hidden"
         } md:block`}
       >
@@ -26,7 +26,7 @@ const Dashboard = ({ showSidebar }) => {
               <li className=" ">
                 <Link to="/dashboard/adminHome" className="flex items-center">
                   <FaHome className="mr-2" />
-                Dashboard
+                  Dashboard
                 </Link>
               </li>
               <li>

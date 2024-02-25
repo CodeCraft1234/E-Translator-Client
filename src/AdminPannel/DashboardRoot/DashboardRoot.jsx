@@ -30,7 +30,7 @@ const DashboardRoot = () => {
         className="absolute left-0 top-0 text-right lg:hidden "
         onClick={()=>setShowSidebar(!showSidebar)}
       >
-        <button className="bg-stone-500 text-white p-2">
+        <button className="bg-gradient-to-r from-[#1201fc] via-indigo-800 to-[#fbfbff] text-white p-2">
         {showSidebar || <FaBars/>}
         </button>
       </div>
@@ -41,17 +41,4 @@ const DashboardRoot = () => {
 
 export default DashboardRoot;
 
-/* import { Outlet } from "react-router-dom";
-import Dashboard from "../Dashboard/Dashboard";
 
-
-const DashboardRoot = () => {
-    return(
-        <div>
-            <div>
-                <Dashboard/>
-                <Outlet/>
-            </div>
-        </div>
-    )}
-export default DashboardRoot; */
