@@ -44,16 +44,15 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className="mt-16 px-5  py-10 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white md:px-0"
-      id="contact"
-    >
-      <Helmet>
+
+    <div className="mt-10 px-5  py-20 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white md:px-0" id="contact">
+  <Helmet>
+
         <title> E-Translator | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <h1 className="text-5xl font-bold text-center mb-10">
-        Contact <span className="text-[#4392d9]">Me</span>
+        Contact <span className="text-[#4392d9]">Us</span>
       </h1>
       <div className="flex flex-wrap items-center justify-around">
         <div className="md:w-3/12">
@@ -115,7 +114,7 @@ const Contact = () => {
                 <span></span>
                 <span></span>
                 <span></span>
-                Explore Us
+                Contact
               </a>
             </button>
           </form>

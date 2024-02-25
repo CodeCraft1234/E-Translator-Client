@@ -19,6 +19,10 @@ import { pdfjs } from "react-pdf";
 import { AuthContext } from "../../Security/AuthProvider";
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
+import BG from "../../Components/Features/BG";
+import Animation from "./Animation";
+import WebRating from "../../Components/WebRating/WebRating";
+import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 
 function Translator() {
   const { user } = useContext(AuthContext);
@@ -45,6 +49,7 @@ function Translator() {
 
   const imageInput = useRef(null);
   const typingTimer = useRef(null);
+  const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
     setLanguages(lang);
@@ -388,9 +393,42 @@ function Translator() {
     }
   };
 
+  // Translation suggestion
+
+  const AxiosSecure = UseAxiosSecure();
+  useEffect(() => {
+    fetchSuggestions("");
+  }, []);
+
+  const fetchSuggestions = async (text) => {
+    try {
+      const response = await AxiosSecure.get("/api/suggestions");
+      console.log(response.data);
+      const suggestions = response.data.reduce((acc, curr) => {
+        acc.push(...curr.words);
+        return acc;
+      }, []);
+
+      setSuggestions(suggestions);
+    } catch (error) {
+      console.error("Error fetching suggestions:", error);
+    }
+  };
+
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   if (name === "fromText") {
+  //     setFromText(value);
+  //     fetchSuggestions(value);
+  //   } else {
+  //     //
+  //   }
+  // };
+
   return (
-    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  flex items-center justify-center">
-      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12">
+    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]   flex items-center justify-center ">
+      <Animation></Animation>
+      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
         <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
@@ -408,10 +446,33 @@ function Translator() {
                   ? `${recognizedText}${pdfText}`
                   : `${fromText}${pdfText}`
               }
-              onChange={(e) => setFromText(e.target.value)}
+              onChange={(e) => {
+                setFromText(e.target.value);
+                fetchSuggestions(e.target.value);
+              }}
               cols="30"
               rows="10"
             ></textarea>
+            {fromText.trim() !== "" && (
+              <ul className="absolute z-10 bg-white w-full mt-1 rounded-b shadow-lg">
+                {suggestions
+                  .filter((suggestion) =>
+                    suggestion.toLowerCase().startsWith(fromText.toLowerCase())
+                  )
+                  .map((suggestion, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer py-1 px-2 hover:bg-gray-100"
+                      onClick={() => {
+                        setFromText(suggestion);
+                        setSuggestions([]);
+                      }}
+                    >
+                      {suggestion}
+                    </li>
+                  ))}
+              </ul>
+            )}
 
             <select
               value={fromLanguage}
@@ -562,7 +623,6 @@ function Translator() {
             Extract Text from PDF
           </button>
         )}
-
         {showPdfText && imageFile && recognizedText && (
           <div>
             <h2 className="text-xl mt-4 font-semibold">PDF Text</h2>
@@ -582,6 +642,7 @@ function Translator() {
             className="btn btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
           >
             <div>Reset</div>
+            {/* <h2 className="text-center">Reset</h2> */}
           </button>
         </div>
 
@@ -608,7 +669,8 @@ function Translator() {
                 <h2 className="text-center">Rating</h2>
               </button>
               <dialog id="my_modal_1" className="modal">
-                <div className="modal-box">
+                <div className="modal-box ">
+                  {/* <WebRating ></WebRating> */}
                   <h3 className="font-bold text-lg">Have a moment?</h3>
                   <p className="py-4">How would you rate this product?</p>
                   <MyRating></MyRating>

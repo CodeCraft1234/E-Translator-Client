@@ -3,7 +3,7 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 
-const BannerBg = () => {
+const BG = () => {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
@@ -19,9 +19,9 @@ const BannerBg = () => {
         loaded={particlesLoaded}
         options={{
             background: {
-                color: {
-                    value: "#62B1F3",
-                },
+                // color: {
+                //     value: "#62B1F3",
+                // },
             },
             fpsLimit: 120,
             interactivity: {
@@ -41,7 +41,7 @@ const BannerBg = () => {
                         quantity: 4,
                     },
                     repulse: {
-                        distance: 200,
+                        distance: 80,
                         duration: 0.4,
                     },
                 },
@@ -52,7 +52,7 @@ const BannerBg = () => {
                 },
                 links: {
                     color: "#ffffff",
-                    distance: 150,
+                    distance: 20,
                     enable: true,
                     opacity: 0.5,
                     width: 1,
@@ -64,7 +64,7 @@ const BannerBg = () => {
                         default: "bounce",
                     },
                     random: false,
-                    speed: 6,
+                    speed: 4,
                     straight: false,
                 },
                 number: {
@@ -72,16 +72,16 @@ const BannerBg = () => {
                         enable: true,
                         area: 800,
                     },
-                    value: 50,
+                    value: 20,
                 },
                 opacity: {
-                    value: 0.5,
+                    value: 0.1,
                 },
                 shape: {
                     type: "circle",
                 },
                 size: {
-                    value: { min: 1, max: 5 },
+                    value: { min: 1, max: 10 },
                 },
             },
             detectRetina: true,
@@ -90,4 +90,4 @@ const BannerBg = () => {
 );
 };
 
-export default BannerBg;
+export default BG;
