@@ -95,7 +95,7 @@ const Features = () => {
   };
 
   return (
-    <div className="lg:px-24 md:px-8 text-white bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  px-5  border-b-2">
+    <div className="lg:px-24 md:px-8 mt-10 text-white bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]  px-5  border-b-2">
       <Helmet>
         <title> E-Translator | Features</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
