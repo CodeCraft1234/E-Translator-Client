@@ -179,8 +179,9 @@ const LiveChat = () => {
   return (
     <div className="fixed z-10 bottom-7 right-7">
       <button className="text-2xl text-emerald-600" onClick={openModal}>
-        {/* <AiFillMessage className="text-blue-700 text-center text-5xl hover:text-red-600" /> Chat Support */}
-        <img className="w-28"  src="https://i.ibb.co/93XRbh3/messenger.png" alt="" />
+        
+        <img className="w-28 ml-14"  src="https://i.ibb.co/93XRbh3/messenger.png" alt="" />
+        <h1 className="text-blue-200 bg-gradient-to-r rounded-lg text-2xl font-bold">Quick Support</h1>  
       </button>
    
       {isModalOpen && (
