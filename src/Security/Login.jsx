@@ -69,7 +69,7 @@ const Login = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl border-4 box bg-violet-950">
-            <form onSubmit={handleLogin} className="card-body ">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <h1 className="text-3xl text-center text-white font-semibold">
                   Login your account
