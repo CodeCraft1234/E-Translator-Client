@@ -72,7 +72,7 @@ const LiveChat = () => {
       </button>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-gray-600 bg-opacity-75">
+        <div className="fixed inset-0 z-50 overflow-auto  bg-opacity-75">
           <div className="flex items-end justify-end min-h-screen">
             <div className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] p-4  w-96 rounded-lg">
               <div className="flex justify-end">
@@ -119,7 +119,7 @@ const LiveChat = () => {
                   className="input text-black  input-bordered input-success w-full max-w-xs"
                 />
                 <button
-                  className="px-4 bg-blue-500 text-white rounded"
+                  className="px-4 rounded-full bg-gradient-to-bl from-teal-800 via-green-900 to-cyan-700 text-white"
                   onClick={handleSendMessage}
                 >
                   Send
