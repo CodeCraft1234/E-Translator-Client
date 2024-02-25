@@ -1,5 +1,5 @@
 
-import './Login.css'
+// import './Login.css'
 const LoginFinal = () => {
   return (
     <div className="mt-6">

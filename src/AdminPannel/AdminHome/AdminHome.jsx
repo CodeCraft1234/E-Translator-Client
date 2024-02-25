@@ -47,7 +47,7 @@ const AdminHome = () => {
   </h1>
 </div>
 
-<div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2">
+<div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 px-28 gap-8">
   <div className="card w-96 h-56 flex-shrink-0">
     <div className="card-body bg-gradient-to-r from-rose-600 to-indigo-600 rounded-xl ml-5">
       <h2 className="card-title text-white text-2xl">
