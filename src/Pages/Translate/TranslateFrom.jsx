@@ -424,15 +424,15 @@ function Translator() {
     }
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    if (name === "fromText") {
-      setFromText(value);
-      fetchSuggestions(value);
-    } else {
-      // 
-    }
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   if (name === "fromText") {
+  //     setFromText(value);
+  //     fetchSuggestions(value);
+  //   } else {
+  //     // 
+  //   }
+  // };
 
 
   return (
@@ -453,7 +453,7 @@ function Translator() {
             <textarea
               className="border w-full p-2"
               placeholder={
-                imageFile ? `${recognizedText}\n${pdfText}` : "Type Here...."
+                imageFile ? `${recognizedText}\n${pdfText}` :  "Type Here...."
               }
               value={
                 imageFile
