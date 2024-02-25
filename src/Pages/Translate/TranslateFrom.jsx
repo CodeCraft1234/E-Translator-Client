@@ -468,7 +468,7 @@ function Translator() {
               rows="10"
             ></textarea>
             {fromText.trim() !== '' && (
-              <ul className="absolute z-10 bg-white w-full mt-1 rounded-b shadow-lg">
+              <ul className="absolute z-10 bg-white w-full mt-1 rounded-b ">
                 {suggestions
                   .filter((suggestion) =>
                     suggestion.toLowerCase().startsWith(fromText.toLowerCase())
