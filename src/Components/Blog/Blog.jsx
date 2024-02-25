@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 const TranslationPlatformBlog = () => {
   const [blogs, refetch] = UseBlogs();
+
+  
   
 
   // Maintain individual states for each blog post
@@ -37,6 +39,10 @@ const TranslationPlatformBlog = () => {
         <title> E-Translator | Blogs</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
+
+      <div>
+     
+      </div>
 
       <div className="grid lg:grid-cols-2 gap-6 overflow-hidden ">
         {blogs.map((blog) => (
