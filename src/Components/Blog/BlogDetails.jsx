@@ -79,12 +79,13 @@ const BlogDetails = () => {
            <div>
            <h1 className="font-bold">{comment.name}</h1>
             <h1>{comment.comment}</h1>
-            <div className="grid lg:grid-cols-3 mt-3 text-start justify-center items-center gap-2">
+            <div className="grid lg:grid-cols-4 mt-3 text-start justify-center items-center gap-2">
             <button  onClick={handleLike}>
       {isLiked ?  <BiSolidLike /> : <BiLike color="blue" />}
     </button>
     <h1 className="hover:underline">Edit</h1>
     <h1 className="hover:underline">Reply</h1>
+    <h1 className="hover:underline">Delete</h1>
             </div>
            </div>
                 </div>)
