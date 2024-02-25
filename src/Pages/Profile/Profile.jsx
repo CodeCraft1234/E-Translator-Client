@@ -23,7 +23,6 @@ const Profile = () => {
         </div>
         <h1 className="text-xl font-bold text-white">{user?.displayName}</h1>
         <p className="text-gray-300">Email: {user?.email}</p>
-        <p className="text-gray-300">Role: {user?.role}</p>
       </div>
 
       <div className="flex justify-center space-x-4">
