@@ -95,11 +95,11 @@ const LiveChat = () => {
                           {message.text}
                           
                         </div>
-                        <RxAvatar className="text-slate-800 " />
+                        <RxAvatar className="text-2xl bg- text-slate-800 " />
                       </div>
                     ) : (
                       <div className="flex justify-start w-full">
-                      <FaRobot  className="text-slate-800 " />
+                      <FaRobot  className="text-slate-800 text-2xl" />
                         <div className="rounded-md p-2 max-w-xs bg-green-800 text-white">
                           {message.text}
                         </div>
