@@ -44,7 +44,7 @@ const ChooseUS = () => {
       iconClass: 'https://i.ibb.co/1Tvgpqk/solution-8327146-6648997.webp',
       title: "Cost-Effective Solutions",
       description:
-        "Quality should never break the bank. Experience the perfect balance of affordability and excellence. We understand the value of your words, and we make every translation cost-effective without compromising on quality.",
+        "Quality should never break the bank. Experience the perfect balance of affordability and excellence. We understand the value of your words, and we make every translation cost-effective.",
     },
   ];
 
@@ -60,47 +60,38 @@ const ChooseUS = () => {
     easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
   };
   return (
-    <div className=" container mx-auto pb-5 mt-24">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-4">
-          <div
-            className="section-head col-span-full text-center"
-            data-aos="zoom-in"
-          >
-            <h4 className="text-3xl font-bold mb-4">
-              <span>Why Choose</span> Us?
-            </h4>
-            <p>
-              Benefit from our unparalleled experience in delivering precise and
-              culturally nuanced translations. Our team of expert linguists
-              ensures that your message retains its intended meaning across
-              languages.
-            </p>
-          </div>
-
-          {cards.map((card, index) => (
-
-  <Tilt key={index} options={defaultOptions} style={{ height: '400px', width: '300px' }}>
-    <div className=''>
-      <div className="col-span-1 sm:col-span-1 gap-10 lg:col-span-1" style={{ height: '400px', width: '300px' }}>
-        <div className="item border-2 shadow-md text-center mr-1 ml-1 p-4 rounded-lg h-full hover:bg-[#006bcb] hover:text-white transition duration-500  transform hover:-translate-y-1 hover:scale-105" data-aos='zoom-in'>
-          <div className='  gap-3'>
-            <img className='h-28 w-28 mx-auto' src= {card.iconClass} alt="" />
-           
-            <h6 className="text-xl font-semibold mb-2">{card.title}</h6>
-          </div>
-          <p className="text-sm">{card.description}</p>
+    <div className="container mx-auto pb-5 mt-24">
+    <div className="container">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
+        <div
+          className="section-head col-span-full text-center mb-10"
+          data-aos="zoom-in"
+        >
+          <h4 className="text-3xl font-bold mb-4">
+            <span>Why Choose</span> Us?
+          </h4>
+          <p>
+            Benefit from our unparalleled experience in delivering precise and
+            culturally nuanced translations. Our team of expert linguists
+            ensures that your message retains its intended meaning across
+            languages.
+          </p>
         </div>
+
+        {cards.map((card, index) => (
+          <Tilt key={index} options={defaultOptions} className="col-span-1">
+            <div className="item m-4 border-2 shadow-md text-center p-4 rounded-lg hover:bg-[#006bcb] hover:text-white transition duration-500 transform hover:-translate-y-1 hover:scale-105" data-aos="zoom-in">
+              <div className="gap-3">
+                <img className="h-28 w-28 mx-auto" src={card.iconClass} alt="" />
+                <h6 className="text-xl font-semibold mb-2">{card.title}</h6>
+              </div>
+              <p className="text-sm">{card.description}</p>
+            </div>
+          </Tilt>
+        ))}
       </div>
     </div>
-  </Tilt>
-))}
-
-
-
-        </div>
-      </div>
-    </div>
+  </div>
   );
 };
 
