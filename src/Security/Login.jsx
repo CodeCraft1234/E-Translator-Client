@@ -169,7 +169,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare, FaGithub } from "react-icons/fa";
 import toast from "react-hot-toast";
-import axios from "axios";
 import { AuthContext } from "./AuthProvider";
 import "./Login.css";
 
