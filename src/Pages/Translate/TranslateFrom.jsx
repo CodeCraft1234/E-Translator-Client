@@ -413,24 +413,13 @@ function Translator() {
     }
   };
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   if (name === "fromText") {
-  //     setFromText(value);
-  //     fetchSuggestions(value);
-  //   } else {
-  //     //
-  //   }
-  // };
-
   return (
-    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]   flex items-center justify-center">
+    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]   flex items-center justify-center ">
       {/* <Animation></Animation> */}
       <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
         <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
-
         <div className="mb-4 flex items-center">
           <div className="w-1/2 pr-2">
             <label className="block text-sm font-medium">From Language:</label>
@@ -451,7 +440,8 @@ function Translator() {
               cols="30"
               rows="10"
             ></textarea>
-            {fromText.trim() !== "" && (
+            {fromText.trim() !== '' && (
+
               <ul className="absolute z-10 bg-white w-1/2 mt-1 rounded-b ">
                 {suggestions
                   .filter((suggestion) =>
@@ -484,7 +474,6 @@ function Translator() {
               ))}
             </select>
           </div>
-
           <div className="w-1/2 pl-2">
             <label className="block text-sm font-medium">To Language:</label>
             <textarea
@@ -518,7 +507,6 @@ function Translator() {
                 <FaVolumeUp className="text-xl hover:scale-150"></FaVolumeUp>
               </div>
             </button>
-
             <button
               onClick={toggleRecognition}
               className={`text-${isRecording ? "red" : "blue"}-500`}
@@ -527,7 +515,6 @@ function Translator() {
                 <MdKeyboardVoice className="text-xl hover:scale-150"></MdKeyboardVoice>
               </div>
             </button>
-
             <button
               onClick={() => imageInput.current.click()}
               className="text-[#4392d9]"
@@ -536,19 +523,16 @@ function Translator() {
                 <FaImages className="text-xl hover:scale-150"></FaImages>
               </div>
             </button>
-
             <button className="text-[#4392d9]" onClick={handleOpenPdf}>
               <div className="rounded p-1">
                 <FaRegFilePdf className="text-xl hover:scale-150"></FaRegFilePdf>
               </div>
             </button>
-
             <button className="text-[#4392d9]" onClick={toggleInput}>
               <div className=" rounded p-1">
                 <FaGlobe className="text-xl hover:scale-150"></FaGlobe>
               </div>
             </button>
-
             {showInput && (
               <>
                 <h2>Website Link</h2>
@@ -568,7 +552,6 @@ function Translator() {
               </>
             )}
           </div>
-
           <button
             onClick={() => copyContent(fromText)}
             className="text-[#4392d9] ml-5"
@@ -577,13 +560,11 @@ function Translator() {
               <FaCopy className="text-xl hover:scale-150"></FaCopy>
             </div>
           </button>
-
           <button onClick={handleExchangeClick} className="text-[#4392d9]">
             <div className="rounded p-1 mr-[110px]">
               <FaExchangeAlt className="text-xl hover:scale-150"></FaExchangeAlt>
             </div>
           </button>
-
           <button
             onClick={() => copyContent(toText)}
             className="text-[#4392d9]"
@@ -592,7 +573,6 @@ function Translator() {
               <FaCopy className="text-xl hover:scale-150"></FaCopy>
             </div>
           </button>
-
           <button
             onClick={() => utterText(toText, toLanguage)}
             className="text-[#4392d9] ml-5"
@@ -602,7 +582,6 @@ function Translator() {
             </div>
           </button>
         </div>
-
         <div>
           <input
             type="file"

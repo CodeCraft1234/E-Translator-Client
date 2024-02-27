@@ -77,7 +77,7 @@ const router = createBrowserRouter([
       {
         path: "http://localhost:5000/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
-        loader:({params})=>fetch(`/blogs/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
       },
       {
         path: "/profile",
@@ -169,8 +169,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/blogs/:id",
         element: <UpdateBlog></UpdateBlog>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/blogs/${params.id}`),
+        loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
       },
     ],
   },
