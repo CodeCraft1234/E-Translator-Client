@@ -16,7 +16,7 @@ const PaymentSuccess = () => {
 
     // after payment redirects to translate page
     const redirectTimer = setTimeout(() => {
-      navigate("http://localhost:5173/translate");
+      navigate("/translate");
     }, 4500);
 
     // clean the toast when components mount
