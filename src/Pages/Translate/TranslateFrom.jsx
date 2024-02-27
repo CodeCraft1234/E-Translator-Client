@@ -169,7 +169,7 @@ function Translator() {
 
 
   const fetchTranslationHistory = () => {
-    fetch("https://e-translator-server.vercel.app/api/history")
+    fetch("http://localhost:5000/api/history")
       .then((res) => res.json())
       .then((data) => {
         const userTranslationHistory = data.filter(
@@ -224,7 +224,7 @@ function Translator() {
         email: user.email,
       };
 
-      fetch("https://e-translator-server.vercel.app/api/history", {
+      fetch("http://localhost:5000/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
