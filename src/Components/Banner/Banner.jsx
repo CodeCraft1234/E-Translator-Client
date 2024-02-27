@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import "./Banner.css";
-import Data3 from "./Animation3.json";
+import Data3 from "./Animationfixed.json";
 import { Animation } from "react-easy-animations";
 import Typewriter from "react-text-writer";
 import Lottie from 'react-lottie';

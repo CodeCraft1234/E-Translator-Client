@@ -4,15 +4,15 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Security/AuthProvider";
 
 const Checkout = () => {
-  const { id} = useParams();
+  const { id } = useParams();
   const { user } = useContext(AuthContext);
 
   const [defaultValues, setDefaultValues] = useState({
-    name: '',
-    address: 'Dhaka',
+    name: "",
+    address: "Dhaka",
     price: 2400,
-    postcode: '5000',
-    phonenumber: '01712345678',
+    postcode: "5000",
+    phonenumber: "01712345678",
   });
 
   const handleAddProduct = (event) => {
@@ -33,9 +33,7 @@ const Checkout = () => {
 
     console.log(product);
 
-
-    fetch(`https://e-translator-server.vercel.app/order/${id}`, {
-
+    fetch(`http://localhost:5173/order/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +64,7 @@ const Checkout = () => {
         }
       });
   };
-//jkshajkdhjgfjkjkdgdsgfgs
+  //jkshajkdhjgfjkjkdgdsgfgs
   return (
     <div className="mt-16 hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse py-10">
@@ -79,7 +77,8 @@ const Checkout = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="name" defaultValue={user?.displayName}
+                placeholder="name"
+                defaultValue={user?.displayName}
                 className="input input-bordered "
                 required
               />
@@ -91,7 +90,8 @@ const Checkout = () => {
               <input
                 type="text"
                 name="address"
-                placeholder="address" defaultValue={defaultValues.address}
+                placeholder="address"
+                defaultValue={defaultValues.address}
                 className="input input-bordered "
                 required
               />
@@ -104,7 +104,8 @@ const Checkout = () => {
               <input
                 type="number"
                 name="price"
-                placeholder="price" defaultValue={defaultValues.price}
+                placeholder="price"
+                defaultValue={defaultValues.price}
                 className="input input-bordered "
                 required
               />
@@ -118,7 +119,8 @@ const Checkout = () => {
                 type="text"
                 name="postcode"
                 pattern="[0-9]{4}"
-                placeholder="Enter 5-digit zip code" defaultValue={defaultValues.postcode}
+                placeholder="Enter 5-digit zip code"
+                defaultValue={defaultValues.postcode}
                 className="input input-bordered"
                 required
               />
@@ -132,7 +134,8 @@ const Checkout = () => {
                 type="tel"
                 name="phonenumber"
                 pattern="[0-9]{11}"
-                placeholder="Format: 123-456-7890" defaultValue={defaultValues.phonenumber}
+                placeholder="Format: 123-456-7890"
+                defaultValue={defaultValues.phonenumber}
                 className="input input-bordered"
                 required
               />

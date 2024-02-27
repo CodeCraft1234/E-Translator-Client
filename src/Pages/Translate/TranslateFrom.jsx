@@ -19,9 +19,7 @@ import { pdfjs } from "react-pdf";
 import { AuthContext } from "../../Security/AuthProvider";
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
-import BG from "../../Components/Features/BG";
 import Animation from "./Animation";
-import WebRating from "../../Components/WebRating/WebRating";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 
 function Translator() {
@@ -162,7 +160,7 @@ function Translator() {
   };
 
   const fetchTranslationHistory = () => {
-    fetch("https://e-translator-server.vercel.app/api/history")
+    fetch("http://localhost:5000/api/history")
       .then((res) => res.json())
       .then((data) => {
         const userTranslationHistory = data.filter(
@@ -217,7 +215,7 @@ function Translator() {
         email: user.email,
       };
 
-      fetch("https://e-translator-server.vercel.app/api/history", {
+      fetch("http://localhost:5000/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -400,7 +398,7 @@ function Translator() {
     fetchSuggestions("");
   }, []);
 
-  const fetchSuggestions = async (text) => {
+  const fetchSuggestions = async () => {
     try {
       const response = await AxiosSecure.get("/api/suggestions");
       console.log(response.data);
@@ -454,7 +452,7 @@ function Translator() {
               rows="10"
             ></textarea>
             {fromText.trim() !== "" && (
-              <ul className="absolute z-10 bg-white w-full mt-1 rounded-b shadow-lg">
+              <ul className="absolute z-10 bg-white w-1/2 mt-1 rounded-b ">
                 {suggestions
                   .filter((suggestion) =>
                     suggestion.toLowerCase().startsWith(fromText.toLowerCase())
