@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import auth from "../Components/firebase/firebase.config";
 import {
   FacebookAuthProvider,
+  GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -21,7 +22,7 @@ const facebookprovider = new FacebookAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const AxiosSecure=UseAxiosSecure()
+  const AxiosSecure = UseAxiosSecure();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -30,8 +31,8 @@ const AuthProvider = ({ children }) => {
 
   const forgetPass = (email) => {
     // setLoading(true);
-    return sendPasswordResetEmail(auth, email)
-  }
+    return sendPasswordResetEmail(auth, email);
+  };
 
   const googleSignIn = () => {
     setLoading(true);
@@ -47,6 +48,12 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  const githubProvider = new GithubAuthProvider();
+  const githubLogin = () =>{
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider);  
+}
 
   const updateProfiles = (name, photo) => {
     updateProfile(auth.currentUser, {
@@ -68,26 +75,22 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       console.log("user on the auth state changed", currentUser);
       setLoading(false);
-      
+
       if (currentUser) {
-        AxiosSecure.post('/jwt', loggeduser, { withCredentials: true })
-            .then((res) => {
-                console.log(res.data);
-            });
-            setLoading(false)
-    } 
-    else {
-        AxiosSecure.post('/logout', loggeduser, {
-                withCredentials: true,
-            })
-            .then((res) => {
-                console.log(res.data);
-            });
-            setLoading(false)
-    }
-
-
-     
+        AxiosSecure.post("/jwt", loggeduser, { withCredentials: true }).then(
+          (res) => {
+            console.log(res.data);
+          }
+        );
+        setLoading(false);
+      } else {
+        AxiosSecure.post("/logout", loggeduser, {
+          withCredentials: true,
+        }).then((res) => {
+          console.log(res.data);
+        });
+        setLoading(false);
+      }
     });
 
     return () => {
@@ -103,10 +106,9 @@ const AuthProvider = ({ children }) => {
     signIn,
     updateProfiles,
     logOut,
-    // githubSignIn,
+    githubLogin,
     facebookSignin,
-    forgetPass
-
+    forgetPass,
   };
 
   return (

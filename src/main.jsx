@@ -13,7 +13,7 @@ import Register from "./Security/Register";
 import Translate from "./Pages/Translate/Translate";
 import ForgetPassword from "./Security/ForgetPassword";
 import Features from "./Components/Features/Features";
-import {HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Security/PrivateRoute";
 import DashboardRoot from "./AdminPannel/DashboardRoot/DashboardRoot";
@@ -26,9 +26,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 import AllUsers from "./AdminPannel/AdminPages/AllUsers.jsx";
 import MeetTeam from "./Components/MeetTeam/MeetTeam.jsx";
-import Profile from './Pages/Profile/Profile';
-import ManageBlogs from './AdminPannel/AdminPages/ManageBlogs';
-import UpdateBlog from './AdminPannel/AdminPages/UpdateBlog';
+import Profile from "./Pages/Profile/Profile";
+import ManageBlogs from "./AdminPannel/AdminPages/ManageBlogs";
+import UpdateBlog from "./AdminPannel/AdminPages/UpdateBlog";
 import ChatTest from "./Components/Chat/ChatTest.jsx";
 import WebRating from "./Components/WebRating/WebRating.jsx";
 import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx";
@@ -50,9 +50,8 @@ const router = createBrowserRouter([
         element: <Features></Features>,
       },
       {
-        path:'/checkout',
-        element:<Checkout></Checkout>
-
+        path: "/checkout",
+        element: <Checkout></Checkout>,
       },
       {
         path: "/translate",
@@ -65,9 +64,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chat",
-        element: <PrivateRoute>
-          <ChatTest></ChatTest>
-        </PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <ChatTest></ChatTest>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blog",
@@ -80,7 +81,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <PrivateRoute><Profile/></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -100,7 +105,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/order/:id",
-        
+
         element: (
           <PrivateRoute>
             <Checkout></Checkout>
@@ -135,7 +140,11 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <PrivateRoute><DashboardRoot></DashboardRoot></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <DashboardRoot></DashboardRoot>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard/adminHome",
@@ -155,8 +164,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/userfeedback",
-        element: <UserFeedback/>
-       
+        element: <UserFeedback />,
       },
       {
         path: "/dashboard/blogs/:id",
