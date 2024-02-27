@@ -19,11 +19,8 @@ import { pdfjs } from "react-pdf";
 import { AuthContext } from "../../Security/AuthProvider";
 import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
-import BG from "../../Components/Features/BG";
 import Animation from "./Animation";
-import WebRating from "../../Components/WebRating/WebRating";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
-
 
 function Translator() {
   const { user } = useContext(AuthContext);
@@ -51,7 +48,6 @@ function Translator() {
   const imageInput = useRef(null);
   const typingTimer = useRef(null);
   const [suggestions, setSuggestions] = useState([]);
-
 
   useEffect(() => {
     setLanguages(lang);
@@ -163,13 +159,8 @@ function Translator() {
     }
   };
 
-
-
-
-
-
   const fetchTranslationHistory = () => {
-    fetch("https://e-translator-server.vercel.app/api/history")
+    fetch("http://localhost:5000/api/history")
       .then((res) => res.json())
       .then((data) => {
         const userTranslationHistory = data.filter(
@@ -224,7 +215,7 @@ function Translator() {
         email: user.email,
       };
 
-      fetch("https://e-translator-server.vercel.app/api/history", {
+      fetch("http://localhost:5000/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -391,7 +382,6 @@ function Translator() {
     setShowInput(!showInput);
   };
 
-
   const handleClick = () => {
     if (websiteLink) {
       let translatedLink = `https://translate.google.com/translate?sl=auto&tl=bn&u=${encodeURIComponent(
@@ -401,17 +391,16 @@ function Translator() {
     }
   };
 
-// Translation suggestion
+  // Translation suggestion
 
   const AxiosSecure = UseAxiosSecure();
   useEffect(() => {
-    
-    fetchSuggestions('');
+    fetchSuggestions("");
   }, []);
 
-  const fetchSuggestions = async (text) => {
+  const fetchSuggestions = async () => {
     try {
-      const response = await AxiosSecure.get('/api/suggestions');
+      const response = await AxiosSecure.get("/api/suggestions");
       console.log(response.data);
       const suggestions = response.data.reduce((acc, curr) => {
         acc.push(...curr.words);
@@ -430,19 +419,14 @@ function Translator() {
   //     setFromText(value);
   //     fetchSuggestions(value);
   //   } else {
-  //     // 
+  //     //
   //   }
   // };
 
-
   return (
-
-
     <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]   flex items-center justify-center ">
       <Animation></Animation>
       <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
-
-
         <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
@@ -453,7 +437,7 @@ function Translator() {
             <textarea
               className="border w-full p-2"
               placeholder={
-                imageFile ? `${recognizedText}\n${pdfText}` :  "Type Here...."
+                imageFile ? `${recognizedText}\n${pdfText}` : "Type Here...."
               }
               value={
                 imageFile
@@ -467,7 +451,7 @@ function Translator() {
               cols="30"
               rows="10"
             ></textarea>
-            {fromText.trim() !== '' && (
+            {fromText.trim() !== "" && (
               <ul className="absolute z-10 bg-white w-1/2 mt-1 rounded-b ">
                 {suggestions
                   .filter((suggestion) =>
@@ -487,8 +471,6 @@ function Translator() {
                   ))}
               </ul>
             )}
-
-
 
             <select
               value={fromLanguage}
@@ -690,10 +672,9 @@ function Translator() {
                   <h3 className="font-bold text-lg">Have a moment?</h3>
                   <p className="py-4">How would you rate this product?</p>
                   <MyRating></MyRating>
-                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+
                   <div className="modal-action">
                     <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
                       <button className="btn">Close</button>
                     </form>
                   </div>
@@ -721,10 +702,9 @@ function Translator() {
                   </h3>
 
                   <Feedback></Feedback>
-                  {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+
                   <div className="modal-action">
                     <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
                       <button className="btn">Close</button>
                     </form>
                   </div>
@@ -783,7 +763,6 @@ function Translator() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
