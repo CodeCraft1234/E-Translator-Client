@@ -77,7 +77,11 @@ const router = createBrowserRouter([
       {
         path: "http://localhost:5000/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
+
         loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
+
+        loader:({params})=> fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
+
       },
       {
         path: "/profile",

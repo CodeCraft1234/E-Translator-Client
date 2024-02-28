@@ -177,7 +177,7 @@ function Translator() {
 
   //deleted
   const handleDeleted = (id) => {
-    fetch(`http://localhost:5000/api/history/${id}`, {
+    fetch(`https://e-translator-server.vercel.app/api/history/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
