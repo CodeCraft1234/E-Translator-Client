@@ -107,7 +107,7 @@ const AuthProvider = ({ children }) => {
     updateProfiles,
     logOut,
     githubLogin,
-    facebookSignin,
+    facebookSignin ,
     forgetPass,
   };
 
