@@ -21,6 +21,7 @@ import Feedback from "../../Components/Feedback/Feedback";
 import MyRating from "../../Components/Rating/MyRating";
 import Animation from "./Animation";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
+import Swal from "sweetalert2";
 
 function Translator() {
   const { user } = useContext(AuthContext);
@@ -418,15 +419,15 @@ function Translator() {
   };
 
   return (
-    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]   flex items-center justify-center ">
+    <div className="text-black bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] flex items-center justify-center ">
       {/* <Animation></Animation> */}
-      <div className="bg-base-300 p-8 rounded-lg shadow-md w-4/5 my-12 ">
+      <div className="bg-base-300 lg:p-8 md:p-8 p-2 rounded-lg shadow-md lg:w-4/5 md:w-4/5 w-[410px] my-12 ">
         <h1 className="text-2xl text-center text-black font-bold mb-4">
           Translation Board
         </h1>
         <div className="mb-4 flex items-center">
-          <div className="w-1/2 pr-2">
-            <label className="block text-sm font-medium">From Language:</label>
+          <div className="lg:w-1/2 md:w-1/2 w-[200px] pr-2">
+            <label className="block text-sm font-medium p-1">From Language:</label>
             <textarea
               className="border w-full p-2"
               placeholder={
@@ -444,8 +445,7 @@ function Translator() {
               cols="30"
               rows="10"
             ></textarea>
-            {fromText.trim() !== '' && (
-
+            {fromText.trim() !== "" && (
               <ul className="absolute z-10 bg-white w-1/2 mt-1 rounded-b ">
                 {suggestions
                   .filter((suggestion) =>
@@ -478,8 +478,8 @@ function Translator() {
               ))}
             </select>
           </div>
-          <div className="w-1/2 pl-2">
-            <label className="block text-sm font-medium">To Language:</label>
+          <div className="lg:w-1/2 md:w-1/2 w-[200px] pl-2">
+            <label className="block text-sm font-medium p-1">To Language:</label>
             <textarea
               className="border w-full p-2"
               value={toText}
@@ -507,34 +507,49 @@ function Translator() {
               onClick={() => utterText(fromText, fromLanguage)}
               className="text-[#4392d9]"
             >
-              <div className="rounded p-1">
-                <FaVolumeUp className="text-xl hover:scale-150"></FaVolumeUp>
+              <div className="rounded p-1 relative group">
+                <FaVolumeUp className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaVolumeUp>
+                <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                  Speaker
+                </span>
               </div>
             </button>
             <button
               onClick={toggleRecognition}
               className={`text-${isRecording ? "red" : "blue"}-500`}
             >
-              <div className="rounded p-1">
-                <MdKeyboardVoice className="text-xl hover:scale-150"></MdKeyboardVoice>
+              <div className="rounded p-1 relative group">
+                <MdKeyboardVoice className="lg:text-xl md:text-xl text-sm hover:scale-150"></MdKeyboardVoice>
+                <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                  Voice
+                </span>
               </div>
             </button>
             <button
               onClick={() => imageInput.current.click()}
               className="text-[#4392d9]"
             >
-              <div className="rounded p-1">
-                <FaImages className="text-xl hover:scale-150"></FaImages>
+              <div className="rounded p-1 relative group">
+                <FaImages className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaImages>
+                <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                  Image
+                </span>
               </div>
             </button>
             <button className="text-[#4392d9]" onClick={handleOpenPdf}>
-              <div className="rounded p-1">
-                <FaRegFilePdf className="text-xl hover:scale-150"></FaRegFilePdf>
+              <div className="rounded p-1 relative group">
+                <FaRegFilePdf className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaRegFilePdf>
+                <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                  PDF
+                </span>
               </div>
             </button>
             <button className="text-[#4392d9]" onClick={toggleInput}>
-              <div className=" rounded p-1">
-                <FaGlobe className="text-xl hover:scale-150"></FaGlobe>
+              <div className="rounded p-1 relative group">
+                <FaGlobe className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaGlobe>
+                <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                  Website
+                </span>
               </div>
             </button>
             {showInput && (
@@ -560,29 +575,41 @@ function Translator() {
             onClick={() => copyContent(fromText)}
             className="text-[#4392d9] ml-5"
           >
-            <div className="rounded p-1">
-              <FaCopy className="text-xl hover:scale-150"></FaCopy>
+            <div className="rounded p-1 relative group">
+              <FaCopy className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaCopy>
+              <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                Copy
+              </span>
             </div>
           </button>
           <button onClick={handleExchangeClick} className="text-[#4392d9]">
-            <div className="rounded p-1 mr-[110px]">
-              <FaExchangeAlt className="text-xl hover:scale-150"></FaExchangeAlt>
+            <div className="rounded p-1 relative group lg:mr-[110px] md:mr-[110px] mr-[86px]">
+              <FaExchangeAlt className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaExchangeAlt>
+              <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 lg:pr-[110px] md:pr-[110px] pr-[86px]">
+                Exchange
+              </span>
             </div>
           </button>
           <button
             onClick={() => copyContent(toText)}
             className="text-[#4392d9]"
           >
-            <div className="rounded p-1">
-              <FaCopy className="text-xl hover:scale-150"></FaCopy>
+            <div className="rounded p-1 relative group">
+              <FaCopy className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaCopy>
+              <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                Copy
+              </span>
             </div>
           </button>
           <button
             onClick={() => utterText(toText, toLanguage)}
             className="text-[#4392d9] ml-5"
           >
-            <div className="rounded p-1">
-              <FaVolumeUp className="text-xl hover:scale-150"></FaVolumeUp>
+            <div className="rounded p-1 relative group">
+              <FaVolumeUp className="lg:text-xl md:text-xl text-sm hover:scale-150"></FaVolumeUp>
+              <span className="absolute text-black p-1 rounded-md top-full left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100">
+                Speaker
+              </span>
             </div>
           </button>
         </div>
@@ -617,13 +644,12 @@ function Translator() {
           </div>
         )}
 
-        <div className="lg:mt-5 md:mt-5 mt-6 lg:mb-5 md:mb-5 mb-10">
+        <div className="lg:mt-8 md:mt-5 mt-6 lg:mb-5 md:mb-5 mb-10">
           <button
             onClick={handleReset}
-            className="btn btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white"
+            className="btn btn-outline border-0 border-[#4392d9] hover:bg-[#4392d9] hover:border-[#4392d9] border-b-4 hover:text-white "
           >
             <div>Reset</div>
-            {/* <h2 className="text-center">Reset</h2> */}
           </button>
         </div>
 

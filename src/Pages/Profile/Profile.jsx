@@ -11,7 +11,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="mt-[100px] mx-auto max-w-md p-6 rounded-lg shadow-md">
+    <div className="lg:mt-[100px] md:mt-[80px] mt-[80px] mx-auto max-w-md p-6 rounded-lg shadow-md">
       <div className="boxP">
         <div className="loginP">
           <div className="loginBxP">
