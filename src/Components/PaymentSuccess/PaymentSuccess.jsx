@@ -28,7 +28,7 @@ const PaymentSuccess = () => {
   }, [navigate]);
 
   return (
-    <div className="mt-44">
+    <div className="mt-24">
       <div className="min-h-screen flex items-center justify-center">
         <div className="container printer2 mx-auto">
           <div className="printer-top"></div>

@@ -16,8 +16,12 @@ const Banner = () => {
   };
   return (
     <div >
+
+      <section className=" z-0 h-[700px] text-white pt-10  lg:mt-0 md:mt-10">
+        <div className="container mt-10 flex lg:flex flex-col p-5  justify-center items-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-col lg:justify-between">
+
       <section className=" z-0 h-[700px] text-white pt-10  lg:mt-10 md:mt-10">
-        <div className="container mt-10 flex flex-col p-5  justify-center items-center  mx-auto sm:py-12 lg:py-24 lg:flex-row md:flex-row lg:justify-between">
+
           <div className="flex flex-col  justify-center text-center rounded-sm lg:max-w-md md:max-w-xs xl:max-w-lg lg:text-left">          
             <TypeAnimation
               sequence={[
@@ -57,7 +61,7 @@ const Banner = () => {
               <br className="hidden md:inline lg:hidden" />
             </p>
             <div className="gap-5 mt-5">
-             <button className="bg-indigo-950  border-b-2 mr-5 rounded-lg">
+             <button className="bg-indigo-950  border-b-2 lg:mr-5 md:mr-0 mr-0 rounded-lg">
             <Link to={'/translate'}> <a className="b" href="">
               <span></span>
               <span></span>
@@ -66,7 +70,7 @@ const Banner = () => {
               Lets Translate
               </a></Link>
              </button>
-             <button className="bg-indigo-950 border-b-2 rounded-lg">
+             <button className="bg-indigo-950 border-b-2 rounded-lg mt-5">
             <Link to={'/chat'}>
             <a className="b" >
               <span></span>
@@ -79,7 +83,7 @@ const Banner = () => {
              </button>
             </div>
           </div>
-          <div className="flex  sm:p-10  items-center justify-center mt-8  pt-16 lg:mt-0 h-96 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+          <div className="flex sm:p-10  items-center justify-center mt-8  pt-16 lg:mt-0 h-96 sm:h-30 lg:h-96 xl:h-112 2xl:h-128">
           <Lottie ClassName='h-[600px] w-[600px]' options={defaultOption}
               height={400}
               width={400}
