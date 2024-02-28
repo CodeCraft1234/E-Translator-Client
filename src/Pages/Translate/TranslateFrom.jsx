@@ -166,6 +166,7 @@ function Translator() {
         const userTranslationHistory = data.filter(
           (entry) => entry.email === user.email
         );
+        console.log(userTranslationHistory);
         setTranslationHistory(userTranslationHistory);
       })
       .catch((error) => {
@@ -221,9 +222,12 @@ function Translator() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(translation),
+     
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
+
           setTranslationHistory((prevHistory) => [data, ...prevHistory]);
         })
         .catch((error) => {
