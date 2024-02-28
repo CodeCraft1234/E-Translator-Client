@@ -63,12 +63,12 @@ const LiveChat = () => {
       <button className="text-2xl text-emerald-600" onClick={openModal}>
         <img
           className="w-28 ml-14"
-          src="https://i.ibb.co/93XRbh3/messenger.png"
+          // src="https://i.ibb.co/93XRbh3/messenger.png"
           alt=""
         />
-        <h1 className="text-blue-200 bg-gradient-to-r rounded-lg text-2xl font-bold">
+        {/* <h1 className="text-blue-200 bg-gradient-to-r rounded-lg text-2xl font-bold">
           Quick Support
-        </h1>
+        </h1> */}
       </button>
 
       {isModalOpen && (
@@ -84,30 +84,28 @@ const LiveChat = () => {
                   &times;
                 </button>
               </div>
-             <form className="bg-white p-2 rounded-lg" action="">
-             <div className="mb-4 text-red-600 h-auto overflow-y-auto">
-                {chatMessages.map((message, index) => (
-                  <div key={index} className="flex">
-                    {message.sender === "user" ? (
-                      <div className="flex justify-end w-full">
-                        
-                        <div className="rounded-md p-2 max-w-xs bg-sky-800 text-white">
-                          {message.text}
-                          
+              <form className="bg-white p-2 rounded-lg" action="">
+                <div className="mb-4 text-red-600 h-auto overflow-y-auto">
+                  {chatMessages.map((message, index) => (
+                    <div key={index} className="flex">
+                      {message.sender === "user" ? (
+                        <div className="flex justify-end w-full">
+                          <div className="rounded-md p-2 max-w-xs bg-sky-800 text-white">
+                            {message.text}
+                          </div>
+                          <RxAvatar className="text-2xl bg- text-slate-800 " />
                         </div>
-                        <RxAvatar className="text-2xl bg- text-slate-800 " />
-                      </div>
-                    ) : (
-                      <div className="flex justify-start w-full">
-                      <FaRobot  className="text-slate-800 text-2xl" />
-                        <div className="rounded-md p-2 max-w-xs bg-green-800 text-white">
-                          {message.text}
+                      ) : (
+                        <div className="flex justify-start w-full">
+                          <FaRobot className="text-slate-800 text-2xl" />
+                          <div className="rounded-md p-2 max-w-xs bg-green-800 text-white">
+                            {message.text}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </form>
               <div className="flex py-2">
                 <input
@@ -125,7 +123,6 @@ const LiveChat = () => {
                   Send
                 </button>
               </div>
-           
             </div>
           </div>
         </div>

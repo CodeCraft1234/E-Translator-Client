@@ -4,10 +4,7 @@ import UseBlogs from "../../AxiosFetch/UseBlogs";
 import { Link } from "react-router-dom";
 
 const TranslationPlatformBlog = () => {
-  const [blogs, refetch] = UseBlogs();
-
-  
-  
+  const [blogs] = UseBlogs();
 
   // Maintain individual states for each blog post
   const [showFullContent, setShowFullContent] = useState({});
@@ -29,20 +26,14 @@ const TranslationPlatformBlog = () => {
       : content;
   };
 
- 
-
   return (
-
     <div className="bg-gradient-to-r my-10 from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white pt-24 mt-10 lg:px-28 md:px-10 px-5">
-
       <Helmet>
         <title> E-Translator | Blogs</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
 
-      <div>
-     
-      </div>
+      <div></div>
 
       <div className="grid lg:grid-cols-2 gap-6 overflow-hidden ">
         {blogs.map((blog) => (
@@ -57,30 +48,27 @@ const TranslationPlatformBlog = () => {
                 alt=""
               />
               <div className="mt-4">
-              <h3 className="text-xl font-semibold">{blog.title}</h3>
-              <p className="mt-2 text-gray-300">
-                {renderContent(blog.description, blog._id)}
-              </p>
+                <h3 className="text-xl font-semibold">{blog.title}</h3>
+                <p className="mt-2 text-gray-300">
+                  {renderContent(blog.description, blog._id)}
+                </p>
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <button
+                  onClick={() => toggleContent(blog._id)}
+                  className="text-blue-500 hover:underline"
+                >
+                  {showFullContent[blog._id] ? "Read Less" : "Read More"}
+                </button>
+                <Link to={`/blogDetails/${blog._id}`}>
+                  <button className="">learn more</button>
+                </Link>
+              </div>
             </div>
-            <div className="flex justify-between items-center mt-4">
-              <button
-                onClick={() => toggleContent(blog._id)}
-                className="text-blue-500 hover:underline"
-              >
-                {showFullContent[blog._id] ? "Read Less" : "Read More"}
-              </button>
-             <Link to={`/blogDetails/${blog._id}`}>
-             <button  className="">learn more</button>
-             </Link>
-            </div>
-            </div>
-            
           </>
         ))}
       </div>
-      <div>
-
-      </div>
+      <div></div>
     </div>
   );
 };

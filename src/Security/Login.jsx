@@ -244,7 +244,7 @@ const handleFacebook = () => {
   };
 
   return (
-    <div className=" flex justify-center items-center mx-auto">
+    <div className=" flex justify-center items-center mx-auto lg:pb-0 md:pb-0 pb-8">
       <div className="box mt-10">
         <div className="login">
           <div className="loginBx">
