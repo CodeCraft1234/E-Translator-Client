@@ -2,11 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
 import Data4 from "../Navbar/Animation4.json";
-import Lottie from "react-lottie";
+import UseAdmin from "../../AxiosFetch/UseAdmin";
+
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   console.log(user);
+
+  const [isAdmin]=UseAdmin()
 
   const defaultOption = {
     loop: true,
@@ -201,7 +204,7 @@ const NavBar = () => {
             <NavLink to={"/rating"}>Rating</NavLink>
           </li> */}
           <li>
-            {user?.email === "admin@gmail.com" ? (
+            {/* {user?.email === "admin@gmail.com" ? (
               <NavLink to={"dashboard/adminHome"}>
                 <img
                   className="h-8 w-8"
@@ -212,7 +215,18 @@ const NavBar = () => {
               </NavLink>
             ) : (
               <></>
-            )}
+            )} */}
+              {
+                isAdmin && <NavLink to={"dashboard/adminHome"}>
+                <img
+                  className="h-8 w-8"
+                  src="https://i.ibb.co/ZgKDvpZ/business-icon-dashboard-3d-illustration-png.webp"
+                  alt=""
+                />
+                Dashbord
+              </NavLink>
+              }
+
           </li>
         </ul>
       </div>
