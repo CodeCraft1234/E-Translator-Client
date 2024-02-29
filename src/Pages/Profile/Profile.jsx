@@ -11,7 +11,8 @@ const Profile = () => {
   };
 
   return (
-    <div className="mt-[100px] mx-auto max-w-md p-6 rounded-lg shadow-md">
+
+    <div className="lg:mt-[100px] md:mt-[80px] mt-[80px] mx-auto max-w-md p-6 rounded-lg shadow-md">
       <div className="boxP">
         <div className="loginP">
           <div className="loginBxP">
@@ -44,9 +45,22 @@ const Profile = () => {
               </button>
             </div>
           </div>
+
+<div className="py-36 mt-10">
+  
+<div className=" p-10  mx-auto max-w-md text-white bg-[#031321] rounded-md shadow-md">
+      <div className="text-center pt-16 mb-4">
+
+        <div className="w-24  h-24 rounded-full overflow-hidden mx-auto animate-bounce">
+          <img
+            src={user?.photoURL}
+            alt="User Avatar"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>
+</div>
   );
 };
 
