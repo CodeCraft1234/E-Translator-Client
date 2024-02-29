@@ -230,7 +230,7 @@ const Register = () => {
         console.log(email, name, photo);
         //post userinfo in database
         const date = new Date();
-        const userInfo = { email, name, photo, date, admin: false };
+        const userInfo = { email, name, photo, date, role: 'user' };
         console.log(date);
 
         AxiosPublic.post("/users", userInfo).then((res) => {
