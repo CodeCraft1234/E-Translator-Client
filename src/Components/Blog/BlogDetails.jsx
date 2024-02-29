@@ -24,6 +24,7 @@ const BlogDetails = () => {
             return res.data
         }
     })
+    //kfdshgakh
         console.log(comments)
         const sortedPosts = comments.sort((a, b) => new Date(b.date) - new Date(a.date));
         const posts=sortedPosts.slice(0,4)
