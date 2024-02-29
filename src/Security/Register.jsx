@@ -247,7 +247,7 @@ const Register = () => {
   };
 
   return (
-    <div className="mt-24 mb-10">
+    <div className="lg:mt-24 md:mt-24 mt-20 mb-10">
       <div className=" flex justify-center items-center mx-auto">
         <div className="boxS mt-10">
           <div className="loginN">

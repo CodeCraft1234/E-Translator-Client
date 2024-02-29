@@ -34,6 +34,8 @@ import WebRating from "./Components/WebRating/WebRating.jsx";
 import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx";
 import BlogDetails from "./Components/Blog/BlogDetails.jsx";
 import LoginFinal from "./Security/LoginFinal.jsx";
+import AdminSecurity from "./Security/AdminSecurity.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -75,9 +77,10 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "/blogDetails/:id",
+        path: "http://localhost:5000/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+
       },
       {
         path: "/profile",
@@ -141,9 +144,9 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: (
-      <PrivateRoute>
-        <DashboardRoot></DashboardRoot>
-      </PrivateRoute>
+   <AdminSecurity> <DashboardRoot></DashboardRoot></AdminSecurity>    
+
+
     ),
     children: [
       {
@@ -169,7 +172,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/blogs/:id",
         element: <UpdateBlog></UpdateBlog>,
-        loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
     ],
   },
@@ -187,3 +190,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </QueryClientProvider>
   </React.StrictMode>
 );
+
+
+
+

@@ -11,7 +11,7 @@
   }
   .boxP {
     position: relative;
-    width: 450px;
+    width: 375px;
     height: 430px;
     background: repeating-conic-gradient(
       from var(--a),

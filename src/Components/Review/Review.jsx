@@ -13,7 +13,7 @@ const Review = () => {
         "https://images.pexels.com/photos/3211476/pexels-photo-3211476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       rating: 3,
       review:
-        "Anika Dental Point has been my go-to dental clinic for years. The staff is incredibly friendly, and Dr. Smith is an expert at what he does. The clinic is well-maintained, and they use the latest technology for treatments. I always feel comfortable and well taken care of during my visits..",
+        "Precision in translation is non-negotiable for me, and eTranslator consistently delivers. Whether it's technical documents, creative content, or casual conversations, the translations are not just accurate but retain the essence and cultural nuances.",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const Review = () => {
         "https://images.pexels.com/photos/3585325/pexels-photo-3585325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       rating: 3,
       review:
-        "I had a fantastic experience at Anika Dental Point. The team is professional, and they take the time to explain procedures thoroughly. The clinic is clean and inviting, and the atmosphere is calming. Dr. Horkil Alom is not only skilled but also genuinely cares about the well-being of his patients.",
+        "The addition of voice translation has elevated my interactions. Conversing in real-time across languages is no longer a challenge. The clarity and natural flow of voice translations are impressive, making eTranslator a communication powerhouse.",
     },
     {
       id: 3,
@@ -52,7 +52,6 @@ const Review = () => {
           Client Review
         </h1>
         <div className="border"></div>
-
         <div
           className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5 mt-16"
           data-aos="zoom-in"
@@ -66,7 +65,9 @@ const Review = () => {
             <div
               key={testimonial.id}
               className={`px-4 mb-8  py-5 shadow-xl rounded-md border ${
-                testimonial.rating === 3 ? "bg-opacity-10 bg-white dark:bg-black dark:bg-opacity-10 p-8 rounded-lg shadow-md backdrop-blur-md" : ""
+                testimonial.rating === 3
+                  ? "bg-opacity-10 bg-white dark:bg-black dark:bg-opacity-10 p-8 rounded-lg shadow-md backdrop-blur-md"
+                  : ""
               }`}
             >
               <div className="testimonial">

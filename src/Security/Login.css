@@ -30,6 +30,8 @@
   transition: 0.5s;
 }
 
+
+
 @keyframes rotating {
   0% {
     --a: 0deg;
@@ -144,4 +146,22 @@
 .group a:nth-child(2) {
   color: #ff2770;
   font-weight: 600;
+}
+
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .box {
+    width: 70%; 
+    height: 400px; 
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .box {
+    width: 350px; 
+    height: 450px; 
+  }
+
 }
