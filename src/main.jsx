@@ -77,7 +77,7 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "http://localhost:5000/blogDetails/:id",
+        path: "/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
 
@@ -106,6 +106,7 @@ const router = createBrowserRouter([
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>,
       },
+      
       {
         path: "/order/:id",
 
