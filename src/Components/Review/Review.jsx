@@ -69,6 +69,7 @@ const Review = () => {
                   ? "bg-opacity-10 bg-white dark:bg-black dark:bg-opacity-10 p-8 rounded-lg shadow-md backdrop-blur-md"
                   : ""
               }`}
+              
             >
               <div className="testimonial">
                 <img
