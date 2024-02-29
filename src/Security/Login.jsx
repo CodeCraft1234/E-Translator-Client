@@ -1,3 +1,4 @@
+
 // import { useContext } from "react";
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { FcGoogle } from "react-icons/fc";
@@ -30,7 +31,7 @@
 //   };
 
 //   // facebook login
-//   const handlefacebooksignin = () => {
+//   const handleFacebook = () => {
 //     facebookSignin()
 //       .then((result) => {
 //         console.log(result.user);
@@ -69,7 +70,7 @@
 //         <div className="hero-content flex-col lg:flex-row-reverse">
 //           <div className="text-center lg:text-left"></div>
 //           <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl border-4 box bg-violet-950">
-//             <form onSubmit={handleLogin} className="card-body ">
+//             <form onSubmit={handleLogin} className="card-body">
 //               <div className="form-control">
 //                 <h1 className="text-3xl text-center text-white font-semibold">
 //                   Login your account
@@ -110,11 +111,13 @@
 //                 </div>
 //               </div>
 //               <div className="form-control mt-1">
+
 //                 <button className="p-2 rounded bg-[#1368c0] text-white">
+
 //                   Login
 //                 </button>
 //               </div>
-
+             
 //               <div className="flex items-center pt-4 space-x-1">
 //                 <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
 //                 <div className=" flex flex-col w-full">
@@ -130,25 +133,27 @@
 //                   aria-label="Log in with Google"
 //                   className="p-3 hover:bg-[#e7e9eb] rounded-full"
 //                 >
-//                   <FcGoogle />
+//                <FcGoogle />
+
+
 //                 </button>
 //                 <button
 //                   onClick={handlefacebooksignin}
 //                   aria-label="Log in with Facebook"
 //                   className="p-3 hover:bg-[#e7e9eb] rounded-full"
 //                 >
-//                   <FaSquareFacebook className="text-[#016ecd]" />
+//                 <FaSquareFacebook className="text-[#016ecd]"/>
 //                 </button>
 //                 <button
 //                   aria-label="Log in with GitHub"
 //                   className="p-3 text-white hover:bg-[#e7e9eb] rounded-full"
 //                 >
-//                   <FaGithub className="text-black" />
+//                 <FaGithub className="text-black"/>
 //                 </button>
 //               </div>
 
 //               <p className="text-center text-white font-semibold text-xs mt-4">
-//                 {`Don't Have An Account ?`}
+//                { `Don't Have An Account ?`}
 //                 <Link className="text-[#F75B5F]" to="/signup">
 //                   {" "}
 //                   Register
@@ -164,16 +169,18 @@
 
 // export default Login;
 
+
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebookSquare, FaGithub } from "react-icons/fa";
+import {  FaGithub } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { AuthContext } from "./AuthProvider";
 import "./Login.css";
+import { FaSquareFacebook } from "react-icons/fa6";
 
 const Login = () => {
-  const { signIn, googleSignIn, facebookSignIn, githubLogin } =
+  const { signIn, googleSignIn, facebookSignin, githubLogin } =
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -191,18 +198,21 @@ const Login = () => {
       });
   };
 
-  const handleFacebookLogin = () => {
-    facebookSignIn()
-      .then((result) => {
-        console.log(result.user);
-        navigate(location?.state ? location.state : "/");
-        toast.success("Facebook login successful");
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error("Facebook login failed");
-      });
-  };
+// facebook login
+const handleFacebook = () => {
+  facebookSignin()
+    .then((result) => {
+      console.log(result.user);
+
+      // navigate after login
+      navigate(location?.state ? location.state : "/");
+      return toast.success("facebook login successfully");
+    })
+    .catch((error) => {
+      console.log(error);
+      return toast.error("password or email not match");
+    });
+};
 
   const handleGithubLogin = () => {
     githubLogin()
@@ -236,7 +246,7 @@ const Login = () => {
   };
 
   return (
-    <div className=" flex justify-center items-center mx-auto">
+    <div className=" flex justify-center items-center mx-auto lg:pb-0 md:pb-0 pb-8">
       <div className="box mt-10">
         <div className="login">
           <div className="loginBx">
@@ -277,12 +287,12 @@ const Login = () => {
                 <FcGoogle />
               </button>
               <button
-                onClick={handleFacebookLogin}
-                aria-label="Log in with Facebook"
-                className="p-3 text-white bg-gray-800 hover:bg-gray-700 rounded-full"
-              >
-                <FaFacebookSquare className="text-[#016ecd]" />
-              </button>
+                  onClick={handleFacebook}
+                  aria-label="Log in with Facebook"
+                  className="p-3 text-white bg-gray-800 hover:bg-gray-700 rounded-full"
+                >
+                <FaSquareFacebook className="text-[#016ecd]"/>
+                </button>
               <button
                 onClick={handleGithubLogin}
                 aria-label="Log in with GitHub"
