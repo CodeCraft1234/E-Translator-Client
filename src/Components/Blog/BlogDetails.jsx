@@ -1,6 +1,5 @@
 import { IoMdSend } from "react-icons/io";
 import { Form, useLoaderData, useParams } from "react-router-dom";
-import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 import { AuthContext } from "../../Security/AuthProvider";
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -11,7 +10,8 @@ import UseAxiosPublic from "../../Axios/UseAxiosPublic";
 const BlogDetails = () => {
     const blog=useLoaderData()
     console.log(blog)
-    const AxiosSecure=UseAxiosSecure()
+    
+    const AxiosPublic=UseAxiosPublic()
     const {user}=useContext(AuthContext)
     console.log(user)
     const {id}=useParams()
@@ -19,7 +19,7 @@ const BlogDetails = () => {
     const { refetch, data: comments=[]}=useQuery({
         queryKey:['comment'],
         queryFn: async () => {
-          const AxiosPublic=UseAxiosPublic()
+         
             const res=await AxiosPublic.get(`/blogComment/get/${id}`)
             return res.data
         }
@@ -39,7 +39,7 @@ const BlogDetails = () => {
         console.log(comment)       
         const commentsInfo={comment,date,name,image,id,email}
         console.log(commentsInfo)
-               AxiosSecure.post('/blogComment',commentsInfo)
+        AxiosPublic.post('/blogComment',commentsInfo)
         .then(res=>{
           refetch()        
           console.log(res.data)
