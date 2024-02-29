@@ -75,7 +75,7 @@ const AllUsers = () => {
               <span></span>
               <span></span>
               <span></span>
-              {user?.admin===false ? "Make Admin" : "Admin" }
+              {user?.role ==='user' ? "Make Admin" : "Admin" }
               </a>
              </button>
                 <button onClick={()=>handleDelete(user._id)} className="bg-indigo-950 inline-block border-b-2 rounded-lg">

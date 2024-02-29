@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { BiLike, BiSolidLike } from "react-icons/bi";
 import { useState } from "react";
+import UseAxiosPublic from "../../Axios/UseAxiosPublic";
 
 const BlogDetails = () => {
     const blog=useLoaderData()
@@ -18,8 +19,8 @@ const BlogDetails = () => {
     const { refetch, data: comments=[]}=useQuery({
         queryKey:['comment'],
         queryFn: async () => {
-          const AxiosSecure=UseAxiosSecure()
-            const res=await AxiosSecure.get(`/blogComment/get/${id}`)
+          const AxiosPublic=UseAxiosPublic()
+            const res=await AxiosPublic.get(`/blogComment/get/${id}`)
             return res.data
         }
     })
