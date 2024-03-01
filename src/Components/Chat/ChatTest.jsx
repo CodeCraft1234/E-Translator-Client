@@ -2,7 +2,7 @@ import { useState } from "react";
 import io from "socket.io-client";
 import ChatTwo from "./ChatTwo";
 
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://e-translator-server.vercel.app");
 
 const ChatTest = () => {
   const [userName, setUserName] = useState("");
