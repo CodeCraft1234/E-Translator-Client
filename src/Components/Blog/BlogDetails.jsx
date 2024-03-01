@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { BiLike, BiSolidLike } from "react-icons/bi";
 import { useState } from "react";
 import UseAxiosPublic from "../../Axios/UseAxiosPublic";
+import Swal from "sweetalert2";
 
 const BlogDetails = () => {
   const blog = useLoaderData();
@@ -13,7 +14,7 @@ const BlogDetails = () => {
 
   const AxiosPublic = UseAxiosPublic();
   const { user } = useContext(AuthContext);
-  console.log(user);
+  console.log(user.email);
   const { id } = useParams();
 
   const { refetch, data: comments = [] } = useQuery({
@@ -50,6 +51,52 @@ const BlogDetails = () => {
   const handleLike = () => {
     setIsLiked(!isLiked);
   };
+
+
+  const handleDelete = (id) => {
+    const AxiosPublic=UseAxiosPublic()
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to delete this Blog!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete blog",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        AxiosPublic.delete(`/blogComment/${id}`)
+        .then((res) => {
+          refetch();
+          if (res.data.deletedCount > 0) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your blog has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  };
+
+
+  // const handleupdate=(e)=>{
+  //   console.log(e)
+  //   const AxiosPublic=UseAxiosPublic()
+  //   e.preventDefault()
+  // const title=e.target.title.value
+
+  // AxiosPublic.patch(`/blogComment/update/${e._id}`,title)
+  // .then(res=>{
+  //   Swal.fire({
+  //     title: "updated!",
+  //     text: "This blog has been updated.",
+  //     icon: "success"
+  //   });
+  //   console.log(res.data)      
+  //   })
+  // }
   return (
     <div className="mt-10 grid lg:grid-cols-2 pt-24">
       <div
@@ -58,7 +105,7 @@ const BlogDetails = () => {
       >
         <img className=" w-full h-[500px] rounded-lg" src={blog.photo} alt="" />
         <div className="mt-4">
-          <h3 className="text-xl font-semibold">{blog.title}</h3>
+          <h3 className="text-xl text-white font-semibold">{blog.title}</h3>
           <p className="mt-2 text-gray-300">{blog.description}</p>
         </div>
         <div className="flex justify-between items-center mt-4"></div>
@@ -80,13 +127,40 @@ const BlogDetails = () => {
                 <div>
                   <h1 className="font-bold">{comment.name}</h1>
                   <h1>{comment.comment}</h1>
-                  <div className="grid lg:grid-cols-4 mt-3 text-start justify-center items-center gap-2">
+                  <div className="grid lg:grid-cols-4 sm:grid-cols-4 md:grid-cols-4 mt-3 text-start justify-center items-center gap-2">
                     <button onClick={handleLike}>
                       {isLiked ? <BiSolidLike /> : <BiLike color="blue" />}
                     </button>
-                    <h1 className="hover:underline">Edit</h1>
+
+                    
+                    {
+                      user?.email === comment.email &&   <button>{/* Open the modal using document.getElementById('ID').showModal() method */}
+                      <button className="hover:underline"  onClick={()=>document.getElementById('my_modal_1').showModal()}>Edit</button>
+                      <dialog id="my_modal_1" className="modal">
+                        <div className="modal-box">
+                          <h3 className="font-bold text-lg">Edit Comment!</h3>
+                          <form >
+                          <input defaultValue={comment.comment} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
+                          <button className="">
+                <IoMdSend className="inline-block text-6xl" />
+              </button>
+                          </form>
+                          <div className="modal-action">
+                            <form method="dialog">
+                              {/* if there is a button in form, it will close the modal */}
+                              <button className="btn">Close</button>
+                            </form>
+                          </div>
+                        </div>
+                      </dialog></button>
+                    }
+                   
+                   
                     <h1 className="hover:underline">Reply</h1>
-                    <h1 className="hover:underline">Delete</h1>
+
+                    {
+                      user?.email === comment.email &&  <button onClick={()=>handleDelete(comment._id)} className=""><h1 className="hover:underline">Delete</h1></button>
+                    }
                   </div>
                 </div>
               </div>
