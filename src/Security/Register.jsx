@@ -230,7 +230,7 @@ const Register = () => {
         console.log(email, name, photo);
         //post userinfo in database
         const date = new Date();
-        const userInfo = { email, name, photo, date, admin: false };
+        const userInfo = { email, name, photo, date, role: 'user' };
         console.log(date);
 
         AxiosPublic.post("/users", userInfo).then((res) => {
@@ -302,10 +302,11 @@ const Register = () => {
                   <span className="text-white"> min 6 carecter</span>
                 )}
 
-                <div className="flex gap-2 mt-3">
-                  <input type="checkbox" name="checkbox" id="" />
-                  <p className="font-normal text-xs">
-                    Accept <span className="font-bold">Term & Conditions</span>
+                <div className="flex mt-3">
+                  
+                  <p className="flex font-normal text-xs">
+                  <input type="checkbox" className="justify-start" name="checkbox" id="" />
+                     <span className="font-bold">Accept Term & Conditions</span>
                   </p>
                 </div>
                 <input type="submit" value="Register" className="my-5"/>

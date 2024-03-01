@@ -5,6 +5,7 @@ import { FaArrowLeft , FaBars } from "react-icons/fa";
 
 const DashboardRoot = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  
   return (
     <div>
       <div className="flex relative">

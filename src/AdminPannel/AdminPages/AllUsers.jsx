@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // import Swal from "sweetalert2";
 // import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 // import UseUsers from "../../AxiosFetch/UseUsers";
