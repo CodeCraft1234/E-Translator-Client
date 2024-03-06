@@ -8,11 +8,11 @@ const Root = () => {
   
   return (
     <div className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]">
-          <div >
+          <div>
            { noheaderfooter || <Navbar></Navbar>}
-           <div className="min-h-screen">
+           <div className="min-h-screen max-w-6xl mx-auto">
            <Outlet></Outlet>
-           </div>
+           </div >
             { noheaderfooter || <Footer></Footer>}
         </div>
       <Toaster />
