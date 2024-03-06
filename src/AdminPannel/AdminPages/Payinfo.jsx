@@ -6,12 +6,12 @@ import UsePayment from "../../AxiosFetch/UsePayment";
 const Payinfo = () => {
     const [payment] = UsePayment()
     return (
-        <div>
+        <div  className=" text-white min-h-screen px-24 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b]">
             <h2 className='text-3xl text-center my-5'>Users payment History</h2>
             <div className="overflow-x-auto mx-auto">
                 <table className="table table-zebra">
                     {/* head */}
-                    <thead>
+                    <thead className=" text-white text-lg">
                         <tr>
                             <th></th>
                             <th>Transaction id</th>

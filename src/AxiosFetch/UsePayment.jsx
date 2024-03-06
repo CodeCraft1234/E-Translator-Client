@@ -7,7 +7,7 @@ const UsePayment = () => {
     const { refetch, data: payment=[]}=useQuery({
         queryKey:['payment'],
         queryFn: async () => {
-            const res=await AxiosSecure.get(`/payment`)
+            const res=await AxiosSecure.get("/payment")
             return res.data
         }
     })
