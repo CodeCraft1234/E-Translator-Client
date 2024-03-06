@@ -1,6 +1,6 @@
 const CookiesPolicy = () => {
   return (
-    <div>
+    <div className="text-blue-600">
       <h2>
         <strong>Cookies Policy</strong>
       </h2>

@@ -35,6 +35,7 @@ import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx
 import BlogDetails from "./Components/Blog/BlogDetails.jsx";
 import LoginFinal from "./Security/LoginFinal.jsx";
 import AdminSecurity from "./Security/AdminSecurity.jsx";
+import Payinfo from "./AdminPannel/AdminPages/Payinfo.jsx";
 
 
 const router = createBrowserRouter([
@@ -174,6 +175,10 @@ const router = createBrowserRouter([
         element: <UpdateBlog></UpdateBlog>,
         loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
+      {
+        path:'/dashboard/userpayinfo',
+        element:<Payinfo></Payinfo>
+      }
     ],
   },
 ]);
