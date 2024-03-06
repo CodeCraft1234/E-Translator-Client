@@ -31,7 +31,6 @@ const useAdmin = () => {
         queryFn: async () => {
             // const res = await AxiosSecure.get(`/usersInfo/admin/${user?.email}` ,{ withCredentials: true });
             const res = await AxiosSecure.get(`/users/admin/${user?.email}` ,{ withCredentials: true });
-            console.log('is admin response', res)
             return res.data.admin;
         }
     });
