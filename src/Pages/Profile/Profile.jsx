@@ -9,7 +9,7 @@ const Profile = () => {
     logOut();
     window.location.href = "/";
   };
-
+//dhdsffdsjh
   return (
     <div className="mt-[100px] mx-auto max-w-md p-6 rounded-lg shadow-md">
       <div className="boxP">

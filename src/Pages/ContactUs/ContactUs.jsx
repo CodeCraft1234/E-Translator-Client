@@ -42,7 +42,7 @@ const Contact = () => {
         }
       );
   };
-
+//hgfkjfsj
   return (
 
     <div className="mt-10 px-5  py-20 bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] text-white md:px-0" id="contact">

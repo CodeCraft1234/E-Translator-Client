@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
 import { FaBlog, FaHome, FaUsers } from "react-icons/fa";
 import { FaBookBookmark } from "react-icons/fa6";
-import { FcFeedback } from "react-icons/fc";
+import { FcFeedback, FcSettings } from "react-icons/fc";
 import useAdmin from "../../Components/hook/useAdmin";
 
 const Dashboard = ({ showSidebar }) => {
@@ -70,6 +70,15 @@ const Dashboard = ({ showSidebar }) => {
                 >
                   <FcFeedback className="mr-2" />
                   Users Feedback
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard/userfeedback"
+                  className="flex items-center py-2"
+                >
+                  <FcSettings className="mr-2" />
+                  Settings
                 </Link>
               </li>
               <li>
