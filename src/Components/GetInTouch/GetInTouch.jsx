@@ -11,7 +11,7 @@ const GetInTouch = () => {
               Contact us
             </p>
 
-            <h1 className="mt-2 text-2xl text-center font-semibold text-gray-800 md:text-3xl dark:text-white">
+            <h1 className="mt-1 text-2xl text-center font-semibold text-gray-800 md:text-3xl dark:text-white">
               Get in touch
             </h1>
 
