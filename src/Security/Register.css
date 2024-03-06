@@ -9,10 +9,10 @@
   inherits: false;
   initial-value: 0deg;
 }
-.box {
+.boxS {
   position: relative;
   width: 450px;
-  height: 500px;
+  height: 640px;
   background: repeating-conic-gradient(
     from var(--a),
     #ff2770 0%,
@@ -30,8 +30,6 @@
   transition: 0.5s;
 }
 
-
-
 @keyframes rotating {
   0% {
     --a: 0deg;
@@ -41,7 +39,7 @@
   }
 }
 
-.box::before {
+.boxS::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -60,7 +58,7 @@
   animation-delay: -1s;
 }
 
-.box::after {
+.boxS::after {
   content: "";
   position: absolute;
   inset: 4px;
@@ -68,7 +66,7 @@
   border-radius: 15px;
   border: 8px solid #25252b;
 }
-.login {
+.loginN {
   position: absolute;
   inset: 50px;
   display: flex;
@@ -85,7 +83,7 @@
   overflow: hidden;
 }
 
-.loginBx {
+.loginBxx {
   position: relative;
   display: flex;
   justify-content: center;
@@ -95,17 +93,17 @@
   width: 90%;
 }
 
-.loginBx h2 {
+.loginBxx h2 {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.2em;
 }
 
-.loginBx h2 i {
+.loginBxx h2 i {
   color: #ff2770;
   text-shadow: 0 0 5px #ff2770, 0 0 25px #ff2770;
 }
-.loginBx input {
+.loginBxx input {
   width: 100%;
   padding: 10px 20px;
   outline: none;
@@ -117,11 +115,11 @@
   border: 2px solid #fff;
 }
 
-.loginBx input::placeholder {
+.loginBxx input::placeholder {
   color: #999;
 }
 
-.loginBx input[type="submit"] {
+.loginBxx input[type="submit"] {
   background: #24d7f7;
   border: none;
   font-weight: 500;
@@ -130,7 +128,7 @@
   transition: 0.5s;
 }
 
-.loginBx input[type="submit"]:hover {
+.loginBxx input[type="submit"]:hover {
   box-shadow: 0 0 10px #24d7f7, 0 0 60px #24d7f7;
 }
 
@@ -148,20 +146,18 @@
   font-weight: 600;
 }
 
-
 /* Tablet Styles */
 @media (max-width: 1024px) {
-  .box {
-    width: 70%; 
-    height: 400px; 
+  .boxS {
+    width: 70%;
+    height: 400px;
   }
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .box {
-    width: 350px; 
-    height: 450px; 
+  .boxS {
+    width: 390px;
+    height: 630px;
   }
-
 }

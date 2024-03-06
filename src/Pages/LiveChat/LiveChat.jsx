@@ -11,7 +11,7 @@ const LiveChat = () => {
   const openModal = () => {
     setIsModalOpen(true);
 
-    // Send initial greeting message
+    // Send initial greeting messages
     const greetingMessage = {
       sender: "bot",
       text: "Hello! welcome to etranslator Quick support Type help for support",
@@ -63,16 +63,16 @@ const LiveChat = () => {
       <button className="text-2xl text-emerald-600" onClick={openModal}>
         <img
           className="w-28 ml-14"
-          src="https://i.ibb.co/93XRbh3/messenger.png"
+          // src="https://i.ibb.co/93XRbh3/messenger.png"
           alt=""
         />
-        <h1 className="text-blue-200 bg-gradient-to-r rounded-lg text-2xl font-bold">
+        {/* <h1 className="text-blue-200 bg-gradient-to-r rounded-lg text-2xl font-bold">
           Quick Support
-        </h1>
+        </h1> */}
       </button>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-gray-600 bg-opacity-75">
+        <div className="fixed inset-0 z-50 overflow-auto  bg-opacity-75">
           <div className="flex items-end justify-end min-h-screen">
             <div className="bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] p-4  w-96 rounded-lg">
               <div className="flex justify-end">
@@ -84,30 +84,28 @@ const LiveChat = () => {
                   &times;
                 </button>
               </div>
-             <form className="bg-white p-2 rounded-lg" action="">
-             <div className="mb-4 text-red-600 h-auto overflow-y-auto">
-                {chatMessages.map((message, index) => (
-                  <div key={index} className="flex">
-                    {message.sender === "user" ? (
-                      <div className="flex justify-end w-full">
-                        
-                        <div className="rounded-md p-2 max-w-xs bg-sky-800 text-white">
-                          {message.text}
-                          
+              <form className="bg-white p-2 rounded-lg" action="">
+                <div className="mb-4 text-red-600 h-auto overflow-y-auto">
+                  {chatMessages.map((message, index) => (
+                    <div key={index} className="flex">
+                      {message.sender === "user" ? (
+                        <div className="flex justify-end w-full">
+                          <div className="rounded-md p-2 max-w-xs bg-sky-800 text-white">
+                            {message.text}
+                          </div>
+                          <RxAvatar className="text-2xl bg- text-slate-800 " />
                         </div>
-                        <RxAvatar className="text-slate-800 " />
-                      </div>
-                    ) : (
-                      <div className="flex justify-start w-full">
-                      <FaRobot  className="text-slate-800 " />
-                        <div className="rounded-md p-2 max-w-xs bg-green-800 text-white">
-                          {message.text}
+                      ) : (
+                        <div className="flex justify-start w-full">
+                          <FaRobot className="text-slate-800 text-2xl" />
+                          <div className="rounded-md p-2 max-w-xs bg-green-800 text-white">
+                            {message.text}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </form>
               <div className="flex py-2">
                 <input
@@ -119,13 +117,12 @@ const LiveChat = () => {
                   className="input text-black  input-bordered input-success w-full max-w-xs"
                 />
                 <button
-                  className="px-4 bg-blue-500 text-white rounded"
+                  className="px-4 rounded-full bg-gradient-to-bl from-teal-800 via-green-900 to-cyan-700 text-white"
                   onClick={handleSendMessage}
                 >
                   Send
                 </button>
               </div>
-           
             </div>
           </div>
         </div>

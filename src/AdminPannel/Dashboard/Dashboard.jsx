@@ -3,10 +3,17 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
 import { FaBlog, FaHome, FaUsers } from "react-icons/fa";
 import { FaBookBookmark } from "react-icons/fa6";
-import { FcFeedback } from "react-icons/fc";
+import { FcFeedback, FcSettings } from "react-icons/fc";
+import useAdmin from "../../Components/hook/useAdmin";
 
 const Dashboard = ({ showSidebar }) => {
   const { user } = useContext(AuthContext);
+  const [isAdmin, isAdminLoading] = useAdmin();
+   
+    if (isAdminLoading ) {
+        return <p>Loading...</p>; // Or show a loading indicator
+    }
+
 
   return (
     <div className="">
@@ -16,7 +23,7 @@ const Dashboard = ({ showSidebar }) => {
         } md:block`}
       >
         <ul className="menu  text-center text-lg md:text-xl">
-          {user && (
+          {user && isAdmin && (
             <div className="w-[250px]">
               <img
                 className="w-44 mx-auto"
@@ -63,6 +70,15 @@ const Dashboard = ({ showSidebar }) => {
                 >
                   <FcFeedback className="mr-2" />
                   Users Feedback
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard/userfeedback"
+                  className="flex items-center py-2"
+                >
+                  <FcSettings className="mr-2" />
+                  Settings
                 </Link>
               </li>
               <li>
