@@ -11,7 +11,7 @@ const LiveChat = () => {
   const openModal = () => {
     setIsModalOpen(true);
 
-    // Send initial greeting message
+    // Send initial greeting messages
     const greetingMessage = {
       sender: "bot",
       text: "Hello! welcome to etranslator Quick support Type help for support",

@@ -7,7 +7,7 @@ import { AuthContext } from "../Security/AuthProvider";
 const UseAdmin = () => {
     const {user, loading} = useContext(AuthContext)
     const AxiosSecure = UseAxiosSecure();
-    // use axios secure with react query
+    // use axios secure with tanstack  query
     const {data: isAdmin, isLoading: isAdminLoading} = useQuery({
         queryKey: ['isAdmin', user?.email],
         enabled: !loading,
