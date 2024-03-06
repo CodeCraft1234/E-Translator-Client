@@ -2,7 +2,7 @@ import React from "react";
 
 const TermsAndConditionsPage = () => {
   return (
-    <div>
+    <div className="text-blue-600">
       <div>
         <h2>
           <strong>Terms and Conditions</strong>
