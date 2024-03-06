@@ -207,7 +207,7 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <footer className="footer footer-center p-4 mt-5 text-white text-base-content">
+      <footer className="footer footer-center p-4 mt-5 text-white ">
         <aside>
           <p>Copyright © 2024 - All right reserved by E Translator </p>
         </aside>
