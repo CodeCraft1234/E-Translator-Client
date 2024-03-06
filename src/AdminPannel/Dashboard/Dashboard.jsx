@@ -78,8 +78,8 @@ const Dashboard = ({ showSidebar }) => {
                   to="/dashboard/userpayinfo"
                   className="flex items-center py-2"
                 >
-                  <MdOutlinePayments  className="mr-2" />
-                  
+                  <MdOutlinePayments className="mr-2" />
+                
                   User payinfo
                 </Link>
               </li>
