@@ -161,7 +161,7 @@ function Translator() {
   };
 
   const fetchTranslationHistory = () => {
-    fetch("https://e-translator-server.vercel.app/api/history")
+    fetch("http://localhost:5000/api/history")
       .then((res) => res.json())
       .then((data) => {
         const userTranslationHistory = data.filter(
@@ -177,7 +177,7 @@ function Translator() {
 
   //deleted
   const handleDeleted = (id) => {
-    fetch(`https://e-translator-server.vercel.app/api/history/${id}`, {
+    fetch(`http://localhost:5000/api/history/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -217,7 +217,7 @@ function Translator() {
         email: user.email,
       };
 
-      fetch("https://e-translator-server.vercel.app/api/history", {
+      fetch("http://localhost:5000/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

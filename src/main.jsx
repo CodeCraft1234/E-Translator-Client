@@ -79,7 +79,7 @@ const router = createBrowserRouter([
       {
         path: "/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
-        loader: ({ params }) => fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
 
       },
       {
@@ -173,7 +173,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/blogs/:id",
         element: <UpdateBlog></UpdateBlog>,
-        loader: ({ params }) => fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
     ],
   },

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const AxiosSecure = axios.create({
-  baseURL: 'https://e-translator-server.vercel.app',
+  baseURL: 'http://localhost:5000',
 });
 
 const UseAxiosSecure = () => {
