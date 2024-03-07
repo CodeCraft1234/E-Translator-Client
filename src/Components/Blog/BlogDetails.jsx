@@ -135,10 +135,10 @@ const BlogDetails = () => {
                     
                     {
                       user?.email === comment.email &&   <button>{/* Open the modal using document.getElementById('ID').showModal() method */}
-                      <button className="hover:underline"  onClick={()=>document.getElementById('my_modal_1').showModal()}>Edit</button>
+                      {/* <button className="hover:underline"  onClick={()=>document.getElementById('my_modal_1').showModal()}>Edit</button> */}
                       <dialog id="my_modal_1" className="modal">
                         <div className="modal-box">
-                          <h3 className="font-bold text-lg">Edit Comment!</h3>
+                          {/* <h3 className="font-bold text-lg">Edit Comment!</h3> */}
                           <form >
                           <input defaultValue={comment.comment} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
                           <button className="">
@@ -156,7 +156,7 @@ const BlogDetails = () => {
                     }
                    
                    
-                    <h1 className="hover:underline">Reply</h1>
+                    {/* <h1 className="hover:underline">Reply</h1> */}
 
                     {
                       user?.email === comment.email &&  <button onClick={()=>handleDelete(comment._id)} className=""><h1 className="hover:underline">Delete</h1></button>
