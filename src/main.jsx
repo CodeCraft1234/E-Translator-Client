@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "http://localhost:5000/blogDetails/:id",
+        path: "/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
 
@@ -117,11 +117,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "payment/success/:tranId",
+        path: "/payment/success/:tranId",
         element: <PaymentSuccess></PaymentSuccess>,
       },
       {
-        path: "payment/fail/:tranId",
+        path: "/payment/fail/:tranId",
         element: <PaymentFail></PaymentFail>,
       },
       {
