@@ -35,6 +35,8 @@ import UserFeedback from "./AdminPannel/AdminPages/UserFeedback/UserFeedback.jsx
 import BlogDetails from "./Components/Blog/BlogDetails.jsx";
 import LoginFinal from "./Security/LoginFinal.jsx";
 import AdminSecurity from "./Security/AdminSecurity.jsx";
+import Payinfo from "./AdminPannel/AdminPages/Payinfo.jsx";
+import LiveChat from "./Pages/LiveChat/LiveChat.jsx";
 
 
 const router = createBrowserRouter([
@@ -77,9 +79,9 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "/blogDetails/:id",
+        path: "http://localhost:5000/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
-        loader: ({ params }) => fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
 
       },
       {
@@ -106,7 +108,6 @@ const router = createBrowserRouter([
         path: "/forgetPassword",
         element: <ForgetPassword></ForgetPassword>,
       },
-      
       {
         path: "/order/:id",
 
@@ -140,6 +141,10 @@ const router = createBrowserRouter([
         path: "/getintuch",
         element: <GetInTouch />,
       },
+      {
+        path:"/livechat",
+        element:<LiveChat/>
+      }
     ],
   },
   {
@@ -173,8 +178,12 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/blogs/:id",
         element: <UpdateBlog></UpdateBlog>,
-        loader: ({ params }) => fetch(`https://e-translator-server.vercel.app/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
       },
+      {
+        path:'/dashboard/userpayinfo',
+        element:<Payinfo></Payinfo>
+      }
     ],
   },
 ]);

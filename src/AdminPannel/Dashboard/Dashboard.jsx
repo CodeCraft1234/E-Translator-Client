@@ -5,6 +5,7 @@ import { FaBlog, FaHome, FaUsers } from "react-icons/fa";
 import { FaBookBookmark } from "react-icons/fa6";
 import { FcFeedback, FcSettings } from "react-icons/fc";
 import useAdmin from "../../Components/hook/useAdmin";
+import { MdOutlinePayments } from "react-icons/md";
 
 const Dashboard = ({ showSidebar }) => {
   const { user } = useContext(AuthContext);
@@ -70,6 +71,16 @@ const Dashboard = ({ showSidebar }) => {
                 >
                   <FcFeedback className="mr-2" />
                   Users Feedback
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard/userpayinfo"
+                  className="flex items-center py-2"
+                >
+                  <MdOutlinePayments className="mr-2" />
+                
+                  User payinfo
                 </Link>
               </li>
               <li>

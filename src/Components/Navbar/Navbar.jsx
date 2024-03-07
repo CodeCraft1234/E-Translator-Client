@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Security/AuthProvider";
-import Data4 from "../Navbar/Animation4.json";
 import UseAdmin from "../../AxiosFetch/UseAdmin";
 
 const NavBar = () => {
@@ -10,15 +9,7 @@ const NavBar = () => {
   console.log(user);
 
   const [isAdmin]=UseAdmin()
-
-  const defaultOption = {
-    loop: true,
-    autoplay: true,
-    animationData: Data4,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  
   // sign out a user
   const handleLogOut = () => {
     logOut().then().catch();
@@ -200,22 +191,7 @@ const NavBar = () => {
               Profile{" "}
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink to={"/rating"}>Rating</NavLink>
-          </li> */}
           <li>
-            {/* {user?.email === "admin@gmail.com" ? (
-              <NavLink to={"dashboard/adminHome"}>
-                <img
-                  className="h-8 w-8"
-                  src="https://i.ibb.co/ZgKDvpZ/business-icon-dashboard-3d-illustration-png.webp"
-                  alt=""
-                />
-                Dashbord
-              </NavLink>
-            ) : (
-              <></>
-            )} */}
               {
                 isAdmin && <NavLink to={"dashboard/adminHome"}>
                 <img

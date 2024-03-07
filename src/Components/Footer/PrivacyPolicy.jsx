@@ -2,7 +2,7 @@
 
 const PrivacyPolicy = () => {
     return (
-        <div className="text-gray-500">
+        <div className="text-blue-600">
             <div>
                 <h2><strong>Privacy Policy</strong></h2>
                 <br />
