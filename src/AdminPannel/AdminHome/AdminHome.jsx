@@ -35,19 +35,19 @@ const AdminHome = () => {
         <SkilitonLoader />
       ) : (
         
-        <div className=" text-white bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] p-10 min-h-screen">
+        <div className=" text-white bg-gradient-to-r from-[#1e1b4b] via-indigo-800 to-[#1e1b4b] min-h-screen">
        <div>
-  <h1 className="flex justify-center items-center py-4 mb-4 text-white bg-transparent rounded-2xl text-xl font-semibold">
+  <h1 className="flex justify-center  lg:items-center py-4 mb-4 text-white bg-transparent rounded-2xl text-xl font-semibold">
     Welcome back
     <img className="w-24 transform hover:scale-105 hover:rotate-3 transition duration-300 ease-in-out" src={user?.photoURL} alt="photo" />
 
 
 
-    <span className="font-bold text-white p-1 rounded-md bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500">@{user?.displayName || "Guest"}</span>
+    <span className="font-bold text-white p-1 rounded-md lg:bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500">@{user?.displayName || "Guest"}</span>
   </h1>
 </div>
 
-<div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 px-28 gap-8">
+<div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 lg:p-20 gap-6">
   <div className="card w-96 h-56 flex-shrink-0">
     <div className="card-body bg-gradient-to-r from-rose-600 to-indigo-600 rounded-xl ml-5">
       <h2 className="card-title text-white text-2xl">

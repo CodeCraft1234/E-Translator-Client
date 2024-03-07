@@ -36,6 +36,7 @@ import BlogDetails from "./Components/Blog/BlogDetails.jsx";
 import LoginFinal from "./Security/LoginFinal.jsx";
 import AdminSecurity from "./Security/AdminSecurity.jsx";
 import Payinfo from "./AdminPannel/AdminPages/Payinfo.jsx";
+import LiveChat from "./Pages/LiveChat/LiveChat.jsx";
 
 
 const router = createBrowserRouter([
@@ -140,6 +141,10 @@ const router = createBrowserRouter([
         path: "/getintuch",
         element: <GetInTouch />,
       },
+      {
+        path:"/livechat",
+        element:<LiveChat/>
+      }
     ],
   },
   {
